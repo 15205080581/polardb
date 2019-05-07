@@ -44,21 +44,21 @@ alter table tbl_name rename to new_tbl_n;ame
 
 1.  **A** \> **B**即要求实例 B 中同步的对象必须为只读，否则会导致同步链路异常，出现数据不一致的情况。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720704634086_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759634086_zh-CN.png)
 
 2.  **A** \> **B/C/D**即一对多的分发式同步架构,这个架构对RDS实例个数没有限制，但是要求目标实例中的同步对象必须为只读，否则会导致同步链路异常，出现数据不一致的情况。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720704634087_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759634087_zh-CN.png)
 
 3.  **B/C/D** \> **A**即多对一的数据汇总架构。对于这种多对一的同步架构，为了保证同步数据一致性，要求每条同步链路同步的对象不相同。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720704634088_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759634088_zh-CN.jpg)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720704634089_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759634089_zh-CN.png)
 
 4.  **A** \> **B** \> **A**即集群A和实例B之间的双向同步架构。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720704634090_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759634090_zh-CN.png)
 
     **说明：** 
 
@@ -122,7 +122,9 @@ alter table tbl_name rename to new_tbl_n;ame
 |--|--|--|
 |-|同步作业名称|同步实例名称没有唯一性要求，主要为了更方便识别具体的作业，建议选择一个有业务意义的作业名称，方便后续的链路查找及管理。|
 |源实例信息|实例类型|选择**通过专线/VPN网关/智能网关接入的自建数据库**。|
-|对端专有网络|此处配置POLARDB的VPC ID。具体VPC ID可以到POLARDB控制台的基本信息界面获取。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720705434091_zh-CN.png)
+|对端专有网络|此处配置POLARDB的VPC ID。具体VPC ID可以到POLARDB控制台的基本信息界面获取。 **说明：** 选择VPC即可，无需为该VPC配置VPN网关。
+
+ ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759734091_zh-CN.png)
 
 |
 |IP地址|配置POLARDB主实例的私网IP地址。在ECS中ping该POLARDB集群的**主地址（私网）**可以获取该IP地址。 **说明：** 填写IP地址而不是域名，例如应该填写192.168.xx.xx，而不是pc-xxxxx.mysql.polardb.rds.aliyuncs.com。
@@ -135,7 +137,7 @@ alter table tbl_name rename to new_tbl_n;ame
 |实例ID|配置源RDS实例的实例ID。|
 |连接方式|对于RDS实例，支持非加密连接和SSL安全连接两种方式。可以根据需要选择连接方式。如果要选择SSL安全连接，那必须先打开RDS的加密连接，开启方法参考[用户指南](https://help.aliyun.com/document_detail/32474.html)。|
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720705434092_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759734092_zh-CN.png)
 
 当这些内容配置完成后，可以单击**授权白名单并进入下一步**。
 
@@ -155,7 +157,7 @@ alter table tbl_name rename to new_tbl_n;ame
 
 如果选择的某张表，那么只有这个表的 drop/alter/truncate/rename table，create/drop index 的操作会同步到目标库。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720705434094_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759734094_zh-CN.png)
 
 当配置完同步对象后，进入同步初始化配置。
 
@@ -165,7 +167,7 @@ alter table tbl_name rename to new_tbl_n;ame
 
 同步初始化类型细分为：结构初始化，全量数据初始化。默认情况下，需要选择结构初始化及全量初始化。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720705434095_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759734095_zh-CN.png)
 
 **预检查**
 
@@ -173,7 +175,7 @@ alter table tbl_name rename to new_tbl_n;ame
 
 如果预检查失败，那么可以单击具体检查项后的按钮，查看具体的失败详情，并根据失败原因修复后，重新进行预检查。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720705434357_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759734357_zh-CN.png)
 
 **说明：** 如果预检查失败，提示源库需要开启binlog，请参见[如何开启Binlog](../../../../cn.zh-CN/用户指南/如何开启Binlog.md#)。
 
@@ -185,10 +187,10 @@ alter table tbl_name rename to new_tbl_n;ame
 
 -   如果单击**授权白名单并进入下一步**后，提示**当前请求失败，建议您刷新页面或稍后重试**，请检查POLARDB实例地址，该地址为IP地址，例如192.168.xx.xx，而不是域名地址。在ECS实例中ping该POLARDB集群的**主地址（私网）**可以获取该IP地址。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720705441928_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759741928_zh-CN.png)
 
 -   如果预检查失败，提示**源库binlog开启检查**失败，请参见[如何开启Binlog](../../../../cn.zh-CN/用户指南/如何开启Binlog.md#)。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720705441938_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79400/155720759741938_zh-CN.png)
 
 
