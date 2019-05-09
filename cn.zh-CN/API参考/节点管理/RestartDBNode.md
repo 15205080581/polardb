@@ -1,6 +1,6 @@
 # RestartDBNode {#reference_zpr_h5t_xfb .reference}
 
-该接口用于重启集群节点。
+该接口用于重启POLARDB集群节点。
 
 ## 请求参数 {#section_kyn_pgs_xfb .section}
 
