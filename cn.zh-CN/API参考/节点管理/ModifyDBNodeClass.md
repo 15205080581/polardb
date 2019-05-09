@@ -1,13 +1,13 @@
 # ModifyDBNodeClass {#reference_187265 .reference}
 
-该接口用于变更集群节点规格。
+该接口用于变更POLARDB集群节点规格。
 
 ## 请求参数 {#section_nwt_f3f_wvw .section}
 
 |名称|类型|是否必须|描述|
 |:-|:-|:---|:-|
 |Action|String|是|系统规定参数，取值：ModifyDBNodeClass。|
-|DBClusterId|String|是|数据库集群ID。|
+|DBClusterId|String|是|集群ID。|
 |ModifyType|String|否|变更类型，取值： -   Upgrade：升级规格；
 -   Downgrade：降级规格。
 
