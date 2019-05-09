@@ -1,6 +1,6 @@
 # UntagResources {#reference_k5d_gsf_1hb .reference}
 
-该接口用于删除集群上的标签。
+该接口用于删除POLARDB集群上的标签。
 
 ## 请求参数 {#section_kyn_pgs_xfb .section}
 
@@ -11,10 +11,10 @@
 |ResourceType|String|是|集群类型，取值：ALIYUN::POLARDB::CLUSTER。|
 |ResourceId.n|String|是|第n个需要删除标签的集群ID。每次最多为50个集群同时删除标签，各个集群ID后面的数字n必须不同，且必须是从1开始的连续整数。例如：pc-bp1xxx.1、pc-bp2xxx.2。|
 |TagKey.n|String|否|标签键。每次最多删除20对标签，各个标签对的数字n必须不同，且必须是从1开始的连续整数。|
-|All|String|否|是否全部删除，仅当TagKey.n为空时有效。取值范围：-   true
+|All|String|否|是否全部删除，仅当TagKey.n为空时有效。取值范围： -   true
 -   false
 
-默认值为：false。|
+ 默认值为：false。|
 
 ## 返回参数 {#section_cf4_phs_xfb .section}
 
@@ -32,7 +32,7 @@ https://polardb.aliyuncs.com/?Action=UntagResources
 &ResourceType=ALIYUN%3A%3APOLARDB%3A%3ACLUSTER
 &&TagKey.1=a
 &<[公共请求参数]>
-
+				
 ```
 
 ## 返回示例 {#section_blw_cls_xfb .section}
