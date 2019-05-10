@@ -81,7 +81,7 @@ PostgreSQL自带一款轻量级的压力测试工具pgbench。pgbench是一种�
     polar_vfs.enable_file_size_cache: "on"
     ```
 
-    **说明：** 以规格为polar.o.x8.4xlarge（32核 256GB）的集群为例修改配置文件，同时为了和RDS对比，修改内存和RDS for PostgreSQL相同。
+    **说明：** 以规格为polar.pg.x8.4xlarge（32核 256GB）的集群为例修改配置文件，同时为了和RDS对比，修改内存和RDS for PostgreSQL相同。
 
     修改配置后，重启PostgreSQL集群让配置生效。
 
@@ -197,7 +197,97 @@ PostgreSQL自带一款轻量级的压力测试工具pgbench。pgbench是一种�
     -   range：表示活跃数据量。
     -   -c：表示测试连接数，测试连接数不代表该规格的最大连接数，最大连接数请参考[规格与定价](../../../../cn.zh-CN/产品简介/规格与定价.md#)。
 
-## 测试结果 {#section_lfs_dyd_l2b .section}
+## 各规格标准测试结果 {#section_83e_o54_ado .section}
+
+|规格|测试数据量|热（活跃）数据量|只读QPS|读写QPS|
+|--|-----|--------|-----|-----|
+| polar.pg.x8.4xlarge
+
+ 32核 256G
+
+ |10亿|1亿|522160|294915|
+| polar.pg.x8.4xlarge
+
+ 32核 256G
+
+ |10亿|5亿|514143|282645|
+| polar.pg.x8.4xlarge
+
+ 32核 256G
+
+ |10亿|10亿|493321|268473|
+| polar.pg.x8.2xlarge
+
+ 16核 128G
+
+ |10亿|1亿|256998|156330|
+| polar.pg.x8.2xlarge
+
+ 16核 128G
+
+ |10亿|5亿|253937|133125|
+| polar.pg.x8.2xlarge
+
+ 16核 128G
+
+ |10亿|10亿|243326|115915|
+| polar.pg.x8.xlarge
+
+ 8核 64G
+
+ |10亿|1亿|159323|71820|
+| polar.pg.x8.xlarge
+
+ 8核 64G
+
+ |10亿|5亿|155498|58140|
+| polar.pg.x8.xlarge
+
+ 8核 64G
+
+ |10亿|10亿|152735|58555|
+| polar.pg.x4.xlarge
+
+ 8核 32G
+
+ |10亿|1亿|129323|64235|
+| polar.pg.x4.xlarge
+
+ 8核 32G
+
+ |10亿|5亿|115498|53682|
+| polar.pg.x4.xlarge
+
+ 8核 32G
+
+ |10亿|10亿|102735|51555|
+| polar.pg.x4.large
+
+ 4核 16G
+
+ |5亿|1亿|75729|48648|
+| polar.pg.x4.large
+
+ 4核 16G
+
+ |5亿|5亿|63818|43343|
+| polar.pg.x4.medium
+
+ 2核 8G
+
+ |1亿|5000万|34386|21383|
+| pg.x8.medium.2
+
+ 2核 16G 250G
+
+ |1亿|1亿|33752|15974|
+
+## 与RDS for PostgreSQL对比测试结果 {#section_lfs_dyd_l2b .section}
+
+**说明：** 
+
+-   测试使用的是非标准POLARDB for PostgreSQL规格，修改POLARDB for PostgreSQL主节点内存与RDS for PostgreSQL独享型规格相同，对比其性能。
+-   下表的规格为RDS for PostgreSQL的实例规格。
 
 |规格| 预计默认存储空间可存储数据量
 
@@ -205,57 +295,57 @@ PostgreSQL自带一款轻量级的压力测试工具pgbench。pgbench是一种�
 
  |测试数据量|热（活跃）数据量|只读QPS|读写QPS|
 |--|----------------------------|-----|--------|-----|-----|
-| polar.o.x8.4xlarge
+| pg.x4.4xlarge.2
 
  32核 128G 2T
 
  |100亿|10亿|1亿|462190|254915|
-| polar.o.x8.4xlarge
+| pg.x4.4xlarge.2
 
  32核 128G 2T
 
  |100亿|10亿|5亿|463176|228440|
-| polar.o.x8.4xlarge
+| pg.x4.4xlarge.2
 
  32核 128G 2T
 
  |100亿|10亿|10亿|473321|200250|
-| polar.o.x8.2xlarge
+| pg.x8.2xlarge.2
 
  16核 128G 2T
 
  |100亿|10亿|1亿|256998|156330|
-| polar.o.x8.2xlarge
+| pg.x8.2xlarge.2
 
  16核 128G 2T
 
  |100亿|10亿|5亿|253937|133125|
-| polar.o.x8.2xlarge
+| pg.x8.2xlarge.2
 
  16核 128G 2T
 
  |100亿|10亿|10亿|243326|115915|
-| polar.o.x4.xlarge
+| pg.x8.xlarge.2
 
  8核 64G 1T
 
  |50亿|10亿|1亿|155014|71820|
-| polar.o.x4.xlarge
+| pg.x8.xlarge.2
 
  8核 64G 1T
 
  |50亿|10亿|5亿|159878|58140|
-| polar.o.x4.xlarge
+| pg.x8.xlarge.2
 
  8核 64G 1T
 
  |50亿|10亿|10亿|152917|58555|
-| polar.o.x4.large
+| pg.x8.large.2
 
  4核 32G 500G
 
  |25亿|5亿|1亿|79429|45110|
-| polar.o.x4.large
+| pg.x8.large.2
 
  4核 32G 500G
 
