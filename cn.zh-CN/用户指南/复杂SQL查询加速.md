@@ -1,6 +1,6 @@
 # 复杂SQL查询加速 {#concept_c1h_sbf_4fb .concept}
 
-集群中有多个只读节点时，每个查询都只在一个只读节点上执行，没有同时利用多个只读节点的计算能力，对于大表（一千万行以上）的复杂查询，响应时间不够短。因此，POLARDB提供**复杂SQL查询加速**（简称：SQL加速）功能，针对这种分析型场景提升查询性能。
+集群中有多个只读节点时，每个查询都只在一个只读节点上执行，没有同时利用多个只读节点的计算能力，对于大表（一千万行以上）的复杂查询，响应时间不够短。因此，POLARDB for MySQL提供**复杂SQL查询加速**（简称：SQL加速）功能，针对这种分析型场景提升查询性能。
 
 SQL加速功能提供一个专门的数据库连接地址，您只需将该地址配置到应用中，该连接所发送的每个读请求都会被分发到所有的只读节点，并行计算。只读节点越多，SQL加速的性能越好。
 
@@ -39,7 +39,7 @@ SQL加速的连接地址不会转发请求到主节点，避免对主节点的�
 
 ## 前提条件 {#section_u1y_tbf_4fb .section}
 
--   POLARDB集群中有至少两个只读节点。如需添加只读节点，请参见[增加只读节点](cn.zh-CN/用户指南/集群管理/增加或删除节点.md#section_zb3_yhd_lfb)。
+-   POLARDB集群中有至少两个只读节点。如需添加只读节点，请参见[增加或删除节点](cn.zh-CN/用户指南/集群管理/增加或删除节点.md#)。
 -   集群中节点的规格至少为4核32GB。如需调整规格，请参见[变更配置](cn.zh-CN/用户指南/集群管理/变更配置.md)。
 -   数据库中的**所有表**不能包含以下数据类型，否则SQL加速功能无法开启。
     -   数值型：[FIXED\[\(M\[,D\]\)\] \[UNSIGNED\]](https://dev.mysql.com/doc/refman/5.6/en/fixed-point-types.html) 、[DOUBLE PRECISION\[\(M,D\)\] \[UNSIGNED\]](https://dev.mysql.com/doc/refman/5.6/en/floating-point-types.html)
@@ -55,7 +55,7 @@ SQL加速的连接地址不会转发请求到主节点，避免对主节点的�
 3.  找到目标集群，单击集群的ID。
 4.  在**访问信息**中，找到**SQL加速地址**，单击**申请**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/24120/155185746914289_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/24120/155747450945067_zh-CN.png)
 
 5.  在弹出的对话框中，单击**确定**。
 6.  设置地址的前缀，并单击**确定**。
@@ -258,10 +258,10 @@ SQL加速扩展支持了Oracle的开窗函数，大大提升用户分析数据�
 语法定义：
 
 ```
-*function* OVER (
-[ PARTITION BY *expr\_list* ]
-[ ORDER BY *order\_list* [ *frame\_clause* ] ] )
-
+function OVER (
+[ PARTITION BY expr_list ]
+[ ORDER BY order_list [ frame_clause ] ] )
+			
 ```
 
 **说明：** 命令中不需要输入中括号，以上中括号只表示可选。
@@ -291,7 +291,7 @@ ROWS BETWEEN
 { UNBOUNDED PRECEDING }
 AND
 { UNBOUNDED FOLLOWING | CURRENT ROW }
-
+				
 ```
 
 示例：
