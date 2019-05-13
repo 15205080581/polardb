@@ -34,6 +34,7 @@
 |VPCId|String|专有网络ID。|
 |VSwitchId|String|虚拟交换机ID。|
 |StorageUsed|Long|存储用量，单位：Byte。|
+|StorageMax|Long|当前集群规格的最大存储容量，单位：Byte。|
 |CreationTime|String|创建时间，格式：*YYYY-MM-DD*T*hh:mm:ss*Z，如2011-05-30T12:11:4Z。|
 |ExpireTime|String|到期时间。 **说明：** 按量付费集群无到期时间。
 
@@ -83,44 +84,44 @@ XML格式
 
 ```
 <DescribeDBClusterAttributeResponse>  
-	<DBVersion>5.6</DBVersion>
-	<LockMode>Unlock</LockMode>
-	<DBClusterDescription>test</DBClusterDescription>
-	<DBClusterNetworkType>VPC</DBClusterNetworkType>
-	<DBClusterId>pc-xxxxxxxxxxxxxx</DBClusterId>
-	<VSwitchId>vsw-xxxxxxxxxxxxxx</VSwitchId>
-	<Engine>POLARDB</Engine>
-	<DBClusterStatus>Running</DBClusterStatus>
-	<CreationTime>2019-04-26T06:01:28Z</CreationTime>
-	<MaintainTime>18:00Z-19:00Z</MaintainTime>
-	<VPCId>vpc-xxxxxxxxxxxxxx</VPCId>
-	<ExpireTime></ExpireTime>
-	<Expired>false</Expired>
-	<RequestId>4E148395-950A-46F8-BFF8-274A64CD793B</RequestId>
-	<RegionId>cn-qingdao</RegionId>
-	<DBType>MySQL</DBType>
-	<DBNodes>
-		<CreationTime>2019-04-26T22:01:28Z</CreationTime>
-		<MaxIOPS>8000</MaxIOPS>
-		<DBNodeRole>Writer</DBNodeRole>
-		<MaxConnections>1200</MaxConnections>
-		<DBNodeClass>polar.mysql.x2.medium</DBNodeClass>
-		<DBNodeStatus>Running</DBNodeStatus>
-		<ZoneId>cn-qingdao-c</ZoneId>
-		<DBNodeId>pi-xxxxxxxxxxxxxx</DBNodeId>
-	</DBNodes>
-	<DBNodes>
-		<CreationTime>2019-04-26T22:01:28Z</CreationTime>
-		<MaxIOPS>8000</MaxIOPS>
-		<DBNodeRole>Reader</DBNodeRole>
-		<MaxConnections>1200</MaxConnections>
-		<DBNodeClass>polar.mysql.x2.medium</DBNodeClass>
-		<DBNodeStatus>Running</DBNodeStatus>
-		<ZoneId>cn-qingdao-c</ZoneId>
-		<DBNodeId>pi-xxxxxxxxxxxxxx</DBNodeId>
-	</DBNodes>
-	<SQLSize>0</SQLSize>
-	<PayType>Postpaid</PayType>
+    <DBVersion>5.6</DBVersion>
+    <LockMode>Unlock</LockMode>
+    <DBClusterDescription>test</DBClusterDescription>
+    <DBClusterNetworkType>VPC</DBClusterNetworkType>
+    <DBClusterId>pc-xxxxxxxxxxxxxx</DBClusterId>
+    <VSwitchId>vsw-xxxxxxxxxxxxxx</VSwitchId>
+    <Engine>POLARDB</Engine>
+    <DBClusterStatus>Running</DBClusterStatus>
+    <CreationTime>2019-04-26T06:01:28Z</CreationTime>
+    <MaintainTime>18:00Z-19:00Z</MaintainTime>
+    <VPCId>vpc-xxxxxxxxxxxxxx</VPCId>
+    <ExpireTime></ExpireTime>
+    <Expired>false</Expired>
+    <RequestId>4E148395-950A-46F8-BFF8-274A64CD793B</RequestId>
+    <RegionId>cn-qingdao</RegionId>
+    <DBType>MySQL</DBType>
+    <DBNodes>
+        <CreationTime>2019-04-26T22:01:28Z</CreationTime>
+        <MaxIOPS>8000</MaxIOPS>
+        <DBNodeRole>Writer</DBNodeRole>
+        <MaxConnections>1200</MaxConnections>
+        <DBNodeClass>polar.mysql.x2.medium</DBNodeClass>
+        <DBNodeStatus>Running</DBNodeStatus>
+        <ZoneId>cn-qingdao-c</ZoneId>
+        <DBNodeId>pi-xxxxxxxxxxxxxx</DBNodeId>
+    </DBNodes>
+    <DBNodes>
+        <CreationTime>2019-04-26T22:01:28Z</CreationTime>
+        <MaxIOPS>8000</MaxIOPS>
+        <DBNodeRole>Reader</DBNodeRole>
+        <MaxConnections>1200</MaxConnections>
+        <DBNodeClass>polar.mysql.x2.medium</DBNodeClass>
+        <DBNodeStatus>Running</DBNodeStatus>
+        <ZoneId>cn-qingdao-c</ZoneId>
+        <DBNodeId>pi-xxxxxxxxxxxxxx</DBNodeId>
+    </DBNodes>
+    <SQLSize>0</SQLSize>
+    <PayType>Postpaid</PayType>
 </DescribeDBClusterAttributeResponse>
 ```
 
@@ -128,47 +129,47 @@ JSON格式
 
 ```
 {
-	"DBVersion": "5.6",
-	"LockMode": "Unlock",
-	"DBClusterDescription": "test",
-	"DBClusterNetworkType": "VPC",
-	"DBClusterId": "pc-xxxxxxxxxxxxxx",
-	"VSwitchId": "vsw-xxxxxxxxxxxxxx",
-	"Engine": "POLARDB",
-	"DBClusterStatus": "Running",
-	"CreationTime": "2019-04-26T06:01:28Z",
-	"MaintainTime": "18:00Z-19:00Z",
-	"Tags": [],
-	"VPCId": "vpc-xxxxxxxxxxxxxx",
-	"ExpireTime": "",
-	"Expired": false,
-	"RequestId": "4E148395-950A-46F8-BFF8-274A64CD793B",
-	"RegionId": "cn-qingdao",
-	"DBType": "MySQL",
-	"DBNodes": [
-		{
-			"CreationTime": "2019-04-26T22:01:28Z",
-			"MaxIOPS": 8000,
-			"DBNodeRole": "Writer",
-			"MaxConnections": 1200,
-			"DBNodeClass": "polar.mysql.x2.medium",
-			"DBNodeStatus": "Running",
-			"ZoneId": "cn-qingdao-c",
-			"DBNodeId": "pi-xxxxxxxxxxxxxx"
-		},
-		{
-			"CreationTime": "2019-04-26T22:01:28Z",
-			"MaxIOPS": 8000,
-			"DBNodeRole": "Reader",
-			"MaxConnections": 1200,
-			"DBNodeClass": "polar.mysql.x2.medium",
-			"DBNodeStatus": "Running",
-			"ZoneId": "cn-qingdao-c",
-			"DBNodeId": "pi-xxxxxxxxxxxxxx"
-		}
-	],
-	"SQLSize": 0,
-	"PayType": "Postpaid"
+    "DBVersion": "5.6",
+    "LockMode": "Unlock",
+    "DBClusterDescription": "test",
+    "DBClusterNetworkType": "VPC",
+    "DBClusterId": "pc-xxxxxxxxxxxxxx",
+    "VSwitchId": "vsw-xxxxxxxxxxxxxx",
+    "Engine": "POLARDB",
+    "DBClusterStatus": "Running",
+    "CreationTime": "2019-04-26T06:01:28Z",
+    "MaintainTime": "18:00Z-19:00Z",
+    "Tags": [],
+    "VPCId": "vpc-xxxxxxxxxxxxxx",
+    "ExpireTime": "",
+    "Expired": false,
+    "RequestId": "4E148395-950A-46F8-BFF8-274A64CD793B",
+    "RegionId": "cn-qingdao",
+    "DBType": "MySQL",
+    "DBNodes": [
+        {
+            "CreationTime": "2019-04-26T22:01:28Z",
+            "MaxIOPS": 8000,
+            "DBNodeRole": "Writer",
+            "MaxConnections": 1200,
+            "DBNodeClass": "polar.mysql.x2.medium",
+            "DBNodeStatus": "Running",
+            "ZoneId": "cn-qingdao-c",
+            "DBNodeId": "pi-xxxxxxxxxxxxxx"
+        },
+        {
+            "CreationTime": "2019-04-26T22:01:28Z",
+            "MaxIOPS": 8000,
+            "DBNodeRole": "Reader",
+            "MaxConnections": 1200,
+            "DBNodeClass": "polar.mysql.x2.medium",
+            "DBNodeStatus": "Running",
+            "ZoneId": "cn-qingdao-c",
+            "DBNodeId": "pi-xxxxxxxxxxxxxx"
+        }
+    ],
+    "SQLSize": 0,
+    "PayType": "Postpaid"
 }
 ```
 
