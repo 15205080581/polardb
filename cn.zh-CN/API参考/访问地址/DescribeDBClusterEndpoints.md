@@ -2,6 +2,8 @@
 
 该接口用于查询POLARDB集群的地址信息。
 
+**说明：** 暂不支持POLARDB for PostgreSQL/Oracle集群。
+
 ## 请求参数 {#section_kyn_pgs_xfb .section}
 
 |名称|类型|是否必须|描述|
@@ -74,53 +76,53 @@ XML格式
 
 ```
 <DescribeDBClusterEndpointsResponse>  
-	<Items>
-		<EndpointType>Primary</EndpointType>
-		<AddressItems>
-			<Port>3306</Port>
-			<ConnectionString>pc-xxxxxxxxxx.w.polardb.cn-qd-pldb1.rds.aliyuncs.com</ConnectionString>
-			<VPCId>vpc-xxxxxxxxxx</VPCId>
-			<IPAddress>172.xx.xx.xx</IPAddress>
-			<NetType>Private</NetType>
-			<VSwitchId>vsw-xxxxxxxxxx</VSwitchId>
-		</AddressItems>
-		<Nodes>pi-xxxxxxxxxx</Nodes>
-		<DBEndpointId>pe-xxxxxxxxxx</DBEndpointId>
-		<EndpointConfig>{}</EndpointConfig>
-	</Items>
-	<Items>
-		<EndpointType>Cluster</EndpointType>
-		<AutoAddNewNodes>Enable</AutoAddNewNodes>
-		<ReadWriteMode>ReadWrite</ReadWriteMode>
-		<AddressItems>
-			<Port>3306</Port>
-			<ConnectionString>pc-xxxxxxxxxx.polardb.cn-qd-pldb1.rds.aliyuncs.com</ConnectionString>
-			<VPCId>vpc-xxxxxxxxxx</VPCId>
-			<IPAddress>172.xx.xx.xx</IPAddress>
-			<NetType>Private</NetType>
-			<VSwitchId>vsw-xxxxxxxxxx</VSwitchId>
-		</AddressItems>
-		<Nodes>pi-xxxxxxxxxx,pi-xxxxxxxxxx</Nodes>
-		<DBEndpointId>pe-xxxxxxxxxx</DBEndpointId>
-		<EndpointConfig>{&quot;ConsistLevel&quot;:&quot;1&quot;,&quot;CausalConsistRead&quot;:&quot;1&quot;,&quot;LoadBalanceStrategy&quot;:&quot;load&quot;}</EndpointConfig>
-	</Items>
-	<Items>
-		<EndpointType>Custom</EndpointType>
-		<AutoAddNewNodes>Disable</AutoAddNewNodes>
-		<ReadWriteMode>ReadOnly</ReadWriteMode>
-		<AddressItems>
-			<Port>3306</Port>
-			<ConnectionString>pe-xxxxxxxxxx.polardb.cn-qd-pldb1.rds.aliyuncs.com</ConnectionString>
-			<VPCId>vpc-xxxxxxxxxx</VPCId>
-			<IPAddress>172.xx.xx.xx</IPAddress>
-			<NetType>Private</NetType>
-			<VSwitchId>vsw-xxxxxxxxxx</VSwitchId>
-		</AddressItems>
-		<Nodes>pi-xxxxxxxxxx,pi-xxxxxxxxxx</Nodes>
-		<DBEndpointId>pe-xxxxxxxxxx</DBEndpointId>
-		<EndpointConfig>{&quot;ConsistLevel&quot;:&quot;0&quot;,&quot;CausalConsistRead&quot;:&quot;0&quot;,&quot;LoadBalanceStrategy&quot;:&quot;load&quot;}</EndpointConfig>
-	</Items>
-	<RequestId>ABA96273-606B-4616-9394-336A06312713</RequestId>
+    <Items>
+        <EndpointType>Primary</EndpointType>
+        <AddressItems>
+            <Port>3306</Port>
+            <ConnectionString>pc-xxxxxxxxxx.w.polardb.cn-qd-pldb1.rds.aliyuncs.com</ConnectionString>
+            <VPCId>vpc-xxxxxxxxxx</VPCId>
+            <IPAddress>172.xx.xx.xx</IPAddress>
+            <NetType>Private</NetType>
+            <VSwitchId>vsw-xxxxxxxxxx</VSwitchId>
+        </AddressItems>
+        <Nodes>pi-xxxxxxxxxx</Nodes>
+        <DBEndpointId>pe-xxxxxxxxxx</DBEndpointId>
+        <EndpointConfig>{}</EndpointConfig>
+    </Items>
+    <Items>
+        <EndpointType>Cluster</EndpointType>
+        <AutoAddNewNodes>Enable</AutoAddNewNodes>
+        <ReadWriteMode>ReadWrite</ReadWriteMode>
+        <AddressItems>
+            <Port>3306</Port>
+            <ConnectionString>pc-xxxxxxxxxx.polardb.cn-qd-pldb1.rds.aliyuncs.com</ConnectionString>
+            <VPCId>vpc-xxxxxxxxxx</VPCId>
+            <IPAddress>172.xx.xx.xx</IPAddress>
+            <NetType>Private</NetType>
+            <VSwitchId>vsw-xxxxxxxxxx</VSwitchId>
+        </AddressItems>
+        <Nodes>pi-xxxxxxxxxx,pi-xxxxxxxxxx</Nodes>
+        <DBEndpointId>pe-xxxxxxxxxx</DBEndpointId>
+        <EndpointConfig>{&quot;ConsistLevel&quot;:&quot;1&quot;,&quot;CausalConsistRead&quot;:&quot;1&quot;,&quot;LoadBalanceStrategy&quot;:&quot;load&quot;}</EndpointConfig>
+    </Items>
+    <Items>
+        <EndpointType>Custom</EndpointType>
+        <AutoAddNewNodes>Disable</AutoAddNewNodes>
+        <ReadWriteMode>ReadOnly</ReadWriteMode>
+        <AddressItems>
+            <Port>3306</Port>
+            <ConnectionString>pe-xxxxxxxxxx.polardb.cn-qd-pldb1.rds.aliyuncs.com</ConnectionString>
+            <VPCId>vpc-xxxxxxxxxx</VPCId>
+            <IPAddress>172.xx.xx.xx</IPAddress>
+            <NetType>Private</NetType>
+            <VSwitchId>vsw-xxxxxxxxxx</VSwitchId>
+        </AddressItems>
+        <Nodes>pi-xxxxxxxxxx,pi-xxxxxxxxxx</Nodes>
+        <DBEndpointId>pe-xxxxxxxxxx</DBEndpointId>
+        <EndpointConfig>{&quot;ConsistLevel&quot;:&quot;0&quot;,&quot;CausalConsistRead&quot;:&quot;0&quot;,&quot;LoadBalanceStrategy&quot;:&quot;load&quot;}</EndpointConfig>
+    </Items>
+    <RequestId>ABA96273-606B-4616-9394-336A06312713</RequestId>
 </DescribeDBClusterEndpointsResponse>
 ```
 
@@ -128,61 +130,61 @@ JSON格式
 
 ```
 {
-	"Items": [
-		{
-			"EndpointType": "Primary",
-			"AddressItems": [
-				{
-					"Port": "3306",
-					"ConnectionString": "pc-xxxxxxxxxx.w.polardb.cn-qd-pldb1.rds.aliyuncs.com",
-					"VPCId": "vpc-xxxxxxxxxx",
-					"IPAddress": "172.xx.xx.xx",
-					"NetType": "Private",
-					"VSwitchId": "vsw-xxxxxxxxxx"
-				}
-			],
-			"Nodes": "pi-xxxxxxxxxx",
-			"DBEndpointId": "pe-xxxxxxxxxx",
-			"EndpointConfig": "{}"
-		},
-		{
-			"EndpointType": "Cluster",
-			"AutoAddNewNodes": "Enable",
-			"ReadWriteMode": "ReadWrite",
-			"AddressItems": [
-				{
-					"Port": "3306",
-					"ConnectionString": "pc-xxxxxxxxxx.polardb.cn-qd-pldb1.rds.aliyuncs.com",
-					"VPCId": "vpc-xxxxxxxxxx",
-					"IPAddress": "172.xx.xx.xx",
-					"NetType": "Private",
-					"VSwitchId": "vsw-xxxxxxxxxx"
-				}
-			],
-			"Nodes": "pi-xxxxxxxxxx,pi-xxxxxxxxxx",
-			"DBEndpointId": "pe-xxxxxxxxxx",
-			"EndpointConfig": "{\"ConsistLevel\":\"1\",\"CausalConsistRead\":\"1\",\"LoadBalanceStrategy\":\"load\"}"
-		},
-		{
-			"EndpointType": "Custom",
-			"AutoAddNewNodes": "Disable",
-			"ReadWriteMode": "ReadOnly",
-			"AddressItems": [
-				{
-					"Port": "3306",
-					"ConnectionString": "pe-xxxxxxxxxx.polardb.cn-qd-pldb1.rds.aliyuncs.com",
-					"VPCId": "vpc-xxxxxxxxxx",
-					"IPAddress": "172.xx.xx.xx",
-					"NetType": "Private",
-					"VSwitchId": "vsw-xxxxxxxxxx"
-				}
-			],
-			"Nodes": "pi-xxxxxxxxxx,pi-xxxxxxxxxx",
-			"DBEndpointId": "pe-xxxxxxxxxx",
-			"EndpointConfig": "{\"ConsistLevel\":\"0\",\"CausalConsistRead\":\"0\",\"LoadBalanceStrategy\":\"load\"}"
-		}
-	],
-	"RequestId": "ABA96273-606B-4616-9394-336A06312713"
+    "Items": [
+        {
+            "EndpointType": "Primary",
+            "AddressItems": [
+                {
+                    "Port": "3306",
+                    "ConnectionString": "pc-xxxxxxxxxx.w.polardb.cn-qd-pldb1.rds.aliyuncs.com",
+                    "VPCId": "vpc-xxxxxxxxxx",
+                    "IPAddress": "172.xx.xx.xx",
+                    "NetType": "Private",
+                    "VSwitchId": "vsw-xxxxxxxxxx"
+                }
+            ],
+            "Nodes": "pi-xxxxxxxxxx",
+            "DBEndpointId": "pe-xxxxxxxxxx",
+            "EndpointConfig": "{}"
+        },
+        {
+            "EndpointType": "Cluster",
+            "AutoAddNewNodes": "Enable",
+            "ReadWriteMode": "ReadWrite",
+            "AddressItems": [
+                {
+                    "Port": "3306",
+                    "ConnectionString": "pc-xxxxxxxxxx.polardb.cn-qd-pldb1.rds.aliyuncs.com",
+                    "VPCId": "vpc-xxxxxxxxxx",
+                    "IPAddress": "172.xx.xx.xx",
+                    "NetType": "Private",
+                    "VSwitchId": "vsw-xxxxxxxxxx"
+                }
+            ],
+            "Nodes": "pi-xxxxxxxxxx,pi-xxxxxxxxxx",
+            "DBEndpointId": "pe-xxxxxxxxxx",
+            "EndpointConfig": "{\"ConsistLevel\":\"1\",\"CausalConsistRead\":\"1\",\"LoadBalanceStrategy\":\"load\"}"
+        },
+        {
+            "EndpointType": "Custom",
+            "AutoAddNewNodes": "Disable",
+            "ReadWriteMode": "ReadOnly",
+            "AddressItems": [
+                {
+                    "Port": "3306",
+                    "ConnectionString": "pe-xxxxxxxxxx.polardb.cn-qd-pldb1.rds.aliyuncs.com",
+                    "VPCId": "vpc-xxxxxxxxxx",
+                    "IPAddress": "172.xx.xx.xx",
+                    "NetType": "Private",
+                    "VSwitchId": "vsw-xxxxxxxxxx"
+                }
+            ],
+            "Nodes": "pi-xxxxxxxxxx,pi-xxxxxxxxxx",
+            "DBEndpointId": "pe-xxxxxxxxxx",
+            "EndpointConfig": "{\"ConsistLevel\":\"0\",\"CausalConsistRead\":\"0\",\"LoadBalanceStrategy\":\"load\"}"
+        }
+    ],
+    "RequestId": "ABA96273-606B-4616-9394-336A06312713"
 }
 ```
 
