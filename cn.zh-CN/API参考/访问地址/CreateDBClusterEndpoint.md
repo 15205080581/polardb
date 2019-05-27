@@ -2,7 +2,7 @@
 
 该接口用于创建POLARDB自定义集群地址。
 
-**说明：** POLARDB for PostgreSQL、POLARDB Oracle兼容版暂不支持自定义集群地址。
+**说明：** POLARDB for PostgreSQL/Oracle暂不支持自定义集群地址。
 
 ## 请求参数 {#section_kyn_pgs_xfb .section}
 
@@ -55,7 +55,7 @@ XML格式
 
 ```
 <CreateDBClusterEndpointResponse>  
-	<RequestId>CD35F3-F3-44CA-AFFF-BAF869666D6B</RequestId>
+    <RequestId>CD35F3-F3-44CA-AFFF-BAF869666D6B</RequestId>
 </CreateDBClusterEndpointResponse>
 ```
 
@@ -63,7 +63,7 @@ JSON格式
 
 ```
 {
-	"RequestId": "CD35F3-F3-44CA-AFFF-BAF869666D6B"
+    "RequestId": "CD35F3-F3-44CA-AFFF-BAF869666D6B"
 }
 ```
 

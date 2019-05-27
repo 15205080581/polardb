@@ -1,13 +1,15 @@
 # ModifyDBEndpointAddress {#reference_rwk_tdz_xfb .reference}
 
-该接口用于修改集群的访问地址前缀。
+该接口用于修改POLARDB集群默认访问地址前缀。
+
+**说明：** POLARDB for PostgreSQL/Oracle暂不支持该接口。
 
 ## 请求参数 {#section_kyn_pgs_xfb .section}
 
 |名称|类型|是否必须|描述|
 |:-|:-|:---|:-|
 |Action|String|是|系统规定参数，取值：ModifyDBEndpointAddress。|
-|DBClusterId|String|是|数据库集群ID。|
+|DBClusterId|String|是|集群ID。|
 |EndpointId|String|是|集群地址ID。例如pe-xxxxxxxx。|
 |NetType|String|是|IP 网络类型： -   Public（公网）；
 -   Private（私网）。
@@ -43,7 +45,7 @@ XML格式
 
 ```
 <CreateDBEndpointAddressResponse>  
-	<RequestId>D0CEC6AC-7760-409A-A0D5-E6CD8660E9CC</RequestId>
+    <RequestId>D0CEC6AC-7760-409A-A0D5-E6CD8660E9CC</RequestId>
 </CreateDBEndpointAddressResponse>
 ```
 

@@ -1,23 +1,23 @@
 # CreateDBEndpointAddress {#reference_rpf_ndz_xfb .reference}
 
-该接口用于创建集群地址。
+该接口用于创建POLARDB集群的公网地址。
+
+**说明：** POLARDB for PostgreSQL/Oracle暂不支持公网地址。
 
 ## 请求参数 {#section_kyn_pgs_xfb .section}
 
 |名称|类型|是否必须|描述|
 |:-|:-|:---|:-|
 |Action|String|是|系统规定参数，取值：CreateDBEndpointAddress。|
-|DBClusterId|String|是|数据库集群ID。|
-|DBEndpointId|String|是|集群地址ID。 **说明：** DBEndpointId可通过DescribeDBClusterEndpoints接口查询。
+|DBClusterId|String|是|集群ID。|
+|DBEndpointId|String|是|集群地址ID。 **说明：** DBEndpointId可通过接口[DescribeDBClusterEndpoints](cn.zh-CN/API参考/访问地址/DescribeDBClusterEndpoints.md#)查询。
 
  |
 |ConnectionStringPrefix|String|是|连接数据库的地址前辍： -   由小写字母，数字，中划线组成，字母开头；
 -   长度不超过30个字符。
 
  |
-|NetType|String|是|新增连接串的网络类型，当前仅支持： -   Public（公网）。
-
- |
+|NetType|String|是|新增连接串的网络类型，当前仅支持： Public（公网）。|
 
 ## 返回参数 {#section_cf4_phs_xfb .section}
 
@@ -43,7 +43,7 @@ XML格式
 
 ```
 <CreateDBEndpointAddressResponse>  
-	<RequestId>D0CEC6AC-7760-409A-A0D5-E6CD8660E9CC</RequestId>
+    <RequestId>D0CEC6AC-7760-409A-A0D5-E6CD8660E9CC</RequestId>
 </CreateDBEndpointAddressResponse>
 ```
 

@@ -1,13 +1,13 @@
 # DeleteDBNodes {#reference_187257 .reference}
 
-该接口用于删除集群节点。
+该接口用于删除POLARDB集群节点。
 
 ## 请求参数 {#section_in0_nc4_4b7 .section}
 
 |名称|类型|是否必须|描述|
 |:-|:-|:---|:-|
 |Action|String|是|系统规定参数，取值：DeleteDBNodes。|
-|DBClusterId|String|是|数据库集群ID。|
+|DBClusterId|String|是|集群ID。|
 |DBNodeId.N|String|是|数据库节点ID。N为从1开始正整数，最大值=当前节点数-2，即必须保留一个主节点和一个只读节点。 **说明：** 当前仅支持一次删除一个节点。
 
  |

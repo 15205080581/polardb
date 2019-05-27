@@ -2,7 +2,7 @@
 
 该接口用于修改POLARDB集群地址属性。
 
-**说明：** POLARDB for PostgreSQL、POLARDB Oracle兼容版暂不支持集群地址。
+**说明：** POLARDB for PostgreSQL/Oracle暂不支持集群地址。
 
 ## 请求参数 {#section_kyn_pgs_xfb .section}
 
@@ -53,7 +53,7 @@ XML格式
 
 ```
 <ModifyDBClusterEndpointResponse>  
-	<RequestId>CD3FA5F3-FAF3-44CA-AFFF-BAF869666D6B</RequestId>
+    <RequestId>CD3FA5F3-FAF3-44CA-AFFF-BAF869666D6B</RequestId>
 </ModifyDBClusterEndpointResponse>
 ```
 
@@ -61,7 +61,7 @@ JSON格式
 
 ```
 {
-	"RequestId": "CD3FA5F3-FAF3-44CA-AFFF-BAF869666D6B"
+    "RequestId": "CD3FA5F3-FAF3-44CA-AFFF-BAF869666D6B"
 }
 ```
 
