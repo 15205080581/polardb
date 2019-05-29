@@ -2,7 +2,7 @@
 
 ## Q: What is POLARDB? {#section_42u_yiy_c62 .section}
 
-POLARDB is the next-generation relational database based on the cloud computing framework. Currently POLARDB only supports MySQL、PostgreSQL and Oracle, which is under development. The most notable features are as follows:
+POLARDB is the next-generation relational database based on the cloud computing framework.Currently POLARDB only supports MySQL、PostgreSQL and Oracle, which is under development. The most notablefeatures are as follows:
 
 -   Data backup time on POLARDB has been reduced to mere seconds. With the help of the excellent RDMA network and the newest block storage technology, the backup time is unrelated to the size of underlying data.
 -   All of the nodes in an instance, including read/write nodes and read-only nodes, are able to access the same copy of data on a storage node. However, the traditional cloud database model only allows each instance to get its own copy of data.
@@ -33,7 +33,7 @@ POLARDB also features a complete management system based on Docker to handle ins
 -   POLARDB is compatible with MySQL, PostgreSQL, Oracle.
 -   When a node abnormality occurs, failover is automatically performed, protect for zero data lost, and the impact time is less than 60 seconds.
 
-## Q: Why is POLARDB better than many traditional databases? {#section_s6g_2bn_dk6 .section}
+## Q: Why is POLARDB betterthan many traditional databases? {#section_s6g_2bn_dk6 .section}
 
 -   When upgrading hardware, you need to migrate data, the upgrade period is long, and you can't calmly respond to sudden business peaks.
 -   Financial level reliability requirements RPO = 0, the traditional architecture uses the instance layer to synchronize multiple copies, performance loss.
@@ -45,9 +45,6 @@ POLARDB also features a complete management system based on Docker to handle ins
 -   TB above the instance backup is slow, often dozens of hours.
 -   The enterprise must not only have the SQL versatility and reliability of the relational database, but also the scalability of NoSQL, and the multidimensional data processing convenience of the multi-mode database. Traditional databases cannot be met.
 -   The traditional database can not be ORACLE compatible.
-
-## What are the advanced features? {#section_pxp_wl8_el2 .section}
-
 -   POLARDB for Oracle is the industry's only deep Oracle-compatible database, replacing Oracle from several years to weeks.
 -   POLARDB v2.0 \(for Oracle|PostgreSQL\) supports millions of QPS, 20 times performance-enhanced for complex queries, allowing enterprises to simultaneously allow OLTP+OLAP mixed load services.
 -   POLARDB v2.0 \(for Oracle|PostgreSQL\) supports multi-mode capabilities, and the business can simultaneously obtain SQL versatility, NOSQL extensibility, and multi-mode development convenience.
