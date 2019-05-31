@@ -8,7 +8,7 @@
 
     **说明：** 调整参数**loose\_innodb\_polar\_log\_file\_max\_reuse**后，缓冲池不会立刻被清空，随着DML被执行，才会慢慢减少。如果需要立即清空，请联系售后服务。
 
-    ![loose_innodb_polar_log_file_max_reuse](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/220154/155805884047439_zh-CN.png)
+    ![loose_innodb_polar_log_file_max_reuse](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/220154/155927963847439_zh-CN.png)
 
 -   磁盘空间无法选择怎么办？
 
@@ -19,5 +19,11 @@
 -   读写分离怎么保证读一致性？
 
     答：读写分离链路会记录日志序号（Log sequence number，LSN），读请求会发往LSN符合要求的只读节点，详情请参见[读写分离](cn.zh-CN/POLARDB for MySQL用户指南/读写分离.md#section_rfw_ys5_j2b)。
+
+-   如何实现POLARDB的读写分离？
+
+    答：只需在应用程序中使用集群地址，即可根据配置的读负载节点实现读写分离。您也可以[自定义集群地址](cn.zh-CN/POLARDB for MySQL用户指南/集群管理/设置__释放自定义集群地址.md#)。
+
+    ![集群地址](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/220154/155927963848356_zh-CN.png)
 
 
