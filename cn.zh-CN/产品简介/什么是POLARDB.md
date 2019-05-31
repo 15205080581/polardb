@@ -47,6 +47,32 @@ POLARDB采用存储和计算分离的架构，所有计算节点共享一份数�
 
 -   **复杂SQL查询加速** 
 
-    内置并行查询引擎，对执行时长超过1分钟的复杂分析类SQL加速效果明显。本功能需要使用额外的访问地址。
+    内置并行查询引擎，对执行时长超过1分钟的复杂分析类SQL加速效果明显。本功能需要使用额外的连接地址。
 
+
+## 相关服务 {#section_dru_7os_cmo .section}
+
+-   [ECS](../../../../cn.zh-CN/产品简介/什么是云服务器ECS.md)：ECS是云服务器，通过内网访问同一地域的POLARDB集群时，可实现POLARDB集群的最佳性能。ECS搭配POLARDB集群是典型的业务访问架构。
+-   [Redis](../../../../cn.zh-CN/产品简介/什么是云数据库Redis版.md)：Redis提供持久化的内存数据库服务。当业务访问量较大时，ECS 、POLARDB和Redis的组合可以支持更多的读请求，同时减少响应时间。
+-   [MongoDB](../../../../cn.zh-CN/产品简介/什么是云数据库MongoDB.md)：提供稳定可靠、弹性伸缩、完全兼容MongoDB协议的数据库服务。数据结构多样时，可以选择将结构化数据存储在POLARDB，将非结构化数据存储在MongoDB，满足业务的多样化存储需求。
+-   [DTS](https://help.aliyun.com/document_detail/26592.html)：您可以使用数据传输服务DTS将本地数据库迁移到云上的POLARDB。
+-   [OSS](../../../../cn.zh-CN/产品简介/什么是对象存储 OSS.md)：对象存储服务OSS是阿里云提供的海量、安全、低成本、高可靠的云存储服务。
+
+## 如何使用POLARDB {#section_hwr_aoq_rgc .section}
+
+您可以通过以下方式管理POLARDB集群，进行集群创建、数据库创建、账号创建等操作：
+
+-   [控制台](https://polardb.console.aliyun.com/)：提供图形化的Web界面，操作方便。
+-   [CLI](https://help.aliyun.com/product/29991.html)：控制台上所有的操作都可以通过CLI实现。
+-   [SDK](../../../../cn.zh-CN/SDK参考/SDK参考.md#)：控制台上所有的操作都可以通过SDK实现。
+-   [API](../../../../cn.zh-CN/API参考/API概览.md#)：控制台上所有的操作都可以通过API实现。
+
+创建POLARDB集群后，您可以通过以下方式连接POLARDB集群：
+
+-   DMS：您可以[通过DMS连接POLARDB集群](../../../../cn.zh-CN/POLARDB for MySQL快速入门/连接数据库集群/连接数据库集群.md#section_wxq_bql_v2b)，在Web界面进行数据库开发工作。
+-   客户端：您可以使用通用的数据库客户端工具连接POLARDB集群。例如，MySQL-Front、pgAdmin等。
+
+## POLARDB定价 {#section_edl_vs8_qbv .section}
+
+详情请参见[规格与定价](../../../../cn.zh-CN/产品定价/规格与定价.md#)。
 
