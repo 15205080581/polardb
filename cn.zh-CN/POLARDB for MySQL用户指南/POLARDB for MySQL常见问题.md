@@ -8,7 +8,7 @@
 
 **说明：** 调整参数**loose\_innodb\_polar\_log\_file\_max\_reuse**后，缓冲池不会立刻被清空，随着DML被执行，才会慢慢减少。如果需要立即清空，请联系售后服务。
 
-![loose_innodb_polar_log_file_max_reuse](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/220154/155962641847439_zh-CN.png)
+![loose_innodb_polar_log_file_max_reuse](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/220154/155963238347439_zh-CN.png)
 
 ## 磁盘空间无法选择怎么办？ {#section_4e1_mks_c2d .section}
 
@@ -24,9 +24,13 @@ POLARDB底层使用存储集群的方式，可以做到磁盘动态扩容，且�
 
 答：只需在应用程序中使用集群地址，即可根据配置的读负载节点实现读写分离。您也可以[自定义集群地址](cn.zh-CN/POLARDB for MySQL用户指南/集群管理/设置__释放自定义集群地址.md#)。
 
-![集群地址](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/220154/155962641848356_zh-CN.png)
+![集群地址](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/220154/155963238348356_zh-CN.png)
 
 ## 如果有多个只读节点，如何设置指定的ECS访问指定的只读节点? {#section_592_d3f_cah .section}
 
 答：您可以设置[自定义集群地址](cn.zh-CN/POLARDB for MySQL用户指南/集群管理/设置__释放自定义集群地址.md#)，自行选择需要接入的只读节点，然后在ECS上使用该自定义集群地址。
+
+## 只用了主地址，但是发现只读节点也有负载，是否主地址也支持读写分离？ {#section_23w_u0b_wvh .section}
+
+答：主地址不支持读写分离，始终只连接到主节点。只读节点有少量QPS是正常现象，与主地址无关。
 
