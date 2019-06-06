@@ -55,7 +55,7 @@ SQL加速的连接地址不会转发请求到主节点，避免对主节点的�
 3.  找到目标集群，单击集群的ID。
 4.  在**访问信息**中，找到**SQL加速地址**，单击**申请**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/24120/155843021345067_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/24120/155979170345067_zh-CN.png)
 
 5.  在弹出的对话框中，单击**确定**。
 6.  设置地址的前缀，并单击**确定**。
@@ -65,7 +65,7 @@ SQL加速的连接地址不会转发请求到主节点，避免对主节点的�
 
 **背景：**以下表格用于记录工作人员在仓库中的作业产出情况，每小时操作的商品件数。记录会准实时地持续更新，高峰期 TPS 近万，存在上亿条记录。POLARDB集群中使用4个只读节点。
 
-```
+``` {#codeblock_g3i_ror_iob}
 Create Table `labor_operate_stat` (
  `id` varchar(60) NOT NULL COMMENT '业务主键',
  `gmt_create` datetime,
@@ -86,7 +86,7 @@ Create Table `labor_operate_stat` (
 
 **SQL语句：**对一段时间内工作人员的小时工作量及总工作量进行统计和排序， 使用的 SQL 如下：
 
-```
+``` {#codeblock_28m_dju_kcq}
 SELECT
   a.user_id as user_id,
   cur_day,
@@ -171,7 +171,7 @@ ORDER BY
 
 除了UNION，SQL加速还扩展支持了Intersect 和 Minus/Except语法。UNION / INTERSECT / EXCEPT / MINUS用于进行集合求并、交、差操作，语法为：
 
-```
+``` {#codeblock_x74_xva_8fi}
 query
 { UNION [ ALL ] | INTERSECT | EXCEPT | MINUS }
 query
@@ -189,7 +189,7 @@ query
 
 `UNION`和`EXCEPT` 操作符都是左结合（left-associative），例如：
 
-```
+``` {#codeblock_0eh_6my_v3e}
 select * from t1
 union
 select * from t2
@@ -202,7 +202,7 @@ order by c1;
 
 `Intersect`操作符的优先级是高于`UNION`和`EXCEPT`的, 例如：
 
-```
+``` {#codeblock_nfs_jq4_otu}
 select * from t1
 union
 select * from t2
@@ -213,7 +213,7 @@ order by c1;
 
 等同于：
 
-```
+``` {#codeblock_fgk_e8s_d7r}
 select * from t1
 union
 (select * from t2
@@ -230,13 +230,13 @@ WITH语句用于定义一个或者多个子查询，每个子查询定义一个�
 
 语法：
 
-```
+``` {#codeblock_wy7_isz_1mu}
 [ WITH with_subquery [, ...] ]
 ```
 
 with\_suquery的语法：
 
-```
+``` {#codeblock_on8_6hf_ia6}
 with_subquery_table_name AS ( query )
 ```
 
@@ -247,7 +247,7 @@ with_subquery_table_name AS ( query )
 
 示例：
 
-```
+``` {#codeblock_gd7_mis_s8x}
 with t as (select x,y from A) select t.y from t order by t.x limit 10
 ```
 
@@ -257,7 +257,7 @@ SQL加速扩展支持了Oracle的开窗函数，大大提升用户分析数据�
 
 语法定义：
 
-```
+``` {#codeblock_ndz_8hb_kda}
 function OVER (
 [ PARTITION BY expr_list ]
 [ ORDER BY order_list [ frame_clause ] ] )
@@ -286,7 +286,7 @@ function OVER (
 
 *frame\_clause*为：
 
-```
+``` {#codeblock_6wf_dz1_25z}
 ROWS BETWEEN
 { UNBOUNDED PRECEDING }
 AND
@@ -296,7 +296,7 @@ AND
 
 示例：
 
-```
+``` {#codeblock_nsd_1km_rk7}
 
 SELECT
 d_year,
