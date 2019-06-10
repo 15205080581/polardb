@@ -2,7 +2,7 @@
 
 集群中有多个只读节点时，每个查询都只在一个只读节点上执行，没有同时利用多个只读节点的计算能力，对于大表（一千万行以上）的复杂查询，响应时间不够短。因此，POLARDB for MySQL提供**复杂SQL查询加速**（简称：SQL加速）功能，针对这种分析型场景提升查询性能。
 
-SQL加速功能提供一个专门的数据库连接地址，您只需将该地址配置到应用中，该连接所发送的每个读请求都会被分发到所有的只读节点，并行计算。只读节点越多，SQL加速的性能越好。
+SQL加速功能提供专门的数据库连接地址，您只需将该地址配置到应用中，该连接所发送的每个读请求都会被分发到所有的只读节点，并行计算。只读节点越多，SQL加速的性能越好。
 
 SQL加速的连接地址不会转发请求到主节点，避免对主节点的影响。
 
@@ -31,6 +31,7 @@ SQL加速的连接地址不会转发请求到主节点，避免对主节点的�
 
 ## 注意事项 {#section_sz1_xw5_4fb .section}
 
+-   SQL加速地址有私网连接地址和公网连接地址，申请私网连接地址后才能申请公网连接地址。
 -   SQL加速地址从只读节点读取数据，理论上主节点和只读节点之间存在数据延迟，对于要求节点之间100%零延迟的场景，不建议使用SQL加速地址。
 -   对于Double或Float字段，查询结果的最大精度为小数点后4位。
 -   Select语句不含Limit子句时，默认输出10000条记录。如果含有Limit子句，可以指定输出任意条记录。
@@ -44,8 +45,9 @@ SQL加速的连接地址不会转发请求到主节点，避免对主节点的�
 -   数据库中的**所有表**不能包含以下数据类型，否则SQL加速功能无法开启。
     -   数值型：[FIXED\[\(M\[,D\]\)\] \[UNSIGNED\]](https://dev.mysql.com/doc/refman/5.6/en/fixed-point-types.html) 、[DOUBLE PRECISION\[\(M,D\)\] \[UNSIGNED\]](https://dev.mysql.com/doc/refman/5.6/en/floating-point-types.html)
     -   日期型：YEAR
--   SQL加速要读取的表为非分区表，字符集为utf8或utf8mb4，表名由大小写字母、数字或下划线组成，主键为VARCHAR, INT、BIGINT、FLOAT、DOUBLE或SHORT类型，且要读取的数据不包含视图或以下类型的字段：BINARY、VARBINARY、TINYBLOB、MEDIUMBLOB、BLOB、LONGBLOB、SET、ENUM。
--   **说明：** POLARDB 100% 兼容MySQL，包括语法、字符集、数据类型等。以上前提条件仅适用于SQL加速功能。
+-   SQL加速要读取的表为非分区表，字符集为utf8或utf8mb4，表名由大小写字母、数字或下划线组成，主键为VARCHAR、INT、BIGINT、FLOAT、DOUBLE或SHORT类型，且要读取的数据不包含视图或以下类型的字段：BINARY、VARBINARY、TINYBLOB、MEDIUMBLOB、BLOB、LONGBLOB、SET、ENUM。
+
+    **说明：** POLARDB for MySQL 100%兼容MySQL，包括语法、字符集、数据类型等。以上前提条件仅适用于SQL加速功能。
 
 
 ## 使用SQL加速功能 {#section_t5v_lgq_4fb .section}
@@ -53,15 +55,47 @@ SQL加速的连接地址不会转发请求到主节点，避免对主节点的�
 1.  登录[POLARDB控制台](https://polardb.console.aliyun.com)。
 2.  选择集群所在地域。
 3.  找到目标集群，单击集群的ID。
-4.  在**访问信息**中，找到**SQL加速地址**，单击**申请**。
+4.  在**访问信息**中，找到**SQL加速地址**，在**私网**右侧单击**申请**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/24120/155979170345067_zh-CN.png)
+    **说明：** 如果需要使用公网连接地址，请等待私网连接地址申请成功后再单击**公网**右侧的**申请**。
 
-5.  在弹出的对话框中，单击**确定**。
-6.  设置地址的前缀，并单击**确定**。
-7.  在应用中配置该SQL加速地址即可。
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/24120/156013132645067_zh-CN.png)
 
-## 示例 {#section_np1_xgc_pfb .section}
+5.  在弹出的对话框中，单击**确认**。
+6.  在应用中配置该SQL加速地址即可。
+
+## 修改SQL加速地址 {#section_2wi_zjo_4q5 .section}
+
+1.  登录[POLARDB控制台](https://polardb.console.aliyun.com)。
+2.  选择集群所在地域。
+3.  找到目标集群，单击集群的ID。
+4.  在**访问信息**中，找到**SQL加速地址**，单击需要修改的地址右侧的**修改**。
+
+    ![修改SQL加速地址](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/24120/156013132648815_zh-CN.png)
+
+5.  修改SQL加速地址的前缀，并单击**提交**。
+
+    **说明：** 前缀要求如下：
+
+    -   由字母开头。
+    -   由小写字母、数字、中划线组成。
+    -   由数字或字母结尾。
+    -   6~30个字符。
+
+## 释放SQL加速地址 {#section_5az_njp_m34 .section}
+
+1.  登录[POLARDB控制台](https://polardb.console.aliyun.com)。
+2.  选择集群所在地域。
+3.  找到目标集群，单击集群的ID。
+4.  在**访问信息**中，找到**SQL加速地址**，单击需要释放的地址右侧的**释放**。
+
+    **说明：** 释放公网连接地址后才能释放私网连接地址。
+
+    ![释放SQL加速地址](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/24120/156013132648816_zh-CN.png)
+
+5.  在弹出的对话框中，单击**确认**。
+
+## SQL加速示例 {#section_np1_xgc_pfb .section}
 
 **背景：**以下表格用于记录工作人员在仓库中的作业产出情况，每小时操作的商品件数。记录会准实时地持续更新，高峰期 TPS 近万，存在上亿条记录。POLARDB集群中使用4个只读节点。
 
@@ -198,9 +232,9 @@ select * from t3
 order by c1;
 ```
 
-相当于先做完t1 union t2 except t3, 最后才是对前面的结果按照c1进行全局排序
+相当于先做完t1 union t2 except t3，最后才是对前面的结果按照c1进行全局排序。
 
-`Intersect`操作符的优先级是高于`UNION`和`EXCEPT`的, 例如：
+`Intersect`操作符的优先级是高于`UNION`和`EXCEPT`的，例如：
 
 ``` {#codeblock_nfs_jq4_otu}
 select * from t1
