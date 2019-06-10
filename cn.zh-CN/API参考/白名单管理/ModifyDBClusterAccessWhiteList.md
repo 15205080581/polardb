@@ -4,6 +4,8 @@
 
 该接口用于修改允许访问数据库集群的IP名单。
 
+**说明：** POLARDB for PostgreSQL/Oracle暂不支持该接口。
+
 ## 请求参数 {#section_kyn_pgs_xfb .section}
 
 |名称|类型|是否必须|描述|
