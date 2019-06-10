@@ -1,7 +1,5 @@
 # DescribeDBClusterAccessWhiteList {#reference_qhl_fn5_xfb .reference}
 
-## 描述 {#section_0t0_kvw_lx5 .section}
-
 该接口用于查看允许访问数据库集群的IP名单。
 
 **说明：** POLARDB for PostgreSQL/Oracle暂不支持该接口。
