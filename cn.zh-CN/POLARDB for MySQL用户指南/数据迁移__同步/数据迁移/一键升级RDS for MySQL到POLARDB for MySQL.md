@@ -21,7 +21,7 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
 **从RDS迁移**是在**从RDS克隆**的基础上增加了单向数据同步，保证POLARDB集群的数据和源RDS实例相同，便于后续进行业务切换。对比示意图如下。
 
-![对比示意图](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156035735249076_zh-CN.png)
+![对比示意图](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156049319549076_zh-CN.png)
 
 ## 平滑迁移流程 {#section_aoh_yoz_8jt .section}
 
@@ -33,7 +33,7 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
 详细的流程示意图如下。
 
-![迁移流程示意图](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156035735249080_zh-CN.png)
+![迁移流程示意图](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156049319549080_zh-CN.png)
 
 ## 注意事项 {#section_ldl_wsn_13b .section}
 
@@ -45,6 +45,7 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
 -   源RDS实例版本为RDS for MySQL 5.6高可用版。
 -   源RDS实例未开启[TDE](../../../../cn.zh-CN/RDS for MySQL 用户指南/数据安全性/设置透明数据加密.md#)和[SSL](../../../../cn.zh-CN/RDS for MySQL 用户指南/数据安全性/设置 SSL 加密.md#)。
+-   源RDS实例的表存储引擎为Innodb。
 
 ## 从RDS迁移 {#section_s4t_zsn_13b .section}
 
@@ -100,7 +101,7 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
     -   数据同步的延迟超过180秒时无法进行迁移切换。
     -   迁移切换需要在7天内完成，超过7天将自动关闭迁移功能，源RDS实例和目的POLARDB集群将恢复可读可写状态。
     -   您可以在此步骤选择取消迁移，相关影响请参见[迁移常见问题](#)。
-    ![迁移切换](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156035735348986_zh-CN.png)
+    ![迁移切换](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156049319548986_zh-CN.png)
 
 
 ## 完成迁移 {#section_3ds_ojf_lmm .section}
@@ -118,7 +119,7 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
     -   单击**确定**后将中断POLARDB集群和RDS实例的数据同步，不再提供迁移切换功能，相关限制也会取消。
     -   您可以选择是否关闭POLARDB集群的Binlog。为了节省费用，源RDS实例如果没有其他业务需求可以，如果是包年包月实例，需要提交工单处理。
     -   您可以在此步骤选择[迁移回滚](#)，再次交换RDS实例和POLARDB集群的读写状态。
-    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156035735348987_zh-CN.png)
+    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156049319548987_zh-CN.png)
 
 
 ## 迁移回滚 {#section_hw4_hy4_13b .section}
@@ -131,7 +132,7 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
     **说明：** 单击**确定**后RDS实例为可读可写，POLARDB集群为只读，同时会将RDS实例的数据同步到POLARDB集群。当**源RDS读写状态**显示为**读写**后，请尽快修改应用里的数据库连接地址。
 
-    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156035735348988_zh-CN.png)
+    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156049319648988_zh-CN.png)
 
 
 ## 迁移常见问题 {#section_lxr_3fp_13b .section}
