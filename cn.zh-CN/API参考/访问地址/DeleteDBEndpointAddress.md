@@ -25,10 +25,10 @@
 
 ## 请求示例 {#section_khc_1dz_xfb .section}
 
-```
+``` {#codeblock_j28_loq_21j}
 https://polardb.aliyuncs.com/?Action=DeleteDBEndpointAddress
 &DBClusterId=pc-xxxxxxxxxx
-&DBEndpointId=pc-xxxxxxxxxx
+&DBEndpointId=pe-xxxxxxxxxx
 &NetType=Public
 &<[公共请求参数]>
 ```
@@ -37,15 +37,15 @@ https://polardb.aliyuncs.com/?Action=DeleteDBEndpointAddress
 
 XML格式
 
-```
+``` {#codeblock_jiq_fcc_3jr}
 <DeleteDBEndpointAddressResponse>  
-	<RequestId>D0CEC6AC-7760-409A-A0D5-E6CD8660E9CC</RequestId>
+    <RequestId>D0CEC6AC-7760-409A-A0D5-E6CD8660E9CC</RequestId>
 </DeleteDBEndpointAddressResponse>
 ```
 
 JSON格式
 
-```
+``` {#codeblock_9bj_7n2_5lf}
 {
   "RequestId": "D0CEC6AC-7760-409A-A0D5-E6CD8660E9CC"
 }
