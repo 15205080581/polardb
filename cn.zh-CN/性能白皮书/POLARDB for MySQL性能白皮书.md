@@ -17,6 +17,8 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
 -   其中包含一个主实例和一个只读实例。（测试多只读实例时，需要多个只读实例。）
 -   已设置集群的账号和密码。
 -   已在白名单中添加ECS实例的内网IP地址。
+**说明：** 2核4GB的集群为入门级规格，用于测试、体验和极小负载的场景，高负载的生产环境不建议使用。生产环境推荐使用8核32GB或以上规格的集群。
+
 
 ## 安装测试工具 {#section_w3b_lrq_tdb .section}
 
@@ -58,7 +60,7 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
     2.  单击集群ID。
     3.  在基本信息页面的访问信息中找到集群的主地址和端口，如下图所示。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/155745379834898_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156047592134898_zh-CN.png)
 
 2.  在ECS上执行如下命令，以在POLARDB集群中创建数据库sbtest。
 
@@ -68,19 +70,19 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
 
 3.  准备测试数据：用Sysbench在数据库上创建表并插入数据。
 
-    ```
+    ``` {#codeblock_002_1jc_7tx}
     sysbench --test=sysbench/tests/db/oltp.lua --mysql-host=XXX --mysql-port=XXX --mysql-user=XXX --mysql-password=XXX --mysql-db=sbtest --mysql-table-engine=innodb --oltp-table-size=25000 --oltp-tables-count=250 --db-driver=mysql prepare
     ```
 
 4.  使用sysbench测试数据库的读性能，将持续10分钟。
 
-    ```
+    ``` {#codeblock_2lh_z42_uwc}
     sysbench --test=sysbench/tests/db/oltp.lua --mysql-host=XXX --oltp-tables-count=250 --mysql-user=XXX --mysql-password=XXX --mysql-port=XXX --db-driver=mysql --oltp-tablesize=25000 --mysql-db=sbtest --max-requests=0 --oltp_simple_ranges=0 --oltp-distinct-ranges=0 --oltp-sum-ranges=0 --oltp-order-ranges=0 -max-time=600 --oltp-read-only=on --num-threads=500 run
     ```
 
 5.  使用sysbench测试数据库的写性能，将持续10分钟。
 
-    ```
+    ``` {#codeblock_2ol_de0_17b}
     sysbench --test=sysbench/tests/db/oltp.lua --mysql-host=XXX --oltp-tables-count=250 --mysql-user=XXX --mysql-password=XXX --mysql-port=XXX --db-driver=mysql --oltp-tablesize=25000 --mysql-db=sbtest --max-requests=0 --max-time=600 --oltp_simple_ranges=0 --oltp-distinct-ranges=0 --oltp-sum-ranges=0 --oltp-order-ranges=0 --oltp-point-selects=0 --num-threads=128 --randtype=uniform run
     ```
 
@@ -94,9 +96,9 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
 
     -   执行htop后，可以按Q键退出。
     -   关于htop详解，请参见[Htop官网](http://hisham.hm/htop/)。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15574537982111_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15604759222111_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15574537982112_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15604759222112_zh-CN.png)
 
 
 ## 测试结果 {#section_lfs_dyd_l2b .section}
@@ -107,19 +109,19 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
 
 单台ECS的log结果如下：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/155745379811337_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156047592211337_zh-CN.png)
 
 三台ECS实例通过集群连接串连接一个POLARDB for MySQL集群时，总QPS如下。
 
 **说明：** 集群连接串总是连接到主实例，所以以下QPS为主实例的性能。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/155745379811333_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156047592311333_zh-CN.png)
 
 三台ECS实例通过集群连接串连接一个POLARDB for MySQL集群时，总TPS如下。
 
 **说明：** 集群连接串总是连接到主实例，所以以下TPS为主实例的性能。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/155745379811334_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156047592311334_zh-CN.png)
 
 五台ECS实例通过只读实例连接串连接到一个POLARDB for MySQL集群中各个只读实例时，聚合QPS如下。
 
@@ -128,5 +130,5 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
 -   该集群中包含五个只读实例，每个实例的规格为4C 32G。
 -   每台ECS连接到一个只读实例。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/155745379811338_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156047592311338_zh-CN.png)
 
