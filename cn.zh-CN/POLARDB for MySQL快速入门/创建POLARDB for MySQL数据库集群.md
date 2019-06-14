@@ -1,4 +1,4 @@
-# 创建POLARDB for MySQL数据库集群 {#task_nhk_4qg_tdb .task}
+# 创建POLARDB for MySQL数据库集群 {#task_nhk_4qg_tdb .concept}
 
 本文介绍如何通过POLARDB管理控制台创建POLARDB for MySQL数据库集群。一个集群包含一个主节点以及最多15个只读节点（最少一个，用于提供Active-Active高可用）。节点是虚拟化的数据库服务器，节点中可以创建和管理多个数据库。
 
@@ -8,26 +8,27 @@
 
 -   POLARDB与其他阿里云产品通过内网互通时才能发挥POLARDB的最佳性能，因此，建议将POLARDB与云服务器ECS配合使用，且与ECS创建于同一个VPC，否则POLARDB无法发挥最佳性能。如果您ECS的网络类型为经典网络，需将ECS从经典网络迁移到VPC，具体请参见[ECS实例迁移](../../../../cn.zh-CN/最佳实践/经典网络迁移到VPC/ECS实例迁移.md)。
 
-**前提条件**
+## 前提条件 {#section_zfn_l4r_b3b .section}
 
 已注册阿里云账号或已创建子账号。
 
 -   如要注册阿里云账号，请[点此注册](https://account.aliyun.com/register/register.htm)。
-
 -   如要创建子账号，请参见[创建和使用子账号](https://help.aliyun.com/document_detail/68550.html)进行子账号的创建和授权。
 
+## 操作步骤 {#section_drs_p4r_b3b .section}
 
-1.  登录阿里云。 
+1.  登录阿里云。
     -   如果使用阿里云账号，请[点此登录](https://account.aliyun.com/login/login.htm)。
-
     -   如果使用子账号，请[点此登录](https://signin.aliyun.com/login.htm)。更多信息请参见[登录子账号](../../../../cn.zh-CN/POLARDB for MySQL用户指南/账号管理/创建和使用子账号.md#section_zb2_54q_tdb)。
-
 2.  进入[POLARDB管理控制台（https://polardb.console.aliyun.com）](https://polardb.console.aliyun.com/)。
-3.  单击**创建新集群**按钮。
-4.  选择**预付费**或**按小时付费**。 
+3.  单击**创建新集群**。
+4.  选择预付费或按小时付费。
+
+    **说明：** 
+
     -   **预付费**：在创建集群时支付计算节点（一个主节点和一个只读节点）的费用，而存储空间会根据实际数据量按小时计费，并从账户中按小时扣除。如果您要长期使用该集群，**预付费**方式更加划算，而且购买时长越长，折扣越多。
-    -   **按小时付费（按量付费）**：无需预先支付费用，计算节点和存储空间（根据实际数据量）均按小时计费，并从账户中按小时扣除。如果您只需短期使用该集群，可以选择**按小时付费**，用完即可释放，节省费用。
-5.  设置如下参数。 
+    -   **按小时付费（按量付费）**：无需预先支付费用，计算节点和存储空间（根据实际数据量）均按小时计费，并从账户中按小时扣除。如果您只需短期使用该集群，可以选择**按小时付费（按量付费）**，用完即可释放，节省费用。
+5.  设置如下参数。
 
     |控制台区域|参数|说明|
     |:----|:-|:-|
@@ -72,20 +73,22 @@
  |
 
 6.  设置**购买时长**（仅针对预付费集群）和**集群数量**，然后单击右侧的**立即购买**。
-7.  在确认订单页面，确认订单信息，阅读和勾选**服务协议**，单击**去支付**。 完成支付后，集群将在十分钟左右创建成功，在集群列表中可以看到创建的集群。
+7.  在确认订单页面，确认订单信息，阅读和勾选**服务协议**，单击**去支付**。
 
-    **说明：** 
+完成支付后，集群将在十分钟左右创建成功，在集群列表中可以看到创建的集群。
 
-    -   当集群中的节点状态为**运行中**时，整个集群可能仍未创建完成，此时集群不可用。只有当集群状态为**运行中**时，集群才可以正常使用。
-    -   请确认已选中正确的地域，否则无法看到您创建的集群。
-    **相关API** 
+**说明：** 
 
-    |API|描述|
-    |:--|:-|
-    |[CreateDBCluster](../../../../cn.zh-CN/API参考/集群管理/CreateDBCluster.md#)|创建数据库集群|
-    |[DescribeDBClusters](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusters.md#)|查看集群列表|
-    |[DescribeDBClusterAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusterAttribute.md#)|查看指定POLARDB集群的详细属性|
-    |[DescribeAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeAutoRenewAttribute.md#)|查询POLARDB包年包月集群自动续费状态|
-    |[ModifyAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/ModifyAutoRenewAttribute.md#)|设置POLARDB包年包月集群自动续费状态|
+-   当集群中的节点状态为**运行中**时，整个集群可能仍未创建完成，此时集群不可用。只有当集群状态为**运行中**时，集群才可以正常使用。
+-   请确认已选中正确的地域，否则无法看到您创建的集群。
 
+## 相关API {#section_uxx_4pr_b3b .section}
+
+|API|描述|
+|:--|:-|
+|[CreateDBCluster](../../../../cn.zh-CN/API参考/集群管理/CreateDBCluster.md#)|创建数据库集群|
+|[DescribeDBClusters](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusters.md#)|查看集群列表|
+|[DescribeDBClusterAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusterAttribute.md#)|查看指定POLARDB集群的详细属性|
+|[DescribeAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeAutoRenewAttribute.md#)|查询POLARDB包年包月集群自动续费状态|
+|[ModifyAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/ModifyAutoRenewAttribute.md#)|设置POLARDB包年包月集群自动续费状态|
 
