@@ -21,7 +21,7 @@ POLARDB支持从RDS for MySQL一键克隆数据到新的POLARDB for MySQL集群�
 
 **从RDS迁移**是在**从RDS克隆**的基础上增加了单向数据同步，保证POLARDB集群的数据和源RDS实例相同，便于后续进行业务切换。对比示意图如下。
 
-![对比示意图](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156049321049076_zh-CN.png)
+![对比示意图](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156049913949076_zh-CN.png)
 
 ## 注意事项 {#section_c9r_z0e_eiq .section}
 
@@ -32,7 +32,7 @@ POLARDB支持从RDS for MySQL一键克隆数据到新的POLARDB for MySQL集群�
 
 -   源RDS实例版本为RDS for MySQL 5.6高可用版。
 -   源RDS实例未开启[TDE](../../../../cn.zh-CN/RDS for MySQL 用户指南/数据安全性/设置透明数据加密.md#)和[SSL](../../../../cn.zh-CN/RDS for MySQL 用户指南/数据安全性/设置 SSL 加密.md#)。
--   源RDS实例的表存储引擎为Innodb。
+-   源RDS实例的表存储引擎为InnoDB。
 
 ## 操作步骤 {#section_usc_hx6_upb .section}
 
