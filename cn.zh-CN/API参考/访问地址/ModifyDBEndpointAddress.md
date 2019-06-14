@@ -30,10 +30,10 @@
 
 ## 请求示例 {#section_khc_1dz_xfb .section}
 
-```
+``` {#codeblock_h4m_o5g_h9w}
 https://polardb.aliyuncs.com/?Action=ModifyDBEndpointAddress
 &DBClusterId=pc-xxxxxxxxxx
-&DBEndpointId=pc-xxxxxxxxxx
+&DBEndpointId=pe-xxxxxxxxxx
 &ConnectionStringPrefix=pc-xxxxxxxxxx-pub2
 &NetType=Public
 &<[公共请求参数]>
@@ -43,7 +43,7 @@ https://polardb.aliyuncs.com/?Action=ModifyDBEndpointAddress
 
 XML格式
 
-```
+``` {#codeblock_mv7_to0_28x}
 <CreateDBEndpointAddressResponse>  
     <RequestId>D0CEC6AC-7760-409A-A0D5-E6CD8660E9CC</RequestId>
 </CreateDBEndpointAddressResponse>
@@ -51,7 +51,7 @@ XML格式
 
 JSON格式
 
-```
+``` {#codeblock_kax_luv_jcv}
 {
   "RequestId": "D0CEC6AC-7760-409A-A0D5-E6CD8660E9CC"
 }
