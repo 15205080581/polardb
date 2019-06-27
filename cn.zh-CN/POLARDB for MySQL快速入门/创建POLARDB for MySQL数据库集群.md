@@ -26,8 +26,8 @@
 
     **说明：** 
 
-    -   **预付费**：在创建集群时支付计算节点（一个主节点和一个只读节点）的费用，而存储空间会根据实际数据量按小时计费，并从账户中按小时扣除。如果您要长期使用该集群，**预付费**方式更加划算，而且购买时长越长，折扣越多。
-    -   **按小时付费（按量付费）**：无需预先支付费用，计算节点和存储空间（根据实际数据量）均按小时计费，并从账户中按小时扣除。如果您只需短期使用该集群，可以选择**按小时付费（按量付费）**，用完即可释放，节省费用。
+    -    **预付费**：在创建集群时支付计算节点（一个主节点和一个只读节点）的费用，而存储空间会根据实际数据量按小时计费，并从账户中按小时扣除。如果您要长期使用该集群，**预付费**方式更加划算，而且购买时长越长，折扣越多。
+    -    **按小时付费（按量付费）**：无需预先支付费用，计算节点和存储空间（根据实际数据量）均按小时计费，并从账户中按小时扣除。如果您只需短期使用该集群，可以选择**按小时付费（按量付费）**，用完即可释放，节省费用。
 5.  设置如下参数。
 
     |控制台区域|参数|说明|
@@ -56,9 +56,12 @@
             -   不占用VPC中可创建交换机的配额。
     -   如果以上默认VPC和交换机无法满足您的要求，您可以自行创建VPC和交换机。
  |
-    |配置|数据库引擎|     -   兼容MySQL 5.6（完全兼容）；
+    |配置|数据库引擎|     -   兼容MySQL 8.0（完全兼容）；
+    -   兼容MySQL 5.6（完全兼容）；
     -   兼容PostgreSQL 11（完全兼容）；
     -   兼容Oracle（[高度兼容](../../../../cn.zh-CN/POLARDB for Oracle用户指南/Oracle兼容性说明.md#)）。
+ **说明：** POLARDB for MySQL 8.0公测中，[点此申请](https://page.aliyun.com/form/act951838896/index.htm)。
+
  |
     |节点规格|按需选择。所有POLARDB节点均为独享型，性能稳定可靠。关于各规格的具体信息，请参见[规格与定价](../../../../cn.zh-CN/产品定价/规格与定价.md#)。|
     |节点个数|     -   无需选择。系统将自动创建一个与主节点规格相同的只读节点。
@@ -73,6 +76,9 @@
  |
 
 6.  设置**购买时长**（仅针对预付费集群）和**集群数量**，然后单击右侧的**立即购买**。
+
+    **说明：** 最多可以一次性创建50个集群，适用于游戏批量开服等业务场景。
+
 7.  在确认订单页面，确认订单信息，阅读和勾选**服务协议**，单击**去支付**。
 
 完成支付后，集群将在十分钟左右创建成功，在集群列表中可以看到创建的集群。
@@ -86,9 +92,9 @@
 
 |API|描述|
 |:--|:-|
-|[CreateDBCluster](../../../../cn.zh-CN/API参考/集群管理/CreateDBCluster.md#)|创建数据库集群|
-|[DescribeDBClusters](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusters.md#)|查看集群列表|
-|[DescribeDBClusterAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusterAttribute.md#)|查看指定POLARDB集群的详细属性|
-|[DescribeAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeAutoRenewAttribute.md#)|查询POLARDB包年包月集群自动续费状态|
-|[ModifyAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/ModifyAutoRenewAttribute.md#)|设置POLARDB包年包月集群自动续费状态|
+| [CreateDBCluster](../../../../cn.zh-CN/API参考/集群管理/CreateDBCluster.md#) |创建数据库集群|
+| [DescribeDBClusters](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusters.md#) |查看集群列表|
+| [DescribeDBClusterAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusterAttribute.md#) |查看指定POLARDB集群的详细属性|
+| [DescribeAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeAutoRenewAttribute.md#) |查询POLARDB包年包月集群自动续费状态|
+| [ModifyAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/ModifyAutoRenewAttribute.md#) |设置POLARDB包年包月集群自动续费状态|
 
