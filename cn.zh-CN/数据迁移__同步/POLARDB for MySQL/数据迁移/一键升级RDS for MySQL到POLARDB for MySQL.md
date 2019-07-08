@@ -11,7 +11,7 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
 ## 迁移流程 {#section_aoh_yoz_8jt .section}
 
-1.  [从RDS迁移](#)的说明，创建一个与源RDS实例数据相同的POLARDB集群，源RDS实例的增量数据会实时同步到该POLARDB集群。
+1.  参考[从RDS迁移](#)的说明，创建一个与源RDS实例数据相同的POLARDB集群，源RDS实例的增量数据会实时同步到该POLARDB集群。
 2.  单击**迁移切换**。该操作将源RDS实例修改为只读，将POLARDB集群修改为可读可写。
 
     具体操作请参见[迁移切换](#)。
@@ -30,7 +30,7 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 ## 前提条件 {#section_ezw_wsn_13b .section}
 
 -   源RDS实例版本为RDS for MySQL 5.6高可用版。
--   源RDS实例未开启[TDE](../../../../cn.zh-CN/RDS for MySQL 用户指南/数据安全性/设置透明数据加密.md#)和[SSL](../../../../cn.zh-CN/RDS for MySQL 用户指南/数据安全性/设置 SSL 加密.md#)。
+-   源RDS实例未开启[TDE](../../../../../cn.zh-CN/RDS for MySQL 用户指南/数据安全性/设置透明数据加密.md#)和[SSL](../../../../../cn.zh-CN/RDS for MySQL 用户指南/数据安全性/设置 SSL 加密.md#)。
 -   源RDS实例的表存储引擎为InnoDB。
 
 ## 从RDS迁移 {#section_s4t_zsn_13b .section}
@@ -66,9 +66,9 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
  |POLARDB集群所属的VPC和虚拟交换机。请确保POLARDB集群与需要连接的ECS创建于同一个VPC，否则它们无法通过内网互通，无法发挥最佳性能。|
     |**数据库引擎**|POLARDB集群的数据库引擎，不可变更。|
-    |**节点规格**|按需选择，建议不低于源RDS实例规格。所有POLARDB节点均为独享型，性能稳定可靠。详情请参见[规格与定价](../../../../cn.zh-CN/产品定价/规格与定价.md#)。|
+    |**节点规格**|按需选择，建议不低于源RDS实例规格。所有POLARDB节点均为独享型，性能稳定可靠。详情请参见[规格与定价](../cn.zh-CN/产品定价/规格与定价.md#)。|
     |**节点个数**|无需选择。系统将自动创建一个与主节点规格相同的只读节点。|
-    |**存储费用**|无需选择容量，根据实际数据使用量按小时计费。详情请参见[规格与定价](../../../../cn.zh-CN/产品定价/规格与定价.md#)。|
+    |**存储费用**|无需选择容量，根据实际数据使用量按小时计费。详情请参见[规格与定价](../cn.zh-CN/产品定价/规格与定价.md#)。|
     |**集群名称**|填写集群名称用于区分业务用途。如果留空，系统将自动生成一个集群名称。创建集群后还可以修改。|
 
 5.  设置**购买时长**（仅针对包年包月集群），然后单击右侧的**立即购买**。
@@ -76,24 +76,28 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
 ## 迁移切换 {#section_jdh_0d3_zjz .section}
 
-**从RDS迁移**之后，您可以进行迁移切换，然后修改应用里的数据库连接地址。
+[从RDS迁移](#section_s4t_zsn_13b)之后，您可以进行迁移切换，然后修改应用里的数据库连接地址。
 
 1.  进入[POLARDB控制台](https://polardb.console.aliyun.com)。
 2.  找到目标集群，单击集群的ID。
 3.  在基本信息页面单击**迁移切换**，在弹出的对话框中单击**确定**。
 
-    该操作将源RDS实例修改为只读，将POLARDB集群修改为可读可写，同时会将POLARDB集群的新增数据同步到RDS实例。
-
     **说明：** 
 
+    -   本操作将源RDS实例修改为只读，将POLARDB集群修改为可读可写，同时会将POLARDB集群的新增数据同步到RDS实例。
     -   数据同步的延迟超过180秒时无法进行迁移切换。
-    -   单击**迁移切换**后，需要在7 内修改数据库连接地址以及进行完成迁移的操作。超过7天将自动关闭迁移功能，源RDS实例和目的POLARDB集群将恢复可读可写状态。
+    -   单击**迁移切换**后，需要在7 内修改数据库连接地址以及进行[完成迁移](#)的操作。超过7天将自动关闭迁移功能，源RDS实例和目的POLARDB集群将恢复可读可写状态。
     -   您可以在此步骤选择取消迁移，相关影响请参见[迁移常见问题](#)。
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156257208451031_zh-CN.png)
+
 4.  当**POLARDB读写状态**显示为**读写**后，尽快修改应用里的数据库连接地址。
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156257208451038_zh-CN.png)
+
 
 ## 完成迁移 {#section_3ds_ojf_lmm .section}
 
-单击**迁移切换**后，需要在7 内修改数据库连接地址以及单击**完成迁移**。该操作将中断POLARDB集群和RDS实例的数据同步。
+[迁移切换](#section_jdh_0d3_zjz)后，需要在7天内修改数据库连接地址以及单击**完成迁移**。该操作将中断POLARDB集群和RDS实例的数据同步。
 
 **警告：** 由于本操作将中断POLARDB集群和RDS实例的数据同步，不再提供迁移回滚功能，建议您使用一段时间POLARDB集群，确认正常后再执行本操作。
 
@@ -103,15 +107,17 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
     **说明：** 
 
-    -   单击**确定**后将中断POLARDB集群和RDS实例的数据同步，不再提供迁移切换功能，相关限制也会取消。
-    -   您可以选择是否关闭POLARDB集群的Binlog。为了节省费用，源RDS实例如果没有其他业务需求可以，如果是包年包月实例，需要提交工单处理。
-    -   您可以在此步骤选择[迁移回滚](#)，再次交换RDS实例和POLARDB集群的读写状态。
-    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156256617548987_zh-CN.png)
+    -   您可以选择是否关闭POLARDB集群的Binlog。关闭Binlog会带来少量的写入性能提升，但需要重启POLARDB。
+    -   源RDS实例如果没有其他业务需求，可以释放以节省费用。如果是包年包月实例，需要提交工单处理。
+    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156257208548987_zh-CN.png)
 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156257208551039_zh-CN.png)
+
+4.  如果不再需要源RDS实例，可以释放实例。
 
 ## 迁移回滚 {#section_hw4_hy4_13b .section}
 
-迁移切换完成后，您也可以进行回滚（仅回滚源RDS实例和POLARDB集群的读写状态和同步数据方向，数据不会回滚）。详细操作步骤如下：
+迁移切换完成后，您也可以进行回滚（RDS实例为可读可写，POLARDB集群为只读，同时会将RDS实例的数据同步到POLARDB集群）。详细操作步骤如下：
 
 1.  进入[POLARDB控制台](https://polardb.console.aliyun.com)。
 2.  找到目标集群，单击集群的ID。
@@ -119,7 +125,7 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
     **说明：** 单击**确定**后RDS实例为可读可写，POLARDB集群为只读，同时会将RDS实例的数据同步到POLARDB集群。当**源RDS读写状态**显示为**读写**后，请尽快修改应用里的数据库连接地址。
 
-    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156256617548988_zh-CN.png)
+    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156257208548988_zh-CN.png)
 
 
 ## 迁移常见问题 {#section_lxr_3fp_13b .section}
