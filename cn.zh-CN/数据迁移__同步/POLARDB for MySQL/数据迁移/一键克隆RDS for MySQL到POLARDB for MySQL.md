@@ -20,9 +20,7 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 ## 一键克隆的功能亮点 {#section_z2a_olf_h1c .section}
 
 -   免费；
--   迁移过程数据0丢失；
--   迁移宕机时间小于10分钟；
--   支持回滚（迁移失败可以在10分钟内回滚）。
+-   克隆过程数据0丢失；
 
 ## 注意事项 {#section_c9r_z0e_eiq .section}
 
@@ -45,7 +43,7 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 3.  找到[符合条件](#section_o3x_p6s_u0l)的源RDS实例，单击实例ID。
 4.  在上方单击**克隆到POLARDB**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/505489/156265232651093_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/505489/156265304551093_zh-CN.png)
 
 2.  选择包年包月或按小时付费页签。
 3.  设置以下参数。
@@ -81,6 +79,10 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 
 4.  设置**购买时长**（仅针对包年包月集群），然后单击右侧的**立即购买**。
 5.  确认订单信息，阅读和勾选**服务协议**，单击**去开通**。
+
+## 下一步 {#section_rws_a83_8cm .section}
+
+请尽快将应用的数据库连接地址修改为POLARDB的地址，详情请参见[查看连接地址](../../../../cn.zh-CN/POLARDB for MySQL快速入门/查看连接地址.md#)。
 
 ## 常见问题 {#section_3l3_e5l_u2i .section}
 
