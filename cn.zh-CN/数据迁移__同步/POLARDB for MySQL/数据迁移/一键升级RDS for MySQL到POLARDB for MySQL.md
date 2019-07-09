@@ -82,17 +82,18 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 2.  找到目标集群，单击集群的ID。
 3.  在基本信息页面单击**迁移切换**，在弹出的对话框中单击**确定**。
 
+    本操作将源RDS实例修改为只读，将POLARDB集群修改为可读可写，同时会将POLARDB集群的新增数据同步到RDS实例。
+
     **说明：** 
 
-    -   本操作将源RDS实例修改为只读，将POLARDB集群修改为可读可写，同时会将POLARDB集群的新增数据同步到RDS实例。
     -   数据同步的延迟超过180秒时无法进行迁移切换。
     -   单击**迁移切换**后，需要在7 内修改数据库连接地址以及进行[完成迁移](#)的操作。超过7天将自动关闭迁移功能，源RDS实例和目的POLARDB集群将恢复可读可写状态。
     -   您可以在此步骤选择取消迁移，相关影响请参见[迁移常见问题](#)。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156258671751031_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156264130451031_zh-CN.png)
 
 4.  当**POLARDB读写状态**显示为**读写**后，尽快修改应用里的数据库连接地址。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156258671851038_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156264130451038_zh-CN.png)
 
 
 ## 完成迁移 {#section_3ds_ojf_lmm .section}
@@ -109,9 +110,9 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
     -   您可以选择是否关闭POLARDB集群的Binlog。关闭Binlog会带来少量的写入性能提升，但需要重启POLARDB。
     -   源RDS实例如果没有其他业务需求，可以释放以节省费用。如果是包年包月实例，需要提交工单处理。
-    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156258671848987_zh-CN.png)
+    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156264130548987_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156258671851039_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156264130551039_zh-CN.png)
 
 4.  如果不再需要源RDS实例，可以释放实例。
 
@@ -125,7 +126,7 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
     **说明：** 单击**确定**后RDS实例为可读可写，POLARDB集群为只读，同时会将RDS实例的数据同步到POLARDB集群。当**源RDS读写状态**显示为**读写**后，请尽快修改应用里的数据库连接地址。
 
-    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156258671848988_zh-CN.png)
+    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156264130548988_zh-CN.png)
 
 
 ## 迁移常见问题 {#section_lxr_3fp_13b .section}
