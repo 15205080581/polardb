@@ -6,7 +6,18 @@ POLARDB支持从RDS for MySQL一键克隆数据到新的POLARDB for MySQL集群�
 
 **说明：** 如果需要在新建POLARDB集群的同时，使源RDS实例的增量数据实时同步到POLARDB集群，即实现平滑迁移（不停机迁移），请参见[一键升级RDS for MySQL到POLARDB for MySQL](cn.zh-CN/数据迁移__同步/POLARDB for MySQL/数据迁移/一键升级RDS for MySQL到POLARDB for MySQL.md#)。
 
-## 功能亮点 {#section_z2a_olf_h1c .section}
+## POLARDB简介 {#section_90a_rjm_vd1 .section}
+
+POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下：
+
+-   存储容量高：最高可达100TB。
+-   性能高：最高可以提升至MySQL的6倍。
+-   快速弹性扩容：存储与计算分离的架构，配合共享存储，使得快速升级成为现实。
+-   临时升配：临时升级规格，轻松应对短时间的业务高峰期。
+
+详情请参见[产品优势](../../../../cn.zh-CN/产品简介/产品优势.md#)。
+
+## 一键克隆的功能亮点 {#section_z2a_olf_h1c .section}
 
 -   免费；
 -   迁移过程数据0丢失；
