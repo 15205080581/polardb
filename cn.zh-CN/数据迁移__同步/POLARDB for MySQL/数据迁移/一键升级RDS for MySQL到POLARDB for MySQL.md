@@ -2,24 +2,37 @@
 
 POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
-## 功能亮点 {#section_4ty_tix_1xp .section}
+## POLARDB简介 {#section_hom_hgv_q2a .section}
 
--   免费；
--   迁移过程数据0丢失；
--   迁移宕机时间小于10分钟；
+POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下：
+
+-   存储容量高：最高可达100TB。
+-   性能高：最高可以提升至MySQL的6倍。
+-   Serverless存储：存储容量无需提前购买，自动扩缩容，按使用量计费。
+-   临时升配：临时升级规格，轻松应对短期的业务高峰。
+
+详情请参见[产品优势](../cn.zh-CN/产品简介/产品优势.md#)。
+
+## 一键升级的功能亮点 {#section_4ty_tix_1xp .section}
+
+-   免费。
+-   迁移过程数据0丢失。
+-   迁移宕机时间小于10分钟。
 -   支持回滚（迁移失败可以在10分钟内回滚）。
 
 ## 迁移流程 {#section_aoh_yoz_8jt .section}
 
 1.  参考[从RDS迁移](#)的说明，创建一个与源RDS实例数据相同的POLARDB集群，源RDS实例的增量数据会实时同步到该POLARDB集群。
-2.  单击**迁移切换**。该操作将源RDS实例修改为只读，将POLARDB集群修改为可读可写。
+
+    **说明：** 需要在7天内修改应用端的数据库地址为POLARDB地址，确认业务正常，以及单击**完成迁移**。单击**完成迁移**会中断RDS和POLARDB之间的数据同步。
+
+2.  单击**迁移切换**。该操作将源RDS实例修改为只读，将POLARDB集群修改为可读可写，POLARDB的增量数据会实时同步到RDS。修改数据库连接地址。
 
     具体操作请参见[迁移切换](#)。
 
-    **说明：** 如果发生异常，可以进行[迁移回滚](#)。
+    **说明：** 迁移切换后，也可以选择[迁移回滚](#)。
 
-3.  单击**迁移切换**后，需要在7天内修改应用端的数据库地址为POLARDB地址，确认业务正常，以及单击**完成迁移**。单击**完成迁移**会中断RDS和POLARDB之间的数据同步。具体操作请参见[完成迁移](#)。
-4.  释放源RDS实例。
+3.  [完成迁移](#)。
 
 ## 注意事项 {#section_ldl_wsn_13b .section}
 
@@ -37,10 +50,18 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
 本操作将创建一个与源RDS实例数据相同的POLARDB集群，源RDS实例的增量数据会实时同步到该POLARDB集群。
 
-1.  进入[POLARDB控制台](https://polardb.console.aliyun.com)。
+1.  您可以使用如下两种方式进入创建新集群的页面：
+    -   1.  登录[POLARDB控制台](https://polardb.console.aliyun.com)。
 2.  单击**创建新集群**。
-3.  选择包年包月或按小时付费页签。
-4.  设置以下参数。
+    -   1.  登录[RDS管理控制台](https://rds.console.aliyun.com/)
+2.  在页面左上角，选择实例所在的地域。
+3.  找到[符合条件](#section_ezw_wsn_13b)的源RDS实例，单击实例ID。
+4.  在上方单击**升级为POLARDB**。
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320351092_zh-CN.png)
+
+2.  选择包年包月或按小时付费页签。
+3.  设置以下参数。
 
     |参数|说明|
     |--|--|
@@ -71,12 +92,26 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
     |**存储费用**|无需选择容量，根据实际数据使用量按小时计费。详情请参见[规格与定价](../cn.zh-CN/产品定价/规格与定价.md#)。|
     |**集群名称**|填写集群名称用于区分业务用途。如果留空，系统将自动生成一个集群名称。创建集群后还可以修改。|
 
-5.  设置**购买时长**（仅针对包年包月集群），然后单击右侧的**立即购买**。
-6.  确认订单信息，阅读和勾选**服务协议**，单击**去开通**。
+4.  设置**购买时长**（仅针对包年包月集群），然后单击右侧的**立即购买**。
+5.  确认订单信息，阅读和勾选**服务协议**，单击**去开通**，完成支付。
+6.  进入[POLARDB控制台](https://polardb.console.aliyun.com)，查看新建的POLARDB集群的状态。
+
+    **说明：** 
+
+    -   集群创建后开始从RDS实例同步数据，7 天内需要完成数据复制、修改数据库连接地址以及[完成迁移](#)操作。超过7天将自动关闭迁移功能。
+    -   您可以在此步骤选择取消迁移，相关影响请参见[迁移常见问题](#)。
 
 ## 迁移切换 {#section_jdh_0d3_zjz .section}
 
-[从RDS迁移](#section_s4t_zsn_13b)之后，您可以进行迁移切换，然后修改应用里的数据库连接地址。
+**前提条件**
+
+-   已完成[从RDS迁移](#section_s4t_zsn_13b)的操作。
+-   **复制延迟**小于60秒。
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320351400_zh-CN.png)
+
+
+满足前提条件后，您可以进行迁移切换，然后修改应用里的数据库连接地址。
 
 1.  进入[POLARDB控制台](https://polardb.console.aliyun.com)。
 2.  找到目标集群，单击集群的ID。
@@ -84,21 +119,18 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
     本操作将源RDS实例修改为只读，将POLARDB集群修改为可读可写，同时会将POLARDB集群的新增数据同步到RDS实例。
 
-    **说明：** 
+    **说明：** 数据同步的延迟超过180秒时无法进行迁移切换。
 
-    -   数据同步的延迟超过180秒时无法进行迁移切换。
-    -   单击**迁移切换**后，需要在7 内修改数据库连接地址以及进行[完成迁移](#)的操作。超过7天将自动关闭迁移功能，源RDS实例和目的POLARDB集群将恢复可读可写状态。
-    -   您可以在此步骤选择取消迁移，相关影响请参见[迁移常见问题](#)。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156264130451031_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320351031_zh-CN.png)
 
-4.  当**POLARDB读写状态**显示为**读写**后，尽快修改应用里的数据库连接地址。
+4.  刷新页面，当**POLARDB读写状态**显示为**读写**后，尽快修改应用里的数据库连接地址。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156264130451038_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320351038_zh-CN.png)
 
 
 ## 完成迁移 {#section_3ds_ojf_lmm .section}
 
-[迁移切换](#section_jdh_0d3_zjz)后，需要在7天内修改数据库连接地址以及单击**完成迁移**。该操作将中断POLARDB集群和RDS实例的数据同步。
+[从RDS迁移](#section_s4t_zsn_13b)后，需要在7天内修改数据库连接地址以及单击**完成迁移**。该操作将中断POLARDB集群和RDS实例的数据同步。
 
 **警告：** 由于本操作将中断POLARDB集群和RDS实例的数据同步，不再提供迁移回滚功能，建议您使用一段时间POLARDB集群，确认正常后再执行本操作。
 
@@ -110,9 +142,9 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
     -   您可以选择是否关闭POLARDB集群的Binlog。关闭Binlog会带来少量的写入性能提升，但需要重启POLARDB。
     -   源RDS实例如果没有其他业务需求，可以释放以节省费用。如果是包年包月实例，需要提交工单处理。
-    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156264130548987_zh-CN.png)
+    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320448987_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156264130551039_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320451039_zh-CN.png)
 
 4.  如果不再需要源RDS实例，可以释放实例。
 
@@ -126,7 +158,7 @@ POLARDB支持将RDS for MySQL一键升级为POLARDB for MySQL。
 
     **说明：** 单击**确定**后RDS实例为可读可写，POLARDB集群为只读，同时会将RDS实例的数据同步到POLARDB集群。当**源RDS读写状态**显示为**读写**后，请尽快修改应用里的数据库连接地址。
 
-    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156264130548988_zh-CN.png)
+    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320448988_zh-CN.png)
 
 
 ## 迁移常见问题 {#section_lxr_3fp_13b .section}
