@@ -58,7 +58,7 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 3.  找到[符合条件](#section_ezw_wsn_13b)的源RDS实例，单击实例ID。
 4.  在上方单击**升级为POLARDB**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527151092_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156311771651092_zh-CN.png)
 
 2.  选择包年包月或按小时付费页签。
 3.  设置以下参数。
@@ -106,7 +106,7 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 -   已完成[从RDS迁移](#section_s4t_zsn_13b)的操作。
 -   **复制延迟**小于60秒。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527151400_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156311771651400_zh-CN.png)
 
 
 **操作步骤**
@@ -123,11 +123,11 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 
     -   数据同步的延迟超过60秒时无法进行迁移切换。
     -   切换过程一般小于5分钟。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527251031_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156311771651031_zh-CN.png)
 
 4.  刷新页面，当**POLARDB读写状态**显示为**读写**后，尽快修改应用里的数据库连接地址。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527251038_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156311771751038_zh-CN.png)
 
     **说明：** 迁移切换完成后，也可以选择[迁移回滚](#)。
 
@@ -142,11 +142,13 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 2.  找到目标集群，单击集群的ID。
 3.  在基本信息页面，单击**完成迁移**，在弹出的对话框中单击**确定**。
 
-    **说明：** 您可以选择是否关闭POLARDB集群的Binlog。关闭Binlog会带来少量的写入性能提升，但需要重启POLARDB。
+    **说明：** 
 
-    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527248987_zh-CN.png)
+    -   单击**确定**后，系统将在约2分钟内中断同步关系，期间**完成迁移**按钮不会消失，请勿重复点击。
+    -   您可以选择是否关闭POLARDB集群的Binlog。关闭Binlog会带来少量的写入性能提升，但需要重启POLARDB。
+    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156311771748987_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527251039_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156311771751039_zh-CN.png)
 
 4.  如果不再需要源RDS实例，可以释放实例。
 
@@ -160,7 +162,7 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 
     **说明：** 单击**确定**后RDS实例为可读可写，POLARDB集群为只读，同时会将RDS实例的数据同步到POLARDB集群。当**源RDS读写状态**显示为**读写**后，请尽快修改应用里的数据库连接地址为RDS连接地址。
 
-    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527248988_zh-CN.png)
+    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156311771748988_zh-CN.png)
 
 
 ## 迁移常见问题 {#section_lxr_3fp_13b .section}
