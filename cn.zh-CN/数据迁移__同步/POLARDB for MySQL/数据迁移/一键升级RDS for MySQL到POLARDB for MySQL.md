@@ -58,7 +58,7 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 3.  找到[符合条件](#section_ezw_wsn_13b)的源RDS实例，单击实例ID。
 4.  在上方单击**升级为POLARDB**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320351092_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527151092_zh-CN.png)
 
 2.  选择包年包月或按小时付费页签。
 3.  设置以下参数。
@@ -68,11 +68,9 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
     |**地域**|源RDS for MySQL实例所在地域。 **说明：** 新建的POLARDB集群也在此地域。
 
  |
-    |**创建方式**|集群的创建方式：     -   **默认创建**：创建一个全新的POLARDB集群。
+    |**创建方式**|选择**从RDS迁移**。     -   **默认创建**：创建一个全新的POLARDB集群。
     -   **从RDS克隆**：基于所选的RDS实例，克隆一个数据完全一样的POLARDB集群。
-    -   **从RDS迁移**：先从RDS实例克隆一个POLARDB集群，同时保持数据同步。默认开启新集群的Binlog。
- 这里选择**从RDS迁移**。
-
+    -   **从RDS迁移**：从RDS实例克隆一个POLARDB集群，同时保持数据同步。默认开启新集群的Binlog。
  |
     |**源RDS引擎**|源RDS实例的引擎类型，不可变更。|
     |**源RDS版本**|源RDS实例的版本，不可变更。|
@@ -98,7 +96,7 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 
     **说明：** 
 
-    -   集群创建后开始从RDS实例同步数据，7 天内需要完成数据复制、修改数据库连接地址以及[完成迁移](#)操作。超过7天将自动关闭迁移功能。
+    -   集群创建后开始从RDS实例同步数据，7 天内需要完成修改数据库连接地址以及[完成迁移](#)操作。超过7天将自动关闭迁移功能。
     -   您可以在此步骤选择取消迁移，相关影响请参见[迁移常见问题](#)。
 
 ## 迁移切换 {#section_jdh_0d3_zjz .section}
@@ -108,8 +106,10 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 -   已完成[从RDS迁移](#section_s4t_zsn_13b)的操作。
 -   **复制延迟**小于60秒。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320351400_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527151400_zh-CN.png)
 
+
+**操作步骤**
 
 满足前提条件后，您可以进行迁移切换，然后修改应用里的数据库连接地址。
 
@@ -119,32 +119,34 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 
     本操作将源RDS实例修改为只读，将POLARDB集群修改为可读可写，同时会将POLARDB集群的新增数据同步到RDS实例。
 
-    **说明：** 数据同步的延迟超过180秒时无法进行迁移切换。
+    **说明：** 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320351031_zh-CN.png)
+    -   数据同步的延迟超过60秒时无法进行迁移切换。
+    -   切换过程一般小于5分钟。
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527251031_zh-CN.png)
 
 4.  刷新页面，当**POLARDB读写状态**显示为**读写**后，尽快修改应用里的数据库连接地址。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320351038_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527251038_zh-CN.png)
+
+    **说明：** 迁移切换完成后，也可以选择[迁移回滚](#)。
 
 
 ## 完成迁移 {#section_3ds_ojf_lmm .section}
 
-[从RDS迁移](#section_s4t_zsn_13b)后，需要在7天内修改数据库连接地址以及单击**完成迁移**。该操作将中断POLARDB集群和RDS实例的数据同步。
+[从RDS迁移](#section_s4t_zsn_13b)后，需要在7天内修改数据库连接地址以及单击**完成迁移**。该操作将中断POLARDB集群和RDS实例间的数据同步。
 
-**警告：** 由于本操作将中断POLARDB集群和RDS实例的数据同步，不再提供迁移回滚功能，建议您使用一段时间POLARDB集群，确认正常后再执行本操作。
+**警告：** 由于本操作将中断POLARDB集群和RDS实例间的数据同步，不再提供[迁移回滚](#)功能，建议您使用一段时间POLARDB集群，确认正常后再执行本操作。
 
 1.  进入[POLARDB控制台](https://polardb.console.aliyun.com)。
 2.  找到目标集群，单击集群的ID。
 3.  在基本信息页面，单击**完成迁移**，在弹出的对话框中单击**确定**。
 
-    **说明：** 
+    **说明：** 您可以选择是否关闭POLARDB集群的Binlog。关闭Binlog会带来少量的写入性能提升，但需要重启POLARDB。
 
-    -   您可以选择是否关闭POLARDB集群的Binlog。关闭Binlog会带来少量的写入性能提升，但需要重启POLARDB。
-    -   源RDS实例如果没有其他业务需求，可以释放以节省费用。如果是包年包月实例，需要提交工单处理。
-    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320448987_zh-CN.png)
+    ![完成迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527248987_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320451039_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527251039_zh-CN.png)
 
 4.  如果不再需要源RDS实例，可以释放实例。
 
@@ -156,9 +158,9 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 2.  找到目标集群，单击集群的ID。
 3.  在基本信息页面单击**迁移回滚**，在弹出的对话框中单击**确定**。
 
-    **说明：** 单击**确定**后RDS实例为可读可写，POLARDB集群为只读，同时会将RDS实例的数据同步到POLARDB集群。当**源RDS读写状态**显示为**读写**后，请尽快修改应用里的数据库连接地址。
+    **说明：** 单击**确定**后RDS实例为可读可写，POLARDB集群为只读，同时会将RDS实例的数据同步到POLARDB集群。当**源RDS读写状态**显示为**读写**后，请尽快修改应用里的数据库连接地址为RDS连接地址。
 
-    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308320448988_zh-CN.png)
+    ![迁移回滚](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/475602/156308527248988_zh-CN.png)
 
 
 ## 迁移常见问题 {#section_lxr_3fp_13b .section}
