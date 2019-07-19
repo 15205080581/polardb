@@ -13,14 +13,42 @@
 -   Oracle。
 
  |
-|DBVersion|String|是|数据库版本号，取值： -   MySQL：5.6；
+|DBVersion|String|是|数据库版本号，取值： -   MySQL：5.6/8.0；
 -   PostgreSQL：11；
 -   Oracle：11。
 
  |
-|DBNodeClass|String|是|节点规格，参见[规格与定价](../../../../cn.zh-CN/产品简介/规格与定价.md#)。|
+|DBNodeClass|String|是|节点规格，参见[规格与定价](../../../../cn.zh-CN/产品定价/规格与定价.md#)。|
 |PayType|String|是|付费类型： -   Postpaid：按量付费；
 -   Prepaid：预付费（包年包月）。
+
+ |
+|CreationOption|String|否|创建方式，取值： -   Normal：创建一个全新的POLARDB集群；
+-   CloneFromPolarDB：从现有POLARDB集群克隆数据到新的POLARDB集群；
+-   CloneFromRDS：从现有RDS实例克隆数据到新的POLARDB集群；
+-   MigrationFromRDS：从现有RDS实例迁移数据到新的POLARDB集群。创建的POLARDB集群是只读模式，且默认开启Binlog。
+
+ 默认为Normal。
+
+ **说明：** **DBType**=**MySQL**且**DBVersion****=5.6**时，本参数有意义。
+
+ |
+|SourceResourceId|String|否|源RDS实例ID或源POLARDB集群ID。 **说明：** 
+
+-   **DBType**=**MySQL**且**DBVersion****=5.6**时，本参数有意义。
+-   如果**CreationOption**≠**Normal**，本参数必填。
+
+ |
+|CloneDataPoint|String|否|克隆数据的时间节点，取值： -   LATEST：最新时间点的数据；
+-   <BackupID\>：历史备份集ID，请传入具体的备份集ID；
+-   <Timestamp\>：历史时间点，请传入具体的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC时间）。
+
+ 默认为LATEST。
+
+ **说明：** 
+
+-   **DBType**=**MySQL**且**DBVersion****=5.6**，并且**CreationOption**=**CloneFromRDS**或**CloneFromPolarDB**本参数有意义。
+-   如果**CreationOption**=**CloneFromRDS**，本参数取值只能为**LATEST**。
 
  |
 |ZoneId|String|否|可用区ID，通过函数[DescribeRegions](cn.zh-CN/API参考/地域/DescribeRegions.md#)查看可用的可用区。|
@@ -62,7 +90,7 @@
 
 ## 请求示例 {#section_lx1_c25_xfb .section}
 
-```
+``` {#codeblock_8o4_gey_4x0}
 https://polardb.aliyuncs.com/?Action=CreateDBCluster
 &RegionId=cn-hangzhou
 &DBType=MySQL
@@ -76,7 +104,7 @@ https://polardb.aliyuncs.com/?Action=CreateDBCluster
 
 XML格式
 
-```
+``` {#codeblock_l1z_fic_ulu}
 <CreateDBClusterResponse>  
     <RequestId>E056BF3D-1E4F-4E39-B729-8491A74B301B</RequestId>
     <OrderId>20235327xxxxx</OrderId>
@@ -86,7 +114,7 @@ XML格式
 
 JSON格式
 
-```
+``` {#codeblock_jq4_n7c_78t}
 {
   "RequestId": "E056BF3D-1E4F-4E39-B729-8491A74B301B",
   "OrderId": "20235327xxxxx",
