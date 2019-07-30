@@ -26,8 +26,8 @@
 
     **说明：** 
 
-    -    **预付费**：在创建集群时支付计算节点（一个主节点和一个只读节点）的费用，而存储空间会根据实际数据量按小时计费，并从账户中按小时扣除。如果您要长期使用该集群，**预付费**方式更加划算，而且购买时长越长，折扣越多。
-    -    **按小时付费（按量付费）**：无需预先支付费用，计算节点和存储空间（根据实际数据量）均按小时计费，并从账户中按小时扣除。如果您只需短期使用该集群，可以选择**按小时付费（按量付费）**，用完即可释放，节省费用。
+    -   **预付费**：在创建集群时支付计算节点（一个主节点和一个只读节点）的费用，而存储空间会根据实际数据量按小时计费，并从账户中按小时扣除。如果您要长期使用该集群，**预付费**方式更加划算，而且购买时长越长，折扣越多。
+    -   **按小时付费（按量付费）**：无需预先支付费用，计算节点和存储空间（根据实际数据量）均按小时计费，并从账户中按小时扣除。如果您只需短期使用该集群，可以选择**按小时付费（按量付费）**，用完即可释放，节省费用。
 5.  设置如下参数。
 
     |控制台区域|参数|说明|
@@ -87,14 +87,15 @@
 
 -   当集群中的节点状态为**运行中**时，整个集群可能仍未创建完成，此时集群不可用。只有当集群状态为**运行中**时，集群才可以正常使用。
 -   请确认已选中正确的地域，否则无法看到您创建的集群。
+-   当您的数据量较大时，推荐您购买POLARDB[存储包](../../../../cn.zh-CN/POLARDB for MySQL用户指南/集群管理/使用存储包.md#)，相比按小时付费，预付费购买存储包有折扣，购买的容量越大，折扣力度就越大。
 
 ## 相关API {#section_uxx_4pr_b3b .section}
 
 |API|描述|
 |:--|:-|
-| [CreateDBCluster](../../../../cn.zh-CN/API参考/集群管理/CreateDBCluster.md#) |创建数据库集群|
-| [DescribeDBClusters](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusters.md#) |查看集群列表|
-| [DescribeDBClusterAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusterAttribute.md#) |查看指定POLARDB集群的详细属性|
-| [DescribeAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeAutoRenewAttribute.md#) |查询POLARDB包年包月集群自动续费状态|
-| [ModifyAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/ModifyAutoRenewAttribute.md#) |设置POLARDB包年包月集群自动续费状态|
+|[CreateDBCluster](../../../../cn.zh-CN/API参考/集群管理/CreateDBCluster.md#)|创建数据库集群|
+|[DescribeDBClusters](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusters.md#)|查看集群列表|
+|[DescribeDBClusterAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeDBClusterAttribute.md#)|查看指定POLARDB集群的详细属性|
+|[DescribeAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/DescribeAutoRenewAttribute.md#)|查询POLARDB包年包月集群自动续费状态|
+|[ModifyAutoRenewAttribute](../../../../cn.zh-CN/API参考/集群管理/ModifyAutoRenewAttribute.md#)|设置POLARDB包年包月集群自动续费状态|
 
