@@ -1,14 +1,16 @@
 # ALTER TABLE… EXCHANGE PARTITION {#concept_221952 .concept}
 
+ALTER TABLE...EXCHANGE PARTITION命令可以用一个分区或子分区交换现有的表。
+
 ## 语法介绍 {#section_c9v_1qz_zzb .section}
 
-ALTER TABLE...EXCHANGE PARTITION命令用一个分区或子分区交换现有的表。如果我们打算添加大量的数据到分区表中，我们可以使用ALTER TABLE, EXCHANGE PARTITION命令来进行批量加载。我们也可以使用ALTER TABLE. EXCHANGE PARTITION命令来删除旧数据或不再需要的数据。
+如果您打算添加大量的数据到分区表中，可以使用ALTER TABLE, EXCHANGE PARTITION命令来进行批量加载。您也可以使用ALTER TABLE. EXCHANGE PARTITION命令来删除旧数据或不再需要的数据。
 
-ALTER TABLE. EXCHANGE PARTITION命令有两种形式。
+ALTER TABLE. EXCHANGE PARTITION命令有以下两种形式。
 
 -   第一种形式是把表换成分区：
 
-    ```
+    ``` {#codeblock_ajv_1in_cpd}
     ALTER TABLE target_table 
       EXCHANGE PARTITION target_partition 
       WITH TABLE source_table 
@@ -17,7 +19,7 @@ ALTER TABLE. EXCHANGE PARTITION命令有两种形式。
 
 -   第二种形式是把表换成子分区 ：
 
-    ```
+    ``` {#codeblock_611_x3y_xkv}
     ALTER TABLE target_table 
       EXCHANGE SUBPARTITION target_subpartition 
       WITH TABLE source_table 
@@ -27,18 +29,18 @@ ALTER TABLE. EXCHANGE PARTITION命令有两种形式。
 
 ALTER TABLE. EXCHANGE PARTITION命令在分区和子分区之间没有任何区别。
 
--   我们可以使用EXCHANGE PARTITION或EXCHANGE SUBPARTITION子句来交换分区。
--   我们可以使用EXCHANGE PARTITION或EXCHANGE SUBPARTITION子句来交换子分区。
+-   您可以使用EXCHANGE PARTITION或EXCHANGE SUBPARTITION子句来交换分区。
+-   您可以使用EXCHANGE PARTITION或EXCHANGE SUBPARTITION子句来交换子分区。
 
 ## 描述 {#section_e94_b32_vf0 .section}
 
-当完成ALTER TABLE. EXCHANGE PARTITION命令的执行后，最初在target\_partition中的数据就会位于source\_table中， 而最初在source\_table中的数据则会位于target partition中。
+当完成ALTER TABLE. EXCHANGE PARTITION命令的执行后，最初在target\_partition中的数据就会位于source\_table中，而最初在source\_table中的数据则会位于target partition中。
 
 source\_table的结构必须与target\_table的结构匹配（也就是说两个表必须有匹配的列和数据类型），且表内的数据必须依附分区约束。
 
 POLARDB for Oracle接受WITHOUT VALIDATION子句，但会忽略。新表通常都是经过验证的。
 
-我们必须有一个表，才能基于这个表来调用ALTER TABLE. EXCHANGE PARTITION或ALTER TABLE. EXCHANGE SUBPARTITION。
+您必须有一个表，才能基于这个表来调用ALTER TABLE. EXCHANGE PARTITION或ALTER TABLE. EXCHANGE SUBPARTITION。
 
 ## 参数 {#section_e3s_2sv_xuv .section}
 
@@ -48,11 +50,11 @@ POLARDB for Oracle接受WITHOUT VALIDATION子句，但会忽略。新表通常�
 |target partition|要替换的分区或子分区的名称。|
 |source table|要替换`target_partition`的表名称。|
 
-## 示例 – 与表交换分区 {#section_sol_u0n_92u .section}
+## 与表交换分区示例 {#section_sol_u0n_92u .section}
 
-下列示例演示了把一个表换成了表sales中的分区\(americas\)的操作。我们可以使用下列命令创建表sales：
+下面示例演示了把一个表换成了表sales中的分区（americas）的操作。您可以使用下列命令创建表sales：
 
-```
+``` {#codeblock_13i_1tp_dgr}
 CREATE TABLE sales
 (
   dept_no     number,   
@@ -71,7 +73,7 @@ PARTITION BY LIST(country)
 
 使用下列命令添加样本数据到表sales中：
 
-```
+``` {#codeblock_q76_iof_jk4}
 INSERT INTO sales VALUES
   (40, '9519b', 'US', '12-Apr-2012', '145000'),
   (10, '4519b', 'FRANCE', '17-Jan-2012', '45000'),
@@ -87,7 +89,7 @@ INSERT INTO sales VALUES
 
 查询表sales来显示分区americas中只有一条记录：
 
-```
+``` {#codeblock_gsu_vmx_ass}
 acctg=# SELECT tableoid::regclass, * FROM sales;
     tableoid   | dept_no| part_no | country |      date     | amount 
 ---------------+--------+---------+---------+-------------------+-----------
@@ -104,9 +106,9 @@ acctg=# SELECT tableoid::regclass, * FROM sales;
 (10 rows)
 ```
 
-下列命令创建了一个与表sales定义匹配的表\(n\_america\)：
+下列命令创建了一个与表sales定义匹配的表（n\_america）：
 
-```
+``` {#codeblock_to8_yjn_997}
 CREATE TABLE n_america
 (
   dept_no     number,   
@@ -119,7 +121,7 @@ CREATE TABLE n_america
 
 下列命令添加了数据到表n\_america中。数据与分区americas的分区规则一致：
 
-```
+``` {#codeblock_yh0_qzp_cf5}
 INSERT INTO n_america VALUES
   (40, '9519b', 'US', '12-Apr-2012', '145000'),
   (40, '4577b', 'US', '11-Nov-2012', '25000'),
@@ -133,7 +135,7 @@ INSERT INTO n_america VALUES
 
 下列命令将表换成分区表：
 
-```
+``` {#codeblock_c1q_etv_zh9}
 ALTER TABLE sales 
   EXCHANGE PARTITION americas 
   WITH TABLE n_america; 
@@ -141,7 +143,7 @@ ALTER TABLE sales
 
 对表sales的查询显示了表n\_america中的内容已和分区americas中的内容交换：
 
-```
+``` {#codeblock_0jl_nkg_osw}
 acctg=# SELECT tableoid::regclass, * FROM sales;
     tableoid   | dept_no| part_no | country |        date        | amount 
 ---------------+--------+--------+----------+--------------------+-----------
@@ -167,7 +169,7 @@ acctg=# SELECT tableoid::regclass, * FROM sales;
 
 对表n\_america的查询显示了之前存储在分区americas中的记录已被移动到表n\_america中：
 
-```
+``` {#codeblock_ggi_qcq_53j}
 acctg=# SELECT tableoid::regclass, * FROM n_america;
  tableoid  | dept_no | part_no | country |        date        | amount 
 -----------+---------+---------+---------+--------------------+------------
