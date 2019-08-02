@@ -1,5 +1,7 @@
 # ALTER TABLE...SPLIT SUBPARTITION {#concept_221802 .concept}
 
+ALTER TABLE.. .SPLIT SUBPARTITION命令用于将子分区添加到现有的子分区表中。
+
 ## 语法介绍 {#section_a9u_sax_lyw .section}
 
 使用ALTER TABLE… SPLIT SUBPARTITION命令将一个子分区划分为两个子分区，并重新分配子分区的内容。ALTER TABLE… SPLIT SUBPARTITION命令有两种形式：
@@ -34,15 +36,15 @@ ALTER TABLE table_name SPLIT SUBPARTITION subpartition_name
 
 ## 描述 {#section_jtj_43p_6lc .section}
 
-ALTER TABLE.. .SPLIT SUBPARTITION命令用于将子分区添加到现有的子分区表中。对于定义的子分区数量没有上限要求。当我们执行ALTER TABLE ...SPLIT SUBPARTITION命令时，POLARDB for Oracle会创建两个子分区，把所有包含（由指定子分区规则约束的）值的记录转移到new\_subpartl中，留下的其他记录则会转移到new\_subpart2中。
+ALTER TABLE.. .SPLIT SUBPARTITION命令用于将子分区添加到现有的子分区表中。对于定义的子分区数量没有上限要求。当您执行ALTER TABLE ...SPLIT SUBPARTITION命令时，POLARDB for Oracle会创建两个子分区，把所有包含（由指定子分区规则约束的）值的记录转移到new\_subpartl中，留下的其他记录则会转移到new\_subpart2中。
 
 新分区规则必须引用在定义现有子分区的规则中指定的列。
 
-包括TABLESPACE子句指定新的子分区要所属的表空间。如果我们没有指定表空间， 那么子分区将创建于缺省表空间。
+包括TABLESPACE子句指定新的子分区要所属的表空间。如果您没有指定表空间， 那么子分区将创建于缺省表空间。
 
 如果对表进行了索引设置， 那么索引将创建在新的子分区上。
 
-要使用ALTER TABLE.. . SPLIT SUBPARTITION命令，我们必须是表的拥有者或有超级用户 \(或管理员\) 的权限。
+要使用ALTER TABLE.. . SPLIT SUBPARTITION命令，您必须是表的拥有者或有超级用户（或管理员）的权限。
 
 ## 参数 {#section_2qq_rzd_7dj .section}
 
@@ -55,23 +57,23 @@ ALTER TABLE.. .SPLIT SUBPARTITION命令用于将子分区添加到现有的子�
  `new_subpart1`会接收那些满足在`alter table... split subpartition`命令中指定的子分区约束的记录。
 
  |
-|new subpart2| 要创建的第二个新的子分区名称。 在所有分区和子分区当中，子分区名称必须是唯一的，且必须遵循给对象标识符命名的惯例。
+|new subpart2| 要创建的第二个新的子分区名称。在所有分区和子分区当中，子分区名称必须是唯一的，且必须遵循给对象标识符命名的惯例。
 
  `new_subpart2`会接收因`alter table. split``SUBPARTITION`命令指定的分区约束而未导入`new_subpartl`中的记录。
 
  |
-|\(value\[, value\]...\)| 使用`value`来指定一个引用的文本值（或以逗号分隔的文本值列表）将表项目划分为不同的分区。每个分区规则必须至少指定一个值，但在规则中对于指定的值的数量没有上限要求。`Value`可能为`null`、`default` \(如果指定了一个`list`子分区的话\) 或`maxvalue` \(如果指定了一个`range` 子分区的话\)。
+|\(value\[, value\]...\)| 使用`value`来指定一个引用的文本值（或以逗号分隔的文本值列表）将表项目划分为不同的分区。每个分区规则必须至少指定一个值，但在规则中对于指定的值的数量没有上限要求。`Value`可能为`null`、`default` （如果指定了一个`list`子分区的话）或`maxvalue`（如果指定了一个`range` 子分区的话）。
 
  更多关于创建`default` 或`maxvalue`分区的信息请参见[在LIST 或 RANGE 分区表中处理偏离值](cn.zh-CN/POLARDB for Oracle开发指南/分区表使用/在LIST 或 RANGE 分区表中处理偏离值.md#)。
 
  |
 |tablespace name|分区或子分区所属的表空间名称。|
 
-## 示例 – 划分LIST子分区 {#section_jax_pma_f1n .section}
+## 划分LIST子分区示例 {#section_jax_pma_f1n .section}
 
-下列示例划分了一个列表子分区，并重新分配了两个新的子分区之间的子分区内容。样本表\(sales\)是通过下列命令创建的：
+下面示例划分了一个列表子分区，并重新分配了两个新的子分区之间的子分区内容。样本表（sales）是通过下列命令创建的：
 
-```
+``` {#codeblock_7hx_3jn_fgc}
 CREATE TABLE sales
 (
   dept_no     number,
@@ -161,7 +163,7 @@ ALTER TABLE sales SPLIT SUBPARTITION p2_americas
   );
 ```
 
-在调用这个命令后，子分区p2\_americas被删除。然后服务器在原有的这个位置创建了两个新的子分区\(p2\_us 和 p2\_canada\)：
+在调用这个命令后，子分区p2\_americas被删除。然后服务器在原有的这个位置创建了两个新的子分区（p2\_us 和 p2\_canada）：
 
 ``` {#codeblock_u5g_aar_zn8}
 acctg=# SELECT partition_name, subpartition_name, high_value FROM ALL_TAB_SUBPARTITIONS;
@@ -197,9 +199,9 @@ acctg=# SELECT tableoid::regclass, * FROM sales;
 (13 rows)
 ```
 
-## 示例 – 划分 RANGE 子分区 {#section_rmh_84s_ysh .section}
+## 划分 RANGE 子分区示例 {#section_rmh_84s_ysh .section}
 
-下列示例划分了一个范围子分区，并重新分配了两个新的子分区之间的子分区内容。 样本表\(sales\)是通过下列命令创建的：
+下面示例划分了一个范围子分区，并重新分配了两个新的子分区之间的子分区内容。 样本表（sales）是通过下列命令创建的：
 
 ``` {#codeblock_999_g7e_vtr}
 CREATE TABLE sales
@@ -237,7 +239,7 @@ PARTITION BY LIST(country)
 );
 ```
 
-表sales有三个分区\(europe, asia, 和 americas\)。每个分区都有两个范围定义的子分区通过列date的值将分区内容分类并导入子分区中：
+表sales有三个分区（europe、asia和 americas）。每个分区都有两个范围定义的子分区通过列date的值将分区内容分类并导入子分区中：
 
 ``` {#codeblock_e8z_krb_io6}
 acctg=# SELECT partition_name, subpartition_name, high_value FROM ALL_TAB_SUBPARTITIONS;
