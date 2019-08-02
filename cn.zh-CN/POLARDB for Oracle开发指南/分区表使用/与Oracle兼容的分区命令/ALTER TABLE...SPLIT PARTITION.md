@@ -1,10 +1,12 @@
 # ALTER TABLE...SPLIT PARTITION {#concept_221780 .concept}
 
+ALTER TABLE.. .SPLIT PARTITION命令用于将分区添加到现有的分区表中。
+
 ## 语法介绍 {#section_mob_imi_cfo .section}
 
 使用ALTER TABLE. .. SPLIT PARTITION命令将一个分区划分为两个分区，并重新分配新分区的内容。ALTER TABLE. .. SPLIT PARTITION命令的语法有两种形式：
 
-第一种形式用于将RANGE分区划分为两个分区：
+第一种形式用于将RANGE分区划分为两个分区。
 
 ``` {#codeblock_1hh_puc_s31}
 ALTER TABLE table_name SPLIT PARTITION partition_name
@@ -18,7 +20,7 @@ ALTER TABLE table_name SPLIT PARTITION partition_name
   ); 
 ```
 
-第二种形式用于将LIST分区划分为两个分区：
+第二种形式用于将LIST分区划分为两个分区。
 
 ``` {#codeblock_kfy_a1p_oig}
 ALTER TABLE table_name SPLIT PARTITION partition_name
@@ -36,13 +38,13 @@ ALTER TABLE table_name SPLIT PARTITION partition_name
 
 ALTER TABLE.. .SPLIT PARTITION命令用于将分区添加到现有的分区表中。在分区表中对于分区数量没有上限要求。
 
-当我们执行ALTER TABLE ... SPLIT PARTITION命令时，POLARDB for Oracle就会创建两个新分区，并在这两个新分区之间（如分区规则约束的一样）重新分配旧分区中的内容。
+当您执行ALTER TABLE ... SPLIT PARTITION命令时，POLARDB for Oracle就会创建两个新分区，并在这两个新分区之间（如分区规则约束的一样）重新分配旧分区中的内容。
 
-包括TABLESPACE子句指定新分区要所属的表空间。如果我们没有指定表空间， 那么分区将所属于缺省表空间。
+包括TABLESPACE子句指定新分区要所属的表空间。如果您没有指定表空间， 那么分区将所属于缺省表空间。
 
 如果对表进行了索引设置， 那么索引将创建在新分区上。
 
-要使用ALTER TABLE... SPLIT PARTITION命令，我们必须是表的拥有者或有超级用户\(或管理员\)的权限。
+要使用ALTER TABLE... SPLIT PARTITION命令，您必须是表的拥有者或有超级用户（或管理员）的权限。
 
 ## 参数 {#section_k4j_hin_5tt .section}
 
@@ -55,7 +57,7 @@ ALTER TABLE.. .SPLIT PARTITION命令用于将分区添加到现有的分区表�
  `new_parti`会接收那些满足在`alter table, split subpartition`命令中指定的子分区约束的记录。
 
  |
-|new part2| 要创建的第二个新分区的名称。 在所有分区和子分区当中，分区名称必须是唯一的，且必须遵循给对象标识符命名的惯例。
+|new part2| 要创建的第二个新分区的名称。在所有分区和子分区当中，分区名称必须是唯一的，且必须遵循给对象标识符命名的惯例。
 
  `new_part2`会接收因`alter table. split partition`命令指定的分区约束而未导入`new_parti`中的记录。
 
@@ -68,7 +70,7 @@ ALTER TABLE.. .SPLIT PARTITION命令用于将分区添加到现有的分区表�
  |
 |tablespace name|分区或子分区所属的表空间名称。|
 
-## 示例 – 划分LIST分区 {#section_2pp_qok_hfl .section}
+## 划分LIST分区示例 {#section_2pp_qok_hfl .section}
 
 下面的示例将会把在列表分区表sales中的其中一个分区划分为两个新分区，并重新分配这两个分区的内容。表sales是通过下列语句创建的：
 
@@ -89,7 +91,7 @@ PARTITION BY LIST(country)
 );
 ```
 
-表定义创建了三个分区\(europe, asia, 和 americas\)。下列命令添加了记录到每个分区中：
+表定义创建了三个分区（europe、asia和americas）。下列命令添加了记录到每个分区中：
 
 ``` {#codeblock_lcg_sco_vbe}
 INSERT INTO sales VALUES
@@ -138,7 +140,7 @@ acctg=# SELECT tableoid::regclass, * FROM sales;
 (17 rows)
 ```
 
-下列命令将分区americas划分为两个分区，分别为us 和canada：
+下列命令将分区americas划分为两个分区，分别为us和canada：
 
 ``` {#codeblock_pt4_29p_zpp}
 ALTER TABLE sales SPLIT PARTITION americas 
@@ -172,9 +174,9 @@ acctg=# SELECT tableoid::regclass, * FROM sales;
 (17 rows)
 ```
 
-## 示例 – 划分RANGE分区 {#section_iuy_u2u_ot4 .section}
+## 划分RANGE分区示例 {#section_iuy_u2u_ot4 .section}
 
-下列示例将\(范围分区表sales的\)分区q4\_2012划分为两个分区， 并重新分配了分区的内容。使用下列命令创建表sales：
+下列示例将范围分区表sales的分区q4\_2012划分为两个分区， 并重新分配了分区的内容。使用下列命令创建表sales：
 
 ``` {#codeblock_c2i_mkp_uaf}
 CREATE TABLE sales
@@ -198,7 +200,7 @@ PARTITION BY RANGE(date)
 );
 ```
 
-表定义创建了四个分区 \(q1\_2012, q2\_2012, q3\_2012 q4\_2012\)。下列命令添加了记录到每个分区中：
+表定义创建了四个分区 （q1\_2012、q2\_2012、q3\_2012、q4\_2012）。下列命令添加了记录到每个分区中：
 
 ``` {#codeblock_uhy_4m4_e2j}
 INSERT INTO sales VALUES
