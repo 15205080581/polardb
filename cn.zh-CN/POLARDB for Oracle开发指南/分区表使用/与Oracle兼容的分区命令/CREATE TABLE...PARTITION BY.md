@@ -1,8 +1,10 @@
 # CREATE TABLE...PARTITION BY {#concept_221638 .concept}
 
+使用CREATE TABLE命令的PARTITION BY子句来创建一个分区表，这个分区表中的数据分配在一个或多个分区（和子分区）中。
+
 ## 语法介绍 {#section_0k9_ip6_dn3 .section}
 
-使用CREATE TABLE命令的PARTITION BY子句来创建一个分区表，这个分区表中的数据分配在一个或多个分区（和子分区）中。CREATE TABLE命令语法有下面的四种形式。
+CREATE TABLE命令语法有下面的四种形式：
 
 -   列表分区语法
 
@@ -10,9 +12,9 @@
 
     ``` {#codeblock_q3z_wxs_wt3}
     CREATE TABLE [ schema. ]table_name table definition PARTITION BY 
-    	LIST(column)
-    	[SUBPARTITION BY {RANGE|LIST} (column[, column ]...)] (list 
-    	partition definitionf, list partition definition]...);
+        LIST(column)
+        [SUBPARTITION BY {RANGE|LIST} (column[, column ]...)] (list 
+        partition definitionf, list partition definition]...);
     ```
 
     其中 list\_partition\_definition 是：
@@ -69,17 +71,17 @@
 
 ## 描述 {#section_qm5_v8o_f54 .section}
 
-CREATE TABLE... PARTITION BY命令用于创建带有一个或多个分区的表，其中每个分区可能有一个或一个以上的子分区。对于定义的分区数量没有上限， 但如果我们要包括PARTITION BY子句，则必须至少指定一个分区规则。产生的表由创建这个表的用户所有。
+CREATE TABLE... PARTITION BY命令用于创建带有一个或多个分区的表，其中每个分区可能有一个或一个以上的子分区。对于定义的分区数量没有上限， 但如果您要包括PARTITION BY子句，则必须至少指定一个分区规则。产生的表由创建这个表的用户所有。
 
-使用PARTITION BY LIST子句在指定列中输入的值的基础上对表进行分区。每个分区规则必须至少指定一个文本值，但对于我们可能要指定的值的数量则没有上限。包括一个用于指定DEFAULT匹配值的规则将任何不符合的记录导入到指定的分区中。
+使用PARTITION BY LIST子句在指定列中输入的值的基础上对表进行分区。每个分区规则必须至少指定一个文本值，但对于您可能要指定的值的数量则没有上限。包括一个用于指定DEFAULT匹配值的规则将任何不符合的记录导入到指定的分区中。
 
 使用PARTITION BY RANGE子句指定边界规则来创建分区。每个分区规则必须至少包含一列有两个运算符的数据类型（例如，一个大于等于运算符和一个小于运算符）。范围边界的评估是依据LESS THAN子句进行的，且范围边界是非包容性的。2013年1月1日这个日期边界只会包括那些在2012年12月31日当天及之前的日期值。
 
-范围分区规则必须以升序方式指定。 如果INSERT命令存储的记录值超过了范围分区表的最大限制将会失败。除非分区规则中包括的边界规则指定了MAXVALUE值。如果我们没有包括MAXVALUE分区规则，那么任何超过边界规则指定的最大限制的记录都会导致错误的产生。
+范围分区规则必须以升序方式指定。 如果INSERT命令存储的记录值超过了范围分区表的最大限制将会失败。除非分区规则中包括的边界规则指定了MAXVALUE值。如果您没有包括MAXVALUE分区规则，那么任何超过边界规则指定的最大限制的记录都会导致错误的产生。
 
-使用关键字TABLESPACE指定分区或子分区要所属的表空间名称。如果我们没有指定表空间， 那么分区或子分区则会所属于缺省表空间。
+使用关键字TABLESPACE指定分区或子分区要所属的表空间名称。如果您没有指定表空间， 那么分区或子分区则会所属于缺省表空间。
 
-如果我们使用CREATE TABLE语法在分区表上创建索引，那么这个索引也会同样创建于每个分区或子分区中。
+如果您使用CREATE TABLE语法在分区表上创建索引，那么这个索引也会同样创建于每个分区或子分区中。
 
 如果表定义包括SUBPARTITION BY子句， 那么这个表中的每个分区都会有至少一个子分区。每个子分区可能是明确定义的或是系统定义的。
 
@@ -88,7 +90,7 @@ CREATE TABLE... PARTITION BY命令用于创建带有一个或多个分区的表�
 -   如果SUBPARTITION BY子句指定了LIST， 那么服务器会创建一个DEFAULT子分区。
 -   如果SUBPARTITION BY子句指定了RANGE，那么服务器会创建一个MAXVALUE子分区。
 
-服务器所产生的子分区名称是分区表名称与一个唯一标识符的结合。我们可以查询表ALL\_TAB\_SUBPARTITIONS来检查完整的子分区名称列表。
+服务器所产生的子分区名称是分区表名称与一个唯一标识符的结合。您可以查询表ALL\_TAB\_SUBPARTITIONS来检查完整的子分区名称列表。
 
 ## 参数 {#section_xur_rwg_ezv .section}
 
@@ -101,16 +103,16 @@ CREATE TABLE... PARTITION BY命令用于创建带有一个或多个分区的表�
 |column|分区规则所基于的列名称。 每条记录都将存储在一个符合于指定列值的分区中。|
 |\(value\[, value\]...\)| 用`value`来指定一个引用的文本值（或以逗号分隔的文本值列表）将表项目划分为不同的分区。每个分区规则必须至少指定一个值，但在规则中对于指定的值的数量没有上限要求。`Value`可能为`null`、`default` \(如果指定了一个`list`分区的话\) 或`maxvalue` \(如果指定了一个`range` 分区的话\)。
 
- 当给列表分区表指定规则时，要在最后的分区中包括关键字`default`来把任何不匹配的记录导入到指定分区中。如果我们没有使用一个包括`default`值的规则，那么任何`insert`语句试图添加一条与（至少一个分区的）指定规则不匹配的记录都会失败，并返回错误。
+ 当给列表分区表指定规则时，要在最后的分区中包括关键字`default`来把任何不匹配的记录导入到指定分区中。如果您没有使用一个包括`default`值的规则，那么任何`insert`语句试图添加一条与（至少一个分区的）指定规则不匹配的记录都会失败，并返回错误。
 
- 当给列表分区表指定规则时，在最后的分区规则中包括关键字`maxvalue`来把所有未分类的记录导入到指定分区中。如果我们包括`maxvalue`分区，那么在分区键大于指定最高值的情况下，`insert`语句试图添加记录的操作将会失败，并返回错误。
+ 当给列表分区表指定规则时，在最后的分区规则中包括关键字`maxvalue`来把所有未分类的记录导入到指定分区中。如果包括`maxvalue`分区，那么在分区键大于指定最高值的情况下，`insert`语句试图添加记录的操作将会失败，并返回错误。
 
  |
 |tablespace name|分区或子分区所属的表空间名称。|
 
 ## PARTITION BY LIST示例 {#section_y46_g01_6mw .section}
 
-下列示例使用了PARTITION BY LIST子句创建了分区表\(sales\)。表sales在三个分区\(europe、 asia 和 americas\)中存储信息：
+下列示例使用了PARTITION BY LIST子句创建了分区表（sales）。表sales在三个分区（europe、 asia 和 americas）中存储信息：
 
 ``` {#codeblock_sl4_d7a_eea}
 CREATE TABLE sales
@@ -153,7 +155,7 @@ INSERT INTO sales VALUES (10, '9519a', 'FRANCE', '18-Aug-2012', '650000');
 
 ## PARTITION BY RANGE示例 {#section_w1m_8jk_vi9 .section}
 
-下列示例使用了PARTITION BY RANGE子句创建了分区表\(sales\)。表sales在四个分区\(q1\_2012、 q2\_2012、 q3\_2012 和 q4\_2012\)中存储信息。
+下列示例使用了PARTITION BY RANGE子句创建了分区表（sales）。表sales在四个分区（q1\_2012、 q2\_2012、 q3\_2012 和 q4\_2012）中存储信息。
 
 ``` {#codeblock_p85_hnl_z7c}
 CREATE TABLE sales
@@ -203,7 +205,7 @@ INSERT INTO sales VALUES (10, '9519a', 'FRANCE', '18-Aug-2012', '650000');
 
 ## PARTITION BY RANGE, SUBPARTITION BY LIST示例 {#section_5pm_wbm_dte .section}
 
-下列示例创建的分区表\(sales\)首先是通过事务日期进行分区。然后使用country列的值对范围分区\(q1\_2012、 q2\_2012、 q3\_2012 和 q4\_2012\)进行了列表子分区的划分。
+下列示例创建的分区表（sales）首先是通过事务日期进行分区。然后使用country列的值对范围分区（q1\_2012、 q2\_2012、 q3\_2012 和 q4\_2012）进行了列表子分区的划分。
 
 ``` {#codeblock_d1q_63q_y77}
 CREATE TABLE sales
@@ -252,20 +254,20 @@ PARTITION BY RANGE(date)
 
 ``` {#codeblock_vd4_3cj_chd}
 acctg=# SELECT subpartition_name, high_value, partition_name FROM ALL_TAB_SUBPARTITI0NS;
-subpartition_name | high_value | partition_name 	+	+	
-q4_asia	| 'INDIA', 'PAKISTAN' | q4_2012
-q4_europe	| 'FRANCE', 'ITALY' | q4_2012
+subpartition_name | high_value | partition_name     +    +    
+q4_asia    | 'INDIA', 'PAKISTAN' | q4_2012
+q4_europe    | 'FRANCE', 'ITALY' | q4_2012
 SUBPARTITION q4_ SUBPARTITION q4_ SUBPARTITION q4_
-q4_americas	| 'US', 'CANADA'	| q4_2012 
-q3_americas	| 'US', 'CANADA'	| q3_2012 
-q3_asia		| 'INDIA', 		| q3_2012 
-q3_europe	| 'PAKISTAN' 		| q3_2012
-q2_americas	| 'FRANCE', 'ITALY'	| q2_2012
-q2_asia		| 'US', 'CANADA'	| q2_2012
-q2_europe	| 'INDIA','PAKISTAN' 	| q2_2012
-q1_americas	| 'FRANCE', 'ITALY'	| q1_2012
-q1_asia		| 'US', 'CANADA' 	| q1_2012
-q1_europe	| 'INDIA', 'PAKISTAN' 	| q1_2012
+q4_americas    | 'US', 'CANADA'    | q4_2012 
+q3_americas    | 'US', 'CANADA'    | q3_2012 
+q3_asia        | 'INDIA',         | q3_2012 
+q3_europe    | 'PAKISTAN'         | q3_2012
+q2_americas    | 'FRANCE', 'ITALY'    | q2_2012
+q2_asia        | 'US', 'CANADA'    | q2_2012
+q2_europe    | 'INDIA','PAKISTAN'     | q2_2012
+q1_americas    | 'FRANCE', 'ITALY'    | q1_2012
+q1_asia        | 'US', 'CANADA'     | q1_2012
+q1_europe    | 'INDIA', 'PAKISTAN'     | q1_2012
 12 rows)
 ```
 
