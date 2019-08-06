@@ -23,10 +23,16 @@
 -   Prepaid：预付费（包年包月）。
 
  |
-|CreationOption|String|否|创建方式，取值： -   Normal：创建一个全新的POLARDB集群；
--   CloneFromPolarDB：从现有POLARDB集群克隆数据到新的POLARDB集群；
--   CloneFromRDS：从现有RDS实例克隆数据到新的POLARDB集群；
--   MigrationFromRDS：从现有RDS实例迁移数据到新的POLARDB集群。创建的POLARDB集群是只读模式，且默认开启Binlog。
+|CreationOption|String|否|创建方式，取值： -   Normal：创建一个全新的POLARDB集群，控制台操作请参见如下文档：
+    -   [创建POLARDB for MySQL数据库集群](../../../../cn.zh-CN/POLARDB for MySQL快速入门/创建POLARDB for MySQL数据库集群.md#)
+    -   [创建POLARDB for PostgreSQL数据库集群](../../../../cn.zh-CN/POLARDB for PostgreSQL快速入门/创建POLARDB for PostgreSQL数据库集群.md#)
+    -   [创建POLARDB for Oracle数据库集群](../../../../cn.zh-CN/POLARDB for Oracle快速入门/创建POLARDB for Oracle数据库集群.md#)
+-   CloneFromPolarDB：从现有POLARDB集群克隆数据到新的POLARDB集群，控制台操作请参见如下文档：
+    -   [恢复POLARDB for MySQL数据](../../../../cn.zh-CN/POLARDB for MySQL用户指南/备份与恢复/恢复数据.md#)
+    -   [恢复POLARDB for PostgreSQL数据](../../../../cn.zh-CN/POLARDB for PostgreSQL用户指南/备份与恢复/恢复数据.md#)
+    -   [恢复POLARDB for Oracle数据](../../../../cn.zh-CN/POLARDB for Oracle用户指南/备份与恢复/恢复数据.md#)
+-   CloneFromRDS：从现有RDS实例克隆数据到新的POLARDB集群，控制台操作请参见[一键克隆RDS for MySQL到POLARDB for MySQL](../../../../cn.zh-CN/数据迁移__同步/POLARDB for MySQL/数据迁移/一键克隆RDS for MySQL到POLARDB for MySQL.md#)；
+-   MigrationFromRDS：从现有RDS实例迁移数据到新的POLARDB集群。创建的POLARDB集群是只读模式，且默认开启Binlog。控制台操作请参见[一键升级RDS for MySQL到POLARDB for MySQL](../../../../cn.zh-CN/数据迁移__同步/POLARDB for MySQL/数据迁移/一键升级RDS for MySQL到POLARDB for MySQL.md#)。
 
  默认为Normal。
 
