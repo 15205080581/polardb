@@ -30,7 +30,7 @@
 
  默认为Normal。
 
- **说明：** **DBType**=**MySQL**且**DBVersion****=5.6**时，本参数有意义。
+ **说明：** **DBType**=**MySQL**且**DBVersion****=5.6**时，本参数取值可以为**CloneFromRDS**或**MigrationFromRDS**。
 
  |
 |SourceResourceId|String|否|源RDS实例ID或源POLARDB集群ID。 **说明：** 
