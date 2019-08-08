@@ -25,7 +25,7 @@ POLARDB在通过RAM进行授权时，资源的描述方式如下：
 |**$regionid**|地域ID，可以用代替。|
 |**$accountid**|云账号的数字ID，可以用代替。|
 
-**说明：** POLARDB暂不支持实例级别的授权，即不支持`acs:polardb:*:*:dbcluster/pc-xxxxxxx`。
+**说明：** POLARDB仅支持针对账号下所有集群授权，不支持集群级别的授权，即不支持`acs:polardb:*:*:dbcluster/pc-xxxxxxx`。
 
 **示例**
 
