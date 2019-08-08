@@ -2,11 +2,13 @@
 
 POLARDB支持从RDS for MySQL一键克隆数据到新的POLARDB for MySQL集群。
 
--   克隆只能在相同地域内进行。
 -   源RDS实例版本为RDS for MySQL 5.6高可用版。
 -   源RDS实例未开启[TDE](../../../../cn.zh-CN/RDS for MySQL 用户指南/数据安全性/设置透明数据加密.md#)和[SSL](../../../../cn.zh-CN/RDS for MySQL 用户指南/数据安全性/设置 SSL 加密.md#)。
 -   源RDS实例的表存储引擎为InnoDB。
--   如果RDS处于高安全模式（数据库代理模式），需要创建有高权限账号，或者切换到高性能模式，才能进行一键克隆。
+-   如果RDS处于高安全模式（数据库代理模式），需要创建有高权限账号（请参见[创建高权限账号](../../../../cn.zh-CN/RDS for MySQL 快速入门/初始化配置/创建账号和数据库.md#section_wkq_j35_q2b)），或者切换到高性能模式（参见[【重要】RDS网络链路升级说明](../../../../cn.zh-CN/云数据库RDS简介/【重要】RDS网络链路升级说明.md#)），才能进行一键克隆。
+
+    ![查看数据库模式](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/505489/156524253854653_zh-CN.png)
+
 
 POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下：
 
