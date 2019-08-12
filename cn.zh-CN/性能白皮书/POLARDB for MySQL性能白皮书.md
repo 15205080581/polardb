@@ -1,4 +1,4 @@
-# POLARDB for MySQL性能白皮书 {#concept_fq3_grq_tdb .concept}
+# POLARDB for MySQL性能白皮书 {#task_1580301 .task}
 
 本文档介绍如何使用Sysbench 0.5测试POLARDB for MySQL集群的最大性能。
 
@@ -7,22 +7,21 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
 ## 准备工作 {#section_ocn_nrq_tdb .section}
 
 -   三台ECS实例：
-
--   每台有32个vCPU，例如规格ecs.sn1ne.8xlarge。
--   ECS实例与POLARDB for MySQL集群位于同一个地域的同一个可用区。
--   已设置ECS实例的账号密码。
--   操作系统为CentOS 7.4 64位。
+    -   每台有32个vCPU，例如规格ecs.sn1ne.8xlarge。
+    -   ECS实例与POLARDB for MySQL集群位于同一个地域的同一个可用区。
+    -   已设置ECS实例的账号密码。
+    -   操作系统为CentOS 7.4 64位。
 -   一个POLARDB for MySQL集群：
 
--   其中包含一个主实例和一个只读实例。（测试多只读实例时，需要多个只读实例。）
--   已设置集群的账号和密码。
--   已在白名单中添加ECS实例的内网IP地址。
-**说明：** 2核4GB的集群为入门级，用于测试、体验和极小负载的场景，高负载的生产环境不建议使用。生产环境推荐使用8核32GB或以上规格的集群。
+    -   其中包含一个主实例和一个只读实例。（测试多只读实例时，需要多个只读实例。）
+    -   已设置集群的账号和密码。
+    -   已在白名单中添加ECS实例的内网IP地址。
+    **说明：** 2核4GB的集群为入门级，用于测试、体验和极小负载的场景，高负载的生产环境不建议使用。生产环境推荐使用8核32GB或以上规格的集群。
 
 
 ## 安装测试工具 {#section_w3b_lrq_tdb .section}
 
-1.  在ECS中执行如下命令安装sysbench 0.5。
+1.  在ECS中执行如下命令安装sysbench 0.5。 
 
     `yum install gcc gcc-c++ autoconf automake make libtool bzr mysql-devel git mysql`
 
@@ -40,7 +39,7 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
 
     `make install`
 
-2.  执行如下命令配置Sysbench client，使内核可以使用所有的CPU核处理数据包（默认设置为使用2个核），同时减少CPU核之间的上下文切换。
+2.  执行如下命令配置Sysbench client，使内核可以使用所有的CPU核处理数据包（默认设置为使用2个核），同时减少CPU核之间的上下文切换。 
 
     `sudo sh -c 'for x in /sys/class/net/eth0/queues/rx-*; do echo ffffffff>$x/rps_cpus; done'`
 
@@ -55,38 +54,37 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
 
 ## 测试方法 {#section_e3b_zxd_l2b .section}
 
-1.  获取POLARDB for MySQL集群的主地址和端口。
+1.  获取POLARDB for MySQL集群的主地址和端口。 
     1.  登录[POLARDB控制台](https://polardb.console.aliyun.com/?spm=5176.2020520001.0.0.69864bd3ikTa1x#/instance/list?regionId=cn-beijing)，进入集群列表页面。
     2.  单击集群ID。
-    3.  在基本信息页面的访问信息中找到集群的主地址和端口，如下图所示。
+    3.  在基本信息页面的访问信息中找到集群的主地址和端口，如下图所示。![基本信息](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156559898934898_zh-CN.png)
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156047623934898_zh-CN.png)
 
-2.  在ECS上执行如下命令，以在POLARDB集群中创建数据库sbtest。
+2.  在ECS上执行如下命令，以在POLARDB集群中创建数据库sbtest。 
 
     `mysql -h XXX -P XXX -u XXX -p XXX -e 'create database sbtest'`
 
     **说明：** 请将本命令和后续步骤的命令中的XXX替换为POLARDB集群的主地址、端口号、用户名和密码。
 
-3.  准备测试数据：用Sysbench在数据库上创建表并插入数据。
+3.  准备测试数据：用Sysbench在数据库上创建表并插入数据。 
 
-    ``` {#codeblock_002_1jc_7tx}
+    ``` {#codeblock_zfy_40z_mcw}
     sysbench --test=sysbench/tests/db/oltp.lua --mysql-host=XXX --mysql-port=XXX --mysql-user=XXX --mysql-password=XXX --mysql-db=sbtest --mysql-table-engine=innodb --oltp-table-size=25000 --oltp-tables-count=250 --db-driver=mysql prepare
     ```
 
-4.  使用sysbench测试数据库的读性能，将持续10分钟。
+4.  使用sysbench测试数据库的读性能，将持续10分钟。 
 
-    ``` {#codeblock_2lh_z42_uwc}
-    sysbench --test=sysbench/tests/db/oltp.lua --mysql-host=XXX --oltp-tables-count=250 --mysql-user=XXX --mysql-password=XXX --mysql-port=XXX --db-driver=mysql --oltp-tablesize=25000 --mysql-db=sbtest --max-requests=0 --oltp_simple_ranges=0 --oltp-distinct-ranges=0 --oltp-sum-ranges=0 --oltp-order-ranges=0 -max-time=600 --oltp-read-only=on --num-threads=500 run
+    ``` {#codeblock_cj3_d87_b41}
+    sysbench --test=sysbench/tests/db/oltp.lua --mysql-host=XXX --oltp-tables-count=250 --mysql-user=XXX --mysql-password=XXX --mysql-port=XXX --db-driver=mysql --oltp-tablesize=25000 --mysql-db=sbtest --max-requests=0 --oltp_simple_ranges=0 --oltp-distinct-ranges=0 --oltp-sum-ranges=0 --oltp-order-ranges=0 --max-time=600 --oltp-read-only=on --num-threads=500 run
     ```
 
-5.  使用sysbench测试数据库的写性能，将持续10分钟。
+5.  使用sysbench测试数据库的写性能，将持续10分钟。 
 
-    ``` {#codeblock_2ol_de0_17b}
+    ``` {#codeblock_g7j_0j3_ihh}
     sysbench --test=sysbench/tests/db/oltp.lua --mysql-host=XXX --oltp-tables-count=250 --mysql-user=XXX --mysql-password=XXX --mysql-port=XXX --db-driver=mysql --oltp-tablesize=25000 --mysql-db=sbtest --max-requests=0 --max-time=600 --oltp_simple_ranges=0 --oltp-distinct-ranges=0 --oltp-sum-ranges=0 --oltp-order-ranges=0 --oltp-point-selects=0 --num-threads=128 --randtype=uniform run
     ```
 
-6.  在以上测试的过程中，您可以另外打开一个会话窗口，连接该ECS实例，并使用htop查看sysbench client的CPU使用率是否正常。
+6.  在以上测试的过程中，您可以另外打开一个会话窗口，连接该ECS实例，并使用htop查看sysbench client的CPU使用率是否正常。 
 
     `yum install htop`
 
@@ -96,12 +94,10 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
 
     -   执行htop后，可以按Q键退出。
     -   关于htop详解，请参见[Htop官网](http://hisham.hm/htop/)。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15604762402111_zh-CN.png)
+    ![CPU使用率](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15655989892111_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15604762402112_zh-CN.png)
+    ![CPU使用率](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15655989902112_zh-CN.png)
 
-
-## 测试结果 {#section_lfs_dyd_l2b .section}
 
 使用三台ECS进行数据库性能测试，从log中取测试结果中的QPS和TPS，如下图所示。
 
@@ -109,19 +105,19 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
 
 单台ECS的log结果如下：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156047624011337_zh-CN.png)
+![单台ECS的log结果](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156559899011337_zh-CN.png)
 
 三台ECS实例通过集群连接串连接一个POLARDB for MySQL集群时，总QPS如下。
 
 **说明：** 集群连接串总是连接到主实例，所以以下QPS为主实例的性能。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156047624011333_zh-CN.png)
+![QPS](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156559899011333_zh-CN.png)
 
 三台ECS实例通过集群连接串连接一个POLARDB for MySQL集群时，总TPS如下。
 
 **说明：** 集群连接串总是连接到主实例，所以以下TPS为主实例的性能。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156047624111334_zh-CN.png)
+![TPS](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156559899011334_zh-CN.png)
 
 五台ECS实例通过只读实例连接串连接到一个POLARDB for MySQL集群中各个只读实例时，聚合QPS如下。
 
@@ -130,5 +126,5 @@ SysBench是一个跨平台且支持多线程的模块化基准测试工具，用
 -   该集群中包含五个只读实例，每个实例的规格为4C 32G。
 -   每台ECS连接到一个只读实例。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156047624111338_zh-CN.png)
+![聚合QPS](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3033/156559899111338_zh-CN.png)
 
