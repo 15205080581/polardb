@@ -24,7 +24,7 @@
  默认为Month。
 
  |
-|Duration|String|否|设置实例自动续费时长： -   当PeriodUnit为Month时，取值为\[1,2,3,6,12\]；
+|Duration|String|否|设置集群自动续费时长： -   当PeriodUnit为Month时，取值为\[1,2,3,6,12\]；
 -   当PeriodUnit为Year时，取值为\[1-3\]。
 
  默认为1。
@@ -39,7 +39,7 @@
 
 ## 请求示例 {#section_snj_c3s_xfb .section}
 
-```
+``` {#codeblock_d61_8jy_8w5}
 https://polardb.aliyuncs.com/?Action=ModifyAutoRenewAttribute
 &DBClusterId=pc-xxxxxxxxxxxxxxxx
 &RegionId=cn-hangzhou
@@ -50,17 +50,17 @@ https://polardb.aliyuncs.com/?Action=ModifyAutoRenewAttribute
 
 XML格式
 
-```
+``` {#codeblock_yvz_xav_wi4}
 <ModifyAutoRenewAttributeResponse>  
-	<RequestId>4CE6DF97-AEA4-484F-906F-C407EE3770EB</RequestId>
+    <RequestId>4CE6DF97-AEA4-484F-906F-C407EE3770EB</RequestId>
 </ModifyAutoRenewAttributeResponse>
 ```
 
 JSON格式
 
-```
+``` {#codeblock_0kn_qly_81g}
 {
-	"RequestId": "4CE6DF97-AEA4-484F-906F-C407EE3770EB"
+    "RequestId": "4CE6DF97-AEA4-484F-906F-C407EE3770EB"
 }
 ```
 
