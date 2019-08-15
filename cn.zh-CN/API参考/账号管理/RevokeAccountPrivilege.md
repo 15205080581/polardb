@@ -16,7 +16,7 @@
 |Action|String|是|系统规定参数，取值：RevokeAccountPrivilege。|
 |DBClusterId|String|是|集群ID。|
 |AccountName|String|是|账号名。|
-|DBName|String|是|数据库名。|
+|DBName|String|是|数据库名。多个数据库用英文逗号（,）分隔。|
 
 ## 返回参数 {#section_cf4_phs_xfb .section}
 
@@ -26,7 +26,7 @@
 
 ## 请求示例 {#section_snj_c3s_xfb .section}
 
-```
+``` {#codeblock_s01_rvv_8tj}
 https://polardb.aliyuncs.com/?Action=RevokeAccountPrivilege
 &DBClusterId=pc-xxxxxxxxxxxxxxx
 &AccountName=testacc
@@ -38,7 +38,7 @@ https://polardb.aliyuncs.com/?Action=RevokeAccountPrivilege
 
 XML格式
 
-```
+``` {#codeblock_0be_gif_t7c}
 <RevokeAccountPrivilegeResponse>  
      <RequestId>2FED790E-FB61-4721-8C1C-07C627FA5A19</RequestId>
 </RevokeAccountPrivilegeResponse>
@@ -46,7 +46,7 @@ XML格式
 
 JSON格式
 
-```
+``` {#codeblock_gm1_rtx_2ce}
 {
    "RequestId": "2FED790E-FB61-4721-8C1C-07C627FA5A19"
 }
