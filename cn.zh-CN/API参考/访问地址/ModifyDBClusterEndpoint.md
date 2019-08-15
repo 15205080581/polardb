@@ -18,11 +18,11 @@
 |Nodes|String|否|加入本地址用于处理读请求的节点，用“,”分隔，至少两个。 默认为全部节点。
 
  |
-|AutoAddNewNodes| | |新节点是否自动加入本地址，取值： -   Enable；
+|AutoAddNewNodes|String|否|新节点是否自动加入本地址，取值： -   Enable；
 -   Disable。
 
  默认为Disable。|
-|EndpointConfig| | |一致性级别，输入格式为`{"ConsistLevel": "<级别>"}`。取值： -   0：最终一致性；
+|EndpointConfig|String|否|一致性级别，输入格式为`{"ConsistLevel": "<级别>"}`。取值： -   0：最终一致性；
 -   1：会话一致性。
 
  示例：`{"ConsistLevel": "0"}`
@@ -40,7 +40,7 @@
 
 ## 请求示例 {#section_lx1_c25_xfb .section}
 
-```
+``` {#codeblock_ynh_41x_2y5}
 https://polardb.aliyuncs.com/?Action=ModifyDBClusterEndpoint
 &DBClusterId=pc-xxxxxxxxxxxxxxxxxx
 &EndpointId=pe-xxxxxxxxxxxxxxxxxx
@@ -51,7 +51,7 @@ https://polardb.aliyuncs.com/?Action=ModifyDBClusterEndpoint
 
 XML格式
 
-```
+``` {#codeblock_3jc_4mw_7o5}
 <ModifyDBClusterEndpointResponse>  
     <RequestId>CD3FA5F3-FAF3-44CA-AFFF-BAF869666D6B</RequestId>
 </ModifyDBClusterEndpointResponse>
@@ -59,7 +59,7 @@ XML格式
 
 JSON格式
 
-```
+``` {#codeblock_mq9_acn_y3h}
 {
     "RequestId": "CD3FA5F3-FAF3-44CA-AFFF-BAF869666D6B"
 }
