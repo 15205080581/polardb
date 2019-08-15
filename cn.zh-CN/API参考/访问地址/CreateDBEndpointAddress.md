@@ -1,6 +1,6 @@
 # CreateDBEndpointAddress {#reference_rpf_ndz_xfb .reference}
 
-该接口用于创建POLARDB集群的公网地址。
+该接口用于创建POLARDB集群的公网地址，包括主地址、默认集群地址和自定义集群地址的公网地址。
 
 **说明：** POLARDB for PostgreSQL/Oracle暂不支持公网地址。
 
