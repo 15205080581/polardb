@@ -1,6 +1,6 @@
 # DeleteDBEndpointAddress {#reference_wzw_12z_xfb .reference}
 
-该接口用于释放POLARDB集群地址（除了自定义集群地址的私网地址）。
+该接口用于释放POLARDB集群公网地址。
 
 **说明：** 释放POLARDB自定义集群地址请参见[DeleteDBClusterEndpoint](cn.zh-CN/API参考/访问地址/DeleteDBClusterEndpoint.md#)。
 
@@ -11,10 +11,7 @@
 |Action|String|是|系统规定参数，取值：DeleteDBEndpointAddress。|
 |DBClusterId|String|是|集群ID。|
 |EndpointId|String|是|集群地址ID。例如pe-xxxxxxxx。|
-|NetType|String|是|IP 网络类型： -   Public（公网）；
--   Private（私网）。
-
- |
+|NetType|String|是|IP 网络类型，取值：Private。|
 
 ## 返回参数 {#section_cf4_phs_xfb .section}
 
