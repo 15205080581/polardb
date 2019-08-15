@@ -19,7 +19,7 @@
 |名称|类型|描述|
 |:-|:-|:-|
 |<公共返回参数\>|-|详见[公共返回参数](cn.zh-CN/API参考/ 使用API/公共参数.md#)。|
-|Databases|List<Database\>|账号组成的集合。|
+|Databases|List<Database\>|数据库组成的集合。|
 
 ## Database参数 {#section_xt3_wdt_xfb .section}
 
@@ -54,7 +54,7 @@
 
 ## 请求示例 {#section_snj_c3s_xfb .section}
 
-```
+``` {#codeblock_pga_0wb_m8b}
 https://polardb.aliyuncs.com/?Action=DescribeDatabases
 &DBClusterId=pc-xxxxxxxxxxxxxxx
 &<[公共请求参数]>
@@ -64,7 +64,7 @@ https://polardb.aliyuncs.com/?Action=DescribeDatabases
 
 XML格式
 
-```
+``` {#codeblock_qtk_cqi_fui}
 <?xml version='1.0' encoding='UTF-8'?>
 <DescribeDatabasesResponse>
     <Databases>
@@ -90,7 +90,7 @@ XML格式
 
 JSON格式
 
-```
+``` {#codeblock_xdm_0cz_gll}
 {
   "code": "200",
   "data": {
