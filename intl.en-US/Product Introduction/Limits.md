@@ -25,5 +25,5 @@ Note:
 
 -   **The length of table name**: The table name \(or file name\) in any database instance cannot exceed 63 English letters in length.
 -   You are unable to set the serializable isolation level for your instances.
--   You cannot manage accounts in the console because your account is an advanced user by default. The permissions of POLARDB accounts are similar to those of RDS accounts for MySQL as advanced users. For more information about permissions, see [Create an account](https://help.aliyun.com/document_detail/26186.html) in ApsaraDB for RDS. 
+-   You cannot manage accounts in the console because your account is an advanced user by default. The permissions of POLARDB accounts are similar to those of RDS accounts for MySQL as advanced users.
 
