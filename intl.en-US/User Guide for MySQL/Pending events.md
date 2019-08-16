@@ -25,7 +25,7 @@ There are unprocessed O&M events.
 
     **Note:** Different notices are displayed on the tabs for different types of events.
 
-    ![Notification](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/222591/156593886747700_en-US.png)
+    ![Notification](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/222591/156594004147700_en-US.png)
 
 4.  View event details in the event list. To change the switch time, select an event, and then click **Change Switch Time**. In the dialog box that appears, set the switch time, and then click **OK**.**** 
 
