@@ -33,17 +33,17 @@ The billing methods for adding nodes are as follows:
 3.  Go to the Add/Remove Node page by using either of the following methods:
     -   Find the target cluster and click **Add/Remove Node** in the **Actions** column.
 
-        ![](images/34661_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/156595003234661_en-US.png)
 
     -   Find the target cluster, click the cluster ID, and then click **Add/Remove Node** in the Node Information section.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/156594059513618_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/156595003313618_en-US.png)
 
 4.  Select **Add Node** and click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/156594059552240_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/156595003352240_en-US.png)
 
-5.  Click ![](images/3597_en-US.jpg) to add a read-only node. Read and agree to the service agreement by selecting the check box, and click **Pay** to complete the payment.
+5.  Click ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/15659500333597_en-US.jpg) to add a read-only node. Read and agree to the service agreement by selecting the check box, and click **Pay** to complete the payment.
 
 ## Remove a read-only node {#section_fkk_13d_lfb .section}
 
@@ -52,17 +52,17 @@ The billing methods for adding nodes are as follows:
 3.  Go to the Add/Remove Node page by using either of the following methods:
     -   Find the target cluster and click **Add/Remove Node** in the **Actions** column.
 
-        ![](images/34661_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/156595003234661_en-US.png)
 
     -   Find the target cluster, click the cluster ID, and then click **Add/Remove Node** in the Node Information section.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/156594059513618_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/156595003313618_en-US.png)
 
 4.  Select **Remove Node** and click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/156594059652249_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/156595003352249_en-US.png)
 
-5.  Click ![](images/3601_en-US.png) next to the node that you want to remove. In the dialog box that appears, click **OK**.
+5.  Click ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13773/15659500343601_en-US.png) next to the node that you want to remove. In the dialog box that appears, click **OK**.
 
     **Note:** You must keep at least one read-only node in the cluster to ensure high availability.
 
