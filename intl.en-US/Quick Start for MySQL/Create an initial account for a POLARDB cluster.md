@@ -16,8 +16,6 @@ The initial account is an advanced user that can meet customization and sophisti
 
 4.  In the **Access Information** section, click **Apply for an Account**.
 
-    ![](images/2081_en-US.png)
-
 5.  In the dialog box that appears, enter usernames and passwords, and click **OK**.
 
     The username cannot exceed 16 characters in length, and cannot be system reserved usernames, such as root and admin.
