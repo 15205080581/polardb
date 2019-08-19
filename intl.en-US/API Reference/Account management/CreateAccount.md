@@ -27,9 +27,8 @@ Before you call this operation, ensure that the following requirements are met:
  |
 |AccountType|String|No|The type of the database account. Valid values: -   Normal: standard account
 -   Super: privileged account
--   Default value: Super.
 
- For more information about how to create a database account, click [here](../../../../intl.en-US/.md#).
+ Default value: Super. For more information about how to create a database account, click [here](../../../../intl.en-US/Quick Start for MySQL/Create an initial account for a POLARDB cluster.md#).
 
  **Note:** 
 
@@ -42,7 +41,8 @@ Before you call this operation, ensure that the following requirements are met:
 -   ReadOnly: has the read-only permission on the database.
 -   DMLOnly: runs only data manipulation language \(DML\) statements.
 -   DDLOnly: runs only data definition language \(DDL\) statements.
--   Default value: ReadWrite.
+
+ Default value: ReadWrite.
 
  |
 |AccountDescription|String|No|The description of the database account. The description must comply with the following rules: -   It cannot start with http:// or https://.
