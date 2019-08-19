@@ -38,7 +38,8 @@ You can call this operation to query the connection point information of a speci
 -   ReadOnly: receives and forwards only read requests.
 
  |
-|Nodes|String| -   The nodes that were added to this connection point. Valid values: Auto, which indicates that nodes were automatically selected based on the cluster connection point type.
+|Nodes|String| -   The nodes that were added to this connection point. Valid values:
+-   Auto, which indicates that nodes were automatically selected based on the cluster connection point type.
 -   A custom list of node IDs that are separated with a comma \(,\).
 
  |
@@ -64,7 +65,7 @@ You can call this operation to query the connection point information of a speci
 
 ## Sample request {#section_snj_c3s_xfb .section}
 
-```
+``` {#codeblock_2wl_25j_21v}
 https://polardb.aliyuncs.com/?Action=DescribeDBClusterEndpoints
 &DBClusterId=pc-xxxxxxxxxx
 &<[Common request parameters]>
@@ -74,7 +75,7 @@ https://polardb.aliyuncs.com/?Action=DescribeDBClusterEndpoints
 
 XML format
 
-```
+``` {#codeblock_isz_lwt_2za}
 <DescribeDBClusterEndpointsResponse>  
     <Items>
         <EndpointType>Primary</EndpointType>
@@ -128,7 +129,7 @@ XML format
 
 JSON format
 
-```
+``` {#codeblock_4lv_nk1_e1q}
 {
     "Items": [
         {
