@@ -73,7 +73,8 @@ You can call this operation to create an ApsaraDB for POLARDB cluster.
 -   Month: subscription on a monthly basis
 
  |
-|UsedTime|String|No| -   The subscription period of the cluster. The valid values depend on the value specified in the Period parameter. Valid values: Month: \[1, 9\]
+|UsedTime|String|No| -   The subscription period of the cluster. The valid values depend on the value specified in the Period parameter. Valid values:
+-   Month: \[1, 9\]
 -   Year: \[1, 3\]
 
  |
