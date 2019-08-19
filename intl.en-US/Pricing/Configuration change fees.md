@@ -26,5 +26,5 @@ Pay-as-you-go clusters are billed by hour. After the configuration of a pay-as-y
 
 ## Related documents {#section_pda_8zp_zmp .section}
 
-[../../../../dita-oss-bucket/SP\_61/DNPOLA1892560/EN-US\_TP\_13772\_V13.md\#](../../../../intl.en-US/.md#)
+[Change specifications](../../../../intl.en-US/User Guide for MySQL/Cluster and instance management/Change specifications.md#)
 
