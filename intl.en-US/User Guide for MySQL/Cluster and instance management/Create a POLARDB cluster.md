@@ -55,9 +55,7 @@ You must have registered an Alibaba Cloud account or created a Resource Access M
     -   If the default VPC and VSwitch cannot satisfy your requirements, you can create your own VPC and VSwitch.
  |
     |Instance configuration|Database engine type|You do not need to specify.|
-    |Instance specifications|     -   Select a specification for your database instance according to your needs. All POLARDB instances own exclusive resources.
-    -   \[DO NOT TRANSLATE\]
- |
+    |Instance specifications|Select a specification for your database instance according to your needs. All POLARDB instances own exclusive resources.|
     |Read-only instances|     -   You do not need to specify. By default, the system will create a read-only instance with the same specifications as the primary instance.
     -   If a primary instance fails, POLARDB will automatically promote the read-only instance as a primary instance, and generate a new read-only instance.
     -   For more information about read-only instances, see [Architecture](https://help.aliyun.com/document_detail/58766.html).
