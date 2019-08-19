@@ -7,9 +7,9 @@ If you want to share the resources under your Alibaba Cloud account with other u
 ## Create a RAM user {#section_m66_z7t_pfi .section}
 
 1.  You can use an Alibaba Cloud account or a RAM user to create one or more RAM users. First, log on to the RAM console.
-    -   Click [here](https://account.aliyun.com/login/login.htm) to log on with your Alibaba Cloud account.
+    -   Click [here](https://account.alibabacloud.com/login/login.htm) to log on with your Alibaba Cloud account.
 
-    -   Click [here](https://signin.aliyun.com/login.htm) to log on with your RAM user.
+    -   Click [here](https://signin-intl.aliyun.com/login.htm) to log on with your RAM user.
 
 **Note:** Enter the RAM username in the format of `RAM username@enterprise alias` on the logon page.
 
@@ -55,18 +55,18 @@ If you want to share the resources under your Alibaba Cloud account with other u
 
 You can log on as a RAM user at the following addresses:
 
--   Universal logon address: [https://signin.aliyun.com/login.htm](https://signin.aliyun.com/login.htm).
+-   Universal logon address: [https://signin-intl.aliyun.com/login.htm](https://signin-intl.aliyun.com/login.htm).
 
     If you log on at the universal logon address, you must enter the RAM username and company alias manually. The address format is `RAM username@company alias`.
 
 -   Dedicated logon address: You can view the logon address dedicated to your RAM users in the [RAM console](https://ram.console.aliyun.com).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3025/15659438626630_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3025/15662036836630_en-US.png)
 
     The system will enter your company alias automatically if you log on using this dedicated address. You only need to enter the RAM username.
 
 
 ## More actions {#section_bc2_54q_tdb .section}
 
-You can also add a RAM user to a group, assign roles to a RAM user, and authorize a user group or roles. For more information, see [RAM User Guide](https://help.aliyun.com/document_detail/28645.html).
+You can also add a RAM user to a group, assign roles to a RAM user, and authorize a user group or roles. For more information, see [RAM User Guide](https://www.alibabacloud.com/help/product/28625.htm).
 
