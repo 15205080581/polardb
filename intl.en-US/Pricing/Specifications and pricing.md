@@ -16,8 +16,7 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 |Billing item|Description|
 |------------|-----------|
 |Compute cluster \(a primary node and a read-only node\)|You can select either **subscription** or **pay-as-you-go**.|
-|Storage| -   You can select **pay-as-you-go**.
--   Or you can select subscription to purchase **a storage package**. For more information, see [Use a storage package](../intl.en-US/User Guide for MySQL/Cluster and instance management/Use a storage package.md#).
+|Storage| You can select **pay-as-you-go**.
 
  |
 |SQL explorer|SQL explorer supports **pay-as-you-go** after it is enabled. For more information, see [SQL explorer](../intl.en-US/User Guide for MySQL/SQL explorer.md#).|
