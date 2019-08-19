@@ -15,7 +15,7 @@ You can call this operation to query the IP address whitelist of a specified Aps
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
-|<Common response parameters\>| |For more information, see [Common response parameters](intl.en-US/API Reference/Call methods/Common parameters.md#).|
+|<Common response parameters\>|N/A|For more information, see [Common response parameters](intl.en-US/API Reference/Call methods/Common parameters.md#).|
 |RequestId|String|The ID of the request.|
 |Items|List<DBClusterIPArray\>|The list of IP address whitelist groups of the cluster.|
 
