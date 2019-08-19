@@ -17,7 +17,7 @@ POLARDB is a next-generation cloud-based service developed by Alibaba Cloud for 
 
 Alibaba Cloud offers a web-based and easy-to-use console where you can manage various products and services including POLARDB. In the console, you can create, access, and configure your POLARDB database.
 
-For more information about the console layout, see [Alibaba Cloud console](https://help.aliyun.com/document_detail/47605.html).
+For more information about the console layout, see [Alibaba Cloud console](https://www.alibabacloud.com/help/doc-detail/47605.htm).
 
 The logon page for the POLARADB console is [https://polardb.console.aliyun.com](https://polardb.console.aliyun.com/).
 
