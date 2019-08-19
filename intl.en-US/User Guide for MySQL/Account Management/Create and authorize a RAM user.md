@@ -61,7 +61,7 @@ You can log on as a RAM user at the following addresses:
 
 -   Dedicated logon address: You can view the logon address dedicated to your RAM users in the [RAM console](https://ram.console.aliyun.com).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3025/15662036836630_en-US.png)
+     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3025/15662047006630_en-US.png) 
 
     The system will enter your company alias automatically if you log on using this dedicated address. You only need to enter the RAM username.
 
