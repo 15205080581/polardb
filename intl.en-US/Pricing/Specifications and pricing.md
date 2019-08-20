@@ -229,7 +229,7 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 
  | USD 15,157.2/year
 
- USD 1,,486/month
+ USD 1,486/month
 
  USD 2.684/hour
 
