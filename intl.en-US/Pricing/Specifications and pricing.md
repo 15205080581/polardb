@@ -341,11 +341,8 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 
     The storage is serverless. You do not need to select the storage capacity when you create a cluster. As data increases, the storage capacity automatically extends. The storage is billed based on the data size. You can check your data size on the [details page](../intl.en-US/User Guide for MySQL/Cluster and instance management/View cluster and instance details.md#) of your cluster in the console.
 
-    |Billing methods|Mainland China|Hong Kong \(China\)|US West|Jakarta|
-    |---------------|--------------|-------------------|-------|-------|
-    |Subscription（USD/GB/month）|0.55|0.61|0.59|0.66|
-    |pay-as-you-go（USD/GB/hour）|0.00077|0.00085|0.00085|0.00085|
-
+    -   Regions in Mainland China: USD 0.00077/GB/hour, USD 0.55GB/month。
+    -   Regions outside Mainland China: USD0.00085/GB/hour，USD 0.61GB/month。
     **Note:** 
 
     -   The [maximum storage capacity](intl.en-US/Pricing/Specifications and pricing.md#table_g1y_xjg_tdb) varies with node specifications. If you want to increase the storage capacity, [upgrade the configuration of your cluster](../intl.en-US/User Guide for MySQL/Cluster and instance management/Change specifications.md).
