@@ -13,7 +13,7 @@
 已注册阿里云账号或已创建子账号。
 
 -   如要注册阿里云账号，请[点此注册](https://account.alibabacloud.com/register/intl_register.htm)。
--   如要创建子账号，请参见[../DNPOLA1892560/ZH-CN\_TP\_3025\_V13.dita\#concept\_y33\_t4q\_tdb](../DNPOLA1892560/ZH-CN_TP_3025_V13.dita#concept_y33_t4q_tdb)进行子账号的创建和授权。
+-   如要创建子账号，请参见[创建和使用子账号](../../../../intl.zh-CN/POLARDB for MySQL用户指南/账号管理/创建和使用子账号.md#)进行子账号的创建和授权。
 
 ## 操作步骤 {#section_drs_p4r_b3b .section}
 
