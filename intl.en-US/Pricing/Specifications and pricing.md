@@ -151,129 +151,129 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 
  USD 0.163/hour
 
- | USD 1509.6/year
+ | USD 1,509.6/year
 
  USD 148/month
 
  USD 0.226/hour
 
- | USD 1224/year
+ | USD 1,224/year
 
  USD 120/month
 
  USD 0.202/hour
 
  |
-    |polar.pg.x4.large| USD 1581/year
+    |polar.pg.x4.large| USD 1,581/year
 
  USD 155/month
 
  USD 0.324/hour
 
- | USD 3009/year
+ | USD 3,009/year
 
  USD 295/month
 
  USD 0.533/hour
 
- | USD 2448/year
+ | USD 2,448/year
 
  USD 240/month
 
  USD 0.434/hour
 
  |
-    |polar.pg.x4.xlarge| USD 3162/year
+    |polar.pg.x4.xlarge| USD 3,162/year
 
  USD 310/month
 
  USD 0.646/hour
 
- | USD 6007.8/year
+ | USD 6,007.8/year
 
  USD 589/month
 
  USD 1.064/hour
 
- | USD 4896/year
+ | USD 4,896/year
 
  USD 480/month
 
  USD 0.867/hour
 
  |
-    |polar.pg.x8.xlarge| USD 5059.2/year
+    |polar.pg.x8.xlarge| USD 5,059.2/year
 
  USD 496/month
 
  USD 1.033/hour
 
- | USD 7578.6/year
+ | USD 7,578.6/year
 
  USD 743/month
 
  USD 1.342/hour
 
- | USD 6324/year
+ | USD 6,324/year
 
  USD 620/month
 
  USD 1.12/hour
 
  |
-    |polar.pg.x8.2xlarge| USD 10108.2/year
+    |polar.pg.x8.2xlarge| USD 10,108.2/year
 
  USD 991/month
 
  USD 2.065/hour
 
- | USD 15157.2/year
+ | USD 15,157.2/year
 
- USD 1486/month
+ USD 1,,486/month
 
  USD 2.684/hour
 
- | USD 12637.8/year
+ | USD 12,637.8/year
 
  USD 1239/month
 
  USD 2.237/hour
 
  |
-    |polar.pg.x8.4xlarge| USD 20216.4/year
+    |polar.pg.x8.4xlarge| USD 20,216.4/year
 
- USD 1982/month
+ USD 1,982/month
 
  USD USD 4.128/hour
 
- | USD 30314.4/year
+ | USD 30,314.4/year
 
- USD 2972/month
+ USD 2,972/month
 
  USD 5.367/hour
 
- | USD 25265.4/year
+ | USD 25,265.4/year
 
- USD 2477/month
+ USD 2,477/month
 
  USD 4.472/hour
 
  |
-    |polar.pg.x8.12xlarge| USD 55579.8/year
+    |polar.pg.x8.12xlarge| USD 55,579.8/year
 
- USD 5449/month
+ USD 5,449/month
 
  USD 11.352/hour
 
- | USD 83364.6/year
+ | USD 83,364.6/year
 
- USD 8173/month
+ USD 8,173/month
 
  USD 14.757/hour
 
- | USD 69472.2/year
+ | USD 69,472.2/year
 
- USD 6811/month
+ USD 6,811/month
 
  USD 12.297/hour
 
@@ -321,13 +321,13 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 |Monthly Subscription price|Yearly Subscription price|Hourly Pay-As-You-Go price|
     |------------------|--------------|
     |--------------------------|-------------------------|--------------------------|
-    |polar.o.x4.medium|USD 161|USD 1642.2|USD 0.336|
-    |polar.o.x4.large|USD 322|USD 3284.4|USD 0.672|
-    |polar.o.x4.xlarge|USD 644|USD 6568.8|USD 1.342|
-    |polar.o.x8.xlarge|USD 830|USD 8466|USD 1.729|
-    |polar.o.x8.2xlarge|USD 1660|USD 16932|USD 3.458|
-    |polar.o.x8.4xlarge|USD 3319|USD 33853.8|USD 6.914|
-    |polar.o.x8.12xlarge|USD 9126|USD 93085.2|USD 19.013|
+    |polar.o.x4.medium|USD 161|USD 1,642.2|USD 0.336|
+    |polar.o.x4.large|USD 322|USD 3,284.4|USD 0.672|
+    |polar.o.x4.xlarge|USD 644|USD 6,568.8|USD 1.342|
+    |polar.o.x8.xlarge|USD 830|USD 8,466|USD 1.729|
+    |polar.o.x8.2xlarge|USD 1,660|USD 16,932|USD 3.458|
+    |polar.o.x8.4xlarge|USD 3,319|USD 33,853.8|USD 6.914|
+    |polar.o.x8.12xlarge|USD 9,126|USD 93,085.2|USD 19.013|
 
     **Note:** 
 
