@@ -19,7 +19,6 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 |Storage| You can select **pay-as-you-go**.
 
  |
-|SQL explorer|SQL explorer supports **pay-as-you-go** after it is enabled. For more information, see [SQL explorer](../intl.en-US/User Guide for MySQL/SQL explorer.md#).|
 |Data backup|Free for now.|
 
 ## Prices {#section_f4v_rpg_tdb .section}
