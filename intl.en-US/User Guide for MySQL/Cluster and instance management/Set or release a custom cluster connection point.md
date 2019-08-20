@@ -21,7 +21,7 @@ You can directly add custom connection points for clusters created on and after 
 3.  Find the target cluster and click the cluster ID in the **Cluster Name** column.
 4.  In the Access Information section on the Basics page, click **Create Custom Connection Point** next to **Cluster Connection Points \(Recommended\)**.
 
-    ![Add a custom cluster connection point](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/160647/156629047145027_en-US.png)
+    ![Add a custom cluster connection point](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/160647/156629325145027_en-US.png)
 
 5.  In the dialog box that appears, set parameters for creating a custom cluster connection point. The following table describes the parameters.
 
@@ -43,7 +43,7 @@ You can directly add custom connection points for clusters created on and after 
 
  |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/160647/156629047145041_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/160647/156629325245041_en-US.png)
 
 6.  Click **OK**.
 
@@ -54,7 +54,7 @@ You can directly add custom connection points for clusters created on and after 
 3.  Find the target cluster and click the cluster ID in the **Cluster Name** column.
 4.  In the Access Information section on the Basics page, click **Modify** next to a **custom connection point**.
 
-    ![Modify a custom cluster connection point](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/160647/156629047147219_en-US.png)
+    ![Modify a custom cluster connection point](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/160647/156629325247219_en-US.png)
 
 5.  In the dialog box that appears, set parameters for modifying a custom cluster connection point. The following table describes the parameters.
 
@@ -71,7 +71,7 @@ You can directly add custom connection points for clusters created on and after 
     |**Load Balancing Policy**|The scheduling policy for read requests among multiple read-only nodes when read-write splitting is enabled. The value is fixed.|
     |**Consistency Level**|     -   **Eventual Consistency**: provides the best performance.
     -   **Session Consistency**: guarantees the read consistency at the session level. In this mode, the load of the primary node is slightly increased.
- For more information, see [../../../../dita-oss-bucket/SP\_61/DNPOLA1875676/EN-US\_TP\_76678\_V1.md\#](../../../../intl.en-US/.md#). **Note:** 
+ **Note:** 
 
     -   If the read/write mode is set to Read Only, the value is fixed to **Eventual Consistency**.
     -   The modification of the consistency level immediately takes effect for all connections.
@@ -86,7 +86,7 @@ You can directly add custom connection points for clusters created on and after 
 3.  Find the target cluster and click the cluster ID in the **Cluster Name** column.
 4.  In the Access Information section on the Basics page, find the target custom connection point under **Cluster Connection Points \(Recommended\)**, and click **Delete**.
 
-    ![Release a custom cluster connection point](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/160647/156629047245049_en-US.png)
+    ![Release a custom cluster connection point](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/160647/156629325245049_en-US.png)
 
 5.  In the dialog box that appears, click **OK**.
 
