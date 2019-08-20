@@ -38,17 +38,17 @@ Price = \(Monthly subscription fee for the new specifications - Monthly subscrip
 3.  Go to the Change Configurations page by using either of the following methods:
     -   Find the target cluster and click **Change Configurations** in the **Actions** column.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13772/156594065013607_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13772/156628575313607_en-US.png)
 
     -   Find the target cluster, click the cluster ID, and then click **Change Configurations** in the Node Information section.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13772/156594065034579_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13772/156628575434579_en-US.png)
 
 4.  Select **Temporary Upgrade**, and click **OK**.
 
     **Note:** **Temporary Upgrade** is available only for subscription-based clusters.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/763549/156594065052266_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/763549/156628575452266_en-US.png)
 
 5.  Select the node specifications.
 6.  Set **Restore Point**.
@@ -58,7 +58,7 @@ Price = \(Monthly subscription fee for the new specifications - Monthly subscrip
     -   If the performance is still insufficient after the **temporary upgrade**, you can perform a maximum of one more temporary upgrade before the restore point is reached. The **restore point** that you set in this temporary upgrade cannot be earlier than the previous one.
     -   The minimum validity period for a temporary upgrade is one day. We recommend that you set the validity period to up to 14 days because the restore point cannot be changed after it is set.
     -   The restore point must be at least one day earlier than the expiration time of the cluster.
-    ![](images/50603_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/763549/156628575450603_en-US.png)
 
 7.  Read and agree to the service agreement by selecting the check box, and click **Pay** to complete the payment.
 
