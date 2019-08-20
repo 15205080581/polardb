@@ -67,55 +67,71 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 
     **Note:** An ApsaraDB for POLARDB cluster with a dual-core CPU and 4 GB memory provides the basic specifications required in tests, trials, and low-load scenarios. We recommend that you do not use the basic specifications in a high-load production environment. In a high-load production environment, we recommend that you use an ApsaraDB for POLARDB cluster with an 8-core CPU and 32 GB memory or higher specifications.
 
-    |Node specification|Jakarta|
-    |:-----------------|-------|
-    |polar.mysql.x2.medium| USD 74/month
+    |Node specification|CPU and memory|Jakarta|
+    |:-----------------|--------------|-------|
+    |polar.mysql.x2.medium| Dual-core
+
+ 4 GB
+
+ | USD 74/month
 
  USD 0.15/hour
 
  |
-    |polar.mysql.x4.large| USD 271/month
+    |polar.mysql.x4.large| Quad-core
+
+ 16 GB
+
+ | USD 271/month
 
  USD 0.57/hour
 
  |
-    |polar.mysql.x4.xlarge| USD 542/month
+    |polar.mysql.x4.xlarge| 8-core
+
+ 32 GB
+
+ | USD 542/month
 
  USD 1.13/hour
 
  |
-    |polar.mysql.x8.xlarge| USD 689/month
+    |polar.mysql.x8.xlarge| 8-core
+
+ 64 GB
+
+ | USD 689/month
 
  USD 1.44/hour
 
  |
-    |polar.mysql.x8.2xlarge| USD 1,378/month
+    |polar.mysql.x8.2xlarge| 16-core
+
+ 128 GB
+
+ | USD 1,378/month
 
  USD 2.87/hour
 
  |
-    |polar.mysql.x8.4xlarge| USD 2,756/month
+    |polar.mysql.x8.4xlarge| 32-core
+
+ 256 GB
+
+ | USD 2,756/month
 
  USD 5.74/hour
 
  |
-    |polar.mysql.x8.12xlarge| USD 7,577/month
+    |polar.mysql.x8.12xlarge| 88-core
+
+ 710 GB
+
+ | USD 7,577/month
 
  USD 15.78/hour
 
  |
-
-    |Node specification|Mainland China|
-|Monthly Subscription price|Yearly Subscription price|Hourly Pay-As-You-Go price|
-    |------------------|--------------|
-    |--------------------------|-------------------------|--------------------------|
-    |polar.o.x4.medium|USD 161|USD 1,642.2|USD 0.336|
-    |polar.o.x4.large|USD 322|USD 3,284.4|USD 0.672|
-    |polar.o.x4.xlarge|USD 644|USD 6,568.8|USD 1.342|
-    |polar.o.x8.xlarge|USD 830|USD 8,466|USD 1.729|
-    |polar.o.x8.2xlarge|USD 1,660|USD 16,932|USD 3.458|
-    |polar.o.x8.4xlarge|USD 3,319|USD 33,853.8|USD 6.914|
-    |polar.o.x8.12xlarge|USD 9,126|USD 93,085.2|USD 19.013|
 
     **Note:** 
 
