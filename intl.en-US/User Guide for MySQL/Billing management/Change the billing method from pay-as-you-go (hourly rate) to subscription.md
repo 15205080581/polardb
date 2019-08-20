@@ -2,7 +2,7 @@
 
 You can change the billing method of a cluster from pay-as-you-go \(hourly rate\) to subscription to meet your needs. Changing the billing method will not impact the performance of an ApsaraDB for POLARDB cluster.
 
-**Note:** If a cluster uses a specification that is no longer available, you cannot change the billing method of the cluster to subscription. In this case, you need to [EN-US\_TP\_13772.md](intl.en-US/User Guide for MySQL/Cluster and instance management/Change specifications.md) before changing the billing method.
+**Note:** If a cluster uses a specification that is no longer available, you cannot change the billing method of the cluster to subscription. In this case, you need to [Change specifications](intl.en-US/User Guide for MySQL/Cluster and instance management/Change specifications.md) before changing the billing method.
 
 ## Precautions {#section_fwc_jxt_g2b .section}
 
@@ -19,9 +19,9 @@ You cannot change the billing method of a cluster from subscription to pay-as-yo
 2.  Select the region where the cluster is located.
 3.  Find the target cluster. In the **Actions** column of the cluster, click the **More** icon, and then select **Switch to Subscription**.
 
-    ![](images/6580_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15138/15662886596580_en-US.png)
 
-4.  Specify the renewal duration, read the ApsaraDB for POLARDB Subscription Agreement of Service, select the check box to agree to it, and then click **Activate**.********
+4.  Specify the renewal duration, read the ApsaraDB for POLARDB Subscription Agreement of Service, select the check box to agree to it, and then click **Activate**.
 
     **Note:** 
 
