@@ -68,107 +68,51 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 
     **Note:** An ApsaraDB for POLARDB cluster with a dual-core CPU and 4 GB memory provides the basic specifications required in tests, trials, and low-load scenarios. We recommend that you do not use the basic specifications in a high-load production environment. In a high-load production environment, we recommend that you use an ApsaraDB for POLARDB cluster with an 8-core CPU and 32 GB memory or higher specifications.
 
-    |Node specification|Mainland China|Hong Kong \(China\)|Singapore|
-    |:-----------------|--------------|-------------------|---------|
-    |polar.mysql.x2.medium| RMB 280/month
+    |Node specification|Jakarta|
+    |:-----------------|-------|
+    |polar.mysql.x2.medium| USD 74/month
 
- RMB 0.59/hour
-
- | RMB 490/month
-
- RMB 0.75/hour
-
- | RMB 490/month
-
- RMB 1.02/hour
+ USD 0.15/hour
 
  |
-    |polar.mysql.x4.large| RMB 1,000/month
+    |polar.mysql.x4.large| USD 271/month
 
- RMB 2.09/hour
-
- | RMB 1,900/month
-
- RMB 3.44/hour
-
- | RMB 1,900/month
-
- RMB 3.96/hour
+ USD 0.57/hour
 
  |
-    |polar.mysql.x4.xlarge| RMB 2,000/month
+    |polar.mysql.x4.xlarge| USD 542/month
 
- RMB 4.17/hour
-
- | RMB 3,800/month
-
- RMB 6.87/hour
-
- | RMB 3,800/month
-
- RMB 7.92/hour
+ USD 1.13/hour
 
  |
-    |polar.mysql.x8.xlarge| RMB 3,200/month
+    |polar.mysql.x8.xlarge| USD 689/month
 
- RMB 6.67/hour
-
- | RMB 4,800/month
-
- RMB 8.67/hour
-
- | RMB 4,800/month
-
- RMB 10.00/hour
+ USD 1.44/hour
 
  |
-    |polar.mysql.x8.2xlarge| RMB 6,400/month
+    |polar.mysql.x8.2xlarge| USD 1,378/month
 
- RMB 13.34/hour
-
- | RMB 9,600/month
-
- RMB 17.34/hour
-
- | RMB 9,600/month
-
- RMB 20.00/hour
+ USD 2.87/hour
 
  |
-    |polar.mysql.x8.4xlarge| RMB 12,800/month
+    |polar.mysql.x8.4xlarge| USD 2,756/month
 
- RMB 26.67/hour
-
- | RMB 19,200/month
-
- RMB 34.67/hour
-
- | RMB 19,200/month
-
- RMB 40.00/hour
+ USD 5.74/hour
 
  |
-    |polar.mysql.x8.12xlarge| RMB 35,200/month
+    |polar.mysql.x8.12xlarge| USD 7,577/month
 
- RMB 73.34/hour
-
- | RMB 52,800/month
-
- RMB 95.34/hour
-
- | RMB 52,800/month
-
- RMB 110.00/hour
+ USD 15.78/hour
 
  |
 
-    |Node specification|CPU and memory|Maximum storage capacity|Maximum connections|Internal network bandwidth|Maximum IOPS|I/O bandwidth|Price|
-    |:-----------------|:-------------|:-----------------------|:------------------|--------------------------|------------|-------------|-----|
+    |Node specification|CPU and memory|Maximum storage capacity|Maximum connections|Internal network bandwidth|Maximum IOPS|I/O bandwidth|
+    |:-----------------|:-------------|:-----------------------|:------------------|--------------------------|------------|-------------|
     |polar.pg.x4.medium| Dual-core
 
  8 GB
 
- |5 TB|400|1 Gbit/s|16,000|1 Gbit/s|See the prices in the console.|
+ |5 TB|400|1 Gbit/s|16,000|1 Gbit/s|
     |polar.pg.x4.large| Quad-core
 
  16 GB
@@ -200,13 +144,149 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 
  |100 TB|36,000|25 Gbit/s|512,000|32 Gbit/s|
 
-    |Node specification|CPU and memory|Maximum storage capacity|Maximum connections|Internal network bandwidth|Maximum IOPS|I/O bandwidth|Price|
-    |:-----------------|:-------------|:-----------------------|:------------------|--------------------------|------------|-------------|-----|
+    |Node specification|Mainland China|Hong Kong \(China\)|US West|
+    |------------------|--------------|-------------------|-------|
+    |polar.pg.x4.medium| USD 795.6/year
+
+ USD 78/month
+
+ USD 0.163/hour
+
+ | USD 1509.6/year
+
+ USD 148/month
+
+ USD 0.226/hour
+
+ | USD 1224/year
+
+ USD 120/month
+
+ USD 0.202/hour
+
+ |
+    |polar.pg.x4.large| USD 1581/year
+
+ USD 155/month
+
+ USD 0.324/hour
+
+ | USD 3009/year
+
+ USD 295/month
+
+ USD 0.533/hour
+
+ | USD 2448/year
+
+ USD 240/month
+
+ USD 0.434/hour
+
+ |
+    |polar.pg.x4.xlarge| USD 3162/year
+
+ USD 310/month
+
+ USD 0.646/hour
+
+ | USD 6007.8/year
+
+ USD 589/month
+
+ USD 1.064/hour
+
+ | USD 4896/year
+
+ USD 480/month
+
+ USD 0.867/hour
+
+ |
+    |polar.pg.x8.xlarge| USD 5059.2/year
+
+ USD 496/month
+
+ USD 1.033/hour
+
+ | USD 7578.6/year
+
+ USD 743/month
+
+ USD 1.342/hour
+
+ | USD 6324/year
+
+ USD 620/month
+
+ USD 1.12/hour
+
+ |
+    |polar.pg.x8.2xlarge| USD 10108.2/year
+
+ USD 991/month
+
+ USD 2.065/hour
+
+ | USD 15157.2/year
+
+ USD 1486/month
+
+ USD 2.684/hour
+
+ | USD 12637.8/year
+
+ USD 1239/month
+
+ USD 2.237/hour
+
+ |
+    |polar.pg.x8.4xlarge| USD 20216.4/year
+
+ USD 1982/month
+
+ USD USD 4.128/hour
+
+ | USD 30314.4/year
+
+ USD 2972/month
+
+ USD 5.367/hour
+
+ | USD 25265.4/year
+
+ USD 2477/month
+
+ USD 4.472/hour
+
+ |
+    |polar.pg.x8.12xlarge| USD 55579.8/year
+
+ USD 5449/month
+
+ USD 11.352/hour
+
+ | USD 83364.6/year
+
+ USD 8173/month
+
+ USD 14.757/hour
+
+ | USD 69472.2/year
+
+ USD 6811/month
+
+ USD 12.297/hour
+
+ |
+
+    |Node specification|CPU and memory|Maximum storage capacity|Maximum connections|Internal network bandwidth|Maximum IOPS|I/O bandwidth|
+    |:-----------------|:-------------|:-----------------------|:------------------|--------------------------|------------|-------------|
     |polar.o.x4.medium| Dual-core
 
  8 GB
 
- |5 TB|400|1 Gbit/s|16,000|1 Gbit/s|See the prices in the console.|
+ |5 TB|400|1 Gbit/s|16,000|1 Gbit/s|
     |polar.o.x4.large| Quad-core
 
  16 GB
@@ -238,9 +318,21 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 
  |100 TB|36,000|25 Gbit/s|512,000|32 Gbit/s|
 
+    |Node specification|Mainland China|
+|Monthly Subscription price|Yearly Subscription price|Hourly Pay-As-You-Go price|
+    |------------------|--------------|
+    |--------------------------|-------------------------|--------------------------|
+    |polar.o.x4.medium|USD 161|USD 1642.2|USD 0.336|
+    |polar.o.x4.large|USD 322|USD 3284.4|USD 0.672|
+    |polar.o.x4.xlarge|USD 644|USD 6568.8|USD 1.342|
+    |polar.o.x8.xlarge|USD 830|USD 8466|USD 1.729|
+    |polar.o.x8.2xlarge|USD 1660|USD 16932|USD 3.458|
+    |polar.o.x8.4xlarge|USD 3319|USD 33853.8|USD 6.914|
+    |polar.o.x8.12xlarge|USD 9126|USD 93085.2|USD 19.013|
+
     **Note:** 
 
-    -   ****Each price in the preceding tables is for a single node. An ApsaraDB for POLARDB cluster consists of a primary node and a read-only node by default.****
+    -   **Each price in the preceding tables is for a single node. An ApsaraDB for POLARDB cluster consists of a primary node and a read-only node by default.**
     -   You can select node specifications for the primary node when you create a cluster. The read-only node has the same specifications as the primary node.
     -   Each **maximum input/output operations per second \(IOPS\)** value is theoretical.
     -   The maximum connections of a cluster depend on the specifications of the nodes in the cluster. Increasing the number of nodes does not increase the maximum connections of the cluster.
@@ -249,23 +341,14 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 
     The storage is serverless. You do not need to select the storage capacity when you create a cluster. As data increases, the storage capacity automatically extends. The storage is billed based on the data size. You can check your data size on the [details page](../intl.en-US/User Guide for MySQL/Cluster and instance management/View cluster and instance details.md#) of your cluster in the console.
 
-    -   Regions in Mainland China: RMB 0.00486/GB/hour
-    -   Hong Kong \(China\): RMB 0.00542/GB/hour
-    -   Other regions outside Mainland China: RMB 0.00542/GB/hour
+    |Billing methods|Mainland China|Hong Kong \(China\)|US West|Jakarta|
+    |---------------|--------------|-------------------|-------|-------|
+    |Subscription（USD/GB/month）|0.55|0.61|0.59|0.66|
+    |pay-as-you-go（USD/GB/hour）|0.00077|0.00085|0.00085|0.00085|
+
     **Note:** 
 
-    -   The storage capacity supports pay-as-you-go but not subscription.
     -   The [maximum storage capacity](intl.en-US/Pricing/Specifications and pricing.md#table_g1y_xjg_tdb) varies with node specifications. If you want to increase the storage capacity, [upgrade the configuration of your cluster](../intl.en-US/User Guide for MySQL/Cluster and instance management/Change specifications.md).
-    We recommend that you purchase a storage package if your data size is large. The storage package can be shared by all the clusters in a specified region. For more information, see [Use a storage package](../intl.en-US/User Guide for MySQL/Cluster and instance management/Use a storage package.md#).
-
--   **Prices for SQL explorer**
-
-    SQL explorer is billed based on the storage capacity of audit logs.
-
-    -   Regions in Mainland China: RMB 0.008/GB/hour
-    -   Regions outside Mainland China: RMB 0.0122/GB/hour
-    **Note:** The storage capacity of audit logs supports pay-as-you-go but not subscription.
-
 -   **Prices for data backup**
 
     Currently, the storage occupied by ApsaraDB for POLARDB backup files is free of charge.
