@@ -50,11 +50,11 @@ When DTS is used to migrate data from **POLARDB for MySQL** to **RDS for MySQL**
     |RDS Instance ID|The ID of the RDS for MySQL instance.|
     |Database Account|The account with the read and write permissions on the destination instance.|
     |Database Password|The password of the account for accessing the destination instance.|
-    |Encryption|The encryption mode for accessing the destination instance. Select **Non-encrypted** or **SSL-encrypted**. The latter greatly increases CPU consumption. **Note:** Select SSL-encrypted only for the instances that have enabled [SSL encryption](https://help.aliyun.com/document_detail/96120.html).
+    |Encryption|The encryption mode for accessing the destination instance. Select **Non-encrypted** or **SSL-encrypted**. The latter greatly increases CPU consumption. **Note:** Select SSL-encrypted only for the instances that have enabled [SSL encryption](https://www.alibabacloud.com/help/doc-detail/32474.htm).
 
  |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156636973640347_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156636994740347_en-US.png)
 
 4.  Click **Test Connectivity**. Ensure that both the source and destination databases pass the test.
 5.  Click **Set Whitelist and Next**.
@@ -75,7 +75,7 @@ When DTS is used to migrate data from **POLARDB for MySQL** to **RDS for MySQL**
 
         -   Currently, system tables cannot be migrated.
         -   Ensure that the name of an object is unique after it is migrated to the destination instance. To change the name of an object before it is migrated the destination instance, move the pointer over the object in the Selected section, and then click **Edit**.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156636973740349_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156636994740349_en-US.png)
 
 7.  Click **Precheck** and wait until the precheck ends.
 
@@ -87,6 +87,6 @@ When DTS is used to migrate data from **POLARDB for MySQL** to **RDS for MySQL**
 
 9.  Select the destination region to view the migration status. The status changes to **Finished** when the migration is completed.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156636973740351_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156636994740351_en-US.png)
 
 
