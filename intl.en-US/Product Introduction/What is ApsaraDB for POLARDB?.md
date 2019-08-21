@@ -59,7 +59,7 @@ ApsaraDB for POLARDB is compatible with MySQL, PostgreSQL, and Oracle databases.
 You can use the following methods to manage ApsaraDB for POLARDB clusters, for example, to create clusters, databases, and accounts:
 
 -   [Console](https://polardb.console.aliyun.com/): provides a visualized and easy-to-use Web interface.
--   [CLI](https://help.aliyun.com/product/29991.html): All operations available in the console can be performed by using the command-line interface \(CLI\).
+-   [CLI](https://www.alibabacloud.com/help/product/29991.htm): All operations available in the console can be performed by using the command-line interface \(CLI\).
 -   [SDK](../../../../intl.en-US/SDK Reference/SDK reference.md#): All operations available in the console can be performed by using the SDK.
 -   [API](../../../../intl.en-US/API Reference/API overview.md#): All operations available in the console can be performed by using API operations.
 
