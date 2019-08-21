@@ -14,7 +14,7 @@ You must have registered an Alibaba Cloud account or created a Resource Access M
 
 -   Click [here](https://account.alibabacloud.com/login/login.htm) to register an Alibaba Cloud account.
 
--   For more information about how to create and grant permissions to a RAM user, see [../DNPOLA1892560/EN-US\_TP\_3025.dita\#concept\_y33\_t4q\_tdb](../DNPOLA1892560/EN-US_TP_3025.dita#concept_y33_t4q_tdb).
+-   For more information about how to create and grant permissions to a RAM user, see [Create and authorize a RAM user](../../../../intl.en-US/User Guide for MySQL/Account Management/Create and authorize a RAM user.md#).
 
 
 1.  Log on to your Alibaba Cloud account. 
