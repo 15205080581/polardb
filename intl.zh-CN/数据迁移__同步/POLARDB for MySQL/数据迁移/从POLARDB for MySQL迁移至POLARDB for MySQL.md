@@ -1,6 +1,6 @@
 # 从POLARDB for MySQL迁移至POLARDB for MySQL {#concept_d1p_4zn_v2b .concept}
 
-本文介绍如何使用[数据传输服务（DTS）](https://www.alibabacloud.com/help/doc-detail/26592.htm)将一个POLARDB集群的数据迁移到另一个POLARDB集群。本迁移操作免费。
+本文介绍如何使用[数据传输服务（DTS）](https://www.alibabacloud.com/help/zh/doc-detail/26592.htm)将一个POLARDB集群的数据迁移到另一个POLARDB集群。本迁移操作免费。
 
 ## 前提条件 {#section_e5z_1rk_xdb .section}
 
@@ -45,7 +45,7 @@
     -   端口：输入3306
     -   数据库账号：POLARDB集群数据库的账号。
     -   数据库密码：以上账号的密码。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17772/15663543499778_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17772/15663568239778_zh-CN.png)
 
 5.  单击**测试连接**，确认DTS可以连接到源POLARDB集群。
 6.  填写目标集群的信息。
@@ -82,6 +82,6 @@
 
 12. 单击目标地域，查看迁移状态。迁移完成时，状态为**已完成**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17772/15663543499779_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17772/15663568239779_zh-CN.png)
 
 
