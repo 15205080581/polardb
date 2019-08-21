@@ -1,6 +1,6 @@
 # Migrate data from local MySQL to POLARDB for MySQL {#concept_rmt_hrm_4gb .concept}
 
-You can migrate data from a local MySQL instance to a POLARDB for MySQL cluster by using Alibaba Cloud [Data Transmission Service \(DTS\)](https://help.aliyun.com/document_detail/26592.html?spm=a2c4g.11186623.2.8.6df54b84N9BVGE). By using the storage engine of DTS incremental data migration, you can migrate data from the local MySQL instance to the POLARDB for MySQL cluster without interrupting the services of local applications.
+You can migrate data from a local MySQL instance to a POLARDB for MySQL cluster by using Alibaba Cloud [Data Transmission Service \(DTS\)](https://www.alibabacloud.com/help/doc-detail/26592.htm). By using the storage engine of DTS incremental data migration, you can migrate data from the local MySQL instance to the POLARDB for MySQL cluster without interrupting the services of local applications.
 
 This topic describes how to migrate data from local MySQL to POLARDB for MySQL by using DTS.
 
@@ -103,7 +103,7 @@ To solve the dependency conflicts between objects and improve the migration succ
     |Database Account|The account with the read and write permissions on the destination instance.|
     |Database Password|The password of the account for accessing the destination instance.|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636732338182_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636767538182_en-US.png)
 
 5.  Click **Test Connectivity**. Ensure that both the source and destination databases pass the test.
 6.  Click **Set Whitelist and Next**.
@@ -133,13 +133,13 @@ To solve the dependency conflicts between objects and improve the migration succ
 
     -   **Migration objects**: Select the objects to be migrated in the Available section, and then click the right arrow to add them to the Selected section.
 
-        The migration objects can be databases, tables, and columns. By default, after an object is migrated to the destination cluster, the object name remains the same as that of the object in the source instance. If the object you migrate has different names in the source instance and destination cluster, you need to use the object name mapping feature provided by DTS. For more information, see [Mappings of database, table, and column names](https://help.aliyun.com/document_detail/26628.html?spm=5176.doc26624.6.125.Mpn8On).
+        The migration objects can be databases, tables, and columns. By default, after an object is migrated to the destination cluster, the object name remains the same as that of the object in the source instance. If the object you migrate has different names in the source instance and destination cluster, you need to use the object name mapping feature provided by DTS. For more information, see [Mappings of database, table, and column names](https://www.alibabacloud.com/help/doc-detail/26628.htm).
 
         **Note:** 
 
         -   Currently, system tables cannot be migrated.
         -   Ensure that the name of an object is unique after it is migrated to the destination instance. To change the name of an object before it is migrated the destination instance, move the pointer over the object in the Selected section, and then click **Edit**.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636732338183_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636767638183_en-US.png)
 
 8.  Click **Precheck**. After the precheck is successful, click **Next**.
 
@@ -151,7 +151,7 @@ To solve the dependency conflicts between objects and improve the migration succ
 
 10. Select the destination region to view the migration status. The status changes to **Finished** when the migration is completed.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636732538209_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636767638209_en-US.png)
 
     Then, you have completed data migration from local MySQL to POLARDB for MySQL.
 
