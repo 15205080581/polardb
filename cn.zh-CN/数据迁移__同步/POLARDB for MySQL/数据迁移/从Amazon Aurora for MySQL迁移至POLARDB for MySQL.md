@@ -31,7 +31,7 @@
 
 1.  登录Amazon Aurora数据库实例，单击**数据库名称**，在连接页面查看终端节点和端口。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636741737254_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636762237254_zh-CN.png)
 
 2.  登录[DTS控制台](https://dts.console.aliyun.com/)。
 3.  在左侧菜单栏单击**数据迁移**，单击右上角**创建迁移任务**。
@@ -58,23 +58,23 @@
     |数据库账号|目标实例的拥有读写权限的账号。|
     |数据库密码|目标实例的对应账号的密码。|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636741937255_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636762437255_zh-CN.png)
 
 6.  填写完成后单击**测试连接**，确定源库和目标库都测试通过。
 7.  单击右下角**授权白名单并进入下一步**。
-8.  勾选对应的迁移类型，在迁移对象框中将要迁移的数据库选中，单击![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636742037264_zh-CN.png)移动到已选择对象框。
+8.  勾选对应的迁移类型，在迁移对象框中将要迁移的数据库选中，单击![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636762437264_zh-CN.png)移动到已选择对象框。
 
     **说明：** 为保证迁移数据的一致性，建议选择结构迁移+全量数据迁移+增量数据迁移。
 
     结构迁移和全量数据迁移暂不收费，增量数据迁移根据链路规格按小时收费。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636742037261_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636762437261_zh-CN.png)
 
 9.  单击**预检查并启动**，等待预检查结束。
 
     **说明：** 如果预检查失败，可以根据错误项的提示进行修复，然后重新启动任务。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636742037262_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636762537262_zh-CN.png)
 
 10. 单击**下一步**，在**购买配置确认**对话框中，勾选**《数据传输（按量付费）服务条款》**并单击**立即购买并启动**。
 
@@ -82,7 +82,7 @@
 
 11. 单击目标地域，查看迁移状态。迁移完成时，状态为**已完成**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636742237263_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636762637263_zh-CN.png)
 
     至此，完成 Amazon Aurora 数据库到阿里云 POLARDB 数据迁移任务配置。
 
