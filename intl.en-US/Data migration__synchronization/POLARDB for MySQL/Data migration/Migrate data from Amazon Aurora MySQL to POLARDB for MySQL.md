@@ -2,7 +2,7 @@
 
 ## Background {#section_mhf_p1t_lgb .section}
 
-This topic describes how to migrate data from Amazon Aurora MySQL to Alibaba Cloud POLARDB for MySQL by using Alibaba Cloud [Data Transmission Service \(DTS\)](https://www.alibabacloud.com/help/zh/product/26590.htm).
+This topic describes how to migrate data from Amazon Aurora MySQL to Alibaba Cloud POLARDB for MySQL by using Alibaba Cloud [Data Transmission Service \(DTS\)](https://www.alibabacloud.com/help/product/26590.htm).
 
 ## Prerequisites {#section_zj4_fxs_lgb .section}
 
@@ -57,17 +57,17 @@ This topic describes how to migrate data from Amazon Aurora MySQL to Alibaba Clo
     |Database Account|The account with the read and write permissions on the destination instance.|
     |Database Password|The password of the account for accessing the destination instance.|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636715837255_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636742737255_en-US.png)
 
 6.  Click **Test Connectivity** and verify that the test results for both the source and target databases are Passed.
 7.  Click **Set Whitelist and Next** in the lower-right corner of the page.
-8.  Select the migration type. In the Available section, select the objects to be migrated, and click ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636715837264_en-US.png) to move the objects to the Selected section.
+8.  Select the migration type. In the Available section, select the objects to be migrated, and click ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636742737264_en-US.png) to move the objects to the Selected section.
 
     **Note:** To maintain data consistency before and after migration, we recommend that you select Schema Migration, Full Data Migration, and Incremental Data Migration.
 
     Currently, Schema Migration and Full Data Migration are free of charge, while Incremental Data Migration charges the users by hour based on link specifications.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636715937261_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636742837261_en-US.png)
 
 9.  Click **Precheck** and wait until the precheck ends.
 
@@ -79,7 +79,7 @@ This topic describes how to migrate data from Amazon Aurora MySQL to Alibaba Clo
 
 11. Select the destination region to view the migration status. The status will be **Completed** when the migration is completed.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636715937263_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/95598/156636742837263_en-US.png)
 
     Data is migrated from Amazon Aurora MySQL to POLARDB for MySQL.
 
