@@ -10,7 +10,7 @@ ApsaraDB for POLARDB uses a storage and computing-separated architecture, in whi
 
 ## Terms {#section_y5f_gbj_5fb .section}
 
-Familiarize yourself with the following terms to gain a better understand of ApsaraDB for POLARDB. This helps you to find optimal purchase strategies and use the ApsaraDB for POLARDB service based on your needs.
+Familiarize yourself with the following terms to gain a better understanding of ApsaraDB for POLARDB. This helps you to find optimal purchase strategies and use the ApsaraDB for POLARDB service based on your needs.
 
 -   Cluster: ApsaraDB for POLARDB adopts a cluster architecture. Each cluster contains one master node and multiple read-only nodes.
 -   Region: specifies the region in which a data center resides. You can achieve optimal read/write performance if ApsaraDB for POLARDB clusters and ECS instances are located in the same region.
