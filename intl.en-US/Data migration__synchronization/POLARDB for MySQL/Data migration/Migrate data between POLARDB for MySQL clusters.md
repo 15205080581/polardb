@@ -1,6 +1,6 @@
 # Migrate data between POLARDB for MySQL clusters {#concept_d1p_4zn_v2b .concept}
 
-This topic describes how to migrate data from one POLARDB for MySQL cluster to another by using [Data Transmission Service \(DTS\)](https://help.aliyun.com/document_detail/26592.html). This migration service is free of charge.
+This topic describes how to migrate data from one POLARDB for MySQL cluster to another by using [Data Transmission Service \(DTS\)](https://www.alibabacloud.com/help/doc-detail/26592.htm). This migration service is free of charge.
 
 ## Prerequisite {#section_e5z_1rk_xdb .section}
 
@@ -45,7 +45,7 @@ To ensure data consistency during migration, stop writing data to the POLARDB fo
     -   Port Number: the listening port of the source cluster. Set this parameter to 3306.
     -   Database Account: the account for accessing the source cluster.
     -   Database Password: the password of the account for accessing the source cluster.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17772/15663545469778_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17772/15663549609778_en-US.png)
 
 5.  Click **Test Connectivity**. Ensure that the source cluster passes the test.
 6.  Configure information about the destination cluster.
@@ -82,6 +82,6 @@ To ensure data consistency during migration, stop writing data to the POLARDB fo
 
 12. Select the destination region to view the migration status. The status changes to **Completed** when the migration is completed.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17772/15663545469779_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17772/15663549609779_en-US.png)
 
 
