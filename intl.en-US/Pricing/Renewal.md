@@ -11,8 +11,3 @@ The prices of renewed clusters are the same as those of newly created clusters. 
 -   Auto renewal: Fees are first deducted at 08:00 on the ninth day before a subscription cluster expires. If the deduction failed, the system tries to deduct fees once a day until fees are deducted or the expiration date arrives. You need to ensure that your Alibaba Cloud account has sufficient balance. If your cluster expires tomorrow, renew the cluster manually.
 -   Manual renewal: Pay manually if you want to renew a subscription cluster.
 
-## Operation guides {#section_lxt_hs3_t2b .section}
-
--   [Manually renew the subscription to a cluster](../../../../intl.en-US//Manually renew the subscription to a cluster.md#)
--   [Automatically renew the subscription to a cluster](../../../../intl.en-US//Automatically renew the subscription to a cluster.md#)
-
