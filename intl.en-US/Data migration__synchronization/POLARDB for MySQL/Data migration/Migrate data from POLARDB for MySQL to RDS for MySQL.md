@@ -8,7 +8,7 @@ This topic describes how to migrate data from POLARDB for MySQL to RDS for MySQL
 
     Before data migration, you need to [set a whitelist](../../../../intl.en-US/Quick Start for MySQL/Configure a whitelist.md#) for the POLARDB for MySQL cluster, and add the Classless Inter-Domain Routing \(CIDR\) block of DTS to the whitelist.
 
-    **Note:** You only need to add the [DTS CIDR block](https://www.alibabacloud.com/help/doc-detail/84900.htm) corresponding to the region where the destination database resides. In this example, the destination database is located in Hangzhou. You only need to add the DTS CIDR block corresponding to China \(Hangzhou\) to the whitelist.
+    **Note:** You only need to add the DTS CIDR block corresponding to the region where the destination database resides. In this example, the destination database is located in Hangzhou. You only need to add the DTS CIDR block corresponding to China \(Hangzhou\) to the whitelist.
 
 -   **Create migration accounts** 
 
@@ -54,7 +54,7 @@ When DTS is used to migrate data from **POLARDB for MySQL** to **RDS for MySQL**
 
  |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156636994740347_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156645714840347_en-US.png)
 
 4.  Click **Test Connectivity**. Ensure that both the source and destination databases pass the test.
 5.  Click **Set Whitelist and Next**.
@@ -75,7 +75,7 @@ When DTS is used to migrate data from **POLARDB for MySQL** to **RDS for MySQL**
 
         -   Currently, system tables cannot be migrated.
         -   Ensure that the name of an object is unique after it is migrated to the destination instance. To change the name of an object before it is migrated the destination instance, move the pointer over the object in the Selected section, and then click **Edit**.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156636994740349_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156645714840349_en-US.png)
 
 7.  Click **Precheck** and wait until the precheck ends.
 
@@ -87,6 +87,6 @@ When DTS is used to migrate data from **POLARDB for MySQL** to **RDS for MySQL**
 
 9.  Select the destination region to view the migration status. The status changes to **Finished** when the migration is completed.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156636994740351_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156645714840351_en-US.png)
 
 
