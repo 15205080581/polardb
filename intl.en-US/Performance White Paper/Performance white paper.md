@@ -56,7 +56,7 @@ Sysbench is a modular, cross-platform and multi-threaded benchmark tool for eval
 1.  Obtain the cluster connection string and port number.
     1.  Log on to the [POLARDB console](https://polardb.console.aliyun.com/?spm=5176.2020520001.0.0.69864bd3ikTa1x#/instance/list?regionId=cn-beijing), and enter the Clusters page.
     2.  Click the cluster ID, or click **Manage** to enter the **Cluster Information** page.
-    3.  Find the [../DNPOLA1840729/EN-US\_TP\_3018.dita\#concept\_imd\_wlq\_tdb](../DNPOLA1840729/EN-US_TP_3018.dita#concept_imd_wlq_tdb) and port number.
+    3.  Find the [View connection endpoints](../../../../intl.en-US/Quick Start for MySQL/View connection endpoints.md#) and port number.
 2.  Run the following commands in ECS to create a sbtest database in the POLARDB cluster.
 
     `mysql -h XXX -P XXX -u XXX -p XXX -e 'create database sbtest'`
@@ -91,9 +91,9 @@ Sysbench is a modular, cross-platform and multi-threaded benchmark tool for eval
 
     -   After running the htop command, you can click Q to exit.
     -   For more information about htop, go to [http://hisham.hm/htop/?spm=a2c4g.11186623.2.6.eKuBNC](http://hisham.hm/htop/).
-    ![CPU使用率](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15665313312111_en-US.png)
+    ![CPU使用率](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15665314592111_en-US.png)
 
-    ![CPU使用率](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15665313312112_en-US.png)
+    ![CPU使用率](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15665314592112_en-US.png)
 
 
 ## Test results {#section_lfs_dyd_l2b .section}
@@ -104,17 +104,17 @@ Obtain the QPS and TPS from the test results in the log file.
 
 Test results for a single ECS instance:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665313312113_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665314602113_en-US.png)
 
 Total QPS for the three ECS instances:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665313326633_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665314606633_en-US.png)
 
 Total TPS for the three ECS instances:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665313326634_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665314606634_en-US.png)
 
 The following figure shows the QPS for multiple read-only nodes. Five read-only nodes are used in this example, each with 4 cores and 32 GB RAM.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665313326635_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665314606635_en-US.png)
 
