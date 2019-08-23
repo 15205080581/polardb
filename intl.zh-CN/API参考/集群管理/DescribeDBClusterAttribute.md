@@ -44,6 +44,9 @@
  示例：16:00Z-17:00Z，表示0点到1点\(UTC+08:00\)可进行例行维护。
 
  |
+|Expired|String|是否过期。|
+|IsLatestVersion|Boolean|是否为最新版本。|
+|ZoneIds|String|数据分布的可用区。|
 |DBNodes|List<DBNode\>|DBNode组成的集合。|
 |Tags|List<Tag\>|Tag组成的集合。|
 
@@ -72,7 +75,7 @@
 
 ## 请求示例 {#section_snj_c3s_xfb .section}
 
-```
+``` {#codeblock_9an_bgv_cea}
 https://polardb.aliyuncs.com/?Action=DescribeDBClusterAttribute
 &DBClusterId=pc-xxxxxxxxxxxxxxx
 &<[公共请求参数]>
@@ -82,7 +85,7 @@ https://polardb.aliyuncs.com/?Action=DescribeDBClusterAttribute
 
 XML格式
 
-```
+``` {#codeblock_ls8_33o_88p}
 <DescribeDBClusterAttributeResponse>  
     <DBVersion>5.6</DBVersion>
     <LockMode>Unlock</LockMode>
@@ -127,7 +130,7 @@ XML格式
 
 JSON格式
 
-```
+``` {#codeblock_mhu_a84_1im}
 {
     "DBVersion": "5.6",
     "LockMode": "Unlock",
