@@ -50,7 +50,7 @@ POLARDB通过阿里巴巴十年双十一技术的沉淀，在技术与性能上�
 
 ## Q：云数据库POLARDB版有哪些功能特性？ {#section_ulh_36o_fv5 .section}
 
-![原理](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/314791/156646385856662_zh-CN.png)
+![原理](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/314791/156654444756662_zh-CN.png)
 
 POLARDB的功能特性主要有如下：
 
@@ -88,10 +88,6 @@ POLARDB的功能特性主要有如下：
 ## Q：云数据库POLARDB的产品定价？ {#section_uf5_j1h_1u1 .section}
 
 有关云数据库POLARDB版产品定价的更多信息，请参见[规格与定价](../../../../intl.zh-CN/产品定价/规格与定价.md#)。
-
-## Q：POLARDB是什么类型的数据库？ {#section_6r8_uca_owr .section}
-
-POLARDB是阿里云自主研发的新一代的关系型云数据库，是数据库云计算力进化的关键里程碑之一。兼容MySQL、PostgreSQL、Oracle引擎，单库最多可扩展到16个节点，适用于企业多样化的数据库应用场景。
 
 ## Q：POLARDB是否使用了计算和存储分离的设计思想？ {#section_vfr_6bi_k5a .section}
 
