@@ -4,15 +4,15 @@ ApsaraDB for POLARDB is a next-generation relational database service developed 
 
 ApsaraDB for POLARDB uses a storage and computing-separated architecture, in which all compute nodes share one copy of data. It can achieve vertical scaling within minutes and crash recovery within seconds. It ensures global data consistency, and offers free services for data backup and disaster recovery. ApsaraDB for POLARDB integrates the benefits of commercial databases and open source cloud databases. Commercial databases are stable, reliable, high-performance, and scalable while open source databases are easy to use and self-iterative. For example, the time a POLARDB for MySQL database takes to return results for a query reduces by five times than that a MySQL database takes. However, the cost of a POLARDB for MySQL database is only 10% that of a MySQL database.
 
-**Cluster architecture with separate storage and computing**: ApsaraDB for POLARDB adopts a cluster architecture. Each cluster contains one read/write node \(master node\) and multiple read-only nodes. All nodes share the data in a Polar store by using a distributed Polar file system.
+**Cluster architecture with separate storage and computing**: ApsaraDB for POLARDB adopts a cluster architecture. Each cluster contains one read/write node \(primary node\) and multiple read-only nodes. All nodes share the data in a Polar store by using a distributed Polar file system.
 
-**Read/write splitting**: POLARDB for MySQL uses a built-in proxy to handle external requests. When apps use a cluster address, the proxy handles all requests sent from the apps before forwarding the requests to nodes. You can use the proxy for authentication and protection and use it to achieve automatic read/write splitting. The proxy can parse SQL statements, send write requests \(such as transactions, UPDATE, INSERT, DELETE, and DDL operations\) to the master node, and distribute read requests \(such as SELECT operations\) to multiple read-only nodes. With the proxy, apps can access POLARDB for MySQL as easily as they access a single-node MySQL database. The proxy only supports POLARDB for MySQL. We are working on support for POLARDB for PostgreSQL and POLARDB for Oracle.
+**Read/write splitting**: POLARDB for MySQL uses a built-in proxy to handle external requests. When apps use a cluster address, the proxy handles all requests sent from the apps before forwarding the requests to nodes. You can use the proxy for authentication and protection and use it to achieve automatic read/write splitting. The proxy can parse SQL statements, send write requests \(such as transactions, UPDATE, INSERT, DELETE, and DDL operations\) to the primary node, and distribute read requests \(such as SELECT operations\) to multiple read-only nodes. With the proxy, apps can access POLARDB for MySQL as easily as they access a single-node MySQL database. The proxy only supports POLARDB for MySQL. We are working on support for POLARDB for PostgreSQL and POLARDB for Oracle.
 
 ## Terms {#section_y5f_gbj_5fb .section}
 
 Familiarize yourself with the following terms to gain a better understanding of ApsaraDB for POLARDB. This helps you to find optimal purchase strategies and use the ApsaraDB for POLARDB service based on your needs.
 
--   Cluster: ApsaraDB for POLARDB adopts a cluster architecture. Each cluster contains one master node and multiple read-only nodes.
+-   Cluster: ApsaraDB for POLARDB adopts a cluster architecture. Each cluster contains one primary node and multiple read-only nodes.
 -   Region: specifies the region in which a data center resides. You can achieve optimal read/write performance if ApsaraDB for POLARDB clusters and ECS instances are located in the same region.
 -   Zone: A zone is a distinct location that operates on independent power grids and networks within a region. All zones in a region provide the same services.
 -   Specification: specifies the resources configured for each node, such as 2 CPU cores and 4 GB.
@@ -35,11 +35,11 @@ ApsaraDB for POLARDB is compatible with MySQL, PostgreSQL, and Oracle databases.
 
 -   **Read consistency** 
 
-    The cluster address uses log sequence numbers \(LSNs\) to ensure global consistency in reading data and to avoid inconsistency caused by synchronization latency between the master node and read-only nodes.
+    The cluster address uses log sequence numbers \(LSNs\) to ensure global consistency in reading data and to avoid inconsistency caused by synchronization latency between the primary node and read-only nodes.
 
 -   **Millisecond-level latency in physical replication** 
 
-    ApsaraDB for POLARDB uses redo log-based physical replication from the master node to read-only nodes instead of binlog-based logical replication to improve the efficiency and stability. No latency is incurred for databases even if you perform DDL operations for a large table, such as adding indexes or fields.
+    ApsaraDB for POLARDB uses redo log-based physical replication from the primary node to read-only nodes instead of binlog-based logical replication to improve the efficiency and stability. No latency is incurred for databases even if you perform DDL operations for a large table, such as adding indexes or fields.
 
 -   **Unlocked backup** 
 
@@ -65,7 +65,7 @@ You can use the following methods to manage ApsaraDB for POLARDB clusters, for e
 
 After creating an ApsaraDB for POLARDB cluster, you can connect to the cluster by using the following methods:
 
--   DMS: You can [connect to an ApsaraDB for POLARDB cluster by using Data Management \(DMS\)](../../../../intl.en-US/Quick Start for MySQL/Log on to POLARDB databases using DMS.md#section_wxq_bql_v2b) and develop databases on the Web interface.
+-   DMS: You can [connect to an ApsaraDB for POLARDB cluster by using Data Management \(DMS\)](../../../../intl.en-US/Quick Start for MySQL/Connect to a POLARDB for MySQL cluster.md#section_wxq_bql_v2b) and develop databases on the Web interface.
 -   Client: You can connect to an ApsaraDB for POLARDB cluster by using a database client, such as MySQL-Front and pgAdmin.
 
 ## Pricing {#section_edl_vs8_qbv .section}
