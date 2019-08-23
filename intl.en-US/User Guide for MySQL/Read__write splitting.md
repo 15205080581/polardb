@@ -54,9 +54,7 @@ Read/write splitting is enabled for all POLARDB clusters by default. The system 
 
 ## Limits {#section_e1j_d55_j2b .section}
 
--   The POLARDB read/write splitting feature does not support the [COM\_PROCESS\_KILL](https://dev.mysql.com/doc/internals/en/com-process-kill.html) command, but supports SQL statements that contain KILL.
--   You must use the show processlist command to obtain the *processlist\_id* in the KILL\[CONNECTION|QUERY\]*processlist\_id* request. You cannot use the theadid/*processlist\_id* returned from the API when establishing a connection.
--   The POLARDB read/write splitting feature does not support [Multi Statements](https://dev.mysql.com/doc/internals/en/multi-statement.html) or stored procedure. If you run Multi Statements or stored procedure, all subsequent requests will be sent to the primary instance. To re-activate the read/write splitting feature, you must disconnect the current connection and reconnect to the application.
+If you run [Multi Statements](https://dev.mysql.com/doc/internals/en/multi-statement.html) or stored procedure, all subsequent requests will be sent to the primary instance. To re-activate the read/write splitting feature, you must disconnect the current connection and reconnect to the application.
 
 ## View or modify the read/write splitting connection string {#section_ksd_h55_j2b .section}
 
