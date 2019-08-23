@@ -16,13 +16,13 @@ You can call this operation to query ApsaraDB for POLARDB clusters or ApsaraDB f
 -   Oracle
 
  |
-|Tag.n.Key|String|No|The key of the tag that you can use to filter clusters by tag. You can specify up to 20 key-value pairs of tags at a time. The number n in each key-value pair must be different and must be consecutive integers that start from 1. Each value of the Tag.n.Key parameter is paired with a value of the Tag.n.Value parameter. **Note:** Each value of this parameter can be up to 64 characters in length. It cannot start with aliyun, acs:, http://, or https://.
+|Tag.n.Key|String|No|The key of the tag that you can use to filter clusters by tag. You can specify up to 20 key-value pairs of tags at a time. The number n in each key-value pair must be different and must be consecutive integers that start from 1. Each value of the Tag.n.Key parameter is paired with a value of the Tag.n.Value parameter. **Note:** Each value of this parameter can be up to 64 characters in length. It cannot start with **aliyun**, **acs:**, **http://**, or **https://**.
 
  |
 |Tag.n.Value|String|No|The value of the tag that you can use to filter clusters by tag. You can specify up to 20 key-value pairs of tags at a time. The number n in each key-value pair must be different and must be consecutive integers that start from 1. Each value of the Tag.n.Value parameter is paired with a value of the Tag.n.Key parameter. **Note:** 
 
 -   If you specify the **Tag.n.Key** parameter, you must also specify the **Tag.n.Value** parameter.
--   Each value of this parameter can be up to 64 characters in length. It cannot start with aliyun, acs:, http://, or https://.
+-   Each value of this parameter can be up to 64 characters in length. It cannot start with **aliyun**, **acs:**, **http://**, or **https://**.
 
  |
 |PageSize|Integer|No|The number of entries to return on each page. Valid values: -   30
@@ -51,8 +51,8 @@ You can call this operation to query ApsaraDB for POLARDB clusters or ApsaraDB f
 |:--------|:---|:----------|
 |DBClusterId|String|The ID of the ApsaraDB for POLARDB cluster.|
 |DBClusterDescription|String|The description of the cluster.|
-|PayType|String|The billing method of the cluster. Valid values: -   Postpaid: pay-as-you-go
--   Prepaid: subscription
+|PayType|String|The billing method of the cluster. Valid values: -   Postpaid: Pay-As-You-Go.
+-   Prepaid: Subscription.
 
  |
 |RegionId|String|The ID of the region.|
@@ -74,6 +74,11 @@ You can call this operation to query ApsaraDB for POLARDB clusters or ApsaraDB f
 |StorageUsed|Long|The storage usage of the cluster.|
 |Tags|List<Tag\>|The list of tags.|
 |DBNodes|List<DBNode\>|The list of nodes in the cluster.|
+|DeletionLock|Integer|Whether to lock the deletion operation. -   0: not locked.
+-   1: locked.
+
+ |
+|Expired|String|Whether the cluster has expired.|
 
 ## DBNode {#section_crc_fns_xfb .section}
 
@@ -85,6 +90,7 @@ You can call this operation to query ApsaraDB for POLARDB clusters or ApsaraDB f
 -   Reader
 
  |
+|ZoneId|String|The ID of the zone where the node is located.|
 
 ## Tag {#section_2sf_yb0_gty .section}
 
@@ -95,7 +101,7 @@ You can call this operation to query ApsaraDB for POLARDB clusters or ApsaraDB f
 
 ## Sample request {#section_snj_c3s_xfb .section}
 
-```
+``` {#codeblock_912_4mk_9eq}
 https://polardb.aliyuncs.com/?Action=DescribeDBClusters
 &RegionId=cn-hangzhou
 &<[Common request parameters]>
@@ -105,115 +111,115 @@ https://polardb.aliyuncs.com/?Action=DescribeDBClusters
 
 XML format
 
-```
+``` {#codeblock_a7c_vcc_chi}
 <DescribeDBClustersResponse>  
-	<Items>
-		<DBCluster>
-			<DBVersion>5.6</DBVersion>
-			<LockMode>Unlock</LockMode>
-			<DBClusterDescription>pc-xxxxxxxxxxxxxxxxx</DBClusterDescription>
-			<DBClusterNetworkType>VPC</DBClusterNetworkType>
-			<StorageUsed>3150970880</StorageUsed>
-			<DBClusterId>pc-xxxxxxxxxxxxxxxxx</DBClusterId>
-			<VpcId>vpc-xxxxxxxxxxxxxxxxx</VpcId>
-			<Engine>POLARDB</Engine>
-			<DBClusterStatus>Running</DBClusterStatus>
-			<Tags>
-				<Tag>
-					<Value>1111</Value>
-					<Key>test1</Key>
-				</Tag>
-				<Tag>
-					<Value>2222</Value>
-					<Key>test2</Key>
-				</Tag>
-			</Tags>
-			<ExpireTime></ExpireTime>
-			<DBNodeClass>polar.mysql.x4.large</DBNodeClass>
-			<RegionId>cn-hangzhou</RegionId>
-			<Expired>false</Expired>
-			<CreateTime>2019-01-10T09:33:58Z</CreateTime>
-			<DBType>MySQL</DBType>
-			<DBNodes>
-				<DBNode>
-					<DBNodeRole>Writer</DBNodeRole>
-					<DBNodeClass>polar.mysql.x4.large</DBNodeClass>
-					<DBNodeId>pi-xxxxxxxxxxxxxxxxx</DBNodeId>
-				</DBNode>
-				<DBNode>
-					<DBNodeRole>Reader</DBNodeRole>
-					<DBNodeClass>polar.mysql.x4.large</DBNodeClass>
-					<DBNodeId>pi-xxxxxxxxxxxxxxxxx</DBNodeId>
-				</DBNode>
-			</DBNodes>
-			<DBNodeNumber>2</DBNodeNumber>
-			<PayType>Postpaid</PayType>
-		</DBCluster>
-	</Items>
-	<TotalRecordCount>1</TotalRecordCount>
-	<PageNumber>1</PageNumber>
-	<RequestId>F7036AE7-20B7-43F8-9E58-558CCDED8CCB</RequestId>
-	<PageRecordCount>1</PageRecordCount>
+    <Items>
+        <DBCluster>
+            <DBVersion>5.6</DBVersion>
+            <LockMode>Unlock</LockMode>
+            <DBClusterDescription>pc-xxxxxxxxxxxxxxxxx</DBClusterDescription>
+            <DBClusterNetworkType>VPC</DBClusterNetworkType>
+            <StorageUsed>3150970880</StorageUsed>
+            <DBClusterId>pc-xxxxxxxxxxxxxxxxx</DBClusterId>
+            <VpcId>vpc-xxxxxxxxxxxxxxxxx</VpcId>
+            <Engine>POLARDB</Engine>
+            <DBClusterStatus>Running</DBClusterStatus>
+            <Tags>
+                <Tag>
+                    <Value>1111</Value>
+                    <Key>test1</Key>
+                </Tag>
+                <Tag>
+                    <Value>2222</Value>
+                    <Key>test2</Key>
+                </Tag>
+            </Tags>
+            <ExpireTime></ExpireTime>
+            <DBNodeClass>polar.mysql.x4.large</DBNodeClass>
+            <RegionId>cn-hangzhou</RegionId>
+            <Expired>false</Expired>
+            <CreateTime>2019-01-10T09:33:58Z</CreateTime>
+            <DBType>MySQL</DBType>
+            <DBNodes>
+                <DBNode>
+                    <DBNodeRole>Writer</DBNodeRole>
+                    <DBNodeClass>polar.mysql.x4.large</DBNodeClass>
+                    <DBNodeId>pi-xxxxxxxxxxxxxxxxx</DBNodeId>
+                </DBNode>
+                <DBNode>
+                    <DBNodeRole>Reader</DBNodeRole>
+                    <DBNodeClass>polar.mysql.x4.large</DBNodeClass>
+                    <DBNodeId>pi-xxxxxxxxxxxxxxxxx</DBNodeId>
+                </DBNode>
+            </DBNodes>
+            <DBNodeNumber>2</DBNodeNumber>
+            <PayType>Postpaid</PayType>
+        </DBCluster>
+    </Items>
+    <TotalRecordCount>1</TotalRecordCount>
+    <PageNumber>1</PageNumber>
+    <RequestId>F7036AE7-20B7-43F8-9E58-558CCDED8CCB</RequestId>
+    <PageRecordCount>1</PageRecordCount>
   </DescribeDBClustersResponse>
 ```
 
 JSON format
 
-```
+``` {#codeblock_brm_120_jbr}
 {
-	"Items": {
-		"DBCluster": [
-			{
-				"DBVersion": "5.6",
-				"LockMode": "Unlock",
-				"DBClusterDescription": "pc-xxxxxxxxxxxxxxxxx",
-				"DBClusterNetworkType": "VPC",
-				"StorageUsed": 3150970880,
-				"DBClusterId": "pc-xxxxxxxxxxxxxxxxx",
-				"VpcId": "vpc-xxxxxxxxxxxxxxxxx",
-				"Engine": "POLARDB",
-				"DBClusterStatus": "Running",
-				"Tags": {
-					"Tag": [
-						{
-							"Value": "1111",
-							"Key": "test1"
-						},
-						{
-							"Value": "2222",
-							"Key": "test2"
-						}
-					]
-				},
-				"ExpireTime": "",
-				"DBNodeClass": "polar.mysql.x4.large",
-				"RegionId": "cn-hangzhou",
-				"Expired": false,
-				"CreateTime": "2019-01-10T09:33:58Z",
-				"DBType": "MySQL",
-				"DBNodes": {
-					"DBNode": [
-						{
-							"DBNodeRole": "Writer",
-							"DBNodeClass": "polar.mysql.x4.large",
-							"DBNodeId": "pi-xxxxxxxxxxxxxxxxx"
-						},
-						{
-							"DBNodeRole": "Reader",
-							"DBNodeClass": "polar.mysql.x4.large",
-							"DBNodeId": "pi-xxxxxxxxxxxxxxxxx"
-						}
-					]
-				},
-				"DBNodeNumber": "2",
-				"PayType": "Postpaid"
-			}
-		]
-	},
-	"TotalRecordCount": 1,
-	"PageNumber": 1,
-	"RequestId": "F7036AE7-20B7-43F8-9E58-558CCDED8CCB",
-	"PageRecordCount": 1
+    "Items": {
+        "DBCluster": [
+            {
+                "DBVersion": "5.6",
+                "LockMode": "Unlock",
+                "DBClusterDescription": "pc-xxxxxxxxxxxxxxxxx",
+                "DBClusterNetworkType": "VPC",
+                "StorageUsed": 3150970880,
+                "DBClusterId": "pc-xxxxxxxxxxxxxxxxx",
+                "VpcId": "vpc-xxxxxxxxxxxxxxxxx",
+                "Engine": "POLARDB",
+                "DBClusterStatus": "Running",
+                "Tags": {
+                    "Tag": [
+                        {
+                            "Value": "1111",
+                            "Key": "test1"
+                        },
+                        {
+                            "Value": "2222",
+                            "Key": "test2"
+                        }
+                    ]
+                },
+                "ExpireTime": "",
+                "DBNodeClass": "polar.mysql.x4.large",
+                "RegionId": "cn-hangzhou",
+                "Expired": false,
+                "CreateTime": "2019-01-10T09:33:58Z",
+                "DBType": "MySQL",
+                "DBNodes": {
+                    "DBNode": [
+                        {
+                            "DBNodeRole": "Writer",
+                            "DBNodeClass": "polar.mysql.x4.large",
+                            "DBNodeId": "pi-xxxxxxxxxxxxxxxxx"
+                        },
+                        {
+                            "DBNodeRole": "Reader",
+                            "DBNodeClass": "polar.mysql.x4.large",
+                            "DBNodeId": "pi-xxxxxxxxxxxxxxxxx"
+                        }
+                    ]
+                },
+                "DBNodeNumber": "2",
+                "PayType": "Postpaid"
+            }
+        ]
+    },
+    "TotalRecordCount": 1,
+    "PageNumber": 1,
+    "RequestId": "F7036AE7-20B7-43F8-9E58-558CCDED8CCB",
+    "PageRecordCount": 1
 }
 ```
 
