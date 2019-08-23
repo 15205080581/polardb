@@ -1,6 +1,6 @@
 # View connection endpoints {#concept_imd_wlq_tdb .concept}
 
-A POLARDB cluster includes cluster connection endpoints and primary endpoints.
+A POLARDB cluster includes cluster connection endpoints and primary connection endpoints.
 
 ## Procedure {#section_rc4_ceb_45t .section}
 
@@ -15,9 +15,9 @@ A POLARDB cluster includes cluster connection endpoints and primary endpoints.
 |Cluster connection endpoint \(recommended\)|An application only needs to connect to a cluster connection endpoint, then it can connect to all the nodes in the POLARDB cluster. The cluster endpoint supports read/write splitting. It sends write requests to the primary node and read requests to the primary and read-only nodes and can automatically balance load among these nodes. **Note:** The POLARDB cluster contains one default cluster connection endpoint. You can customize one or more cluster connection endpoints as needed. A custom connection endpoint can connect to specified nodes and work in the specified read/write mode. For more information, see [Set or release a custom cluster connection point](../../../../intl.en-US/User Guide for MySQL/Connect to POLARDB/Set or release a custom cluster connection endpoint.md#).
 
  |VPC and public network|
-|Primary connection endpoint|A primary connection endpoint always connects to the primary node and supports read and write operations. If the primary node becomes faulty, the primary endpoint is automatically switched to the read-only node that is promoted to the primary node.|VPC and public network|
+|Primary connection endpoint|A primary connection endpoint always connects to the primary node and supports read and write operations. If the primary node becomes faulty, the primary connection endpoint is automatically switched to the read-only node that is promoted to the primary node.|VPC and public network|
 
-![连接地址示意图](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3018/156652977545542_en-US.png)
+![连接地址示意图](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3018/156654173045542_en-US.png)
 
 ## Private and public connection endpoints {#section_3n5_mt5_rnu .section}
 
