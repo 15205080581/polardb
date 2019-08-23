@@ -74,6 +74,11 @@
 |StorageUsed|Long|存储用量。|
 |Tags|List<Tag\>|标签列表。|
 |DBNodes|List<DBNode\>|节点列表。|
+|DeletionLock|Integer|集群删除保护状态： -   0：未锁定；
+-   1：锁定。
+
+ |
+|Expired|String|是否过期。|
 
 ## DBNode参数 {#section_crc_fns_xfb .section}
 
@@ -85,6 +90,7 @@
 -   Reader。
 
  |
+|ZoneId|String|可用区ID。|
 
 ## Tag参数 {#section_2sf_yb0_gty .section}
 
