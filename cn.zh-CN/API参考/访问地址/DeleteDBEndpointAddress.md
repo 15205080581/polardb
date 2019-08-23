@@ -11,7 +11,7 @@
 |Action|String|是|系统规定参数，取值：DeleteDBEndpointAddress。|
 |DBClusterId|String|是|集群ID。|
 |EndpointId|String|是|集群地址ID。例如pe-xxxxxxxx。|
-|NetType|String|是|IP 网络类型，取值：Private。|
+|NetType|String|是|IP 网络类型，取值：Public。|
 
 ## 返回参数 {#section_cf4_phs_xfb .section}
 
