@@ -1,8 +1,8 @@
 # 从RDS for MySQL迁移至POLARDB for MySQL {#concept_pf2_25y_bgb .concept}
 
-**说明：** 阿里云已支持从RDS for MySQL一键迁移到POLARDB for MySQL，详情请参见[一键升级RDS for MySQL到POLARDB for MySQL](cn.zh-CN/数据迁移__同步/POLARDB for MySQL/数据迁移/一键升级RDS for MySQL到POLARDB for MySQL.md#)。
+**说明：** 阿里云已支持从RDS for MySQL一键迁移到POLARDB for MySQL，详情请参见[一键升级RDS for MySQL到POLARDB for MySQL](intl.zh-CN/数据迁移__同步/POLARDB for MySQL/数据迁移/一键升级RDS for MySQL到POLARDB for MySQL.md#)。
 
-使用阿里云[数据传输服务（DTS）](https://help.aliyun.com/document_detail/26592.html?spm=a2c4g.11186623.2.8.6df54b84N9BVGE)，您可以实现RDS for MySQL到POLARDB for MySQL的数据迁移。通过DTS增量迁移的存储引擎，可以在源RDS实例不停机的情况下，将数据迁移到目标POLARDB for MySQL集群。
+使用阿里云[数据传输服务（DTS）](https://www.alibabacloud.com/help/zh/doc-detail/26592.htm)，您可以实现RDS for MySQL到POLARDB for MySQL的数据迁移。通过DTS增量迁移的存储引擎，可以在源RDS实例不停机的情况下，将数据迁移到目标POLARDB for MySQL集群。
 
 本文介绍使用DTS将RDS for MySQL迁移至POLARDB for MySQL的任务配置流程。
 
@@ -16,7 +16,7 @@
 
 **创建迁移账号** 
 
-迁移任务配置时，需要提供源RDS实例及目的POLARDB集群的迁移账号。迁移账号的相关权限详见上面的 迁移权限要求 一节。如果尚未创建迁移账号，您可以参考 [RDS实例账号创建](https://help.aliyun.com/document_detail/26186.html?spm=5176.product26090.6.190.dNyWM8)和[POLARDB集群账号创建](https://help.aliyun.com/document_detail/68508.html?spm=a2c4g.11186623.2.10.3f657dd3d4orj4)。先在源实例及目的集群中创建迁移账号，并将要迁移的库表的读写权限授权给上面创建的账号。
+迁移任务配置时，需要提供源RDS实例及目的POLARDB集群的迁移账号。迁移账号的相关权限详见上面的 迁移权限要求 一节。如果尚未创建迁移账号，您可以参考 [RDS实例账号创建](https://www.alibabacloud.com/help/zh/doc-detail/26186.htm)和[POLARDB集群账号创建](../../../../intl.zh-CN/POLARDB for MySQL快速入门/创建数据库账号.md#)。先在源实例及目的集群中创建迁移账号，并将要迁移的库表的读写权限授权给上面创建的账号。
 
 **配置迁移任务** 
 
@@ -26,7 +26,7 @@
 2.  在页面左侧，选择**数据迁移**。
 3.  单击右上角**创建迁移任务**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156257242836105_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156636860936105_zh-CN.png)
 
 4.  （可选）填写任务名称。
 
@@ -39,7 +39,7 @@
     -   RDS实例ID：选择配置迁移的源RDS实例的实例ID。
     -   数据库账号：连接RDS实例的账号。
     -   数据库密码：以上数据库账号的密码。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156257242834082_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156636861034082_zh-CN.png)
 
 6.  单击**测试连接**，确认DTS可以连接到源RDS实例。
 7.  填写目标POLARDB集群信息。
@@ -49,7 +49,7 @@
     -   POLARDB实例ID：选择配置迁移的目标POLARDB集群的集群ID。
     -   数据库账号：连接POLARDB集群的账号。
     -   数据库密码：以上数据库账号的密码。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156257242834083_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156636861034083_zh-CN.png)
 
 8.  单击**测试连接**，确认DTS可以连接到目标POLARDB集群。
 9.  单击右下角的**授权白名单并进入下一步**。这个步骤DTS会将DTS服务器的IP地址添加到源RDS实例及目标POLARDB的白名单中，避免因为RDS实例及POLARDB设置了白名单，DTS服务器连接不上实例导致迁移失败。
@@ -77,19 +77,19 @@
 
     -   **迁移对象**：选择要迁移的对象，单击向右的箭头，将选中的对象添加到右侧。
 
-        迁移对象的选择粒度细化为：库、表、列三个粒度。默认情况下，对象迁移到目标POLARDB集群后，对象名跟源RDS实例一致。如果您迁移的对象在源实例跟目标集群上名称不同，那么需要使用DTS提供的对象名映射功能，详细使用方式可以参考[库表列映射](https://help.aliyun.com/document_detail/26628.html?spm=5176.doc26624.6.125.Mpn8On)。
+        迁移对象的选择粒度细化为：库、表、列三个粒度。默认情况下，对象迁移到目标POLARDB集群后，对象名跟源RDS实例一致。如果您迁移的对象在源实例跟目标集群上名称不同，那么需要使用DTS提供的对象名映射功能，详细使用方式可以参考[库表列映射](https://www.alibabacloud.com/help/zh/doc-detail/26628.htm)。
 
         **说明：** 
 
         -   暂时不支持对系统表的迁移。
         -   目标集群中不能有和迁移对象同名的对象。将鼠标移至右侧框中的对象，单击**编辑**，即可修改迁移后的对象名。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156257242934085_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156636861034085_zh-CN.png)
 
 11. 单击右下角的**预检查并启动**，成功后单击**下一步**。
 
     如果预检查失败，可以单击具体检查项后的检查结果，查看具体的失败详情，并根据失败原因修复后，重新进行预检查。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156257242934084_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156636861134084_zh-CN.png)
 
 12. 确认DTS购买信息，阅读并勾选**服务条款**，单击**立即购买并启动**。
 

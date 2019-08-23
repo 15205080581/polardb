@@ -45,8 +45,9 @@ interp枚举值及其解释：
 
 ## 示例 {#section_3lk_wxg_xyq .section}
 
-``` {#codeblock_k0i_moa_rib}
+``` {#codeblock_za7_ye0_vp8}
 update rast set rast=ST_SetColorInterp(rast,0, 'CI_Cyan');
+
 __________________________________
 (1 row)
 ```

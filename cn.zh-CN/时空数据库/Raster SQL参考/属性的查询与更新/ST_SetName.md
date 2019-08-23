@@ -17,8 +17,9 @@ raster ST_SetName(raster rast, cstring name);
 
 ## 示例 {#section_j81_xl6_jvz .section}
 
-``` {#codeblock_ewm_4bn_eo3}
-update rat set rast = ST_SetNam e(rast,'im age2') where id = 2;
+``` {#codeblock_bm6_lc0_c3r}
+update rat set rast = ST_SetName(rast,'image2') where id = 2;
+
 ——————————————————————————————————
 (1 row)
 ```

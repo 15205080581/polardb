@@ -1,11 +1,11 @@
 # ST\_patchAvg {#reference_c4x_vgn_qfb .reference}
 
-计算pcpatch对象中pcpoint所有属性的平均值，返回新的pcpoint对象。
+计算pcpatch对象中所有pcpoint某一属性维度的平均值。
 
-## 语法 {#section_ysj_vhn_qfbd .section}
+## 语法 {#section_ysj_vhn_qfb .section}
 
 ```
-pcpoint ST_patchAvg(pcpatch pc);
+numeric ST_patchAvg(pcpatch pc, text dimname);
 ```
 
 ## 参数 {#section_gyb_phn_qfb .section}
@@ -13,12 +13,13 @@ pcpoint ST_patchAvg(pcpatch pc);
 |参数名称|描述|
 |:---|:-|
 |pc|pcpatch对象。|
+|dimname|指定的属性维名称。|
 
 ## 示例 {#section_cxp_4jn_qfb .section}
 
 ```
-SELECT ST_AsText(ST_PatchAvg(pa)) FROM patches WHERE id = 7;
--------------------------------------
-{"pcid":1,"pt":[-126.46,45.54,54.5,5]}
+SELECT ST_PatchAvg(pa, 'intensity') FROM patches WHERE id = 7;
+--------------------------
+5.0000000000000000
 ```
 

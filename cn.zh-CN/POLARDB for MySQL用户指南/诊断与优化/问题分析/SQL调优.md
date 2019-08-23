@@ -16,11 +16,11 @@ SQL调优功能可以根据您输入的SQL语句，提出优化建议。您也�
     |用户名|有管理相应数据库权限的账号名称。|
     |密码|登录数据库的账号对应的密码。|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81403/155747464434823_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81403/156594443934823_zh-CN.png)
 
 7.  选择要查询或管理的数据库。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81403/155747464434824_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81403/156594443934824_zh-CN.png)
 
 8.  在输入框中填写SQL语句，然后选择如下操作。
 
@@ -28,15 +28,15 @@ SQL调优功能可以根据您输入的SQL语句，提出优化建议。您也�
 
     -   单击**查看执行计划**，即可在执行结果中查看SQL语句具体的执行计划。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81403/155747464434818_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81403/156594444034818_zh-CN.png)
 
     -   单击**智能诊断**，系统会对所输入的SQL语句进行诊断并给出优化建议，如索引优化。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81403/155747464434819_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81403/156594444034819_zh-CN.png)
 
     -   单击**执行语句**并在弹出的对话框中单击**确认**，即可在已选数据库中执行SQL命令，可在执行结果中查看SQL执行结果。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81403/155747464434820_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81403/156594444034820_zh-CN.png)
 
     -   单击**格式优化**，系统会自动优化所输入SQL语句的格式。
     -   单击**撤销**，可以撤销上一步对SQL语句进行的修改。若您误撤销了上一步的操作，可以立刻单击**重做**，即可恢复被撤销的修改。

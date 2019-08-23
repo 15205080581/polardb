@@ -14,7 +14,7 @@
 
 |名称|类型|描述|
 |:-|:-|:-|
-|<公共返回参数\>|-|详见[公共参数](cn.zh-CN/API参考/ 使用API/公共参数.md#)。|
+|<公共返回参数\>|-|详见[公共参数](intl.zh-CN/API参考/ 使用API/公共参数.md#)。|
 |AccountList|List<DBAccount\>|账号组成的集合。|
 
 ## DBAccount参数 {#section_qgd_d1t_xfb .section}

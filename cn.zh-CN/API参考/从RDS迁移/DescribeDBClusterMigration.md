@@ -2,7 +2,9 @@
 
 该接口用于查询POLARDB集群的迁移状态。
 
-该接口用于查询RDS一键迁移到POLARDB的迁移状态。详情请参见[一键升级RDS for MySQL到POLARDB for MySQL](../../../../cn.zh-CN/数据迁移__同步/POLARDB for MySQL/数据迁移/一键升级RDS for MySQL到POLARDB for MySQL.md#)。
+该接口用于查询RDS一键迁移到POLARDB的迁移状态。详情请参见[一键升级RDS for MySQL到POLARDB for MySQL](../../../../intl.zh-CN/数据迁移__同步/POLARDB for MySQL/数据迁移/一键升级RDS for MySQL到POLARDB for MySQL.md#)。
+
+调用该接口时，集群必须已经创建了一键升级任务。创建一键升级任务的接口为[CreateDBCluster](intl.zh-CN/API参考/集群管理/CreateDBCluster.md#)，参数**CreationOption**取值需要为**MigrationFromRDS**。
 
 ## 请求参数 {#section_85h_fpg_ena .section}
 
@@ -15,7 +17,7 @@
 
 |名称|类型|描述|
 |:-|:-|:-|
-|<公共返回参数\>|-|详见[公共参数](cn.zh-CN/API参考/ 使用API/公共参数.md#)。|
+|<公共返回参数\>|-|详见[公共参数](intl.zh-CN/API参考/ 使用API/公共参数.md#)。|
 |DBClusterId|String|POLARDB集群ID。|
 |SourceRDSDBInstanceId|String|源RDS实例ID。|
 |RdsReadWriteMode|String|源RDS实例读写模式|

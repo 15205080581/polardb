@@ -10,7 +10,7 @@
 |RegionId|String|是|地域ID。|
 |DBClusterIds|String|否|如果有多个集群ID，以","分隔。|
 |DBClusterDescription|String|否|集群描述，可模糊查询。|
-|DBClusterStatus|String|否|集群状态，详见[集群状态表](cn.zh-CN/API参考/附表/集群状态表.md#)。|
+|DBClusterStatus|String|否|集群状态，详见[集群状态表](intl.zh-CN/API参考/附表/集群状态表.md#)。|
 |DBType|String|否|数据库类型，取值： -   MySQL；
 -   PostgreSQL；
 -   Oracle。
@@ -38,7 +38,7 @@
 
 |名称|类型|描述|
 |:-|:-|:-|
-|<公共返回参数\>|-|详见[公共返回参数](cn.zh-CN/API参考/ 使用API/公共参数.md#)。|
+|<公共返回参数\>|-|详见[公共返回参数](intl.zh-CN/API参考/ 使用API/公共参数.md#)。|
 |RequestId|String|RequestId。|
 |PageNumber|Integer|页数。|
 |TotalRecordCount|Integer|总记录数。|

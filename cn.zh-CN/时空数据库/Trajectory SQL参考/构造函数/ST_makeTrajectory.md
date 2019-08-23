@@ -4,7 +4,7 @@
 
 ## 语法 {#section_og1_4hn_qfb .section}
 
-``` {#codeblock_bdo_7b4_1z1}
+``` {#codeblock_4n0_cee_atd}
 trajectory  ST_makeTrajectory (leaftype type, geometry spatial, tsrange timespan , cstring attrs_json);
 trajectory  ST_makeTrajectory (leaftype type, geometry spatial, timestamp start,  timestamp end ,  cstring attrs_json);
 trajectory  ST_makeTrajectory (leaftype type, geometry spatial, timestamp[]  timeline, cstringattrs_json );
@@ -29,7 +29,7 @@ trajectory  ST_makeTrajectory (leaftype type, float8[] x, float8[] y, i
 
 1.  attr\_json的格式为：
 
-    ``` {#codeblock_k2b_87n_pq3}
+    ``` {#codeblock_2d4_uxd_89c}
     {
       "leafcount": 3,
       "attributes": {
@@ -111,7 +111,7 @@ trajectory  ST_makeTrajectory (leaftype type, float8[] x, float8[] y, i
 2.  如果传入的时间参数为 timespan 或者 start、end，则会根据spatial中点的个数进行插值。
 3.  如果形式4不满足实际使用，可以自定义MakeTrajectory函数，前六个为固定参数，后面的参数可以根据实际情况进行定制：
 
-    ``` {#codeblock_kf9_25h_t4d}
+    ``` {#codeblock_ca5_n6e_07h}
     CREATE OR REPLACE FUNCTION  _ST_MakeTrajectory(type leaftype, x float8[], y float8[] , srid integer, timespan timestamp[],
         attrs_name cstring[], attr1 float8[], attr2 float4[], attr3 timestamp[])
         RETURNS trajectory
@@ -122,7 +122,7 @@ trajectory  ST_makeTrajectory (leaftype type, float8[] x, float8[] y, i
 
 ## 示例 {#section_lmw_qhn_qfb .section}
 
-``` {#codeblock_z2l_fgz_apq}
+``` {#codeblock_f5a_n78_0wx}
 -- (1) ST_MakeTrajectory with timestamp range
 select ST_MakeTrajectory('STPOINT'::leaftype, st_geomfromtext('LINESTRING (114 35, 115 36, 116 37)', 4326), '[2010-01-01 14:30, 2010-01-01 15:30)'::tsrange, '{"leafcount":3,"attributes":{"velocity": {"type": "integer", "length": 2,"nullable" : true,"value": [120, 130, 140]}, "accuracy": {"type": "float", "length": 4, "nullable" : false,"value": [120, 130, 140]}, "bearing": {"type": "float", "length": 8, "nullable" : false,"value": [120, 130, 140]}, "vesname": {"type": "string", "length": 20, "nullable" : true,"value": ["adsf", "sdf", "sdfff"]}, "active": {"type": "timestamp", "nullable" : false,"value": ["Fri Jan 01 14:30:00 2010", "Fri Jan 01 15:00:00 2010", "Fri Jan 01 15:30:00 2010"]}}, "events": [{"1" : "Fri Jan 01 14:30:00 2010"}, {"2" : "Fri Jan 01 15:00:00 2010"}, {"3" : "Fri Jan 01 15:30:00 2010"}]}');                        st_maketrajectory         
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 

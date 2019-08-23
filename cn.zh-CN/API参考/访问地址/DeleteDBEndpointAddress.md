@@ -2,7 +2,7 @@
 
 该接口用于释放POLARDB集群公网地址。
 
-**说明：** 释放POLARDB自定义集群地址请参见[DeleteDBClusterEndpoint](cn.zh-CN/API参考/访问地址/DeleteDBClusterEndpoint.md#)。
+**说明：** 释放POLARDB自定义集群地址请参见[DeleteDBClusterEndpoint](intl.zh-CN/API参考/访问地址/DeleteDBClusterEndpoint.md#)。
 
 ## 请求参数 {#section_kyn_pgs_xfb .section}
 
@@ -17,7 +17,7 @@
 
 |名称|类型|描述|
 |:-|:-|:-|
-|<公共返回参数\>|-|详见[公共返回参数](cn.zh-CN/API参考/ 使用API/公共参数.md#)。|
+|<公共返回参数\>|-|详见[公共返回参数](intl.zh-CN/API参考/ 使用API/公共参数.md#)。|
 |RequestId|String|RequestId|
 
 ## 请求示例 {#section_khc_1dz_xfb .section}
