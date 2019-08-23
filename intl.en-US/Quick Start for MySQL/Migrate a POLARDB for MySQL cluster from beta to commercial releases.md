@@ -16,7 +16,7 @@ Before the migration, you must follow these steps to configure a whitelist for t
 
 **Create accounts**
 
-Before the migration, you must create an account for the source and destination POLARDB clusters separately. The account can be a superuser account. For more information, see [Create an initial account for a POLARDB cluster](intl.en-US/Quick Start for MySQL/Create accounts for a POLARDB for MySQL cluster.md#).
+Before the migration, you must create an account for the source and destination POLARDB clusters separately. The account can be a privileged account. For more information, see [Create an initial account for a POLARDB cluster](intl.en-US/Quick Start for MySQL/Create accounts for a POLARDB for MySQL cluster.md#).
 
 **Stop write operations**
 
@@ -27,7 +27,7 @@ For data consistency purposes, you must stop writing data into the source POLARD
 1.  Log on to the [DTS console](https://dts.console.aliyun.com/).
 2.  In the left-side navigation pane, click **Data Migration**. Then in the upper-right corner, and click **Create Migration Task**.
 
-    ![数据迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13787/15665303243682_en-US.png)
+    ![数据迁移](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13787/15665316353682_en-US.png)
 
 3.  \(Optional\) Enter the task name.
 
@@ -40,9 +40,9 @@ For data consistency purposes, you must stop writing data into the source POLARD
     -   **Database Type**: Select **MySQL**.
     -   **Hostname or IP Address**: Enter the public connection endpoint for accessing the POLARDB cluster. For more information, see [View connection endpoints](intl.en-US/Quick Start for MySQL/View connection endpoints.md#).
     -   **Port Number**: Enter **3306**.
-    -   **Database Account**: Enter the username of the superuser account for the POLARDB cluster.
-    -   **Database Password**: Enter the password of the superuser account for the POLARDB cluster.
-    ![设置迁移任务参数](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13787/15665303243683_en-US.png)
+    -   **Database Account**: Enter the username of the privileged account for the POLARDB cluster.
+    -   **Database Password**: Enter the password of the privileged account for the POLARDB cluster.
+    ![设置迁移任务参数](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13787/15665316353683_en-US.png)
 
 5.  In the lower-right corner, click **Set Whitelist and Next**.
 6.  Select migration types and migration objects.
