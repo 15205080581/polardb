@@ -11,10 +11,7 @@ You can call this operation to release a public connection point for a specified
 |Action|String|Yes|The operation that you want to perform. Set this parameter to DeleteDBEndpointAddress.|
 |DBClusterId|String|Yes|The ID of the ApsaraDB for POLARDB cluster to which a public connection point belongs.|
 |EndpointId|String|Yes|The ID of the public connection point to be released. For example, pe-xxxxxxxx.|
-|NetType|String|Yes|The network type of the cluster connection point. Valid values: -   Public: public network
--   Private: private network
-
- |
+|NetType|String|Yes|The network type of the cluster connection point. Value: Public.|
 
 ## Response parameters {#section_cf4_phs_xfb .section}
 
