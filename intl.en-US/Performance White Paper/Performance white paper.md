@@ -91,9 +91,9 @@ Sysbench is a modular, cross-platform and multi-threaded benchmark tool for eval
 
     -   After running the htop command, you can click Q to exit.
     -   For more information about htop, go to [http://hisham.hm/htop/?spm=a2c4g.11186623.2.6.eKuBNC](http://hisham.hm/htop/).
-    ![CPU使用率](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15665314592111_en-US.png)
+    ![CPU使用率](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15665315482111_en-US.png)
 
-    ![CPU使用率](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15665314592112_en-US.png)
+    ![CPU使用率](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3035/15665315492112_en-US.png)
 
 
 ## Test results {#section_lfs_dyd_l2b .section}
@@ -104,17 +104,17 @@ Obtain the QPS and TPS from the test results in the log file.
 
 Test results for a single ECS instance:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665314602113_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665315492113_en-US.png)
 
 Total QPS for the three ECS instances:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665314606633_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665315496633_en-US.png)
 
 Total TPS for the three ECS instances:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665314606634_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665315506634_en-US.png)
 
 The following figure shows the QPS for multiple read-only nodes. Five read-only nodes are used in this example, each with 4 cores and 32 GB RAM.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665314606635_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3036/15665315506635_en-US.png)
 
