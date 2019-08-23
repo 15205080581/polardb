@@ -17,8 +17,8 @@ You can call this operation to query the detailed information of a specified Aps
 |RegionId|String|The ID of the region.|
 |DBClusterId|String|The ID of the ApsaraDB for POLARDB cluster.|
 |DBClusterDescription|String|The description of the cluster.|
-|PayType|String|The billing method of the cluster. Valid values: -   Postpaid: pay-as-you-go
--   Prepaid: subscription
+|PayType|String|The billing method of the cluster. Valid values: -   Postpaid: Pay-As-You-Go.
+-   Prepaid: Subscription.
 
  |
 |Engine|String|The engine of the cluster.|
@@ -35,15 +35,18 @@ You can call this operation to query the detailed information of a specified Aps
 |VSwitchId|String|The VSwitch ID of the cluster.|
 |StorageUsed|Long|The storage usage of the cluster, in bytes.|
 |StorageMax|Long|The maximum storage capacity supported by the current specifications of the cluster, in bytes.|
-|CreationTime|String|The time when the cluster was created. The time follows the ISO 8601 standard in the *yyyy-MM-dd*T*HH:mm:ss*Z format. For example, 2011-05-30T12:11:4Z.|
-|ExpireTime|String|The time when the cluster expires. **Note:** Pay-as-you-go clusters never expire.
+|CreationTime|String|The time when the cluster was created. The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format, for example, 2011-05-30T12:11:4Z.|
+|ExpireTime|String|The time when the cluster expires. **Note:** Pay-As-You-Go clusters never expire.
 
  |
-|MaintainTime|String|The maintenance window of the cluster. The time follows the *HH:mm*Z-*HH:mm*Z format.
+|MaintainTime|String|The maintenance window of the cluster. The time follows the HH:mmZ-HH:mmZ format.
 
- For example, a value of 16:00Z-17:00Z indicates that the cluster can be maintained from 00:00 to 01:00 \(UTC+8\).
+ For example, the value 16:00Z-17:00Z indicates that the cluster can be maintained from 00:00 to 01:00 \(UTC+8\).
 
  |
+|Expired|String|Whether the cluster has expired.|
+|IsLatestVersion|Boolean|Whether the version of the cluster is the latest.|
+|ZoneIds|String|The zone where data is distributed.|
 |DBNodes|List<DBNode\>|The list of nodes in the cluster.|
 |Tags|List<Tag\>|The list of tags.|
 
@@ -72,7 +75,7 @@ You can call this operation to query the detailed information of a specified Aps
 
 ## Sample request {#section_snj_c3s_xfb .section}
 
-```
+``` {#codeblock_yqr_dbh_rkl}
 https://polardb.aliyuncs.com/?Action=DescribeDBClusterAttribute
 &DBClusterId=pc-xxxxxxxxxxxxxxx
 &<[Common request parameters]>
@@ -82,7 +85,7 @@ https://polardb.aliyuncs.com/?Action=DescribeDBClusterAttribute
 
 XML format
 
-```
+``` {#codeblock_yed_qw5_24v}
 <DescribeDBClusterAttributeResponse>  
     <DBVersion>5.6</DBVersion>
     <LockMode>Unlock</LockMode>
@@ -127,7 +130,7 @@ XML format
 
 JSON format
 
-```
+``` {#codeblock_9ic_8s3_a83}
 {
     "DBVersion": "5.6",
     "LockMode": "Unlock",
