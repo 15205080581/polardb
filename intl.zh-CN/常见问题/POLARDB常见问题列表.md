@@ -50,7 +50,7 @@ POLARDB通过阿里巴巴十年双十一技术的沉淀，在技术与性能上�
 
 ## Q：云数据库POLARDB版有哪些功能特性？ {#section_ulh_36o_fv5 .section}
 
-![原理](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/314791/156655446356662_zh-CN.png)
+![原理](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/314791/156681384956662_zh-CN.png)
 
 POLARDB的功能特性主要有如下：
 
@@ -77,7 +77,7 @@ POLARDB的功能特性主要有如下：
 
 **从RDS一键迁移POLARDB**
 
-目前POLARDB数据库内核支持从RDS for MySQL 5.6一键迁移到PolarDB，流程详见[一键升级RDS for MySQL到POLARDB for MySQL](../../../../intl.zh-CN/数据迁移__同步/POLARDB for MySQL/数据迁移/一键升级RDS for MySQL到POLARDB for MySQL.md#)。
+目前POLARDB数据库内核支持从RDS for MySQL 5.6一键迁移到POLARDB，流程详见[一键升级RDS for MySQL到POLARDB for MySQL](../../../../intl.zh-CN/数据迁移__同步/POLARDB for MySQL/数据迁移/一键升级RDS for MySQL到POLARDB for MySQL.md#)。
 
 ## Q：为什么云数据库POLARDB版优于传统MySQL数据库？ {#section_73b_04t_cl7 .section}
 
