@@ -19,6 +19,7 @@ You can call this operation to manually create a full snapshot backup for a spec
 |Parameter|Type|Description|
 |:--------|:---|:----------|
 |<Common response parameters\>|N/A|For more information, see [Common parameters](intl.en-US/API Reference/Call methods/Common parameters.md#).|
+|BackupJobId|String|The ID of the backup set.|
 
 ## Sample request {#section_snj_c3s_xfb .section}
 
