@@ -23,7 +23,8 @@
 
 |参数|类型|描述|
 |:-|:-|:-|
-|DBClusterIPArrayName|String|IP白名单分组的名称。|
+|DBClusterIPArrayAttribute|String|IP白名单分组属性。|
+|DBClusterIPArrayName|String|IP白名单分组名称。|
 |SecurityIps|String|IP白名单分组下的IP列表，最多1000个，多个IP间用英文逗号（,）隔开，支持如下两种格式： -   IP地址形式，例如：10.23.12.24。
 -   CIDR形式，例如：10.23.12.24/24（无类域间路由，24表示了地址中前缀的长度，范围为1~32）。
 

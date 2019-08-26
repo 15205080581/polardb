@@ -23,6 +23,7 @@ You can call this operation to query the IP address whitelist of a specified Aps
 
 |Parameter|Type|Description|
 |:--------|:---|:----------|
+|DBClusterIPArrayAttribute|String|The attribute of the IP address whitelist group.|
 |DBClusterIPArrayName|String|The name of the IP address whitelist group.|
 |SecurityIps|String|The IP addresses in the IP address whitelist group. Each whitelist group can contain a maximum of 1,000 IP addresses. Multiple IP addresses are separated with a comma \(,\). The following two formats are supported: -   IP address: for example, 10.23.12.24.
 -   Classless inter-domain routing \(CIDR\) block: for example, 10.23.12.24/24, where the suffix /24 indicates the number of bits for the prefix of the IP address. The suffix ranges from 1 to 32.
