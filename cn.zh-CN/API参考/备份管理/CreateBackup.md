@@ -19,6 +19,7 @@
 |名称|类型|描述|
 |:-|:-|:-|
 |<公共返回参数\>|-|详见[公共参数](intl.zh-CN/API参考/ 使用API/公共参数.md#)。|
+|BackupJobId|String|备份集ID。|
 
 ## 请求示例 {#section_snj_c3s_xfb .section}
 
