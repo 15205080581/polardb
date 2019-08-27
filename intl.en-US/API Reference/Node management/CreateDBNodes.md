@@ -27,7 +27,7 @@ You can call this operation to add a node to a specified ApsaraDB for POLARDB cl
 
 ## Sample request {#section_khc_1dz_xfb .section}
 
-```
+``` {#codeblock_5pt_e5m_hgn}
 https://polardb.aliyuncs.com/?Action=CreateDBNodes
 &DBClusterId=pc-xxxxxxxxxx
 &DBNode.N.TargetClass=polar.mysql.x2.medium
@@ -38,21 +38,21 @@ https://polardb.aliyuncs.com/?Action=CreateDBNodes
 
 XML format
 
-```
+``` {#codeblock_bbd_imn_w3e}
 <CreateDBNodesResponse>  
-	<OrderId>2035624xxxxxxxx</OrderId>
-	<RequestId>C5BC3F8D-37C0-40EF-B5EF-457F983C612A</RequestId>
-	<DBClusterId>pc-xxxxxxxxxxxxx</DBClusterId>
+    <OrderId>2035624xxxxxxxx</OrderId>
+    <RequestId>C5BC3F8D-37C0-40EF-B5EF-457F983C612A</RequestId>
+    <DBClusterId>pc-xxxxxxxxxxxxx</DBClusterId>
 </CreateDBNodesResponse>
 ```
 
 JSON format
 
-```
+``` {#codeblock_yfr_ysn_h5h}
 {
-	"OrderId": 2035624xxxxxxxx,
-	"RequestId": "C5BC3F8D-37C0-40EF-B5EF-457F983C612A",
-	"DBClusterId": "pc-xxxxxxxxxxxxx"
+    "OrderId": 2035624xxxxxxxx,
+    "RequestId": "C5BC3F8D-37C0-40EF-B5EF-457F983C612A",
+    "DBClusterId": "pc-xxxxxxxxxxxxx"
 }
 ```
 
