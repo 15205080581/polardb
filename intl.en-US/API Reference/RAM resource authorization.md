@@ -4,7 +4,7 @@
 
 All ApsaraDB for POLARDB clusters created under your Alibaba Cloud account are resources owned by your account. By default, you have full operation permissions on the resources under your account.
 
-Alibaba Cloud Resource Access Management \(RAM\) allows you to grant RAM users the access and management permissions on POLARDB resources owned by your account. For more information, see [RAM authorization](https://help.aliyun.com/document_detail/93736.html).
+Alibaba Cloud Resource Access Management \(RAM\) allows you to grant RAM users the access and management permissions on POLARDB resources owned by your account. For more information, see [RAM authorization](https://www.alibabacloud.com/help/doc-detail/93736.htm).
 
 This topic describes how to grant RAM users the permissions on POLARDB resources.
 
