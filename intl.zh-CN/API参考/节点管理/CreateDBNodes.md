@@ -11,7 +11,7 @@
 |DBNode.N.ZoneId|String|否|新增节点的可用区，需要与原有节点保持一致。N为从1开始的整数，最大值=16-当前节点数。DBNode.N.ZoneId和DBNode.N.TargetClass，至少填一个。可用区ID可以通过接口[DescribeRegions](intl.zh-CN/API参考/地域/DescribeRegions.md#)查询。 **说明：** 当前暂不支持一次增加多个节点。
 
  |
-|DBNode.N.TargetClass|String|否|新增节点的规格，需要与原有节点保持一致。N为从1开始的整数，最大值=16-当前节点数。DBNode.N.ZoneId和DBNode.N.TargetClass，至少填一个。规格详情请参见[../../../../dita-oss-bucket/SP\_61/DNPOLA1875676/ZH-CN\_TP\_3012\_V32.md\#](../../../../intl.zh-CN/产品定价/规格与定价.md#)。 **说明：** 当前暂不支持一次增加多个节点。
+|DBNode.N.TargetClass|String|否|新增节点的规格，需要与原有节点保持一致。N为从1开始的整数，最大值=16-当前节点数。DBNode.N.ZoneId和DBNode.N.TargetClass，至少填一个。规格详情请参见[规格与定价](../../../../intl.zh-CN/产品定价/规格与定价.md#)。 **说明：** 当前暂不支持一次增加多个节点。
 
  |
 |ClientToken|String|否|用于保证请求的幂等性，防止重复提交请求。由客户端生成该参数值，保证在不同请求间唯一，大小写敏感、不超过64个ASCII字符。|
@@ -27,7 +27,7 @@
 
 ## 请求示例 {#section_khc_1dz_xfb .section}
 
-```
+``` {#codeblock_5ji_jqw_tth}
 https://polardb.aliyuncs.com/?Action=CreateDBNodes
 &DBClusterId=pc-xxxxxxxxxx
 &DBNode.N.TargetClass=polar.mysql.x2.medium
@@ -38,21 +38,21 @@ https://polardb.aliyuncs.com/?Action=CreateDBNodes
 
 XML格式
 
-```
+``` {#codeblock_h6y_szy_dsg}
 <CreateDBNodesResponse>  
-	<OrderId>2035624xxxxxxxx</OrderId>
-	<RequestId>C5BC3F8D-37C0-40EF-B5EF-457F983C612A</RequestId>
-	<DBClusterId>pc-xxxxxxxxxxxxx</DBClusterId>
+    <OrderId>2035624xxxxxxxx</OrderId>
+    <RequestId>C5BC3F8D-37C0-40EF-B5EF-457F983C612A</RequestId>
+    <DBClusterId>pc-xxxxxxxxxxxxx</DBClusterId>
 </CreateDBNodesResponse>
 ```
 
 JSON格式
 
-```
+``` {#codeblock_lht_mzq_9vn}
 {
-	"OrderId": 2035624xxxxxxxx,
-	"RequestId": "C5BC3F8D-37C0-40EF-B5EF-457F983C612A",
-	"DBClusterId": "pc-xxxxxxxxxxxxx"
+    "OrderId": 2035624xxxxxxxx,
+    "RequestId": "C5BC3F8D-37C0-40EF-B5EF-457F983C612A",
+    "DBClusterId": "pc-xxxxxxxxxxxxx"
 }
 ```
 
