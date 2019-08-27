@@ -4,7 +4,7 @@
 
 集群创建于2019年4月5日之后。如果是在2019年4月5日之前创建的集群，暂时需要提交工单进行小版本升级，之后即可在控制台手动开启Binlog。
 
-POLARDB是一款完全兼容MySQL的云原生数据库，默认使用了更高级别的物理日志代替Binlog，但为了更好地与MySQL生态融合，POLARDB上线了开启Binlog的功能，开启Binlog后您就可以连接[ElasticSearch](https://help.aliyun.com/document_detail/90777.html)、[AnalyticDB](https://help.aliyun.com/document_detail/98724.html)等数据产品，也可以搭建[POLARDB到RDS](https://help.aliyun.com/document_detail/102184.html)、[RDS到POLARDB](https://help.aliyun.com/document_detail/102185.html)或POLARDB之间的数据实时同步。
+POLARDB是一款完全兼容MySQL的云原生数据库，默认使用了更高级别的物理日志代替Binlog，但为了更好地与MySQL生态融合，POLARDB上线了开启Binlog的功能，开启Binlog后您就可以连接[ElasticSearch](https://www.alibabacloud.com/help/zh/doc-detail/90777.htm)、AnalyticDB等数据产品，也可以搭建POLARDB到RDS、RDS到POLARDB或POLARDB之间的数据实时同步。
 
 ## 收费说明 {#section_v2y_2ty_3hb .section}
 
@@ -17,7 +17,7 @@ Binlog的空间属于集群存储空间的一部分，需要收取[存储费用]
 -   开启Binlog后会导致写性能下降，读性能不受影响。
 -   拉取、订阅或同步Binlog（例如使用DTS等工具）时，建议使用POLARDB的**主地址**，因为直接指向生成Binlog的主节点，具有更好的兼容性和稳定性。您可以在基本信息页面查看主地址，如下图所示。
 
-    ![主地址](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155021/156594463843468_zh-CN.png)
+    ![主地址](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155021/156689878443468_zh-CN.png)
 
 
 ## 开启Binlog的操作步骤 {#section_ebg_frx_3hb .section}
@@ -26,7 +26,7 @@ Binlog的空间属于集群存储空间的一部分，需要收取[存储费用]
 2.  选择地域。
 3.  找到目标集群，单击**集群名称**列的集群ID。
 4.  在左侧导航栏中选择**配置与管理** \> **参数配置**。
-5.  搜索**loose\_polar\_log\_bin**，修改当前值，并单击**提交修改**。![开启Binlog](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155030/156594463843470_zh-CN.png)
+5.  搜索**loose\_polar\_log\_bin**，修改当前值，并单击**提交修改**。![开启Binlog](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155030/156689878443470_zh-CN.png)
 
  
 
