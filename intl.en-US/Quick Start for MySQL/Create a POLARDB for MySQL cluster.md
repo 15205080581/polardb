@@ -60,7 +60,7 @@ A POLARDB for MySQL cluster contains one primary node and up to 15 read-only nod
     |Node Specification|Select a specification for your database node according to your needs. All POLARDB nodes own exclusive resources.|
     |Number Nodes|     -   You do not need to specify the number. By default, the system creates one read-only node with the same specifications as the primary node.
     -   If a primary node fails, the system automatically promotes the read-only node as a primary node and generates a new read-only node.
-    -   For more information about read-only nodes, see [Architecture](https://help.aliyun.com/document_detail/58766.html).
+    -   For more information about read-only nodes, see [Architecture](https://www.alibabacloud.com/help/doc-detail/58766.htm).
  |
     |Storage Cost|You do not need to specify the storage cost. The system calculates the fees by hour based on the storage usage. For more information, see [Specifications and pricing](../../../../intl.en-US/Pricing/Specifications and pricing.md#). **Note:** You do not need to specify the storage capacity of the POLARDB cluster. The storage capacity automatically scales based on the data volume.
 
