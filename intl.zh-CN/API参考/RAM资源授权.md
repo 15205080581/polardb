@@ -4,7 +4,7 @@
 
 您通过云账号创建的POLARDB集群，都是该账号自己拥有的资源。默认情况下，账号对自己的资源拥有完整的操作权限。
 
-通过使用阿里云的RAM（Resource Access Management）服务，您可以将您云账号下POLARDB资源的访问及管理权限授予RAM中的子用户，详情请参见[RAM授权](https://help.aliyun.com/document_detail/93736.html)。
+通过使用阿里云的RAM（Resource Access Management）服务，您可以将您云账号下POLARDB资源的访问及管理权限授予RAM中的子用户，详情请参见[RAM授权](https://www.alibabacloud.com/help/zh/doc-detail/93736.htm)。
 
 POLARDB在通过RAM进行授权时，资源的描述方式如下：
 
