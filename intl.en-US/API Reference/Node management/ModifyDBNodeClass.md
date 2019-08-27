@@ -12,7 +12,7 @@ You can call this operation to change the node specifications of a specified Aps
 -   Downgrade: downgrades the node specifications.
 
  |
-|DBNodeTargetClass|String|No|The target node specifications of the cluster. For more information, see [../../../../dita-oss-bucket/SP\_61/DNPOLA1875676/EN-US\_TP\_3012.md\#](../../../../intl.en-US/Pricing/Specifications and pricing.md#).|
+|DBNodeTargetClass|String|No|The target node specifications of the cluster. For more information, see [Specifications and pricing](../../../../intl.en-US/Pricing/Specifications and pricing.md#).|
 |ClientToken|String|No|The client token that is used to ensure the idempotence of the request. You can use the client to generate this value, but you must ensure that it is unique among different requests. The token is case-sensitive. It can contain only ASCII characters, and cannot exceed 64 characters in length.|
 
 ## Response parameters {#section_i2b_pu2_yzg .section}
@@ -26,7 +26,7 @@ You can call this operation to change the node specifications of a specified Aps
 
 ## Sample request {#section_2zx_5jd_b5u .section}
 
-```
+``` {#codeblock_o8z_v1u_80q}
 https://polardb.aliyuncs.com/?Action=ModifyDBNodeClass
 &DBClusterId=pc-xxxxxxxxxx
 &ModifyType=Upgrade
@@ -38,21 +38,21 @@ https://polardb.aliyuncs.com/?Action=ModifyDBNodeClass
 
 XML format
 
-```
+``` {#codeblock_exb_9od_4x3}
 <ModifyDBNodeClassResponse>  
-	<RequestId>685F028C-4FCD-407D-A559-072D6378C4C3</RequestId>
-	<OrderId>2035629xxxxxx</OrderId>
-	<DBClusterId>pc-xxxxxxxxxxxxx</DBClusterId>
+    <RequestId>685F028C-4FCD-407D-A559-072D6378C4C3</RequestId>
+    <OrderId>2035629xxxxxx</OrderId>
+    <DBClusterId>pc-xxxxxxxxxxxxx</DBClusterId>
 </ModifyDBNodeClassResponse>
 ```
 
 JSON format
 
-```
+``` {#codeblock_gtf_0ua_ple}
 {
-	"RequestId": "685F028C-4FCD-407D-A559-072D6378C4C3",
-	"OrderId": 2035629xxxxxx,
-	"DBClusterId": "pc-xxxxxxxxxxxxx"
+    "RequestId": "685F028C-4FCD-407D-A559-072D6378C4C3",
+    "OrderId": 2035629xxxxxx,
+    "DBClusterId": "pc-xxxxxxxxxxxxx"
 }
 ```
 
