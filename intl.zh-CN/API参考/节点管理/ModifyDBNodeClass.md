@@ -12,7 +12,7 @@
 -   Downgrade：降级规格。
 
  |
-|DBNodeTargetClass|String|否|所有节点变更的目标规格 ，请参见[../../../../dita-oss-bucket/SP\_61/DNPOLA1875676/ZH-CN\_TP\_3012\_V32.md\#](../../../../intl.zh-CN/产品定价/规格与定价.md#)。|
+|DBNodeTargetClass|String|否|所有节点变更的目标规格 ，请参见[规格与定价](../../../../intl.zh-CN/产品定价/规格与定价.md#)。|
 |ClientToken|String|否|用于保证请求的幂等性，防止重复提交请求。由客户端生成该参数值，保证在不同请求间唯一，大小写敏感、不超过64个ASCII字符。|
 
 ## 返回参数 {#section_i2b_pu2_yzg .section}
@@ -26,7 +26,7 @@
 
 ## 请求示例 {#section_2zx_5jd_b5u .section}
 
-```
+``` {#codeblock_8o4_t5f_ga8}
 https://polardb.aliyuncs.com/?Action=ModifyDBNodeClass
 &DBClusterId=pc-xxxxxxxxxx
 &ModifyType=Upgrade
@@ -38,21 +38,21 @@ https://polardb.aliyuncs.com/?Action=ModifyDBNodeClass
 
 XML格式
 
-```
+``` {#codeblock_3g1_bzw_103}
 <ModifyDBNodeClassResponse>  
-	<RequestId>685F028C-4FCD-407D-A559-072D6378C4C3</RequestId>
-	<OrderId>2035629xxxxxx</OrderId>
-	<DBClusterId>pc-xxxxxxxxxxxxx</DBClusterId>
+    <RequestId>685F028C-4FCD-407D-A559-072D6378C4C3</RequestId>
+    <OrderId>2035629xxxxxx</OrderId>
+    <DBClusterId>pc-xxxxxxxxxxxxx</DBClusterId>
 </ModifyDBNodeClassResponse>
 ```
 
 JSON格式
 
-```
+``` {#codeblock_nej_jka_9uy}
 {
-	"RequestId": "685F028C-4FCD-407D-A559-072D6378C4C3",
-	"OrderId": 2035629xxxxxx,
-	"DBClusterId": "pc-xxxxxxxxxxxxx"
+    "RequestId": "685F028C-4FCD-407D-A559-072D6378C4C3",
+    "OrderId": 2035629xxxxxx,
+    "DBClusterId": "pc-xxxxxxxxxxxxx"
 }
 ```
 
