@@ -1,6 +1,6 @@
 # Enable binlogging {#concept_ekv_brx_3hb .concept}
 
-ApsaraDB for POLARDB is a cloud native database fully compatible with MySQL. By default, it uses more advanced physical logs instead of binlogs. However, to better integrate with the MySQL ecosystem, ApsaraDB for POLARDB allows you to enable binlogging. When binlogging is enabled, you can connect to the data products such as [ElasticSearch](https://help.aliyun.com/document_detail/90777.html) and [AnalyticDB](https://help.aliyun.com/document_detail/98724.html). You can also synchronize data from [POLARDB to RDS](https://help.aliyun.com/document_detail/102184.html), from [RDS to POLARDB](https://help.aliyun.com/document_detail/102185.html), or between POLARDB clusters in a real time manner.
+ApsaraDB for POLARDB is a cloud native database fully compatible with MySQL. By default, it uses more advanced physical logs instead of binlogs. However, to better integrate with the MySQL ecosystem, ApsaraDB for POLARDB allows you to enable binlogging. When binlogging is enabled, you can connect to the data products such as [ElasticSearch](https://help.aliyun.com/document_detail/90777.html) and AnalyticDB. You can also synchronize data from POLARDB to RDS, from RDS to POLARDB, or between POLARDB clusters in a real time manner.
 
 ## Prerequisites {#section_x2h_nty_3hb .section}
 
@@ -17,7 +17,7 @@ The space used to store binlogs is a part of the cluster storage space. It is ch
 -   After binlogging is enabled, the write performance is deteriorated, while the read performance is not affected.
 -   The primary endpoint directly points to the primary node that generates binlog files, ensuring higher compatibility and stability. We recommend that you use the **primary endpoint** of ApsaraDB for POLARDB when you pull, subscribe to, or synchronize binlog files by using a tool such as DTS. You can view the primary endpoint on the Basic Information page, as shown in the following figure.
 
-    ![Primary endpoint](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155021/156593890143468_en-US.png)
+    ![Primary endpoint](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155021/156689864243468_en-US.png)
 
 
 ## Enable binlogging {#section_ebg_frx_3hb .section}
@@ -28,7 +28,7 @@ The space used to store binlogs is a part of the cluster storage space. It is ch
 4.  In the left-side navigation pane, choose **Settings and Management** \> **Parameters**.
 5.  Search for the **loose\_polar\_log\_bin** parameter, change the value of the parameter to ON\_WITH\_GTID, and then click **Apply Changes**.
 
-    ![Enable binlogging](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155030/156593890143470_en-US.png)
+    ![Enable binlogging](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155030/156689864243470_en-US.png)
 
 6.  In the dialog box that appears, click **OK**.
 
