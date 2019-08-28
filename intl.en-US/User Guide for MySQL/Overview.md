@@ -10,7 +10,7 @@ POLARDB is a next-generation cloud-based service developed by Alibaba Cloud for 
 
 -   **Database**: A database is a logical unit created in an instance. The name of each POLARDB database under the same instance must be unique.
 
--   **Region and zone**: Each region is a separate geographic area. Zones are distinct locations within a region that operate on independent power grids and networks. For more information, see [Alibaba Cloud's Global Infrastructure](https://www.aliyun.com/about/global?spm=a2c4g.11186623.2.3.OXfiny).
+-   **Region and zone**: Each region is a separate geographic area. Zones are distinct locations within a region that operate on independent power grids and networks. For more information, see [Alibaba Cloud's Global Infrastructure](https://www.alibabacloud.com/zh/global-locations).
 
 
 ## Console {#section_p15_lnq_tdb .section}
