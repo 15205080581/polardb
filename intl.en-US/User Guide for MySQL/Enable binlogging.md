@@ -17,7 +17,7 @@ The space used to store binlogs is a part of the cluster storage space. It is ch
 -   After binlogging is enabled, the write performance is deteriorated, while the read performance is not affected.
 -   The primary endpoint directly points to the primary node that generates binlog files, ensuring higher compatibility and stability. We recommend that you use the **primary endpoint** of ApsaraDB for POLARDB when you pull, subscribe to, or synchronize binlog files by using a tool such as DTS. You can view the primary endpoint on the Basic Information page, as shown in the following figure.
 
-    ![Primary endpoint](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155021/156689864243468_en-US.png)
+    ![Primary endpoint](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155021/156695555543468_en-US.png)
 
 
 ## Enable binlogging {#section_ebg_frx_3hb .section}
@@ -28,7 +28,7 @@ The space used to store binlogs is a part of the cluster storage space. It is ch
 4.  In the left-side navigation pane, choose **Settings and Management** \> **Parameters**.
 5.  Search for the **loose\_polar\_log\_bin** parameter, change the value of the parameter to ON\_WITH\_GTID, and then click **Apply Changes**.
 
-    ![Enable binlogging](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155030/156689864243470_en-US.png)
+    ![Enable binlogging](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155030/156695555543470_en-US.png)
 
 6.  In the dialog box that appears, click **OK**.
 
