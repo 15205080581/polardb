@@ -1,6 +1,6 @@
 # 从本地MySQL迁移至POLARDB for MySQL {#concept_rmt_hrm_4gb .concept}
 
-使用阿里云[数据传输服务（DTS）](https://help.aliyun.com/document_detail/26592.html?spm=a2c4g.11186623.2.8.6df54b84N9BVGE)，您可以实现本地MySQL到POLARDB for MySQL集群的数据迁移。通过DTS增量迁移的存储引擎，可以实现在本地应用不停服的情况下，将数据迁移到目标POLARDB for MySQL集群。
+使用阿里云[数据传输服务（DTS）](https://www.alibabacloud.com/help/zh/doc-detail/26592.htm)，您可以实现本地MySQL到POLARDB for MySQL集群的数据迁移。通过DTS增量迁移的存储引擎，可以实现在本地应用不停服的情况下，将数据迁移到目标POLARDB for MySQL集群。
 
 本文介绍使用DTS进行本地MySQL迁移至POLARDB for MySQL的任务配置流程。
 
@@ -103,7 +103,7 @@ DTS 在进行**本地 MySQL** \> **POLARDB**数据迁移时，为了解决对象
     |数据库账号|目标实例的拥有读写权限的账号。|
     |数据库密码|目标实例的对应账号的密码。|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636766538182_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156695781238182_zh-CN.png)
 
 5.  填写完成后单击**测试连接**，确定源库和目标库都测试通过。
 6.  单击右下角**授权白名单并进入下一步**。
@@ -133,19 +133,19 @@ DTS 在进行**本地 MySQL** \> **POLARDB**数据迁移时，为了解决对象
 
     -   **迁移对象**：选择要迁移的对象，单击向右的箭头，将选中的对象添加到右侧。
 
-        迁移对象的选择粒度细化为：库、表、列三个粒度。默认情况下，对象迁移到目标POLARDB集群后，对象名跟源RDS实例一致。如果您迁移的对象在源实例跟目标集群上名称不同，那么需要使用DTS提供的对象名映射功能，详细使用方式可以参考[库表列映射](https://help.aliyun.com/document_detail/26628.html?spm=5176.doc26624.6.125.Mpn8On)。
+        迁移对象的选择粒度细化为：库、表、列三个粒度。默认情况下，对象迁移到目标POLARDB集群后，对象名跟源RDS实例一致。如果您迁移的对象在源实例跟目标集群上名称不同，那么需要使用DTS提供的对象名映射功能，详细使用方式可以参考[库表列映射](https://www.alibabacloud.com/help/zh/doc-detail/26628.htm)。
 
         **说明：** 
 
         -   暂时不支持对系统表的迁移。
         -   目标集群中不能有和迁移对象同名的对象。将鼠标移至右侧框中的对象，单击**编辑**，即可修改迁移后的对象名。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636766638183_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156695781238183_zh-CN.png)
 
 8.  单击右下角的**预检查并启动**，成功后单击**下一步**。
 
     **说明：** 如果预检查失败，可以单击具体检查项后的检查结果，查看具体的失败详情，并根据失败原因修复后，重新进行预检查。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636766838184_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156695781238184_zh-CN.png)
 
 9.  确认DTS购买信息，阅读并勾选**服务条款**，单击**立即购买并启动**。
 
@@ -153,7 +153,7 @@ DTS 在进行**本地 MySQL** \> **POLARDB**数据迁移时，为了解决对象
 
 10. 单击目标地域，查看迁移状态。迁移完成时，状态为**已完成**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636766938209_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156695781238209_zh-CN.png)
 
     至此，完成 本地 MySQL 数据库到阿里云 POLARDB 的数据迁移任务。
 
