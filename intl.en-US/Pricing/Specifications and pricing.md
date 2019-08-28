@@ -203,8 +203,11 @@ You can choose from the following POLARDB node specifications. Nodes of any spec
 
  |
 
+**Note:** Currently, POLARDB is supported only by the Indonesia \(Jakarta\) region. The service in other regions will be released soon.
+
 **Note:** 
 
+-   Currently, POLARDB is supported only by the Indonesia \(Jakarta\) region. The service in other regions will be released soon.
 -   **Each price in the preceding tables is for a single node. An ApsaraDB for POLARDB cluster consists of a primary node and a read-only node by default.**
 -   You can select node specifications for the primary node when you create a cluster. The read-only node has the same specifications as the primary node.
 -   Each **maximum input/output operations per second \(IOPS\)** value is theoretical.
