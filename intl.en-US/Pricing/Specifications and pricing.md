@@ -21,55 +21,69 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
  |
 |Data backup|Free for now.|
 
-## Prices {#section_f4v_rpg_tdb .section}
+## Prices for storage {#section_1mh_47i_7kk .section}
 
--   **Prices for compute nodes**
+The storage is serverless. You do not need to select the storage capacity when you create a cluster. As data increases, the storage capacity automatically extends. The storage is billed based on the data size. You can check your data size on the [details page](../intl.en-US/User Guide for MySQL/Cluster management/View clusters.md#) of your cluster in the console.
 
-    You can choose from the following POLARDB node specifications. Nodes of any specifications in POLARDB use exclusive resources. The CPU, memory, storage, and input/output \(I/O\) resources assigned to a node are exclusive to this node and not shared with other nodes. This improves the stability and reliability of the node.
+-   Regions in Mainland China: USD 0.00077/GB/hour.
+-   Regions outside Mainland China: USD 0.00085/GB/hour.
 
-    |Node specification|CPU and memory|Maximum storage capacity|Maximum connections|Internal network bandwidth|Maximum IOPS|I/O bandwidth|
-    |:-----------------|:-------------|:-----------------------|:------------------|--------------------------|------------|-------------|
-    |polar.mysql.x2.medium| Dual-core
+**Note:** 
+
+-   The storage capacity supports pay-as-you-go but not subscription.
+-   The [maximum storage capacity](intl.en-US/Pricing/Specifications and pricing.md#table_g1y_xjg_tdb) varies with node specifications. If you want to increase the storage capacity, [upgrade the configuration of your cluster](../intl.en-US/User Guide for MySQL/Cluster management/Change specifications.md).
+
+## Prices for data backup {#section_ssd_knn_d0p .section}
+
+Currently, the storage occupied by ApsaraDB for POLARDB backup files is free of charge.
+
+## Prices for compute nodes {#section_f4v_rpg_tdb .section}
+
+You can choose from the following POLARDB node specifications. Nodes of any specifications in POLARDB use exclusive resources. The CPU, memory, storage, and input/output \(I/O\) resources assigned to a node are exclusive to this node and not shared with other nodes. This improves the stability and reliability of the node.
+
+|Node specification|CPU and memory|Maximum storage capacity|Maximum connections|Internal network bandwidth|Maximum IOPS|I/O bandwidth|
+|:-----------------|:-------------|:-----------------------|:------------------|--------------------------|------------|-------------|
+|polar.mysql.x2.medium| Dual-core
 
  4 GB
 
  |5 TB|1,200|1 Gbit/s|8,000|1 Gbit/s|
-    |polar.mysql.x4.large| Quad-core
+|polar.mysql.x4.large| Quad-core
 
  16 GB
 
  |10 TB|5,000|10 Gbit/s|32,000|4 Gbit/s|
-    |polar.mysql.x4.xlarge| 8-core
+|polar.mysql.x4.xlarge| 8-core
 
  32 GB
 
  |10 TB|10,000|10 Gbit/s|64,000|8 Gbit/s|
-    |polar.mysql.x8.xlarge| 8-core
+|polar.mysql.x8.xlarge| 8-core
 
  64 GB
 
  |30 TB|10,000|10 Gbit/s|72,000|10 Gbit/s|
-    |polar.mysql.x8.2xlarge| 16-core
+|polar.mysql.x8.2xlarge| 16-core
 
  128 GB
 
  |50 TB|20,000|10 Gbit/s|128,000|16 Gbit/s|
-    |polar.mysql.x8.4xlarge| 32-core
+|polar.mysql.x8.4xlarge| 32-core
 
  256 GB
 
  |50 TB|64,000|10 Gbit/s|192,000|24 Gbit/s|
-    |polar.mysql.x8.12xlarge| 88-core
+|polar.mysql.x8.12xlarge| 88-core
 
  710 GB
 
  |50 TB|64,000|25 Gbit/s|256,000|32 Gbit/s|
 
-    **Note:** An ApsaraDB for POLARDB cluster with a dual-core CPU and 4 GB memory provides the basic specifications required in tests, trials, and low-load scenarios. We recommend that you do not use the basic specifications in a high-load production environment. In a high-load production environment, we recommend that you use an ApsaraDB for POLARDB cluster with an 8-core CPU and 32 GB memory or higher specifications.
+**Note:** An ApsaraDB for POLARDB cluster with a dual-core CPU and 4 GB memory provides the basic specifications required in tests, trials, and low-load scenarios. We recommend that you do not use the basic specifications in a high-load production environment. In a high-load production environment, we recommend that you use an ApsaraDB for POLARDB cluster with an 8-core CPU and 32 GB memory or higher specifications.
 
-    |Node specification|Mainland China|Hong Kong \(China\)|Singapore|Jakarta|
-    |:-----------------|--------------|-------------------|---------|-------|
-    |polar.mysql.x2.medium| USD 44/month
+|Node specification|Mainland China|Hong Kong \(China\)|Singapore|Jakarta|
+|:-----------------|--------------|-------------------|---------|-------|
+|polar.mysql.x2.medium| USD 44/month
 
  USD 0.091/hour
 
@@ -86,7 +100,7 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
  USD 0.15/hour
 
  |
-    |polar.mysql.x4.large| USD 155/month
+|polar.mysql.x4.large| USD 155/month
 
  USD 0.323/hour
 
@@ -103,7 +117,7 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
  USD 0.57/hour
 
  |
-    |polar.mysql.x4.xlarge| USD 310/month
+|polar.mysql.x4.xlarge| USD 310/month
 
  USD 0.646/hour
 
@@ -120,7 +134,7 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
  USD 1.13/hour
 
  |
-    |polar.mysql.x8.xlarge| USD 496/month
+|polar.mysql.x8.xlarge| USD 496/month
 
  USD 1.033/hour
 
@@ -137,7 +151,7 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
  USD 1.44/hour
 
  |
-    |polar.mysql.x8.2xlarge| USD 991/month
+|polar.mysql.x8.2xlarge| USD 991/month
 
  USD 2.064/hour
 
@@ -154,7 +168,7 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
  USD 2.87/hour
 
  |
-    |polar.mysql.x8.4xlarge| USD 1,982/month
+|polar.mysql.x8.4xlarge| USD 1,982/month
 
  USD 4.128/hour
 
@@ -171,7 +185,7 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
  USD 5.74/hour
 
  |
-    |polar.mysql.x8.12xlarge| USD 5,449/month
+|polar.mysql.x8.12xlarge| USD 5,449/month
 
  USD 11.351/hour
 
@@ -189,26 +203,13 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 
  |
 
-    **Note:** 
+**Note:** 
 
-    -   **Each price in the preceding tables is for a single node. An ApsaraDB for POLARDB cluster consists of a primary node and a read-only node by default.**
-    -   You can select node specifications for the primary node when you create a cluster. The read-only node has the same specifications as the primary node.
-    -   Each **maximum input/output operations per second \(IOPS\)** value is theoretical.
-    -   The maximum connections of a cluster depend on the specifications of the nodes in the cluster. Increasing the number of nodes does not increase the maximum connections of the cluster.
-    -   If you need higher computing capabilities and storage capacity \(such as **100 TB**\), [open a ticket](https://selfservice.console.aliyun.com/ticket/createIndex) to contact after-sales support engineers.
--   **Prices for storage**
-
-    The storage is serverless. You do not need to select the storage capacity when you create a cluster. As data increases, the storage capacity automatically extends. The storage is billed based on the data size. You can check your data size on the [details page](../intl.en-US/User Guide for MySQL/Cluster management/View clusters.md#) of your cluster in the console.
-
-    -   Regions in Mainland China: USD 0.00077/GB/hour, USD 0.55GB/month。
-    -   Regions outside Mainland China: USD0.00085/GB/hour，USD 0.61GB/month。
-    **Note:** 
-
-    -   The [maximum storage capacity](intl.en-US/Pricing/Specifications and pricing.md#table_g1y_xjg_tdb) varies with node specifications. If you want to increase the storage capacity, [upgrade the configuration of your cluster](../intl.en-US/User Guide for MySQL/Cluster management/Change specifications.md).
--   **Prices for data backup**
-
-    Currently, the storage occupied by ApsaraDB for POLARDB backup files is free of charge.
-
+-   **Each price in the preceding tables is for a single node. An ApsaraDB for POLARDB cluster consists of a primary node and a read-only node by default.**
+-   You can select node specifications for the primary node when you create a cluster. The read-only node has the same specifications as the primary node.
+-   Each **maximum input/output operations per second \(IOPS\)** value is theoretical.
+-   The maximum connections of a cluster depend on the specifications of the nodes in the cluster. Increasing the number of nodes does not increase the maximum connections of the cluster.
+-   If you need higher computing capabilities and storage capacity \(such as **100 TB**\), [open a ticket](https://selfservice.console.aliyun.com/ticket/createIndex) to contact after-sales support engineers.
 
 ## FAQ {#section_mxm_x1v_vfb .section}
 
