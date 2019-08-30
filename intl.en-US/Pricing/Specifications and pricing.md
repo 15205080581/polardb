@@ -212,7 +212,7 @@ You can choose from the following POLARDB node specifications. Nodes of any spec
 -   You can select node specifications for the primary node when you create a cluster. The read-only node has the same specifications as the primary node.
 -   Each **maximum input/output operations per second \(IOPS\)** value is theoretical.
 -   The maximum connections of a cluster depend on the specifications of the nodes in the cluster. Increasing the number of nodes does not increase the maximum connections of the cluster.
--   If you need higher computing capabilities and storage capacity \(such as **100 TB**\), [open a ticket](https://selfservice.console.aliyun.com/ticket/createIndex) to contact after-sales support engineers.
+-   If you need higher computing capabilities and storage capacity \(such as **100 TB**\), [open a ticket](https://workorder-intl.console.aliyun.com/console.htm?spm=5176.2020520001.console-base-top.dwork-order-1.497b4bd3uHPH0W#/ticket/createIndex) to contact after-sales support engineers.
 
 ## FAQ {#section_mxm_x1v_vfb .section}
 
