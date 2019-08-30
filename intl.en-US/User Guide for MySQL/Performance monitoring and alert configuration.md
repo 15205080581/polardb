@@ -11,15 +11,15 @@ The ApsaraDB for POLARDB console provides a variety of performance metrics for y
 5.  You can view the performance information of a **cluster** or **node** according to your needs. For more information, see [Metric description](#).
     -   To monitor cluster performance, click the **Cluster** tab and set the monitoring time period.****
 
-        ![Cluster performance monitoring](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3031/156593888334680_en-US.png)
+        ![Cluster performance monitoring](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3031/156715767834680_en-US.png)
 
     -   To monitor node performance, click the **Node** tab, select a node, and set the monitoring time period.**** 
 
         **Note:** You can click **More** at the bottom of the Node tab to view more metrics.
 
-        ![Node performance monitoring](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3031/156593888334681_en-US.png)
+        ![Node performance monitoring](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3031/156715767834681_en-US.png)
 
-        ![Node performance monitoring](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3031/156593888334796_en-US.png)
+        ![Node performance monitoring](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3031/156715767834796_en-US.png)
 
 
 ## Metric description {#section_ab1_kij_u21 .section}
@@ -49,11 +49,11 @@ The ApsaraDB for POLARDB console provides a variety of performance metrics for y
 
 ## Configure alert rules {#section_ugr_15h_1gb .section}
 
-1.  Log on to the [CloudMonitor console](https://cloudmonitor.console.aliyun.com).
+1.  Log on to the [CloudMonitor console](https://cms-intl.console.aliyun.com).
 2.  In the left-side navigation pane, choose **Alarms** \> **Alarm Rules**.
 3.  On the Alarm Rules page, click **Create Alarm Rule**.
 
-    ![Create alert rules](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3031/156593888453821_en-US.png)
+    ![Create alert rules](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3031/156715767853821_en-US.png)
 
     **Note:** For more information about alert rules, see [Alarm rule parameters](../../../../intl.en-US/User Guide/Alarm service/Alarm rules/Alarm rule parameters.md#).
 
