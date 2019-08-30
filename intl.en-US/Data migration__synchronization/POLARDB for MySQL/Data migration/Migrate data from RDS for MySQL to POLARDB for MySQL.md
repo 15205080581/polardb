@@ -16,17 +16,17 @@ This section describes how to use DTS to migrate data from the RDS for MySQL ins
 
 **Create migration accounts** 
 
-When you configure a migration task, you need to provide the account of the source RDS instance and the account of the destination ApsaraDB for POLARDB cluster. For more information about permissions required for the migration accounts, see Migration permission requirements. If you have not created the migration accounts, create [an account for RDS for MySQL](https://www.alibabacloud.com/help/doc-detail/26186.htm) and [an account for POLARDB for MySQL](../../../../intl.en-US/Quick Start for MySQL/Create an initial account for a POLARDB cluster.md#). First, create a migration account for the source and destination instances respectively. Then, grant the created accounts the permissions to read data from and write data to the tables or databases to be migrated.
+When you configure a migration task, you need to provide the account of the source RDS instance and the account of the destination ApsaraDB for POLARDB cluster. For more information about permissions required for the migration accounts, see Migration permission requirements. If you have not created the migration accounts, create [an account for RDS for MySQL](https://www.alibabacloud.com/help/doc-detail/26186.htm) and [an account for POLARDB for MySQL](../../../../intl.en-US/Quick Start for MySQL/Create accounts for a POLARDB for MySQL cluster.md#). First, create a migration account for the source and destination instances respectively. Then, grant the created accounts the permissions to read data from and write data to the tables or databases to be migrated.
 
 **Configure a migration task** 
 
 After all the preceding prerequisites are met, you can start to configure a migration task. This section describes the procedure for configuring a migration task.
 
-1.  Log on to the [DTS console](https://dts.console.aliyun.com/).
+1.  Log on to the [DTS console](https://dts-intl.console.aliyun.com).
 2.  In the left-side navigation pane, click **Data Migration**.
 3.  In the upper-right corner, click **Create Migration Task**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156636690636105_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156715612636105_en-US.png)
 
 4.  \(Optional\) Set the task name.
 
@@ -39,7 +39,7 @@ After all the preceding prerequisites are met, you can start to configure a migr
     -   RDS Instance ID: Select the ID of the source RDS instance to be migrated.
     -   Database Account: Enter the account for accessing the RDS instance.
     -   Database Password: Enter the password of the account.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156636690934082_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156715612634082_en-US.png)
 
 6.  Click **Test Connectivity** and verify that DTS can connect to the source RDS instance.
 7.  Enter the information of the destination ApsaraDB for POLARDB cluster.
@@ -49,7 +49,7 @@ After all the preceding prerequisites are met, you can start to configure a migr
     -   POLARDB Instance ID: Select the ID of the destination ApsaraDB for POLARDB cluster to which data is migrated.
     -   Database Account: Enter the account for accessing the ApsaraDB for POLARDB cluster.
     -   Database Password: Enter the password of the account.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156636691034083_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156715612634083_en-US.png)
 
 8.  Click **Test Connectivity** and verify that DTS can connect to the destination ApsaraDB for POLARDB cluster.
 9.  Click **Set Whitelist and Next** in the lower-right corner of the page. In this step, DTS adds the IP address of the DTS server to the whitelists of the source RDS instance and the destination ApsaraDB for POLARDB cluster. This prevents connection issues where the DTS service cannot connect to the required source RDS instance and destination ApsaraDB for POLARDB cluster for data migration.
@@ -83,7 +83,7 @@ After all the preceding prerequisites are met, you can start to configure a migr
 
         -   Currently, system tables cannot be migrated.
         -   Ensure that the name of an object is unique after it is migrated to the destination instance. To change the name of an object before it is migrated the destination instance, move the pointer over the object in the Selected section, and then click **Edit**.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156636691234085_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79403/156715612634085_en-US.png)
 
 11. Click **Precheck** in the lower-right corner. After the precheck ends, click **Next**.
 
