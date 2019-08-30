@@ -4,7 +4,7 @@ ApsaraDB for POLARDB is a cloud native database fully compatible with MySQL. By 
 
 ## Prerequisites {#section_x2h_nty_3hb .section}
 
-The cluster was created after April 5, 2019. If the cluster was created on April 5, 2019 or earlier, you need to [open a ticket](https://selfservice.console.aliyun.com/ticket/createIndex) to perform minor version upgrade. After that, you can enable binlogging in the console.
+The cluster was created after April 5, 2019. If the cluster was created on April 5, 2019 or earlier, you need to [open a ticket](https://workorder-intl.console.aliyun.com/console.htm?spm=a2c63.p38356.879954.9.1e4c6de0nw8Nvt#/ticket/createIndex) to perform minor version upgrade. After that, you can enable binlogging in the console.
 
 ## Pricing {#section_v2y_2ty_3hb .section}
 
@@ -17,7 +17,7 @@ The space used to store binlogs is a part of the cluster storage space. It is ch
 -   After binlogging is enabled, the write performance is deteriorated, while the read performance is not affected.
 -   The primary endpoint directly points to the primary node that generates binlog files, ensuring higher compatibility and stability. We recommend that you use the **primary endpoint** of ApsaraDB for POLARDB when you pull, subscribe to, or synchronize binlog files by using a tool such as DTS. You can view the primary endpoint on the Basic Information page, as shown in the following figure.
 
-    ![Primary endpoint](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155021/156695575843468_en-US.png)
+    ![Primary endpoint](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155021/156715804643468_en-US.png)
 
 
 ## Enable binlogging {#section_ebg_frx_3hb .section}
@@ -28,11 +28,11 @@ The space used to store binlogs is a part of the cluster storage space. It is ch
 4.  In the left-side navigation pane, choose **Settings and Management** \> **Parameters**.
 5.  Search for the **loose\_polar\_log\_bin** parameter, change the value of the parameter to ON\_WITH\_GTID, and then click **Apply Changes**.
 
-    ![Enable binlogging](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155030/156695575843470_en-US.png)
+    ![Enable binlogging](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/155030/156715804643470_en-US.png)
 
 6.  In the dialog box that appears, click **OK**.
 
-    **Note:** If the error message **Custins minor version does not support current action** is displayed, [open a ticket](https://selfservice.console.aliyun.com/ticket/createIndex) to enable binlogging.
+    **Note:** If the error message **Custins minor version does not support current action** is displayed, [open a ticket](https://workorder-intl.console.aliyun.com/console.htm?spm=a2c63.p38356.879954.9.1e4c6de0nw8Nvt#/ticket/createIndex) to enable binlogging.
 
 
 ## FAQs {#section_k2h_cly_3hb .section}
