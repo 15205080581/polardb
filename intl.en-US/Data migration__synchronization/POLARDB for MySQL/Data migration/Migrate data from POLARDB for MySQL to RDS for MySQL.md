@@ -6,13 +6,13 @@ This topic describes how to migrate data from POLARDB for MySQL to RDS for MySQL
 
 -   **Set an IP address whitelist for the source cluster** 
 
-    Before data migration, you need to [set a whitelist](../../../../intl.en-US/Quick Start for MySQL/Configure a whitelist.md#) for the POLARDB for MySQL cluster, and add the Classless Inter-Domain Routing \(CIDR\) block of DTS to the whitelist.
+    Before data migration, you need to [set a whitelist](../../../../intl.en-US/Quick Start for MySQL/Configure a whitelist for a POLARDB for MySQL cluster.md#) for the POLARDB for MySQL cluster, and add the Classless Inter-Domain Routing \(CIDR\) block of DTS to the whitelist.
 
     **Note:** You only need to add the DTS CIDR block corresponding to the region where the destination database resides. In this example, the destination database is located in Hangzhou. You only need to add the DTS CIDR block corresponding to China \(Hangzhou\) to the whitelist.
 
 -   **Create migration accounts** 
 
-    When configuring a migration task, you need to provide the migration accounts for the POLARDB for MySQL cluster and the RDS for MySQL instance. If you have not created the migration accounts, create [an account for POLARDB for MySQL](intl.en-US/Quick Start for MySQL/Create an initial account for a POLARDB cluster.md) and [an account for RDS for MySQL](https://www.alibabacloud.com/help/doc-detail/87038.htm). First, create a migration account for the POLARDB for MySQL cluster and RDS for MySQL instance respectively. Then, grant the created accounts the permissions to read data from and write data to the tables or databases to be migrated.
+    When configuring a migration task, you need to provide the migration accounts for the POLARDB for MySQL cluster and the RDS for MySQL instance. If you have not created the migration accounts, create [an account for POLARDB for MySQL](intl.en-US/Quick Start for MySQL/Create accounts for a POLARDB for MySQL cluster.md) and [an account for RDS for MySQL](https://www.alibabacloud.com/help/doc-detail/87038.htm). First, create a migration account for the POLARDB for MySQL cluster and RDS for MySQL instance respectively. Then, grant the created accounts the permissions to read data from and write data to the tables or databases to be migrated.
 
 
 ## Migration permission requirements {#section_gmj_3tm_4gb .section}
@@ -32,7 +32,7 @@ When DTS is used to migrate data from **POLARDB for MySQL** to **RDS for MySQL**
 
 ## Procedure {#section_tvx_5bh_1hb .section}
 
-1.  Log on to the [DTS console](https://dts.console.aliyun.com/).
+1.  Log on to the [DTS console](https://dts-intl.console.aliyun.com).
 2.  Click **Data Migration** in the left-side navigation pane, and then click **Create Migration Task** in the upper-right corner.
 3.  Configure information about the source and destination databases. The following table describes the parameters.
 
@@ -41,7 +41,7 @@ When DTS is used to migrate data from **POLARDB for MySQL** to **RDS for MySQL**
     |Source database|Instance Type|The type of the source database instance. Select **User-Created Database with Public IP Address**.|
     |Instance Region|The region where the POLARDB for MySQL cluster resides.|
     |Database Type|The type of the source database. Select **MySQL**.|
-    |Hostname or IP Address|The public connection point of the POLARDB for MySQL cluster. For more information, see [View the connection point](../../../../intl.en-US/Quick Start for MySQL/View database connection strings.md#).|
+    |Hostname or IP Address|The public connection point of the POLARDB for MySQL cluster. For more information, see [View the connection point](../../../../intl.en-US/Quick Start for MySQL/View connection endpoints.md#).|
     |Port Number|The listening port of the POLARDB for MySQL cluster. Default value: 3306.|
     |Database Account|The account for accessing the POLARDB for MySQL cluster.|
     |Database Password|The password of the account for accessing the POLARDB for MySQL cluster.|
@@ -54,7 +54,7 @@ When DTS is used to migrate data from **POLARDB for MySQL** to **RDS for MySQL**
 
  |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156645714840347_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156715637040347_en-US.png)
 
 4.  Click **Test Connectivity**. Ensure that both the source and destination databases pass the test.
 5.  Click **Set Whitelist and Next**.
@@ -75,7 +75,7 @@ When DTS is used to migrate data from **POLARDB for MySQL** to **RDS for MySQL**
 
         -   Currently, system tables cannot be migrated.
         -   Ensure that the name of an object is unique after it is migrated to the destination instance. To change the name of an object before it is migrated the destination instance, move the pointer over the object in the Selected section, and then click **Edit**.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156645714840349_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156715637040349_en-US.png)
 
 7.  Click **Precheck** and wait until the precheck ends.
 
@@ -87,6 +87,6 @@ When DTS is used to migrate data from **POLARDB for MySQL** to **RDS for MySQL**
 
 9.  Select the destination region to view the migration status. The status changes to **Finished** when the migration is completed.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156645714840351_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/136115/156715637040351_en-US.png)
 
 
