@@ -24,8 +24,8 @@ RENAME TABLE and TRUNCATE TABLE
 
 ## Prerequisites {#section_f4w_2f4_4gb .section}
 
--   You have [created a POLARDB for MySQL cluster](../../../../intl.en-US/Quick Start for MySQL/Create a POLARDB cluster.md#).
--   You have [created an account with the read and write permissions on the POLARDB for MySQL cluster](../../../../intl.en-US/Quick Start for MySQL/Create an initial account for a POLARDB cluster.md#).
+-   You have [created a POLARDB for MySQL cluster](../../../../intl.en-US/Quick Start for MySQL/Create a POLARDB for MySQL cluster.md#).
+-   You have [created an account with the read and write permissions on the POLARDB for MySQL cluster](../../../../intl.en-US/Quick Start for MySQL/Create accounts for a POLARDB for MySQL cluster.md#).
 -   You have granted the account the remote access permission on the local MySQL instance. The authorization command is grant all privileges on \*.\* to <username\>@'<ipaddress\>' identified by "<password\>";.
 
     **Note:** 
@@ -80,7 +80,7 @@ To solve the dependency conflicts between objects and improve the migration succ
 
 ## Procedure {#section_uwt_sck_5fb .section}
 
-1.  Log on to the [DTS console](https://dts.console.aliyun.com/).
+1.  Log on to the [DTS console](https://dts-intl.console.aliyun.com).
 2.  Click **Data Migration** in the left-side navigation pane, and then click **Create Migration Task** in the upper-right corner.
 3.  \(Optional\) Set the task name.
 
@@ -103,7 +103,7 @@ To solve the dependency conflicts between objects and improve the migration succ
     |Database Account|The account with the read and write permissions on the destination instance.|
     |Database Password|The password of the account for accessing the destination instance.|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636767538182_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156715619738182_en-US.png)
 
 5.  Click **Test Connectivity**. Ensure that both the source and destination databases pass the test.
 6.  Click **Set Whitelist and Next**.
@@ -139,7 +139,7 @@ To solve the dependency conflicts between objects and improve the migration succ
 
         -   Currently, system tables cannot be migrated.
         -   Ensure that the name of an object is unique after it is migrated to the destination instance. To change the name of an object before it is migrated the destination instance, move the pointer over the object in the Selected section, and then click **Edit**.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636767638183_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156715619738183_en-US.png)
 
 8.  Click **Precheck**. After the precheck is successful, click **Next**.
 
@@ -151,7 +151,7 @@ To solve the dependency conflicts between objects and improve the migration succ
 
 10. Select the destination region to view the migration status. The status changes to **Finished** when the migration is completed.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156636767638209_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120364/156715619738209_en-US.png)
 
     Then, you have completed data migration from local MySQL to POLARDB for MySQL.
 
