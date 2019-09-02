@@ -15,12 +15,12 @@ When configuring a migration task, you need to provide the migration accounts fo
 
 ## Configure a migration task {#section_owb_pby_bgb .section}
 
-1.  Log on to the [DTS console](https://www.alibabacloud.com/help/doc-detail/99729.htm).
+1.  Log on to the [DTS console](https://dts-intl.console.aliyun.com).
 2.  In the left-side navigation pane, click **Data Migration**.
 3.  In the upper-right corner of the Data Migration page, click **Create Migration Task**.
 4.  Configure information about the source and destination databases.
 
-    ![Configure information about the source and destination databases](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78734/156741057140718_en-US.png)
+    ![Configure information about the source and destination databases](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78734/156741069440718_en-US.png)
 
     |Item|Parameter|Description|
     |:---|:--------|:----------|
@@ -57,7 +57,7 @@ When configuring a migration task, you need to provide the migration accounts fo
 
     -   If you need to migrate data without service interruption, select **Schema Migration**, **Full Data Migration**, and **Incremental Data Migration**.
  |
-    |Available|     -   Select the objects to be migrated in the **Available** section, and then click ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78734/156741057140720_en-US.png) to add them to the **Selected** section.
+    |Available|     -   Select the objects to be migrated in the **Available** section, and then click ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78734/156741069440720_en-US.png) to add them to the **Selected** section.
     -   The migration objects can be databases, tables, and columns.
     -   By default, after an object is migrated to the destination cluster, the object name remains the same as that of the object in the source instance. If the object you migrate has different names in the source instance and destination cluster, you need to use the object name mapping feature provided by DTS. For more information, see [Mappings of database, table, and column names](https://www.alibabacloud.com/help/doc-detail/26628.htm).
  |
@@ -67,7 +67,7 @@ When configuring a migration task, you need to provide the migration accounts fo
     **Note:** 
 
     -   A precheck is performed before the migration task starts. The migration task can be started only after the precheck is successful.
-    -   If the precheck fails, click ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/86903/156741057135996_en-US.png) corresponding to each failed item to view the details. Fix the problems as instructed and run the precheck again.
+    -   If the precheck fails, click ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/86903/156741069435996_en-US.png) corresponding to each failed item to view the details. Fix the problems as instructed and run the precheck again.
 8.  After the precheck is successful, click **Next**.
 9.  On the **Confirm Settings** page, set **Channel Specification** read the **Data Transmission Service \(Pay-As-You-Go\) Service Terms**, and then select the check box to agree to them.
 10. Click **Buy and Start** to start the migration task.
