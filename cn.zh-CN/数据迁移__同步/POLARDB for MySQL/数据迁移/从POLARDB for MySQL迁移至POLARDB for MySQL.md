@@ -2,8 +2,8 @@
 
 本文介绍如何使用数据传输服务（DTS）将一个POLARDB集群的数据迁移到另一个POLARDB集群。
 
--   已购买源和目标POLARDB for MySQL集群，详情请参见[创建POLARDB for MySQL集群](https://help.aliyun.com/document_detail/58769.html)。
--   为满足增量数据迁移的要求，源POLARDB for MySQL集群需要开启Binlog，详情请参见[如何开启Binlog](https://help.aliyun.com/document_detail/113546.html)。
+-   已购买源和目标POLARDB for MySQL集群，详情请参见[创建POLARDB for MySQL集群](https://www.alibabacloud.com/help/zh/doc-detail/58769.htm)。
+-   为满足增量数据迁移的要求，源POLARDB for MySQL集群需要开启Binlog，详情请参见[如何开启Binlog](https://www.alibabacloud.com/help/zh/doc-detail/113546.htm)。
 
 ## 注意事项 {#d7e36 .section}
 
@@ -25,7 +25,7 @@
 
 ## 增量数据迁移阶段支持同步的SQL操作 {#d7e126 .section}
 
--   INSER、UPDATE、DELETE、REPLACE
+-   INSERT、UPDATE、DELETE、REPLACE
 -   ALTER TABLE、ALTER VIEW、ALTER FUNCTION、ALTER PROCEDURE
 -   CREATE DATABASE、CREATE SCHEMA、CREATE INDEX、CREATE TABLE、CREATE PROCEDURE、CREATE FUNCTION、CREATE TRIGGER、CREATE VIEW、CREATE EVENT
 -   DROP FUNCTION、DROP EVENT、DROP INDEX、DROP PROCEDURE、DROP TABLE、DROP TRIGGER、DROP VIEW
@@ -38,7 +38,7 @@
 |源POLARDB for MySQL|待迁移对象的读权限|
 |目标POLARDB for MySQL|迁移对象的读写权限|
 
-**说明：** 关于数据库账号的创建和授权方法，请参见[创建POLARDB数据库账号](https://help.aliyun.com/document_detail/68508.html?spm=a2c4g.11186623.2.10.3f657dd3d4orj4)。
+**说明：** 关于数据库账号的创建和授权方法，请参见[创建POLARDB数据库账号](https://www.alibabacloud.com/help/zh/doc-detail/68508.htm)。
 
 ## 操作步骤 {#d7e206 .section}
 
@@ -46,20 +46,33 @@
 2.  在左侧导航栏，单击**数据迁移**。
 3.  在迁移任务列表页面顶部，选择迁移的目标集群所属地域。 
 
-    ![选择地域](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/711733/156681387250439_zh-CN.png)
+    ![选择地域](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/711733/156775645950439_zh-CN.png)
 
 4.  单击页面右上角的**创建迁移任务**。
 5.  配置迁移任务的源库和目标库连接信息。 
 
-    ![配置源库和目标库连接信息](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1436590/156681387256870_zh-CN.png)
+    ![配置源库和目标库连接信息](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1436590/156775645959392_zh-CN.png)
 
     |配置项目|配置选项|配置说明|
     |:---|:---|:---|
     |任务名称|-|DTS会自动生成一个任务名称，建议配置具有业务意义的名称（无唯一性要求），便于后续识别。|
-    |源库信息|实例类型|选择**POLARDB**。|
+    |源库信息|实例类型|选择**通过专线/VPN网关/智能网关接入的自建数据库**。|
     |实例地区|选择源POLARDB集群所属的地域。|
-    |POLARDB实例ID|选择源POLARDB集群ID。|
-    |数据库账号|填入连接源POLARDB集群的数据库账号。|
+    |对端专有网络|选择POLARDB实例所属的专有网络。 您可以登录[POLARDB控制台](https://polardb.console.aliyun.com/)，单击目标实例ID，进入该实例的**基本信息**页面来获取。
+
+ ![获取VPC Id](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227086/156775645954382_zh-CN.png)
+
+|
+    |数据库类型|选择为**MySQL**。|
+    |IP地址|填入POLARDB主实例的私网IP地址，本案例中填入**172.16.20.20**。 您可以在电脑中ping目标POLARDB实例的**主地址（私网）**来获取私网IP地址。
+
+ ![获取POLARDB的私网IP地址](../../SP_201/DNdts1898536/images/54390_zh-CN.gif)
+
+|
+    |端口|填入POLARDB集群的服务端口，默认为**3306**。|
+    |数据库账号|填入源POLARDB集群的数据库账号。 **说明：** 该账号需具备待同步对象的SELECT、REPLICATION CLIENT、REPLICATION SLAVE权限。
+
+ |
     |数据库密码|填入该账号对应的密码。 **说明：** 源库信息填写完毕后，您可以单击**数据库密码**后的**测试连接**来验证填入的信息是否正确。如果填写正确则提示**测试通过**；如果提示**测试失败**，单击**测试失败**后的**诊断**，根据提示调整填写的源库信息。
 
  |
@@ -77,7 +90,7 @@
 
 7.  选择迁移类型和迁移对象。 
 
-    ![选择迁移对象和类型](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1436590/156681387256880_zh-CN.png)
+    ![选择迁移对象和类型](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1436590/156775645956880_zh-CN.png)
 
     |配置|说明|
     |:-|:-|
@@ -87,7 +100,7 @@
 
     -   如果需要进行不停机迁移，则同时勾选**结构迁移**、**全量数据迁移**和**增量数据迁移**。
  |
-    |迁移对象| 在迁移对象框中单击待迁移的对象，然后单击![向右小箭头](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79929/156681387240698_zh-CN.png)将其移动至已选择对象框。
+    |迁移对象| 在迁移对象框中单击待迁移的对象，然后单击![向右小箭头](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79929/156775645940698_zh-CN.png)将其移动至已选择对象框。
 
  **说明：** 
 
@@ -101,7 +114,7 @@
     **说明：** 
 
     -   在迁移任务正式启动之前，会先进行预检查。只有通过预检查，DTS才能迁移数据。
-    -   如果预检查失败，单击具体检查项后的![提示](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17095/156681387247468_zh-CN.png)，查看失败详情。根据提示修复后，重新进行预检查。
+    -   如果预检查失败，单击具体检查项后的![提示](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17095/156775646047468_zh-CN.png)，查看失败详情。根据提示修复后，重新进行预检查。
 9.  预检查通过后，单击**下一步**。
 10. 在弹出的购买配置确认对话框，选择**链路规格**并勾选**数据传输（按量付费）服务条款**。
 11. 单击**购买并启动**，迁移任务正式开始。 
@@ -118,7 +131,7 @@
         1.  观察迁移任务的进度变更为**增量迁移**，并显示为**无延迟**状态时，将源库停写几分钟，此时**增量迁移**的状态可能会显示延迟的时间。
         2.  等待迁移任务的**增量迁移**再次进入**无延迟**状态后，手动结束迁移任务。
 
-            ![结束增量迁移任务](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17104/156681387347604_zh-CN.png)
+            ![结束增量迁移任务](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17104/156775646047604_zh-CN.png)
 
 12. 将业务切换至POLARDB集群。
 
