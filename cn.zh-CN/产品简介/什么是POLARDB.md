@@ -45,13 +45,9 @@ POLARDB采用存储和计算分离的架构，所有计算节点共享一份数�
     利用存储层的快照，可以在60秒内完成对2TB数据量大小的数据库的备份，而且备份过程不会对数据库加锁，对应用程序几乎无影响，全天24小时均可进行备份。
 
 
-## 相关服务 {#section_dru_7os_cmo .section}
+## POLARDB定价 {#section_w1e_qv5_njq .section}
 
--   [ECS](../../../../intl.zh-CN/产品简介/什么是云服务器ECS.md)：ECS是云服务器，通过内网访问同一地域的POLARDB集群时，可实现POLARDB集群的最佳性能。ECS搭配POLARDB集群是典型的业务访问架构。
--   [Redis](../../../../intl.zh-CN/产品简介/什么是云数据库Redis版.md)：Redis提供持久化的内存数据库服务。当业务访问量较大时，ECS 、POLARDB和Redis的组合可以支持更多的读请求，同时减少响应时间。
--   [MongoDB](../../../../intl.zh-CN/产品简介/什么是云数据库MongoDB版.md)：提供稳定可靠、弹性伸缩、完全兼容MongoDB协议的数据库服务。数据结构多样时，可以选择将结构化数据存储在POLARDB，将非结构化数据存储在MongoDB，满足业务的多样化存储需求。
--   [DTS](../../../../intl.zh-CN/产品简介/什么是数据传输服务DTS.md#)：您可以使用数据传输服务DTS将本地数据库迁移到云上的POLARDB。
--   [OSS](../../../../intl.zh-CN/产品简介/什么是对象存储 OSS.md)：对象存储服务OSS是阿里云提供的海量、安全、低成本、高可靠的云存储服务。
+详情请参见[规格与定价](../../../../intl.zh-CN/产品定价/规格与定价.md#)。
 
 ## 如何使用POLARDB {#section_hwr_aoq_rgc .section}
 
@@ -67,7 +63,11 @@ POLARDB采用存储和计算分离的架构，所有计算节点共享一份数�
 -   DMS：您可以[通过DMS连接POLARDB集群](../../../../intl.zh-CN/POLARDB for MySQL快速入门/连接数据库集群.md#section_wxq_bql_v2b)，在Web界面进行数据库开发工作。
 -   客户端：您可以使用通用的数据库客户端工具连接POLARDB集群。例如，MySQL-Front、pgAdmin等。
 
-## POLARDB定价 {#section_edl_vs8_qbv .section}
+## 相关服务 {#section_lcm_tex_py9 .section}
 
-详情请参见[规格与定价](../../../../intl.zh-CN/产品定价/规格与定价.md#)。
+-   [ECS](../../../../intl.zh-CN/产品简介/什么是云服务器ECS.md)：ECS是云服务器，通过内网访问同一地域的POLARDB集群时，可实现POLARDB集群的最佳性能。ECS搭配POLARDB集群是典型的业务访问架构。
+-   [Redis](../../../../intl.zh-CN/产品简介/什么是云数据库Redis版.md)：Redis提供持久化的内存数据库服务。当业务访问量较大时，ECS 、POLARDB和Redis的组合可以支持更多的读请求，同时减少响应时间。
+-   [MongoDB](../../../../intl.zh-CN/产品简介/什么是云数据库MongoDB版.md)：提供稳定可靠、弹性伸缩、完全兼容MongoDB协议的数据库服务。数据结构多样时，可以选择将结构化数据存储在POLARDB，将非结构化数据存储在MongoDB，满足业务的多样化存储需求。
+-   [DTS](../../../../intl.zh-CN/产品简介/什么是数据传输服务DTS.md#)：您可以使用数据传输服务DTS将本地数据库迁移到云上的POLARDB。
+-   [OSS](../../../../intl.zh-CN/产品简介/什么是对象存储 OSS.md)：对象存储服务OSS是阿里云提供的海量、安全、低成本、高可靠的云存储服务。
 

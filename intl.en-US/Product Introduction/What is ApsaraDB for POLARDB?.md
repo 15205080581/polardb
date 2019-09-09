@@ -46,13 +46,9 @@ ApsaraDB for POLARDB is compatible with MySQL, PostgreSQL, and Oracle databases.
     You can back up a database with a size of 2 TB within 60 seconds by using snapshots. Backup can be performed at any time on a day without any impacts on apps. During the backup process, the database will not be locked.
 
 
-## Related services {#section_dru_7os_cmo .section}
+## Pricing {#section_ez0_hsa_fjp .section}
 
--   [ECS](../../../../intl.en-US/Product Introduction/What is ECS?.md): When Elastic Compute Service \(ECS\) instances access ApsaraDB for POLARDB clusters in the same region, the optimal performance of ApsaraDB for POLARDB clusters is achieved. ECS instances and ApsaraDB for POLARDB clusters compose a typical business architecture.
--   [ApsaraDB for Redis](../../../../intl.en-US/Product Introduction/What is ApsaraDB for Redis.md): ApsaraDB for Redis provides database services that use hybrid storage of memory and hard disks to ensure data consistency. You can combine ECS instances, ApsaraDB for POLARDB clusters, and ApsaraDB for Redis instances to handle a large number of read requests and reduce the response time.
--   [ApsaraDB for MongoDB](../../../../intl.en-US/Product Introduction/What is ApsaraDB for MongoDB.md): ApsaraDB for MongoDB provides a stable, reliable, and scalable database service that is compatible with the MongoDB Wire Protocol. To meet diverse business demands, you can store structured data in ApsaraDB for POLARDB and store unstructured data in ApsaraDB for MongoDB.
--   [DTS](https://www.alibabacloud.com/help/doc-detail/26592.htm): You can use Data Transmission Service \(DTS\) to migrate on-premises databases to ApsaraDB for POLARDB.
--   [OSS](../../../../intl.en-US/Product Introduction/What is OSS?.md): Object Storage Service \(OSS\) is a cloud storage service that features significant storage capacity, security, cost-effectiveness, and reliability.
+For more information about pricing, see [Specifications and pricing](../../../../intl.en-US/Pricing/Specifications and pricing.md#).
 
 ## Use ApsaraDB for POLARDB {#section_hwr_aoq_rgc .section}
 
@@ -68,7 +64,11 @@ After creating an ApsaraDB for POLARDB cluster, you can connect to the cluster b
 -   DMS: You can [connect to an ApsaraDB for POLARDB cluster by using Data Management \(DMS\)](../../../../intl.en-US/Quick Start for MySQL/Connect to a POLARDB for MySQL cluster.md#section_wxq_bql_v2b) and develop databases on the Web interface.
 -   Client: You can connect to an ApsaraDB for POLARDB cluster by using a database client, such as MySQL-Front and pgAdmin.
 
-## Pricing {#section_edl_vs8_qbv .section}
+## Related services {#section_wzr_72z_tsv .section}
 
-For more information about pricing, see [Specifications and pricing](../../../../intl.en-US/Pricing/Specifications and pricing.md#).
+-   [ECS](../../../../intl.en-US/Product Introduction/What is ECS?.md): When Elastic Compute Service \(ECS\) instances access ApsaraDB for POLARDB clusters in the same region, the optimal performance of ApsaraDB for POLARDB clusters is achieved. ECS instances and ApsaraDB for POLARDB clusters compose a typical business architecture.
+-   [ApsaraDB for Redis](../../../../intl.en-US/Product Introduction/What is ApsaraDB for Redis.md): ApsaraDB for Redis provides database services that use hybrid storage of memory and hard disks to ensure data consistency. You can combine ECS instances, ApsaraDB for POLARDB clusters, and ApsaraDB for Redis instances to handle a large number of read requests and reduce the response time.
+-   [ApsaraDB for MongoDB](../../../../intl.en-US/Product Introduction/What is ApsaraDB for MongoDB.md): ApsaraDB for MongoDB provides a stable, reliable, and scalable database service that is compatible with the MongoDB Wire Protocol. To meet diverse business demands, you can store structured data in ApsaraDB for POLARDB and store unstructured data in ApsaraDB for MongoDB.
+-   [DTS](https://www.alibabacloud.com/help/doc-detail/26592.htm): You can use Data Transmission Service \(DTS\) to migrate on-premises databases to ApsaraDB for POLARDB.
+-   [OSS](../../../../intl.en-US/Product Introduction/What is OSS?.md): Object Storage Service \(OSS\) is a cloud storage service that features significant storage capacity, security, cost-effectiveness, and reliability.
 
