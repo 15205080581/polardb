@@ -1,12 +1,17 @@
 # 什么是POLARDB {#concept_jpz_zb2_sdb .concept}
 
-POLARDB是阿里云自研的下一代关系型云数据库，兼容MySQL、PostgreSQL、Oracle引擎，存储容量最高可达100TB，单库最多可扩展到16个节点，适用于企业多样化的数据库应用场景。
+POLARDB是阿里云自研的下一代关系型云数据库，兼容MySQL引擎，存储容量最高可达100TB，单库最多可扩展到16个节点，适用于企业多样化的数据库应用场景。
 
 POLARDB采用存储和计算分离的架构，所有计算节点共享一份数据，提供分钟级的配置升降级、秒级的故障恢复、全局数据一致性和免费的数据备份容灾服务。POLARDB既融合了商业数据库稳定可靠、高性能、可扩展的特征，又具有开源云数据库简单开放、自我迭代的优势，例如POLARDB for MySQL性能最高可以提升至MySQL的6倍，而成本只有商用数据库的1/10。
 
-**集群架构，计算与存储分离：**POLARDB采用多节点集群的架构，集群中有一个Writer节点（主节点）和多个Reader节点（读节点），各节点通过分布式文件系统（PolarFileSystem）共享底层的存储（PolarStore）。
+-   **集群架构，计算与存储分离** 
 
-**读写分离**：当应用程序使用集群地址时，POLARDB for MySQL通过内部的代理层（Proxy）对外提供服务，应用程序的请求都先经过代理，然后才访问到数据库节点。代理层不仅可以做安全认证和保护，还可以解析SQL，把写操作（例如事务、UPDATE、INSERT、DELETE、DDL等）发送到主节点，把读操作（例如SELECT）均衡地分发到多个只读节点，实现自动的读写分离。对于应用程序来说，就像使用一个单点的MySQL数据库一样简单。内部的代理层（Proxy）后续将支持POLARDB for PostgreSQL/Oracle。
+    POLARDB采用多节点集群的架构，集群中有一个Writer节点（主节点）和多个Reader节点（读节点），各节点通过分布式文件系统（PolarFileSystem）共享底层的存储（PolarStore）。
+
+-   **读写分离** 
+
+    当应用程序使用集群地址时，POLARDB for MySQL通过内部的代理层（Proxy）对外提供服务，应用程序的请求都先经过代理，然后才访问到数据库节点。代理层不仅可以做安全认证和保护，还可以解析SQL，把写操作（例如事务、UPDATE、INSERT、DELETE、DDL等）发送到主节点，把读操作（例如SELECT）均衡地分发到多个只读节点，实现自动的读写分离。对于应用程序来说，就像使用一个单点的MySQL数据库一样简单。内部的代理层（Proxy）后续将支持POLARDB for PostgreSQL/Oracle。
+
 
 ## 相关概念 {#section_y5f_gbj_5fb .section}
 
@@ -47,11 +52,11 @@ POLARDB采用存储和计算分离的架构，所有计算节点共享一份数�
 
 ## POLARDB定价 {#section_w1e_qv5_njq .section}
 
-详情请参见[规格与定价](../../../../intl.zh-CN/产品定价/规格与定价.md#)。
+详情请参见[规格与定价](../../../../intl.zh-CN/产品定价/规格与定价.md#)。。
 
 ## 如何使用POLARDB {#section_hwr_aoq_rgc .section}
 
-您可以通过以下方式管理POLARDB集群，进行集群创建、数据库创建、账号创建等操作：
+您可以通过以下方式管理POLARDB集群，包括创建集群、创建数据库、创建账号等。
 
 -   [控制台](https://polardb.console.aliyun.com/)：提供图形化的Web界面，操作方便。
 -   [CLI](https://www.alibabacloud.com/help/zh/product/29991.htm)：控制台上所有的操作都可以通过CLI实现。
