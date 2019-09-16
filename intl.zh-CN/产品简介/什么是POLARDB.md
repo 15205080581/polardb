@@ -52,7 +52,7 @@ POLARDB采用存储和计算分离的架构，所有计算节点共享一份数�
 
 ## POLARDB定价 {#section_w1e_qv5_njq .section}
 
-详情请参见[规格与定价](../../../../intl.zh-CN/产品定价/规格与定价.md#)。。
+详情请参见[规格与定价](../../../../intl.zh-CN/产品定价/规格与定价.md#)，[点此购买](https://common-buy-intl.aliyun.com/?spm=a2796.intl-zh-product-polardb.0.0.1b1a3ff6Pps4rD&commodityCode=polardb_sub_intl#/buy)。
 
 ## 如何使用POLARDB {#section_hwr_aoq_rgc .section}
 
