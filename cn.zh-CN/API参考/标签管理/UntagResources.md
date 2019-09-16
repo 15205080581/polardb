@@ -8,7 +8,7 @@
 |:-|:-|:---|:-|
 |Action|String|是|系统规定参数，取值：UntagResources。|
 |RegionId|String|是|地域ID。|
-|ResourceType|String|是|集群类型，取值：ALIYUN::POLARDB::CLUSTER。|
+|ResourceType|String|是|集群类型，取值：cluster。|
 |ResourceId.n|String|是|第n个需要删除标签的集群ID。每次最多为50个集群同时删除标签，各个集群ID后面的数字n必须不同，且必须是从1开始的连续整数。例如：pc-bp1xxx.1、pc-bp2xxx.2。|
 |TagKey.n|String|否|标签键。每次最多删除20对标签，各个标签对的数字n必须不同，且必须是从1开始的连续整数。|
 |All|String|否|是否全部删除，仅当TagKey.n为空时有效。取值范围： -   true
@@ -25,11 +25,11 @@
 
 ## 请求示例 {#section_snj_c3s_xfb .section}
 
-```
+``` {#codeblock_ko0_gow_d3x}
 https://polardb.aliyuncs.com/?Action=UntagResources
 &RegionId=cn-hangzhou
 &ResourceId.1=pc-bp15751xxxxxxxx
-&ResourceType=ALIYUN%3A%3APOLARDB%3A%3ACLUSTER
+&ResourceType=cluster
 &&TagKey.1=a
 &<[公共请求参数]>
 				
@@ -39,7 +39,7 @@ https://polardb.aliyuncs.com/?Action=UntagResources
 
 XML格式
 
-```
+``` {#codeblock_mgr_6gy_k31}
 <UntagResourcesResponse>
     <RequestId>2D69A58F-345C-4FDE-88E4-BF5189484043</RequestId>
 </UntagResourcesResponse>
@@ -47,7 +47,7 @@ XML格式
 
 JSON格式
 
-```
+``` {#codeblock_rqj_qyk_jcq}
 { 
 "RequestId": "2D69A58F-345C-4FDE-88E4-BF5189484043", 
 }

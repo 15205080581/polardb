@@ -27,7 +27,7 @@ float8 ST_lcsSubDisatance(trajectory traj1, trajectory traj2, float8 dist, inter
 
 本函数计算的是与LCSS轨迹段相对应的轨迹1子轨迹的点数与LCSS轨迹段的点数的比例关系。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/803703/156326628950874_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/803703/156739408450874_zh-CN.png)
 
 上图中轨迹点\[2,3,5\]为LCSS轨迹段，轨迹1与此对应的轨迹段为\[2,3,4,5\]，返回的结果为1-3/4。
 

@@ -27,7 +27,7 @@ integer ST_lcsSimilarity(trajectory traj1, trajectory traj2, float8 dist, interv
 
 LCSS用于计算最大的公共子序列。用于判断两个轨迹点是否一致的条件包括空间距离和时间距离。 返回的结果是符合条件的轨迹点的数量 。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/803696/156326623550869_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/803696/156739407950869_zh-CN.png)
 
 上图中轨迹点1，3， 6 符合要求，返回为 3。
 

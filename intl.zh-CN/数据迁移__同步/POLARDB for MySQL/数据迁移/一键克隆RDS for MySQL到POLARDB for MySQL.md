@@ -3,11 +3,11 @@
 POLARDB支持从RDS for MySQL一键克隆数据到新的POLARDB for MySQL集群。
 
 -   源RDS实例版本为RDS for MySQL 5.6高可用版。
--   源RDS实例未开启[TDE](https://help.aliyun.com/document_detail/96121.html)和[SSL](https://help.aliyun.com/document_detail/96120.html)。
+-   源RDS实例未开启[TDE](https://www.alibabacloud.com/help/zh/doc-detail/33510.htm)和[SSL](https://www.alibabacloud.com/help/zh/doc-detail/32474.htm)。
 -   源RDS实例的表存储引擎为InnoDB。
--   如果RDS处于高安全模式（数据库代理模式），需要创建有高权限账号（请参见[创建高权限账号](../../../../cn.zh-CN/RDS for MySQL 快速入门/初始化配置/创建账号和数据库.md#section_wkq_j35_q2b)），或者切换到高性能模式（参见[【重要】RDS网络链路升级说明](../../../../cn.zh-CN/云数据库RDS简介/【重要】RDS网络链路升级说明.md#)），才能进行一键克隆。
+-   如果RDS处于高安全模式（数据库代理模式），需要创建有高权限账号（请参见[创建高权限账号](../../../../intl.zh-CN/RDS for MySQL 快速入门/初始化配置/创建账号和数据库.md#section_wkq_j35_q2b)），或者切换到高性能模式（参见[【重要】RDS网络链路升级说明](../../../../intl.zh-CN/云数据库RDS简介/【重要】RDS网络链路升级说明.md#)），才能进行一键克隆。
 
-    ![查看数据库模式](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/505489/156629387154653_zh-CN.png)
+    ![查看数据库模式](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/505489/156801204154653_zh-CN.png)
 
 
 POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下：
@@ -17,11 +17,11 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 -   Serverless存储：存储容量无需提前购买，自动扩缩容，按使用量计费。
 -   临时升配：临时升级规格，轻松应对短期的业务高峰。
 
-详情请参见[产品优势](../../../../cn.zh-CN/产品简介/产品优势.md#)。
+详情请参见[产品优势](../../../../intl.zh-CN/产品简介/产品优势.md#)。
 
 一键克隆功能将会新建一个与源RDS实例的数据相同的POLARDB集群，POLARDB集群包含源RDS实例的账号、数据库、IP白名单和必要的参数。源RDS实例的增量数据不会同步到POLARDB集群。
 
-**说明：** 如果需要在新建POLARDB集群的同时，使源RDS实例的增量数据实时同步到POLARDB集群，即实现平滑迁移（不停机迁移），请参见[一键升级RDS for MySQL到POLARDB for MySQL](cn.zh-CN/数据迁移__同步/POLARDB for MySQL/数据迁移/一键升级RDS for MySQL到POLARDB for MySQL.md#)。
+**说明：** 如果需要在新建POLARDB集群的同时，使源RDS实例的增量数据实时同步到POLARDB集群，即实现平滑迁移（不停机迁移），请参见[一键升级RDS for MySQL到POLARDB for MySQL](intl.zh-CN/数据迁移__同步/POLARDB for MySQL/数据迁移/一键升级RDS for MySQL到POLARDB for MySQL.md#)。
 
 ## 一键克隆的功能亮点 {#section_z2a_olf_h1c .section}
 
@@ -59,9 +59,9 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 
  |POLARDB集群所属的VPC和虚拟交换机。请确保POLARDB集群与需要连接的ECS创建于同一个VPC，否则它们无法通过内网互通，无法发挥最佳性能。|
     |**数据库引擎**|POLARDB集群的数据库引擎，不可变更。|
-    |**节点规格**|按需选择，建议不低于源RDS实例规格。所有POLARDB节点均为独享型，性能稳定可靠。详情请参见[规格与定价](../../../../cn.zh-CN/产品定价/规格与定价.md#)。|
+    |**节点规格**|按需选择，建议不低于源RDS实例规格。所有POLARDB节点均为独享型，性能稳定可靠。详情请参见[规格与定价](../../../../intl.zh-CN/产品定价/规格与定价.md#)。|
     |**节点个数**|无需选择。系统将自动创建一个与主节点规格相同的只读节点。|
-    |**存储费用**|无需选择容量，根据实际数据使用量按小时计费。详情请参见[规格与定价](../../../../cn.zh-CN/产品定价/规格与定价.md#)。|
+    |**存储费用**|无需选择容量，根据实际数据使用量按小时计费。详情请参见[规格与定价](../../../../intl.zh-CN/产品定价/规格与定价.md#)。|
     |**集群名称**|填写集群名称用于区分业务用途。如果留空，系统将自动生成一个集群名称。创建集群后还可以修改。|
 
 5.  设置**购买时长**（仅针对包年包月集群），然后单击右侧的**立即购买**。
@@ -77,9 +77,9 @@ POLARDB是阿里云自研的下一代关系型云数据库，主要优势如下�
 
 |API|描述|
 |---|--|
-|[CreateDBCluster](../../../../cn.zh-CN/API参考/集群管理/CreateDBCluster.md#)|创建POLARDB集群。 **说明：** 一键克隆时，参数**CreationOption**取值需要为**CloneFromRDS**。
+|[CreateDBCluster](../../../../intl.zh-CN/API参考/集群管理/CreateDBCluster.md#)|创建POLARDB集群。 **说明：** 一键克隆时，参数**CreationOption**取值需要为**CloneFromRDS**。
 
  |
 
-请尽快将应用的数据库连接地址修改为POLARDB的地址，详情请参见[查看连接地址](../../../../cn.zh-CN/POLARDB for MySQL快速入门/查看连接地址.md#)。
+请尽快将应用的数据库连接地址修改为POLARDB的地址，详情请参见[查看连接地址](../../../../intl.zh-CN/POLARDB for MySQL快速入门/查看连接地址.md#)。
 

@@ -29,7 +29,7 @@ LCSS用于计算最大的公共子序列。用于判断两个轨迹点是否一�
 
 返回的结果是 1- （LCSS）/ min\(leafcount\(traj1\), leafcount\(traj2\)。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/803702/156326626550871_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/803702/156739408150871_zh-CN.png)
 
 上图中轨迹点1，3，6符合要求，LCSS的数量为3， 结果为1-3/5=0.4。
 

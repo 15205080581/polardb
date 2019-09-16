@@ -15,12 +15,12 @@
 
 ## 配置迁移任务 {#section_owb_pby_bgb .section}
 
-1.  登录[DTS控制台](https://dts.console.aliyun.com/)。
+1.  登录[DTS控制台](https://dts-intl.console.aliyun.com)。
 2.  在左侧导航栏，单击**数据迁移**。
 3.  单击数据迁移页面右侧的**创建迁移任务**。
 4.  配置迁移任务的**源库及目标库**信息。
 
-    ![源库及目标库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78734/156637531540718_zh-CN.png)
+    ![源库及目标库配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78734/156741108640718_zh-CN.png)
 
     |配置项目|配置选项|配置说明|
     |:---|:---|:---|
@@ -49,7 +49,7 @@
 
 6.  选择**迁移对象**和**迁移类型**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78734/156637531534080_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78734/156741108634080_zh-CN.png)
 
     |配置项目|配置说明|
     |:---|:---|
@@ -59,7 +59,7 @@
 
     -   如果需要进行不停机迁移，那么迁移类型选择**结构迁移**、**全量数据迁移**和**增量数据迁移**。
  |
-    |迁移对象|     -   在**迁移对象**框中将想要迁移的数据库选中，单击![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78734/156637531540720_zh-CN.png)移动到**已选择对象**框。
+    |迁移对象|     -   在**迁移对象**框中将想要迁移的数据库选中，单击![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/78734/156741108640720_zh-CN.png)移动到**已选择对象**框。
     -   迁移对象的选择粒度细化为：库、表、列三个粒度。
     -   默认情况下，对象迁移到目标POLARDB实例后，对象名跟源ECS上的自建数据库一致。如果您迁移的对象在源实例跟目标实例上名称不同，那么需要使用DTS提供的对象名映射功能，详细使用方式可以参考[库表列映射](https://www.alibabacloud.com/help/zh/doc-detail/26628.htm)。
  |
@@ -69,10 +69,9 @@
     **说明：** 
 
     -   在迁移任务正式启动之前，会先进行预检查。只有预检查通过后，才能成功启动迁移任务。
-    -   如果预检查失败，单击具体检查项后的![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/86903/156637531535996_zh-CN.png)，查看具体的失败详情。根据失败原因修复后，重新进行预检查。
+    -   如果预检查失败，单击具体检查项后的![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/86903/156741108735996_zh-CN.png)，查看具体的失败详情。根据失败原因修复后，重新进行预检查。
 8.  预检查通过后，单击**下一步**。
-9.  在**购买配置确认**页面，选择**链路规格**并勾选**数据传输（按量付费）服务条款**。
-10. 单击**购买并启动**，迁移任务正式开始。
+9.  在**购买配置确认**页面，选择**链路规格**并勾选**数据传输（按量付费）服务条款**，单击**购买并启动**，迁移任务正式开始。
     -   全量数据迁移
 
         等待迁移任务完成即可，迁移任务会自动停止。
@@ -81,5 +80,6 @@
 
         迁移任务不会自动结束，观察迁移任务的状态显示为**增量迁移无延迟**的状态时，将源库停写几分钟，等待增量迁移再次进入**增量迁移无延迟**状态，手动停止迁移任务。
 
-11. 迁移完成后根据业务需求选择合适的时间，将业务切换至目标POLARDB实例中。
+
+迁移完成后根据业务需求选择合适的时间，将业务切换至目标POLARDB实例中。
 

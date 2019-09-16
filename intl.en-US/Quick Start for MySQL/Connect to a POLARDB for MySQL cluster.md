@@ -9,10 +9,10 @@ A privileged or standard account has been created for the POLARDB cluster. For m
 DMS is a graphical data management tool provided by Alibaba Cloud. It offers an integrated solution for data management, structure management, access security, BI charts, data trends, data tracking, performance management, performance management. With DMS, you can manage relational databases \(including MySQL, SQL Server, and PostgreSQL\), NoSQL databases \(including MongoDB and Redis\), and Linux servers.
 
 1.  Find the target POLARDB cluster and click its ID.
-2.  In the upper-right corner, click **Log On to Database**.![基本信息](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3019/15665450592084_en-US.png)
+2.  In the upper-right corner, click **Log On to Database**.![基本信息](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3019/15668946312084_en-US.png)
 
 
-3.  On the displayed logon page, enter the primary connection endpoint and port number, which are separated by a comma \(,\), enter the username and password of the privileged or standard account, and click **Log On**.![登录页面](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3019/15665450592085_en-US.png)
+3.  On the displayed logon page, enter the primary connection endpoint and port number, which are separated by a comma \(,\), enter the username and password of the privileged or standard account, and click **Log On**.![登录页面](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3019/15668946312085_en-US.png)
 
  
 
@@ -24,7 +24,7 @@ DMS is a graphical data management tool provided by Alibaba Cloud. It offers an 
 You can use any general-purpose database client to connect to a POLARDB cluster. This topics uses the [HeidiSQL](https://www.heidisql.com/) database client as an example.
 
 1.  Start HeidiSQL.
-2.  In the lower-left corner, click **New**.![会话窗口](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3019/156654505954958_en-US.png)
+2.  In the lower-left corner, click **New**.![会话窗口](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3019/156689463154958_en-US.png)
 
 
 3.  Enter the POLARDB cluster information. 
@@ -43,7 +43,7 @@ You can use any general-purpose database client to connect to a POLARDB cluster.
     |Password|The password of the account you use to access the POLARDB cluster.|
     |Port|The port number corresponding to the private or public connection endpoint of the POLARDB cluster.|
 
-4.  Click **Open**. If the connection information is correct, the POLARDB cluster gets connected.![HeidiSQL成功连接数据库](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3019/156654506055048_en-US.png)
+4.  Click **Open**. If the connection information is correct, the POLARDB cluster gets connected.![HeidiSQL成功连接数据库](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3019/156689463155048_en-US.png)
 
 
 
@@ -81,5 +81,5 @@ mysql -h<Connection endpoint> -P<Port number> -u<Username> -p<Password> -D<Name 
 
  |`mysql`|
 
-![示例图](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3019/156654506052711_en-US.png)
+![示例图](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3019/156689463152711_en-US.png)
 

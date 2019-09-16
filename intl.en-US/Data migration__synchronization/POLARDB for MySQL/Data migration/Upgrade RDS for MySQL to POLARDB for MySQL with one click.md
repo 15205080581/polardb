@@ -43,22 +43,17 @@ For more information, see [Benefits](../../../../intl.en-US/Product Introduction
 ## Prerequisites {#section_ezw_wsn_13b .section}
 
 -   The source RDS instance is of the RDS for MySQL 5.6 high-availability version.
--   [Transparent Data Encryption \(TDE\)](../../../../intl.en-US/User Guide/Security/Set TDE.md#) and [Secure Sockets Layer \(SSL\)](../../../../intl.en-US/User Guide/Security/Set SSL encryption.md#)are not enabled in the source RDS instance.
+-   [Transparent Data Encryption \(TDE\)](../../../../intl.en-US/User Guide/Security/Set TDE.md#) and [Secure Sockets Layer \(SSL\)](../../../../intl.en-US/User Guide/Security/Configure SSL encryption.md#)are not enabled in the source RDS instance.
 -   The table storage engine of the source RDS instance is InnoDB.
 
 ## Migrate data from the source RDS instance {#section_s4t_zsn_13b .section}
 
 This operation creates an ApsaraDB for POLARDB cluster with the same data as that of the source RDS instance. The incremental data of the source RDS instance will be synchronized to the ApsaraDB for POLARDB cluster in real time.
 
-1.  You can go to the page for creating a new cluster in the following two ways.
-    -   1.  Log on to the [ApsaraDB for POLARDB console](https://polardb.console.aliyun.com).
+1.  Log on to the [ApsaraDB for POLARDB console](https://polardb.console.aliyun.com).
 2.  Click **Create Cluster**.
-    -   1.  Log on to the [RDS console](https://rds.console.aliyun.com/).
-2.  In the upper-left corner of the page, select the region where the source instance resides.
-3.  Find the [desired source RDS instance](#section_ezw_wsn_13b) and click the instance ID.
-4.  Click **Upgrade to POLARDB**.
-2.  Select Subscription or Pay-As-You-Go \(Hourly Rate\).
-3.  Set parameters listed in the following table.
+3.  Select Subscription or Pay-As-You-Go \(Hourly Rate\).
+4.  Set parameters listed in the following table.
 
     |Parameter|Description|
     |---------|-----------|
@@ -87,9 +82,9 @@ This operation creates an ApsaraDB for POLARDB cluster with the same data as tha
     |**Storage Cost**|The storage capacity. You do not need to specify this parameter. The actual usage is billed hourly in pay-as-you-go mode. For more information, see [Specifications and pricing](../../../../intl.en-US/Pricing/Specifications and pricing.md#).|
     |**Cluster Name**|The cluster name for business distinguishing. The system will automatically create a name for your ApsaraDB for POLARDB cluster if you leave it blank. You can also modify the name after the cluster is created.|
 
-4.  Specify **Duration** \(only applicable to subscription clusters\), and click **Buy Now** on the right side of the page.
-5.  Confirm the order information, read the **Service Agreement**, select the checkbox to agree to it, and click **Activate Now**.
-6.  Log on to the [ApsaraDB for POLARDB console](https://polardb.console.aliyun.com) and view the status of the new ApsaraDB for POLARDB cluster.
+5.  Specify **Duration** \(only applicable to subscription clusters\), and click **Buy Now** on the right side of the page.
+6.  Confirm the order information, read the **Service Agreement**, select the checkbox to agree to it, and click **Activate Now**.
+7.  Log on to the [ApsaraDB for POLARDB console](https://polardb.console.aliyun.com) and view the status of the new ApsaraDB for POLARDB cluster.
 
     **Note:** 
 

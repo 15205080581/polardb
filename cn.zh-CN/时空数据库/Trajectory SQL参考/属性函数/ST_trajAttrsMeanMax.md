@@ -19,7 +19,7 @@ SETOF recrod ST_trajAttrsMeanMax(trajectory traj, cstring attr_field_name, out i
 
 Mean-Max 算法通过一个滑动窗口，分别计算出落入该窗口的属性值的平均值，再求出所有均值的最大值。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/803581/156326610950858_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/803581/156739403950858_zh-CN.png)
 
 该函数仅对integer和float类型的属性值有效。属性值不能为NULL。
 
