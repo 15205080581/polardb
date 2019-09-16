@@ -4,7 +4,7 @@
 
 ## Q：什么是云数据库POLARDB版？ {#section_jj0_avy_7nx .section}
 
-POLARDB是与MySQL、PostgreSQL、Oracle引擎兼容的云原生关系型数据库，经过阿里巴巴双十一活动的最佳实践，让用户既享受到开源的灵活性与价格，又享受到商业数据库的高性能和安全性。
+POLARDB是与MySQL引擎兼容的云原生关系型数据库，经过阿里巴巴双十一活动的最佳实践，让用户既享受到开源的灵活性与价格，又享受到商业数据库的高性能和安全性。
 
 POLARDB是为业务变化快，数据量激增，高并发场景而设计的数据库。单实例存储高达100TB、百万QPS，可扩展至16个节点，性能可提升至传统MySQL的6倍，而成本降低30%-50%。帮助您实现分钟级的配置升降级和弹性扩展、秒级故障恢复、全局数据一致性，使其具备商业数据库的高性能和安全性。
 
@@ -50,7 +50,7 @@ POLARDB通过阿里巴巴十年双十一技术的沉淀，在技术与性能上�
 
 ## Q：云数据库POLARDB版有哪些功能特性？ {#section_ulh_36o_fv5 .section}
 
-![原理](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/314791/156681384956662_zh-CN.png)
+![原理](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/314791/156862093156662_zh-CN.png)
 
 POLARDB的功能特性主要有如下：
 
