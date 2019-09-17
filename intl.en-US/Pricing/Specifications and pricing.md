@@ -231,8 +231,6 @@ You can choose from the following POLARDB node specifications. Nodes of any spec
 
  |
 
-**Note:** Currently, POLARDB is supported only by the Indonesia \(Jakarta\) region. The service in other regions will be released soon.
-
 **Note:** 
 
 -   POLARDB is available only in the Indonesia \(Jakarta\) region and will be rolled out soon in the other regions.
