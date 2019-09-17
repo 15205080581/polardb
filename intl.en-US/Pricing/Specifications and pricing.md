@@ -81,8 +81,8 @@ You can choose from the following POLARDB node specifications. Nodes of any spec
 
 **Note:** An ApsaraDB for POLARDB cluster with a dual-core CPU and 4 GB memory provides the basic specifications required in tests, trials, and low-load scenarios. We recommend that you do not use the basic specifications in a high-load production environment. In a high-load production environment, we recommend that you use an ApsaraDB for POLARDB cluster with an 8-core CPU and 32 GB memory or higher specifications.
 
-|Node specification|Mainland China|Hong Kong \(China\)|Singapore|Jakarta|
-|:-----------------|--------------|-------------------|---------|-------|
+|Node specification|Mainland China|China \(Hong Kong\)|US \(Silicon Valley\)|Singapore|Indonesia \(Jakarta\)|
+|:-----------------|--------------|-------------------|---------------------|---------|---------------------|
 |polar.mysql.x2.medium| USD 44/month
 
  USD 0.091/hour
@@ -90,6 +90,10 @@ You can choose from the following POLARDB node specifications. Nodes of any spec
  | USD 76/month
 
  USD 0.117/hour
+
+ | USD 62/month
+
+ USD 0.130/hour
 
  | USD 76/month
 
@@ -108,6 +112,10 @@ You can choose from the following POLARDB node specifications. Nodes of any spec
 
  USD 0.532/hour
 
+ | USD 240/month
+
+ USD 0.500/hour
+
  | USD 295/month
 
  USD 0.61/hour
@@ -124,6 +132,10 @@ You can choose from the following POLARDB node specifications. Nodes of any spec
  | USD 589/month
 
  USD 1.063/hour
+
+ | USD 480/month
+
+ USD 1.000/hour
 
  | USD 589/month
 
@@ -142,6 +154,10 @@ You can choose from the following POLARDB node specifications. Nodes of any spec
 
  USD 1.342/hour
 
+ | USD 620/month
+
+ USD 1.290/hour
+
  | USD 743/month
 
  USD 1.55/hour
@@ -158,6 +174,10 @@ You can choose from the following POLARDB node specifications. Nodes of any spec
  | USD 1,486/month
 
  USD 2.684/hour
+
+ | USD 1,239/month
+
+ USD 2.580/hour
 
  | USD 1,486/month
 
@@ -176,6 +196,10 @@ You can choose from the following POLARDB node specifications. Nodes of any spec
 
  USD 5.367/hour
 
+ | USD 2,477/month
+
+ USD 5.160/hour
+
  | USD 2,972/month
 
  USD 6.19/hour
@@ -192,6 +216,10 @@ You can choose from the following POLARDB node specifications. Nodes of any spec
  | USD 8,173/month
 
  USD 14.756/hour
+
+ | USD 6,811/month
+
+ USD 14.190/hour
 
  | USD 8,173/month
 
