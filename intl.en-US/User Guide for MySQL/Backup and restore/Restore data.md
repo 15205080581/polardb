@@ -5,8 +5,7 @@ The process of restoring data of a POLARDB for MySQL cluster is as follows:
 1.  Restore historical data to a new cluster. You can choose either of the following methods to restore data:
     -   [Restore data to a specific point in time.](#)
     -   [Restore data from a backup set \(snapshot\).](#)
-2.  [Log on to the new cluster](../../../../intl.en-US/Quick Start for MySQL/Log on to POLARDB databases using DMS.md) and verify the data accuracy.
-3.  [Migrate required data to the original cluster](../../../../intl.en-US//Data migration/Migrate data between POLARDB for MySQL clusters.md#).
+2.  [Log on to the new cluster](../../../../intl.en-US/User Guide for MySQL/Connect to POLARDB/Connect to a POLARDB for MySQL cluster.md) and verify the data accuracy.
 
 **Note:** The restored cluster data contains the data and account information of the original cluster, excluding the parameter settings of the original cluster.
 
@@ -20,7 +19,7 @@ You can restore data to **a specific point in time** in the last seven days in a
 4.  In the left-side navigation pane, choose **Settings and Management** \> **Backup and Restore**.
 5.  Click **Point-in-time Restore**. In the dialog box that appears, click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17710/156595237334703_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17710/156878866334703_en-US.png)
 
 6.  On the Clone Instance page, select a billing method for the new cluster:
     -   **Subscription**: For the new cluster created, you need to pay the subscription fee for a compute cluster \(with a primary node and a read-only node by default\). The storage occupied by the new cluster is billed on an hourly basis based on the actual data volume. The payment will be deducted from your Alibaba Cloud account on an hourly basis. The **subscription** method is more cost-effective if you want to use the new cluster for a long term. You can save more with longer subscription periods.
