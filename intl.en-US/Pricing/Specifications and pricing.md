@@ -23,7 +23,7 @@ The following table lists the billing items of an ApsaraDB for POLARDB cluster.
 
 ## Prices for storage {#section_1mh_47i_7kk .section}
 
-The storage is serverless. You do not need to select the storage capacity when you create a cluster. As data increases, the storage capacity automatically extends. The storage is billed based on the data size. You can check your data size on the [details page](../intl.en-US/User Guide for MySQL/Cluster management/View clusters.md#) of your cluster in the console.
+The storage is serverless. You do not need to select the storage capacity when you create a cluster. As data increases, the storage capacity automatically extends. The storage is billed based on the data size. You can check your data size on the Overview of your cluster in the console.
 
 -   Regions in Mainland China: USD 0.00077/GB/hour.
 -   Regions outside Mainland China: USD 0.00085/GB/hour.
