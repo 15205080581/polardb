@@ -1,178 +1,254 @@
-# DescribeDBClusterAttribute {#reference_p5z_535_xfb .reference}
+# DescribeDBClusterAttribute
 
-该接口用于查看指定POLARDB集群的详细属性。
+调用DescribeDBClusterAttribute接口查看PolarDB集群的详细属性。
 
-## 请求参数 {#section_kyn_pgs_xfb .section}
+****
 
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|Action|String|是|系统规定参数，取值：DescribeDBClusterAttribute。|
-|DBClusterId|String|是|集群ID。|
+## 调试
 
-## 返回参数 {#section_cf4_phs_xfb .section}
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=polardb&api=DescribeDBClusterAttribute&type=RPC&version=2017-08-01)
 
-|名称|类型|描述|
-|:-|:-|:-|
-|<公共返回参数\>|-|详见[公共返回参数](intl.zh-CN/API参考/ 使用API/公共参数.md#)。|
-|RegionId|String|地域ID。|
-|DBClusterId|String|集群ID。|
-|DBClusterDescription|String|集群描述。|
-|PayType|String|付费类型： -   Postpaid：按量付费；
--   Prepaid：预付费（包年包月）。
+## 请求参数
 
- |
-|Engine|String|集群引擎。|
-|DBType|String|数据库类型。|
-|DBVersion|String|数据库版本。|
-|DBClusterStatus|String|集群状态，详见[集群状态表](intl.zh-CN/API参考/附表/集群状态表.md#)。|
-|LockMode|String|锁定模式： -   Unlock：正常；
--   ManualLock：手动触发锁定；
--   LockByExpiration：集群过期自动锁定。
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|否|DescribeDBClusterAttribute|系统规定参数，取值为DescribeDBClusterAttribute。 |
+|DBClusterId|String|是|pc-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*|集群ID。 |
 
- |
-|DBClusterNetworkType|String|集群的网络类型。|
-|VPCId|String|专有网络ID。|
-|VSwitchId|String|虚拟交换机ID。|
-|StorageUsed|Long|存储用量，单位：Byte。|
-|StorageMax|Long|当前集群规格的最大存储容量，单位：Byte。|
-|CreationTime|String|创建时间，格式：*YYYY-MM-DD*T*hh:mm:ss*Z，如2011-05-30T12:11:4Z。|
-|ExpireTime|String|到期时间。 **说明：** 按量付费集群无到期时间。
+## 返回数据
 
- |
-|MaintainTime|String|集群的可维护时间： 格式：*HH:mm*Z-*HH:mm*Z
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|Category|String|Normal|集群系列，取值范围如下：
 
- 示例：16:00Z-17:00Z，表示0点到1点\(UTC+08:00\)可进行例行维护。
+ -   **Normal**：标准版
+-   **Basic**：普惠版 |
+|CreationTime|String|2020-03-23T05:35:43Z|集群创建时间。 |
+|DBClusterDescription|String|GDN测试|集群描述。 |
+|DBClusterId|String|pc-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*|集群ID。 |
+|DBClusterNetworkType|String|VPC|集群的网络类型。 |
+|DBClusterStatus|String|Running|集群状态，取值范围如下：
 
- |
-|Expired|String|是否过期。|
-|IsLatestVersion|Boolean|是否为最新版本。|
-|ZoneIds|String|数据分布的可用区。|
-|DBNodes|List<DBNode\>|DBNode组成的集合。|
-|Tags|List<Tag\>|Tag组成的集合。|
+ -   Creating：创建中
+-   Running：运行中
+-   Deleting：释放中
+-   Rebooting：重启中
+-   DBNodeCreating：正在增加节点
+-   DBNodeDeleting：正在删除节点
+-   ClassChanging：正在变更节点规格
+-   NetAddressCreating：正在创建网络连接
+-   NetAddressDeleting：正在删除网络连接
+-   NetAddressModifying：正在修改网络连接
+-   Deleted：已释放 |
+|DBNodes|Array of DBNode| |DBNode组成的集合。 |
+|CreationTime|String|2020-03-23T21:35:43Z|节点创建时间。 |
+|DBNodeClass|String|polar.mysql.x4.large|节点规格。 |
+|DBNodeId|String|pi-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*|节点ID。 |
+|DBNodeRole|String|Reader|节点角色，取值范围如下：
 
-## DBNode参数 {#section_lmx_xg5_xfb .section}
+ -   Writer：主节点。
+-   Reader：只读节点。 |
+|DBNodeStatus|String|Running|节点状态，取值范围如下：
 
-|名称|类型|描述|
-|:-|:-|:-|
-|DBNodeId|String|节点ID。|
-|ZoneId|String|可用区ID。|
-|DBInstanceStatus|String|节点状态。|
-|CreationTime|String|创建时间。|
-|DBNodeClass|String|节点规格。|
-|DBNodeRole|String|节点角色： -   Writer；
--   Reader。
+ -   Creating：创建中
+-   Running：运行中
+-   Deleting：删除中
+-   Rebooting：重启中
+-   DBNodeCreating：正在增加节点
+-   DBNodeDeleting：正在删除节点
+-   ClassChanging：正在变更节点规格
+-   NetAddressCreating：正在创建网络连接
+-   NetAddressDeleting：正在删除网络连接
+-   NetAddressModifying：正在修改网络连接
+-   MinorVersionUpgrading：小版本升级中
+-   Maintaining：实例维护中
+-   Switching：切换中 |
+|FailoverPriority|Integer|1|Failover优先级。每个节点都有一个Failover优先级，决定了当故障切换时，该节点被选举为主节点的概率高低。数值越大，优先级越高，取值范围为1~15。 |
+|MaxConnections|Integer|1200|最大集群并发连接数。 |
+|MaxIOPS|Integer|8000|最大I/O请求次数，即IOPS。 |
+|ZoneId|String|cn-qingdao-c|可用区ID。 |
+|DBType|String|MySQL|数据库引擎类型。 |
+|DBVersion|String|8.0|数据库引擎版本。 |
+|DataLevel1BackupChainSize|Long|1389363200|一级备份（快照）总大小，单位为Byte。 |
+|DeletionLock|Integer|0|集群删除的锁定状态：
 
- |
-|MaxIOPS|Integer|最大IO请求次数，即IOPS。|
-|MaxConnections|Integer|最大集群并发连接数。|
+ -   0：未锁定，可删除集群。
+-   1：锁定，不可删除集群。 |
+|Engine|String|POLARDB|集群引擎。 |
+|ExpireTime|String|2020-06-14T16:00:00Z|到期时间。
 
-## Tag参数 {#section_yth_nv1_1hb .section}
+ **说明：** 按量付费集群无到期时间。 |
+|Expired|String|false|是否过期。 |
+|IsLatestVersion|Boolean|false|是否为最新内核版本。 |
+|LockMode|String|Unlock|锁定模式，取值范围如下：
 
-|名称|类型|描述|
-|:-|:-|:-|
-|Key|String|标签键。|
-|Value|String|标签值。|
+ -   Unlock：未锁定。
+-   ManualLock：手动触发锁定。
+-   LockByExpiration：集群过期自动锁定。 |
+|MaintainTime|String|16:00Z-17:00Z|集群的可维护时间段（UTC时间），格式为`HH:mmZ-HH:mmZ`。例如`16:00Z-17:00Z`表示，0点到1点（UTC+08:00）可以进行例行维护。 |
+|PayType|String|Postpaid|付费类型：
 
-## 请求示例 {#section_snj_c3s_xfb .section}
+ -   Postpaid：按量付费。
+-   Prepaid：预付费（包年包月）。 |
+|RegionId|String|cn-hangzhou|地域ID。 |
+|RequestId|String|6A8952B9-6ADD-4AF6-A96F-6C01B6\*\*\*\*\*\*|请求ID。 |
+|ResourceGroupId|String|rg-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*|资源组ID。 |
+|SQLSize|Long|0|SQL的存储量，单位为Byte。若数值为-1，则表示没有数据。 |
+|StorageMax|Long|10995116277760|当前集群规格的最大存储容量，单位为Byte。 |
+|StorageUsed|Long|4864344064|存储空间的使用量，单位为Byte。 |
+|Tags|Array of Tag| |标签组成的集合。 |
+|Key|String|test1|标签键。 |
+|Value|String|1111|标签值。 |
+|VPCId|String|vpc-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*|专有网络ID。 |
+|VSwitchId|String|vsw-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*|虚拟交换机ID。 |
+|ZoneIds|String|cn-hangzhou-i|数据分布的可用区。 |
 
-``` {#codeblock_9an_bgv_cea}
-https://polardb.aliyuncs.com/?Action=DescribeDBClusterAttribute
-&DBClusterId=pc-xxxxxxxxxxxxxxx
-&<[公共请求参数]>
+## 示例
+
+请求示例
+
+```
+http(s)://polardb.aliyuncs.com/?Action=DescribeDBClusterAttribute
+&DBClusterId=pc-*****************
+&<公共请求参数>
 ```
 
-## 返回示例 {#section_blw_cls_xfb .section}
+正常返回示例
 
-XML格式
+`XML` 格式
 
-``` {#codeblock_ls8_33o_88p}
-<DescribeDBClusterAttributeResponse>  
-    <DBVersion>5.6</DBVersion>
-    <LockMode>Unlock</LockMode>
-    <DBClusterDescription>test</DBClusterDescription>
-    <DBClusterNetworkType>VPC</DBClusterNetworkType>
-    <DBClusterId>pc-xxxxxxxxxxxxxx</DBClusterId>
-    <VSwitchId>vsw-xxxxxxxxxxxxxx</VSwitchId>
-    <Engine>POLARDB</Engine>
-    <DBClusterStatus>Running</DBClusterStatus>
-    <CreationTime>2019-04-26T06:01:28Z</CreationTime>
-    <MaintainTime>18:00Z-19:00Z</MaintainTime>
-    <VPCId>vpc-xxxxxxxxxxxxxx</VPCId>
-    <ExpireTime></ExpireTime>
-    <Expired>false</Expired>
-    <RequestId>4E148395-950A-46F8-BFF8-274A64CD793B</RequestId>
-    <RegionId>cn-qingdao</RegionId>
-    <DBType>MySQL</DBType>
-    <DBNodes>
-        <CreationTime>2019-04-26T22:01:28Z</CreationTime>
-        <MaxIOPS>8000</MaxIOPS>
-        <DBNodeRole>Writer</DBNodeRole>
-        <MaxConnections>1200</MaxConnections>
-        <DBNodeClass>polar.mysql.x2.medium</DBNodeClass>
-        <DBNodeStatus>Running</DBNodeStatus>
-        <ZoneId>cn-qingdao-c</ZoneId>
-        <DBNodeId>pi-xxxxxxxxxxxxxx</DBNodeId>
-    </DBNodes>
-    <DBNodes>
-        <CreationTime>2019-04-26T22:01:28Z</CreationTime>
-        <MaxIOPS>8000</MaxIOPS>
-        <DBNodeRole>Reader</DBNodeRole>
-        <MaxConnections>1200</MaxConnections>
-        <DBNodeClass>polar.mysql.x2.medium</DBNodeClass>
-        <DBNodeStatus>Running</DBNodeStatus>
-        <ZoneId>cn-qingdao-c</ZoneId>
-        <DBNodeId>pi-xxxxxxxxxxxxxx</DBNodeId>
-    </DBNodes>
-    <SQLSize>0</SQLSize>
-    <PayType>Postpaid</PayType>
-</DescribeDBClusterAttributeResponse>
+```
+<DeletionLock>0</DeletionLock>
+<Category>Normal</Category>
+<ResourceGroupId>rg-***************</ResourceGroupId>
+<DataLevel1BackupChainSize>1389363200</DataLevel1BackupChainSize>
+<DBClusterId>pc-*****************</DBClusterId>
+<DBClusterNetworkType>VPC</DBClusterNetworkType>
+<DBType>MySQL</DBType>
+<IsLatestVersion>false</IsLatestVersion>
+<DBVersion>8.0</DBVersion>
+<StorageMax>10995116277760</StorageMax>
+<DBNodes>
+    <DBNodeStatus>Running</DBNodeStatus>
+    <ZoneId>cn-hangzhou-i</ZoneId>
+    <MaxConnections>8000</MaxConnections>
+    <DBNodeRole>Reader</DBNodeRole>
+    <CreationTime>2020-03-23T21:35:43Z</CreationTime>
+    <DBNodeId>pi-****************</DBNodeId>
+    <FailoverPriority>1</FailoverPriority>
+    <DBNodeClass>polar.mysql.x4.large</DBNodeClass>
+    <MaxIOPS>32000</MaxIOPS>
+</DBNodes>
+<DBNodes>
+    <DBNodeStatus>Running</DBNodeStatus>
+    <ZoneId>cn-hangzhou-i</ZoneId>
+    <MaxConnections>8000</MaxConnections>
+    <DBNodeRole>Writer</DBNodeRole>
+    <CreationTime>2020-03-23T21:35:43Z</CreationTime>
+    <DBNodeId>pi-****************</DBNodeId>
+    <FailoverPriority>0</FailoverPriority>
+    <DBNodeClass>polar.mysql.x4.large</DBNodeClass>
+    <MaxIOPS>32000</MaxIOPS>
+</DBNodes>
+<DBNodes>
+    <DBNodeStatus>Running</DBNodeStatus>
+    <ZoneId>cn-hangzhou-i</ZoneId>
+    <MaxConnections>8000</MaxConnections>
+    <DBNodeRole>Reader</DBNodeRole>
+    <CreationTime>2020-05-08T18:28:22Z</CreationTime>
+    <DBNodeId>pi-****************</DBNodeId>
+    <FailoverPriority>1</FailoverPriority>
+    <DBNodeClass>polar.mysql.x4.large</DBNodeClass>
+    <MaxIOPS>32000</MaxIOPS>
+</DBNodes>
+<ZoneIds>cn-hangzhou-i,cn-hangzhou-i</ZoneIds>
+<MaintainTime>16:00Z-17:00Z</MaintainTime>
+<Engine>POLARDB</Engine>
+<RequestId>6A8952B9-6ADD-4AF6-A96F-6C01B6******</RequestId>
+<VPCId>vpc-*******************</VPCId>
+<DBClusterStatus>Running</DBClusterStatus>
+<VSwitchId>vsw-*********************</VSwitchId>
+<DBClusterDescription>GDN测试</DBClusterDescription>
+<Expired>false</Expired>
+<PayType>Postpaid</PayType>
+<LockMode>Unlock</LockMode>
+<StorageUsed>4864344064</StorageUsed>
+<CreationTime>2020-03-23T05:35:43Z</CreationTime>
+<RegionId>cn-hangzhou</RegionId>
+<SQLSize>0</SQLSize>
+<ExpireTime/>
 ```
 
-JSON格式
+`JSON` 格式
 
-``` {#codeblock_mhu_a84_1im}
+```
 {
-    "DBVersion": "5.6",
-    "LockMode": "Unlock",
-    "DBClusterDescription": "test",
-    "DBClusterNetworkType": "VPC",
-    "DBClusterId": "pc-xxxxxxxxxxxxxx",
-    "VSwitchId": "vsw-xxxxxxxxxxxxxx",
-    "Engine": "POLARDB",
-    "DBClusterStatus": "Running",
-    "CreationTime": "2019-04-26T06:01:28Z",
-    "MaintainTime": "18:00Z-19:00Z",
-    "Tags": [],
-    "VPCId": "vpc-xxxxxxxxxxxxxx",
-    "ExpireTime": "",
-    "Expired": false,
-    "RequestId": "4E148395-950A-46F8-BFF8-274A64CD793B",
-    "RegionId": "cn-qingdao",
-    "DBType": "MySQL",
-    "DBNodes": [
-        {
-            "CreationTime": "2019-04-26T22:01:28Z",
-            "MaxIOPS": 8000,
-            "DBNodeRole": "Writer",
-            "MaxConnections": 1200,
-            "DBNodeClass": "polar.mysql.x2.medium",
-            "DBNodeStatus": "Running",
-            "ZoneId": "cn-qingdao-c",
-            "DBNodeId": "pi-xxxxxxxxxxxxxx"
-        },
-        {
-            "CreationTime": "2019-04-26T22:01:28Z",
-            "MaxIOPS": 8000,
-            "DBNodeRole": "Reader",
-            "MaxConnections": 1200,
-            "DBNodeClass": "polar.mysql.x2.medium",
-            "DBNodeStatus": "Running",
-            "ZoneId": "cn-qingdao-c",
-            "DBNodeId": "pi-xxxxxxxxxxxxxx"
-        }
-    ],
-    "SQLSize": 0,
-    "PayType": "Postpaid"
+	"DeletionLock": 0,
+    "Category": "Normal",
+	"ResourceGroupId": "rg-***************",
+	"DataLevel1BackupChainSize": 1389363200,
+	"DBClusterId": "pc-*****************",
+	"DBClusterNetworkType": "VPC",
+	"DBType": "MySQL",
+	"IsLatestVersion": false,
+	"DBVersion": "8.0",
+	"StorageMax": 10995116277760,
+	"DBNodes": [
+		{
+			"DBNodeStatus": "Running",
+			"ZoneId": "cn-hangzhou-i",
+			"MaxConnections": 8000,
+			"DBNodeRole": "Reader",
+			"CreationTime": "2020-03-23T21:35:43Z",
+			"DBNodeId": "pi-****************",
+			"FailoverPriority": 1,
+			"DBNodeClass": "polar.mysql.x4.large",
+			"MaxIOPS": 32000
+		},
+		{
+			"DBNodeStatus": "Running",
+			"ZoneId": "cn-hangzhou-i",
+			"MaxConnections": 8000,
+			"DBNodeRole": "Writer",
+			"CreationTime": "2020-03-23T21:35:43Z",
+			"DBNodeId": "pi-****************",
+			"FailoverPriority": 0,
+			"DBNodeClass": "polar.mysql.x4.large",
+			"MaxIOPS": 32000
+		},
+		{
+			"DBNodeStatus": "Running",
+			"ZoneId": "cn-hangzhou-i",
+			"MaxConnections": 8000,
+			"DBNodeRole": "Reader",
+			"CreationTime": "2020-05-08T18:28:22Z",
+			"DBNodeId": "pi-****************",
+			"FailoverPriority": 1,
+			"DBNodeClass": "polar.mysql.x4.large",
+			"MaxIOPS": 32000
+		}
+	],
+	"ZoneIds": "cn-hangzhou-i,cn-hangzhou-i",
+	"MaintainTime": "16:00Z-17:00Z",
+	"Engine": "POLARDB",
+	"Tags": [],
+	"RequestId": "6A8952B9-6ADD-4AF6-A96F-6C01B6******",
+	"VPCId": "vpc-*******************",
+	"DBClusterStatus": "Running",
+	"VSwitchId": "vsw-*********************",
+	"DBClusterDescription": "GDN测试",
+	"Expired": false,
+	"PayType": "Postpaid",
+	"LockMode": "Unlock",
+	"StorageUsed": 4864344064,
+	"CreationTime": "2020-03-23T05:35:43Z",
+	"RegionId": "cn-hangzhou",
+	"SQLSize": 0,
+	"ExpireTime": ""
 }
 ```
+
+## 错误码
+
+访问[错误中心](https://error-center.alibabacloud.com/status/product/polardb)查看更多错误码。
 
