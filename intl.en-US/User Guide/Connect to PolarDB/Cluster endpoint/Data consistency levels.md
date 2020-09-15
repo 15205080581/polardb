@@ -4,7 +4,7 @@
 
 Apsara PolarDB runs in a cluster architecture. Each cluster contains a writer node and one or more read-only nodes. Clients can connect to an Apsara PolarDB cluster by using two types of endpoints: cluster endpoints and primary endpoints. We recommend that you use the cluster endpoints to enable access to all the nodes in the cluster and implement read/write splitting.
 
-![](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3722729951/p34629.png)
+![](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/6159410061/p34629.png)
 
 ## Read/write splitting of PolarDB for MySQL
 
