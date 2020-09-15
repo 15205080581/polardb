@@ -4,7 +4,7 @@
 
 ## PolarDB架构及PolarProxy介绍
 
-![PolarDB架构 ](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/1426400061/p99621.png)
+![PolarDB架构 ](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/0901410061/p99621.png)
 
 PolarDB是一个由多个节点构成的数据库集群，一个主节点，多个读节点。对外默认提供两个地址，分别为主地址和集群地址。其中，集群地址功能由PolarProxy提供，集群地址分为只读和可读可写两种读写模式，可读可写模式支持读写分离，只读模式支持按连接数负载。读写分离请参见[读写分离](/intl.zh-CN/用户指南/集群访问/集群地址/读写分离.md)，更多关于PolarProxy的功能介绍请参见下文。
 
