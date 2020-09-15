@@ -6,7 +6,7 @@ PolarDB MySQL提供了最终一致性、会话读一致性以及全局一致性�
 
 PolarDB是一个由多个节点构成的数据库集群，一个主节点，多个读节点。对外默认提供两个地址，一个是集群地址，一个是主地址，推荐使用集群地址，因为它具备读写分离功能可以把所有节点的资源整合到一起对外提供服务。
 
-![1](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/8126400061/p34629.png)
+![1](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/5537310061/p34629.png)
 
 ## MySQL读写分离解决和引入
 
