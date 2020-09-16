@@ -101,6 +101,7 @@ PolarDB提供了会话级连接池和事务级连接池。
 
 **说明：**
 
+-   若您需要通过MySQL官方命令行执行上述Hint语句，请在命令行中加上-c参数，否则该Hint会被MySQL官方命令行过滤导致Hint失效，具体请参见[MySQL官方命令行](https://dev.mysql.com/doc/refman/5.6/en/mysql-command-options.html#option_mysql_comments)。
 -   Hint的路由优化级最高，不受一致性级别和事务拆分的约束，使用前请进行评估。
 -   Hint语句里不要有改变环境变量的语句，例如`/*FORCE_SLAVE*/ set names utf8;`等，这类语句可能导致后续的业务出错。
 
