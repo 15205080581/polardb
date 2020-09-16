@@ -4,7 +4,7 @@ PolarProxy works as a proxy in a PolarDB cluster. This topic describes the follo
 
 ## PolarDB architecture and overview
 
-![PolarDB architecture ](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3728449951/p99621.png)
+![PolarDB architecture ](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/2679410061/p99621.png)
 
 PolarDB runs in a cluster architecture. Each cluster contains a primary node and one or more read-only nodes. By default, PolarDB provides two types of endpoints: primary endpoints and cluster endpoints. PolarProxy supports the cluster endpoint feature. Cluster endpoints include read/write endpoints and read-only endpoints. Read/write cluster endpoints support read/write splitting. Read-only cluster endpoints can be used to evenly distribute connections to read-only nodes. For more information about read/write splitting, see [Read/write splitting](/intl.en-US/User Guide/Connect to PolarDB/Cluster endpoint/Read/write splitting.md). The following sections describe the features of PolarProxy.
 
