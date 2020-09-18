@@ -12,7 +12,7 @@
 |--|--|----|---|--|
 |Action|String|否|ModifyDBClusterParameters|系统规定参数，取值为**ModifyDBClusterParameters**。 |
 |DBClusterId|String|是|pc-xxxxxxxxxx|集群ID。 |
-|Parameters|String|是|\{"auto\_increment":"1","character\_set\_filesystem":"utf8"\}|参数及其值的JSON串，参数的值都是字符串类型，例如`{"auto_increment":"1","character_set_filesystem":"utf8"}`。
+|Parameters|String|是|\{"auto\_increment\_increment":"1","character\_set\_filesystem":"utf8"\}|参数及其值的JSON串，参数的值都是字符串类型，例如`{"auto_increment_increment":"1","character_set_filesystem":"utf8"}`。
 
  **说明：** 您可以通过接口[DescribeDBClusterParameters](~~98122~~)查看PolarDB集群的参数。 |
 |EffectiveTime|String|否|Auto|生效时间：
@@ -36,7 +36,7 @@
 ```
 http(s)://polardb.aliyuncs.com/?Action=ModifyDBClusterParameters
 &DBClusterId=pc-xxxxxxxxxx
-&Parameters={"auto_increment":"1","character_set_filesystem":"utf8"} 
+&Parameters={"auto_increment_increment":"1","character_set_filesystem":"utf8"} 
 &<公共请求参数>
 ```
 
