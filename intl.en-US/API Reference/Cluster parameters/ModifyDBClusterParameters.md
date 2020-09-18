@@ -12,7 +12,7 @@ Modifies the parameters of a specified PolarDB cluster.
 |---------|----|--------|-------|-----------|
 |Action|String|No|ModifyDBClusterParameters|The operation that you want to perform. Set the value to **ModifyDBClusterParameters**. |
 |DBClusterId|String|Yes|pc-xxxxxxxxxx|The ID of the PolarDB cluster whose parameters are to be modified. |
-|Parameters|String|Yes|\{"auto\_increment":"1","character\_set\_filesystem":"utf8"\}|The JSON string that consists of parameters and their values. The parameter values are strings, for example, `{"auto_increment_increment":"1","character_set_filesystem":"utf8"}`.
+|Parameters|String|Yes|\{"auto\_increment\_increment":"1","character\_set\_filesystem":"utf8"\}|The JSON string that consists of parameters and their values. The parameter values are strings, for example, `{"auto_increment_increment":"1","character_set_filesystem":"utf8"}`.
 
 **Note:** You can call the [DescribeDBClusterParameters](~~98122~~) operation to view the parameters of the PolarDB cluster. |
 |EffectiveTime|String|No|Auto|The time when the modified values of parameters take effect. Valid values:
