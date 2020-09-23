@@ -1,29 +1,38 @@
-# Limits {#concept_tb5_rvk_xdb .concept}
+# Limits
 
-## Specification limits {#section_dxq_xxk_xdb .section}
+This topic describes the limits of Apsara PolarDB.
 
-|Specifications|Memory|Memory occupied by the file system|Maximum storage|Maximum number of files|
-|:-------------|:-----|:---------------------------------|:--------------|:----------------------|
-|polar.mysql.x2.medium|4 GB|450 MB|5,000 GB|1,026,048|
-|polar.mysql.x8.medium|16 GB|850 MB|1,000 GB|2,050,048|
-|polar.mysql.x8.large|32 GB|
-|polar.mysql.x8.xlarge|64 GB|
-|polar.mysql.x8.2xlarge|128 GB|
-|polar.mysql.x8.4xlarge|220 GB|
+## PolarDB MySQL
 
-Note:
+|Node specification|Memory occupied by the file system|Maximum number of files|
+|:-----------------|:---------------------------------|:----------------------|
+|polar.mysql.x2.medium|450 MB|1,026,048|
+|polar.mysql.x4.large|850 MB|2,050,048|
+|polar.mysql.x4.xlarge|
+|polar.mysql.x8.xlarge|
+|polar.mysql.x8.2xlarge|
+|polar.mysql.x8.4xlarge|
+|polar.mysql.x8.12xlarge|
 
--   **Maximum number of files**: includes user files, database system files \(approximately 100\), and log files \(run the SHOW POLAR LOGS command to view the number of log files\). A POLARDB table occupies two files. A partition table occupies N+2 files \(N indicates the number of partitions\). The following error message will pop up if you try to create new tables after reaching the upper limit of files:
+Description:
 
-    ERROR 3017 \(HY000\): Too many files. PolarDB only supports 2048 files every 10GB disk size. Please drop some tables/databases before creating new tables
+-   Maximum number of files
 
-    Specifically, you must delete some tables or upgrade the specifications of your database instance.
+    Includes user files, database system files \(approximately 100\), and log files. To view the number of log files, run the `SHOW POLAR LOGS` command. An Apsara PolarDB table occupies two files. A partition table occupies N + 2 files, where N indicates the number of partitions. The following error message appears when you create a table after the maximum number of files is reached:
 
--   **Memory occupied by the file system**: The memory occupied by the file system when your database reaches the upper limit of storage and is able to read and write normally \(that is, neither when the instance is under performance stress testing, nor when you perform DDL on large tables\). The file system occupies fewer memory resources than specified in the table if your instance has not reached its storage limit.
+    ```
+    ERROR 3017 (HY000): Too many files. PolarDB only supports 2048 files every 10GB disk size. Please drop some tables/databases before creating new tables
+    ```
 
-## Other limits {#section_a3h_syk_xdb .section}
+    In this case, you need to delete some tables or upgrade the specifications of your cluster.
 
--   **The length of table name**: The table name \(or file name\) in any database instance cannot exceed 63 English letters in length.
--   You are unable to set the serializable isolation level for your instances.
--   You cannot manage accounts in the console because your account is an advanced user by default. The permissions of POLARDB accounts are similar to those of RDS accounts for MySQL as advanced users.
+-   Memory occupied by the file system
+
+    The amount of memory that is occupied by the file system when your cluster has reached its storage limit and can read and write data normally \(neither when the cluster is under performance stress testing nor when you perform DDL operations on large tables\). The file system occupies fewer memory resources than the value specified in the table if your cluster has not reached its storage limit.
+
+
+|Item|Limit|
+|----|-----|
+|Table name|The name of a table in a cluster of any specification must be up to 64 letters and digits or 50 Chinese characters in length.|
+|Serializable isolation level|Not supported.|
 
