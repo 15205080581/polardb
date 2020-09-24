@@ -1,8 +1,6 @@
 # Limits
 
-This topic describes the limits of Apsara PolarDB.
-
-## PolarDB MySQL
+This topic describes the limits of PolarDB for MySQL.
 
 |Node specification|Memory occupied by the file system|Maximum number of files|
 |:-----------------|:---------------------------------|:----------------------|
