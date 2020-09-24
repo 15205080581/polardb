@@ -26,11 +26,11 @@ Queries the performance data of a PolarDB cluster.
 |---------|----|--------|-------|-----------|
 |Action|String|No|DescribeDBClusterPerformance|The operation that you want to perform. Set the value to **DescribeDBClusterPerformance**. |
 |DBClusterId|String|Yes|pc-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*|The ID of the PolarDB cluster. |
-|EndTime|String|Yes|2012-06-08T15:00Z|The end of the time range to query. Specify the time in the `yyyy-MM-ddTHH:mmZ` format. The time must be in UTC. |
+|EndTime|String|Yes|2020-09-23T01:00Z|The end of the time range to query. Specify the time in the `yyyy-MM-ddTHH:mmZ` format. The time must be in UTC. |
 |Key|String|Yes|PolarDBDiskUsage|The performance indicators that you want to query. Separate multiple indicators with commas \(,\). For more information, see [Performance parameters](~~141787~~).
 
- **Note:** You can specify a maximum of five performance indicators. |
-|StartTime|String|Yes|2012-06-08T01:00Z|The beginning of the time range to query. Specify the time in the `yyyy-MM-ddTHH:mmZ` format. The time must be in UTC. |
+**Note:** You can specify a maximum of five performance indicators. |
+|StartTime|String|Yes|2020-09-23T01:01Z|The beginning of the time range to query. Specify the time in the `yyyy-MM-ddTHH:mmZ` format. The time must be in UTC. |
 
 ## Response parameters
 
@@ -38,32 +38,32 @@ Queries the performance data of a PolarDB cluster.
 |---------|----|-------|-----------|
 |DBClusterId|String|pc-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*|The ID of the PolarDB cluster. |
 |DBType|String|MySQL|The engine of the database. |
-|DBVersion|String|5.6|The version of the database engine. |
-|EndTime|String|2012-06-08T15:00Z|The end of the time range. The time is in the `yyyy-MM-ddTHH:mmZ` format. The time is displayed in UTC. |
+|DBVersion|String|8.0|The version of the database engine. |
+|EndTime|String|2020-09-23T01:01:00Z|The end of the time range. The time is in the `yyyy-MM-ddTHH:mm:ssZ` format. The time is displayed in UTC. |
 |PerformanceKeys|Array of PerformanceItem| |The list of cluster performance indicators. |
 |PerformanceItem| | | |
 |DBNodeId|String|pi-\*\*\*\*\*\*\*\*\*\*\*\*\*|The ID of the cluster node.
 
- **Note:** The value of this parameter is not returned if `Key` is set to `PolarDBDiskUsage`. |
+**Note:** The value of this parameter is not returned if `Key`is set to `PolarDBDiskUsage`. |
 |Measurement|String|PolarDBDiskUsage|The performance indicator. |
 |MetricName|String|mean\_data\_size|The name of the metric. |
 |Points|Array of PerformanceItemValue| |The array of the metrics. |
 |PerformanceItemValue| | | |
-|Timestamp|Long|1571193960000|The timestamp of the metric. Unit: milliseconds. |
-|Value|String|14.25|The value of the metric. |
-|RequestId|String|A5409D02-D661-4BF3-8F3D-0A814D\*\*\*\*\*\*|The ID of the request. |
-|StartTime|String|2012-06-08T01:00Z|The beginning of the time range. The time is in the `yyyy-MM-ddTHH:mmZ` format. The time is displayed in UTC. |
+|Timestamp|Long|1600822800000|The timestamp of the metric. Unit: milliseconds. |
+|Value|String|42.38|The value of the metric. |
+|RequestId|String|35D3E3DA-4650-407A-BFF5-59BFF1\*\*\*\*\*\*|The ID of the request. |
+|StartTime|String|2020-09-23T01:00:00Z|The beginning of the time range. The time is in the `yyyy-MM-ddTHH:mmZ` format. The time is displayed in UTC. |
 
 ## Examples
 
 Sample requests
 
 ```
-http(s)://polardb.aliyuncs.com/? Action=DescribeDBClusterPerformance
+http(s)://polardb.aliyuncs.com/?Action=DescribeDBClusterPerformance
 &DBClusterId=pc-****************
-&EndTime=2012-06-08T15:00Z
+&EndTime=2020-09-23T01:00Z
 &Key=PolarDBDiskUsage
-&StartTime=2012-06-08T01:00Z
+&StartTime=2020-09-23T01:01Z
 &<Common request parameters>
 ```
 
@@ -72,62 +72,206 @@ Sample success responses
 `XML` format
 
 ```
-<code>200</code>
-<data>
-    <PerformanceKeys>
-        <PerformanceItem>
-            <Measurement>PolarDBDiskUsage</Measurement>
-            <MetricName>mean_data_size</MetricName>
-            <Points>
-                <PerformanceItemValue>
-                    <Timestamp>1571193960000</Timestamp>
-                    <Value>14.25</Value>
-                </PerformanceItemValue>
-            </Points>
-        </PerformanceItem>
-    </PerformanceKeys>
-    <DBVersion>5.6</DBVersion>
-    <RequestId>A0ADCEAF-3277-48DE-B66D-4B67B1******</RequestId>
-    <EndTime>2012-06-08T15:00Z</EndTime>
-    <StartTime>2012-06-08T01:00Z</StartTime>
-    <DBClusterId>pc-****************</DBClusterId>
-    <DBType>MySQL</DBType>
-</data>
-<requestId>A0ADCEAF-3277-48DE-B66D-4B67B1******</requestId>
-<successResponse>true</successResponse>
+<PerformanceKeys>
+    <PerformanceItem>
+        <Measurement>PolarDBDiskUsage</Measurement>
+        <MetricName>mean_binlog_size</MetricName>
+        <Points>
+            <PerformanceItemValue>
+                <Value>0.00</Value>
+                <Timestamp>1600822800000</Timestamp>
+            </PerformanceItemValue>
+        </Points>
+    </PerformanceItem>
+    <PerformanceItem>
+        <Measurement>PolarDBDiskUsage</Measurement>
+        <MetricName>mean_data_size</MetricName>
+        <Points>
+            <PerformanceItemValue>
+                <Value>42.38</Value>
+                <Timestamp>1600822800000</Timestamp>
+            </PerformanceItemValue>
+        </Points>
+    </PerformanceItem>
+    <PerformanceItem>
+        <Measurement>PolarDBDiskUsage</Measurement>
+        <MetricName>mean_log_size</MetricName>
+        <Points>
+            <PerformanceItemValue>
+                <Value>4393.63</Value>
+                <Timestamp>1600822800000</Timestamp>
+            </PerformanceItemValue>
+        </Points>
+    </PerformanceItem>
+    <PerformanceItem>
+        <Measurement>PolarDBDiskUsage</Measurement>
+        <MetricName>mean_other_log_size</MetricName>
+        <Points>
+            <PerformanceItemValue>
+                <Value>1.63</Value>
+                <Timestamp>1600822800000</Timestamp>
+            </PerformanceItemValue>
+        </Points>
+    </PerformanceItem>
+    <PerformanceItem>
+        <Measurement>PolarDBDiskUsage</Measurement>
+        <MetricName>mean_redolog_size</MetricName>
+        <Points>
+            <PerformanceItemValue>
+                <Value>4096.00</Value>
+                <Timestamp>1600822800000</Timestamp>
+            </PerformanceItemValue>
+        </Points>
+    </PerformanceItem>
+    <PerformanceItem>
+        <Measurement>PolarDBDiskUsage</Measurement>
+        <MetricName>mean_sys_dir_size</MetricName>
+        <Points>
+            <PerformanceItemValue>
+                <Value>11.47</Value>
+                <Timestamp>1600822800000</Timestamp>
+            </PerformanceItemValue>
+        </Points>
+    </PerformanceItem>
+    <PerformanceItem>
+        <Measurement>PolarDBDiskUsage</Measurement>
+        <MetricName>mean_tmp_dir_size</MetricName>
+        <Points>
+            <PerformanceItemValue>
+                <Value>0.00</Value>
+                <Timestamp>1600822800000</Timestamp>
+            </PerformanceItemValue>
+        </Points>
+    </PerformanceItem>
+    <PerformanceItem>
+        <Measurement>PolarDBDiskUsage</Measurement>
+        <MetricName>mean_undolog_size</MetricName>
+        <Points>
+            <PerformanceItemValue>
+                <Value>296.00</Value>
+                <Timestamp>1600822800000</Timestamp>
+            </PerformanceItemValue>
+        </Points>
+    </PerformanceItem>
+</PerformanceKeys>
+<DBVersion>8.0</DBVersion>
+<RequestId>35D3E3DA-4650-407A-BFF5-59BFF1******</RequestId>
+<EndTime>2020-09-23T01:01:00Z</EndTime>
+<DBClusterId>pc-*****************</DBClusterId>
+<StartTime>2020-09-23T01:00:00Z</StartTime>
+<DBType>MySQL</DBType>
 ```
 
 `JSON` format
 
 ```
 {
-    "code":"200",
-    "data":{
-        "PerformanceKeys":{
-            "PerformanceItem":[
-                {
-                    "Measurement":"PolarDBDiskUsage",
-                    "MetricName":"mean_data_size",
-                    "Points": {
-                        "PerformanceItemValue": [
-                            {
-                                "Timestamp": 1571193960000,
-                                "Value": "14.25"
-                            }
-                        ]
-                    }
+    "PerformanceKeys": {
+        "PerformanceItem": [
+            {
+                "Measurement": "PolarDBDiskUsage",
+                "MetricName": "mean_binlog_size",
+                "Points": {
+                    "PerformanceItemValue": [
+                        {
+                            "Value": "0.00",
+                            "Timestamp": 1600822800000
+                        }
+                    ]
                 }
-            ]
-        },
-        "DBVersion":"5.6",
-        "RequestId":"A0ADCEAF-3277-48DE-B66D-4B67B1******",
-        "EndTime":"2012-06-08T15:00Z",
-        "StartTime":"2012-06-08T01:00Z",
-        "DBClusterId":"pc-****************",
-        "DBType":"MySQL"
+            },
+            {
+                "Measurement": "PolarDBDiskUsage",
+                "MetricName": "mean_data_size",
+                "Points": {
+                    "PerformanceItemValue": [
+                        {
+                            "Value": "42.38",
+                            "Timestamp": 1600822800000
+                        }
+                    ]
+                }
+            },
+            {
+                "Measurement": "PolarDBDiskUsage",
+                "MetricName": "mean_log_size",
+                "Points": {
+                    "PerformanceItemValue": [
+                        {
+                            "Value": "4393.63",
+                            "Timestamp": 1600822800000
+                        }
+                    ]
+                }
+            },
+            {
+                "Measurement": "PolarDBDiskUsage",
+                "MetricName": "mean_other_log_size",
+                "Points": {
+                    "PerformanceItemValue": [
+                        {
+                            "Value": "1.63",
+                            "Timestamp": 1600822800000
+                        }
+                    ]
+                }
+            },
+            {
+                "Measurement": "PolarDBDiskUsage",
+                "MetricName": "mean_redolog_size",
+                "Points": {
+                    "PerformanceItemValue": [
+                        {
+                            "Value": "4096.00",
+                            "Timestamp": 1600822800000
+                        }
+                    ]
+                }
+            },
+            {
+                "Measurement": "PolarDBDiskUsage",
+                "MetricName": "mean_sys_dir_size",
+                "Points": {
+                    "PerformanceItemValue": [
+                        {
+                            "Value": "11.47",
+                            "Timestamp": 1600822800000
+                        }
+                    ]
+                }
+            },
+            {
+                "Measurement": "PolarDBDiskUsage",
+                "MetricName": "mean_tmp_dir_size",
+                "Points": {
+                    "PerformanceItemValue": [
+                        {
+                            "Value": "0.00",
+                            "Timestamp": 1600822800000
+                        }
+                    ]
+                }
+            },
+            {
+                "Measurement": "PolarDBDiskUsage",
+                "MetricName": "mean_undolog_size",
+                "Points": {
+                    "PerformanceItemValue": [
+                        {
+                            "Value": "296.00",
+                            "Timestamp": 1600822800000
+                        }
+                    ]
+                }
+            }
+        ]
     },
-    "requestId":"A0ADCEAF-3277-48DE-B66D-4B67B1******",
-    "successResponse":true
+    "DBVersion": "8.0",
+    "RequestId": "35D3E3DA-4650-407A-BFF5-59BFF1******",
+    "EndTime": "2020-09-23T01:01:00Z",
+    "DBClusterId": "pc-*****************",
+    "StartTime": "2020-09-23T01:00:00Z",
+    "DBType": "MySQL"
 }
 ```
 
