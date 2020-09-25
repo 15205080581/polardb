@@ -15,6 +15,8 @@ The hot row optimization feature is not applicable in the following scenarios:
 -   Hot rows are stored in a partitioned table.
 -   The table that stores hot rows is associated with a trigger.
 
+## Considerations
+
 PolarDB for MySQL uses canary releases to provide the hot row optimization feature. To use this feature, [Submit a ticket](https://workorder-intl.console.aliyun.com/)for technical support.
 
 ## Background information
