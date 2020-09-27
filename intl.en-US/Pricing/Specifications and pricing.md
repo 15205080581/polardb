@@ -383,7 +383,6 @@ All nodes in Apsara PolarDB clusters are hosted on dedicated resources. The CPU,
 -   You can select a node type for the primary node when you create a cluster. The same type will be automatically applied to read-only nodes.
 -   The **maximum number of IOPS** is a theoretically calculated value.
 -   The maximum number of connections for a cluster depends on the specifications of nodes, and does not change with the number of nodes.
--   If you require higher computing performance and larger storage space \(for example, **100 TB**\), you can [submit a ticket](https://workorder-intl.console.aliyun.com/console.htm?spm=5176.2020520001.console-base-top.dwork-order-1.497b4bd3uHPH0W#/ticket/createIndex) to contact after-sales services.
 
 ## Storage pricing
 
